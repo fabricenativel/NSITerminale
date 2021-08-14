@@ -1,17 +1,32 @@
-# Welcome to MkDocs
+# Cours de NSI en Terminale du lycée Hintermann-Afféjee
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Liste des chapitres 
 
-## Commands
+{{ affiche_progression() }} 
+ 
+## Thèmes traités sur l'année :
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+{{ sec_titre("histoire","Histoire de l'informatique")}}
 
-## Project layout
+{{ sec_titre("projet","Projet")}}
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+
+## Système d'exploitation
+
+Ce cours est construit pour être utilisé **en classe**, les élèves disposent d'un ordinateur fonctionnant sous [Ubuntu](https://www.ubuntu.com){target=_blank}. 
+
+## Applications
+
+Les applications suivants sont utilisés dans le cours, leur compatibilité avec les systèmes d'exploitation est indiqué. 
+
+| Applications | {{ sc("gnu")}}/Linux | Windows | MacOS |
+| ----------|----------------------|------------|----------|
+| [Python](../install)    | {{ ok() }}           | {{ ok() }} | {{ ok() }} |
+| Jupyter   | {{ ok() }}           | {{ ok() }} | {{ ok() }} |
+| Filius    | {{ ok() }}           | {{ ok() }} | {{ ok() }} |
+| Gameshell | {{ ok() }}           | {{ nok() }} | {{ ok() }} |
+
+
+
+--8<-- "includes/glossaire.md"
