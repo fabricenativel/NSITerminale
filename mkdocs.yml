@@ -1,0 +1,72 @@
+# Les infos sur le site
+site_name: Numériques et Sciences Informatiques Terminale
+site_description: Cours de NSI en classe de terminale du lycée Hintermann-Afféjee
+site_author: Fabrice NATIVEL
+
+# Les éléments de la barre de navigation
+nav:  
+  - "C1-Récursivité" : recursivite.md
+
+#Le thème du site
+theme:
+  name: material
+  language: fr
+  # Changement de l'icone du site (dans la barre de titre) les icones sont à chercher dans ~/.local/lib/python3.8/site-packages/material/.icons
+  icon:
+    logo: fontawesome/solid/dragon
+  favicon : images/dragon.svg
+  # Les couleurs, on utilise la palette par défaut avec qques tweaks via css (voir https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/stylesheets/main/_colors.scss)
+  palette: 
+    scheme: default
+  
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.superfences:          # Imbrication de blocs.
+    # Exception pour code highlight (de façon à faire fonctionner mermaid)
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+
+  - pymdownx.tabbed               # Volets glissants.  === "Mon volet"
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
+        custom_checkbox:    true   #   avec cases d'origine
+        clickable_checkbox: true    #   et cliquables.
+
+
+  - attr_list
+  # Permet l'utilisation d'abbréviation dans le fichier syntaxe *[abbr]: description (voir glossaire.md)
+  - abbr
+  # Permet l'insertion de fichiers dans le document à l'aide de la syntaxe --8<-- "includes/glossaire.md"
+  - pymdownx.snippets
+  # Admonitions et variantes (details : repliable, superfences : avec onglet)
+  - admonition
+  - pymdownx.details
+  - pymdownx.keys:
+      strict: false
+
+
+plugins:
+  - macros
+  - search
+
+extra_css:
+  - stylesheets/fenarius.css
+
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js
+  
