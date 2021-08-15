@@ -11,7 +11,7 @@
 {{ sec_titre("projet","Projet")}}
 
 
-
+ 
 ## Système d'exploitation
 
 Ce cours est construit pour être utilisé **en classe**, les élèves disposent d'un ordinateur fonctionnant sous [Ubuntu](https://www.ubuntu.com){target=_blank}. 

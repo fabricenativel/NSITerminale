@@ -5,7 +5,24 @@ site_author: Fabrice NATIVEL
 
 # Les éléments de la barre de navigation
 nav:  
+  - "C0-Révisions" : revisions.md
   - "C1-Récursivité" : recursivite.md
+  - "C2-Introduction aux bases de données et à SQL" : sql.md
+  - "C3-Processus" : processus.md
+  - "C4-Diviser pour régner" : diviser.md
+  - "C5-Notions de programmation orienté objet" : poo.md
+  - "C6-Structures de données linéaires" : sl.md
+  - "C7-Système sur puce" : puces.md
+  - "C8-Arbres" : arbres.md
+  - "C9-Schéma relationnel d'une base de données" : sgbd.md
+  - "C10-Algorithmes sur les arbres" : algoarbre.md
+  - "C11-Graphes" : graphes.md
+  - "C12-Protocoles de routage" : routage.md
+  - "C13-Recherche textuelle" : texte.md
+  - "C14-Calculabilité, décidabilité" : calculabilite.md
+  - "C15-Sécurisation des communications" : cryptage.md
+
+
 
 #Le thème du site
 theme:

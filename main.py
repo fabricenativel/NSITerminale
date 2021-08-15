@@ -46,18 +46,22 @@ def define_env(env):
     env.variables['num_act']=1
 
     env.variables['progression']={
-        1 : ["python","Récursivité",1,"recursivite.md"],
+        0 : ["python","Révisions",2,"revisions.md"],
+        1 : ["python","Récursivité",2,"recursivite.md"],
         2 : ["db","Introduction aux bases de données et à SQL",2,"sql.md"],
-        3 : ["os","Processus",3,"processus.md"],
-        4 : ["algorithmique","Diviser pour régner",4,"diviser.md"],
-        5 : ["python","Notions de programmation orienté objet",5,"poo.md"],
-        6 : ["sd","Structures de données linéaires",6,"sl.md"],
-        7 : ["os","Système sur puce",7,"puces.md"],
-        8 : ["sd","Arbres",8,"arbres.md"],
-        9 : ["db","Schéma relationnel",9,"sgbd.md"],
-        10: ["algorithmique","Algorithmes sur les arbes",10,"algoarbre.md"],
-        11: ["sd","Graphes",11,"graphes.md"],
-        12: ["os","Protocoles de routage",12,"routage.md"]
+        3 : ["os","Processus",1,"processus.md"],
+        4 : ["algorithmique","Diviser pour régner",1,"diviser.md"],
+        5 : ["python","Notions de programmation orienté objet",2,"poo.md"],
+        6 : ["sd","Structures de données linéaires",2,"sl.md"],
+        7 : ["os","Système sur puce",1,"puces.md"],
+        8 : ["sd","Arbres",2,"arbres.md"],
+        9 : ["db","Schéma relationnel d'une base de données",2,"sgbd.md"],
+        10: ["algorithmique","Algorithmes sur les arbres",2,"algoarbre.md"],
+        11: ["sd","Graphes",2,"graphes.md"],
+        12: ["os","Protocoles de routage",2,"routage.md"],
+        13: ["algorithmique","Recherche textuelle",2,"texte.md"],
+        14: ["python","Calculabilité, décidabilité",2,"calculabilite.md"],
+        15: ["os","Sécurisation des communications",2,"cryptage.md"]
     }
     
     env.variables['nchap']=0
@@ -132,6 +136,11 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
 !!! warning "Attention"
     Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos **propres** notes de cours et par une révision approfondie des exercices.'''
         return ccours
+
+    @env.macro
+    def aff_cours(num):
+        fichier=f'C{num}/C{num}-cours.pdf'
+        return cours(fichier)
 
     @env.macro
     def sc(chaine):
