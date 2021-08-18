@@ -358,4 +358,62 @@
 				\end{lstlisting}
 	\end{exampleblock}
 \end{frame}
+
+
+% Représentation listes
+\begin{frame}
+	\mframe{\Python}
+	\begin{alertblock}{Indice d'un élément}
+		\begin{itemize}
+			\item<1-> Les éléments d'une liste sont repérés par leur position dans la liste, on dit leur \textcolor{blue}{indice} \\
+			\item<2-> Attention, la numérotation commence à zéro, l'indice du premier élément de la liste est donc zéro
+			\item<3-> On peut accéder à un élément en indiquant le nom de la liste puis  l'indice de cet élément entre crochet
+			\item<4-> L'erreur {\tt IndexError} indique qu'on tente d'accéder à un indice qui n'existe pas.
+		\end{itemize}
+		\onslide<4->{\begin{center}
+				Une liste L : \\
+				\begin{tabularx}{0.8\textwidth}{l|Y|Y|Y|Y|Y|}
+					\cline{2-6}
+					Eléments                    & {\tt L[0]}                       & {\tt L[1]}                       & {\tt L[2]}                       & {\tt L[3]}                       & {\tt L[4]}                       \\
+					\cline{2-6}
+					\multicolumn{1}{c}{ }       & \multicolumn{1}{c}{$\downarrow$} & \multicolumn{1}{c}{$\downarrow$} & \multicolumn{1}{c}{$\downarrow$} & \multicolumn{1}{c}{$\downarrow$} & \multicolumn{1}{c}{$\downarrow$} \\
+					\multicolumn{1}{c}{Indices} & \multicolumn{1}{c}{0}            & \multicolumn{1}{c}{1}            & \multicolumn{1}{c}{2}            & \multicolumn{1}{c}{3}            & \multicolumn{1}{c}{4}            \\
+				\end{tabularx}
+			\end{center}}
+	\end{alertblock}
+\end{frame}
+
+
+% Manipulation des listes
+\begin{frame}
+	\mframe{\Python}
+	\begin{alertblock}{Opérations sur les listes}
+		Les opérations suivantes permettent de manipuler les listes (ajout, suppression, insertion d'éléments). On fera bien attention à la syntaxe on met le nom de la liste suivi d'un point suivi de l'opération à effectuer (voir exemples)
+		\begin{itemize}
+			\item<1-> \textcolor{blue}{\tt remove} permet de supprimer un élément d'une liste. Par exemple : {\tt ma\_liste.remove(elt)} va enlever {\tt elt} de {\tt ma\_liste}.
+			\item<2-> \textcolor{blue}{\tt append} permet d'ajouter un élément à la fin d'une liste. Par exemple : {\tt ma\_liste.append(elt)} va ajouter {\tt elt} à la fin de {\tt ma\_liste}.
+			\item<3-> \textcolor{blue}{\tt insert} permet d'insérer un élément à un indice donnée. Par exemple : {\tt ma\_liste.insert(indice,elt)} va insérer {\tt elt} dans {\tt ma\_liste} à l'index {\tt indice}.
+			\item<4-> \textcolor{blue}{\tt pop} permet de récupérer un élement de la liste tout en le supprimant de la liste. Par exemple {\tt elt=ma\_liste.pop(2)} va mettre dans {\tt elt} {\tt ma\_liste[2]} et dans le même temps supprimer cet élément de la liste.
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+
+% Génération de listes
+\begin{frame}
+	\mframe{\Python}
+	\begin{alertblock}{Création de listes}
+		On peut créer des listes de diverses façons en Python :
+		\begin{itemize}
+			\item<2-> \textcolor{red}{Par ajout succesif d'élement} on part alors d'une liste (éventuellement vide) et on ajoute chaque élément à l'aide d'instruction \textcolor{blue}{\tt append}.
+			\item<3-> \textcolor{red}{Par répétition du même élément} on utilise alors le caractère \textcolor{blue}{\tt *} pour indiquer le nombre de répétitions. \\
+			      \onslide<4-> {Par exemple pour créer la liste: \\ {\tt bavardages = ["bla", "bla", "bla", "bla"]} \\ on peut simplement écrire : \\}
+			      \onslide<5->{\textcolor{blue}{\tt bavardages = ["bla"]*4}}
+			\item<6->	 \textcolor{red}{Par compréhension}, c'est à dire en indiquant la définition des éléments qui composent la liste. \\
+			      \onslide<7-> {Par exemple la liste {\tt puissances2 = [1, 2, 4, 8, 16, 32, 64, 128]} est constitué des huits premières puissances de 2} \\
+			      \onslide<8-> {Elle contient donc $2^0, 2^1, 2^2, \dots 2^7$, ce qui se traduit en Python par :}\\
+			      \onslide<9-> \textcolor{blue}{\tt puissances2 = [2**k for k in range(8)]}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
 \end{document}

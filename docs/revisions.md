@@ -182,6 +182,45 @@ On souhaite dessiner la figure suivante à l'aide du module `turtle` de Python :
         else:
             <instructions2>
         ``` 
+        
+{{ titre_activite("Le problème de Josephus",["video"]) }}
+
+<div class="centre"><iframe width="560" height="315" src="https://www.youtube.com/embed/uCsD3ZGzMgE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+Le but de l'activité est d'écrire un programme permettant de résoudre le [problème de Joséphus](https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_Jos%C3%A8phe){target=_blank} en révisant les listes de Python.
+
+
+1. On représente un cercle de `n` soldats par la liste `[1,2,...,n]`
+    1. Ecrire une fonction `soldats(n)` qui renvoie la liste `[1,2,....,n]`
+    2. Verifier que `n` est bien un entier strictement positif à l'aide d'instruction `assert`
+    3. Ajouter une chaîne documentation.
+2. Afin de repérer l'épée, on décide que le soldat qui la tient se situe *toujours en première position de la liste*.
+    1. Compléter l'évolution de la liste de soldat ci-dessous
+
+        | Etat de la liste | Explications |
+        |------------------|--------------|
+        |[==1==,~~2~~,3,4,5,6] | `1` élimine `2` et passe l'épée à `3` qui passe donc en tête de liste |
+        |[==3==,...,5,6,1]  | `3` élimine `...` et passe l'épée à `...` qui passe donc en tête de liste |
+        |[==...==,~~6~~,1,3]  | `...` élimine `...` et passe l'épée à `...` qui passe donc en tête de liste |
+        |[...,...,...] | ..... |
+        |[...,...] | ..... |
+        |[...] | ..... |
+    
+    2. Compléter l'algorithme suivant d'évolution de la liste et indiquer les instructions Python correspondantes (on désigne par `cercle` la liste représentant le cercle de soldats):
+
+        |Etapes | Opération sur la liste | Instructions Python |
+        |-|------------------------|---------------------|
+        |:one:| .......... |                  `tueur=cercle.pop(0)`
+        |:two:| Ajouter cet élément en fin de liste|        ......    |
+        |:three:| Supprimer le premier élément |       ......           |
+
+    3. Quel est la condition d'arrêt de l'algorithme ?
+    4. Exprimer cette condition par un test en python sur `cercle`
+
+3. Programmer une fonction `josephus(n)` qui renvoie le soldat survivant pour un cercle de `n` soldats.
+
+
+
 
 ## Cours
 
@@ -242,7 +281,7 @@ On souhaite dessiner la figure suivante à l'aide du module `turtle` de Python :
     * Au début du tracé de la figure écrire l'instruction `crayon.begin_fill()`
     * A la fin du tracé de la figure écrire l'instruction `crayon.end_fill()`
 
-    Modifier votre fonction rectangle de façon à pouvoir un rectangle rempli avec une couleur passée en paramètre.
+    Modifier votre fonction rectangle de façon à pouvoir tracer un rectangle rempli avec une couleur passée en paramètre.
 
 {{ exo("Quelques figures avec `turtle`",[]) }}
 Construire les figures suivantes (le repère est là pour vous aider et ne dois pas être reproduit):
