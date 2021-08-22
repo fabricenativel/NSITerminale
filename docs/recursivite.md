@@ -240,19 +240,37 @@ def courbe_koch(tortue,longueur,ordre):
 3. Donner une implémentation itérative de cet algorithme
 4. Donner une implémentation récursive de cet algorithme
 
-{{ exo("Algorithme d'Euclide de calcul du pgcd",["maths"]) }}
+{{ exo("Suite de Fibonnaci",["maths"]) }}
 
-La suite de Fibonnaci $(f_n)$ est définie par $f_0=0$, $f_1=1$ et  $f_{n}=f_{n-1}+f_{n-2}$ pour tout $n\geq2$. C'est à dire que chaque terme de la suite est la somme des deux précédents.
+La suite de Fibonnaci $(f_n)$ est définie par :
+
+$$\left\{ \begin{array}{lll} 
+f_0&=&0, \\
+f_1&=&1, \\
+f_{n}&=&f_{n-1}+f_{n-2} \mathrm{\ \ pour\ tout\ \ } n\geq2. \end{array} \right.$$
+
+ C'est à dire que chaque terme de la suite est la somme des deux précédents.
 
 1. Calculer à la main les premières valeurs de cette suite en complétant le tableau suivant :
 
     <table>
-    <tr> <th>\(n\)</th> <td>0</td> <td>1</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td>  </tr>
-    <tr> <th>\(f_n\)</th> <td>0</td> <td>1</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td>  </tr>
+    <tr> <td>\(\textcolor{darkred}{n}\)</td> <td>0</td> <td>1</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td>  </tr>
+    <tr> <td>\(\textcolor{darkred}{f_n}\)</td> <td>0</td> <td>1</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td> <td>\(\dots\)</td>  </tr>
     </table>
 
-2. Proposer une fonction recursive permettant de calculer les termes de cette suite.
-3. Recopier et compléter le schéma suivant qui montre les appels récursifs nécessaires au calcul de $f_5$.
+2. Compléter le code suivant permettant de calculer les termes de cette suite :
+
+    ```python
+        def fibonnaci(n):
+            if n<2:
+                return ....
+            else:
+                return ........+............
+    ```
+
+3. Tester cette fonction en écrivant une boucle qui écrit les termes de la suite de Fibonnaci pour les entiers de 1 à 50. 
+4. Que remarquez-vous ?
+5. Recopier et compléter le schéma suivant qui montre les appels récursifs nécessaires au calcul de $f_5$.
 
     ```mermaid
                 graph TD
@@ -263,3 +281,11 @@ La suite de Fibonnaci $(f_n)$ est définie par $f_0=0$, $f_1=1$ et  $f_{n}=f_{n-
                 f3 --> f33[...]
                 f3 --> f34[...]
     ```
+
+6. En déduire une explication de la lenteur observée à la question 4.
+
+7. Proposer une version itérative du calcul du énième terme de la suite de Fibonnaci.
+
+!!! lien "Pour aller plus loin"
+    La vidéo suivante (en anglais) reprend ce problème et propose une solution pour coder un algorithme plus efficace
+    <div class="centre"><iframe width="560" height="315" src="https://www.youtube.com/embed/Qk0zUZW-U_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

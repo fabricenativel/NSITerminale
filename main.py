@@ -48,7 +48,7 @@ def define_env(env):
     env.variables['progression']={
         0 : ["python","Révisions",2,"revisions.md"],
         1 : ["python","Récursivité",2,"recursivite.md"],
-        2 : ["db","Introduction aux bases de données et à SQL",2,"sql.md"],
+        2 : ["db","Bases de données et SQL",2,"sql.md"],
         3 : ["os","Processus",1,"processus.md"],
         4 : ["algorithmique","Diviser pour régner",1,"diviser.md"],
         5 : ["python","Notions de programmation orienté objet",2,"poo.md"],
