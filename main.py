@@ -123,7 +123,7 @@ def define_env(env):
 
     @env.macro
     def telecharger(description,fichier):
-        liens =f"[{description} :fontawesome-regular-file-pdf:](./{fichier})"
+        liens =f"[{description} :material-download:](./{fichier})"
         liens+="{.md-button}"
         return "<span class='centre'>"+liens+"</span>"
 

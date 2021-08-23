@@ -95,7 +95,7 @@ On souhaite dessiner une grille du [jeu de morpion](https://fr.wikipedia.org/wik
 
     3. Compléter ce programme en traçant les deux traits horizontaux manquants afin de compléter le dessin de la grille de morpion.
 
-2. Dessiner en cercle au centre de la grille de morpion (de rayon 40, de couleur `darkred` avec un crayon d'épaisseur 7) de façon à obtenir le dessin final suivant :
+2. Dessiner un cercle au centre de la grille de morpion (de rayon 40, de couleur `darkred` avec un crayon d'épaisseur 7) de façon à obtenir le dessin final suivant :
 ![morpion1](./images/C0/morpion2.png){: .imgcentre}
 
     !!! Aide

@@ -20,7 +20,7 @@
 
 2. Pour réaliser le dessin ci-dessus vous avez probablement utilisé une boucle, votre programme est dit **itératif**. Remarquons à présent que cette spirale peut se décomposer en un premier carré (en trait épais ci dessous), suivi d'une spirale de carrés (en gris et traits fin ci-dessous) :
 ![spirale de carre](./images/C1/spirale2.png){: .imgcentre}
-On pourrait donc définir qu'une spirale est constitué (compléter):
+On pourrait donc définir qu'une spirale est constituée (compléter):
 
     * :one: d'un .....
     * :two: et d'une ........... plus petite !
@@ -52,7 +52,7 @@ On pourrait donc définir qu'une spirale est constitué (compléter):
     1. Ecrire une fonction python `somme(n)` itérative qui calcule la somme des `n` premiers entiers. Par exemple `somme(5)` renvoie `15` puisque `1+2+3+4+5=15`.
     2. Compléter l'égalité mathématique suivante entre `somme(n)` et `somme(n-1)` : <br>
         `somme(n) = somme(n-1) + ... `
-    3. En déduire une version itérative de la fonction `somme(n)`
+    3. En déduire une version récursive de la fonction `somme(n)`
 
 2. Écrire à l'envers
     1. Compléter puis tester le code de la fonction Python ci-dessous qui prend en argument une chaine de caractère et la renvoie écrite à l'envers
