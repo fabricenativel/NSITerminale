@@ -1,6 +1,6 @@
 
-{% set num = 1 %}
-{% set theme = "THEME" %}
+{% set num = 3 %}
+{% set theme = "os" %}
 
 {{ titre_chapitre(num,titre,theme)}}
  

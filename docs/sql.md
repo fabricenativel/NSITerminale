@@ -161,7 +161,7 @@ Pour mettre en place une base de données dans une médiathèque; on décide de 
 
 {{ exo("Modélisation d'une liste de contacts téléphoniques",[]) }}
 
-Proposer une modélisation d'une liste de contact téléphonique dans laquelle chaque personne (nom, prénom) est associé à un numéro de téléphone.
+Proposer une modélisation d'une liste de contact téléphonique dans laquelle chaque personne (nom, prénom) est associée à un numéro de téléphone.
 
 {{ exo("Prix Nobel",[])}}
 
@@ -170,12 +170,55 @@ Proposer une modélisation d'une liste de contact téléphonique dans laquelle c
 2. Ouvrir cette base avec `sqlitebrowser`
 3. Dans <span class='encadre'>Parcourir les données</span> prendre note du noms des colonnes et de leur signification. 
 4. Ecrire les requêtes {{ sc("sql") }} permettant :
-    1. d'obtenir les catégories dans lesquelles sont attribuées les prix Nobel.
-    2. de lister par ordre alphabétique les lauréats du prix Nobel nés en France ou travaillant pour une organisation Française.
-    3. de lister les années où le \textit{Comité international de la Croix Rouge} a obtenu le prix Nobel
-    4. de connaître le nombre de femmes ayant obtenu un prix Nobel
-    5. de lister par âge décroissant les lauréats du prix Nobel qui sont toujours en vie.
-    6. de rechercher les lauréats dont le nom contient {\tt Curie}.
+    1. d'obtenir les catégories dans lesquelles sont attribuées les prix Nobel,
+    2. de lister par ordre alphabétique les lauréats du prix Nobel nés en France ou travaillant pour une organisation Française,
+    3. de lister les années où le "Comité international de la Croix Rouge" a obtenu le prix Nobel,
+    4. de connaître le nombre de femmes ayant obtenu un prix Nobel,
+    5. de lister par âge décroissant les lauréats du prix Nobel qui sont toujours en vie,
+    6. de rechercher les lauréats dont le nom contient "Curie".
+
+
+
+
+{{ exo("Tremblements de terre",[]) }} 
+1. Télécharger ci-dessous une base de données des tremblements de terre :
+{{telecharger("Tremblements de terre","./files/C2/earthquakes.db")}}
+2. Ouvrir cette base avec `sqlitebrowser`
+3. Dans <span class='encadre'>Parcourir les données</span> prendre note du noms des colonnes et de leur signification. 
+4. Ecrire les requêtes {{ sc("sql") }} permettant :
+    1. de lister  tremblements de terre qui se sont produits au Japon,
+    2. de lister les tremblements de terre qui se sont produits en l'an 2000 classés par magnitude,
+        
+        !!! Aide 
+            Remarquer que le champ `occured_on` qui indique la date est au format texte.
+
+    
+5. Utiliser cette base pour répondre aux questions suivantes :
+    1. les tremblements de terre sont-ils plus fréquents dans l'hémisphère nord ou l'hémisphère sud ?
+    
+        !!! Aide
+             On rappelle que l'hémisphère nord correspond à une latitude positive et le sud à une latitude négative.
+
+    2. Où étaient effectuées les essais nucléaires français ?
+    3. L'un des séisme de cette base de données s'est-il produit à proximité de l'île de la Réunion ?
+        
+        !!! Aide
+             Rechercher la latitude et la longitude de l'île de Réunion et considérer que "à proximité" signifie qu'on s'écarte de moins de 10 degrés de latitude ou de longitude
+
+{{ exo("Titanic",[] )}}
+
+1. Consulter la page wikipedia consacrée au [Titanic](https://fr.wikipedia.org/wiki/Titanic){target=_blank} pour connaître l'histoire tragique de ce paquebot.
+2. Télécharger ci-dessous une base de données partielle des passagers du titanic :
+{{telecharger("Passagers du titanic","./files/C2/titanic.db")}}
+On précise la signification des champs suivants : <br>
+ :octicons-triangle-right-16: `survived` : un entier qui vaut 0 (passager décédé) ou 1 (passager survivant). <br>
+:octicons-triangle-right-16: `pclasse` : un entier qui indique la classe dans laquelle voyageait le passenger : de 1 pour la première classe à 3 pour la classe la moins chère.<br>
+:octicons-triangle-right-16: `sibsp` : le nombre de frères et soeurs présents à bord.<br>
+:octicons-triangle-right-16: `parch` : le nombre de parents et enfants présents à bord.<br>
+3. En *argumentant* vos réponses à l'aide d'informations extraites de cette base, donner votre avis sur les affirmations suivantes :
+    1. Les passengers de la première classe avaient plus de chance de survie.
+    2. Les femmes et les enfants ont été sauvées en priorité.
+    3. Les passenger âgés de plus de 50 avaient moins de chance de survie que les autres.
 
 {{ exo("Créer une base de données à partir d'un fichier csv",[])}}
 
