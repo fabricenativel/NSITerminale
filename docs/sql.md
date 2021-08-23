@@ -42,7 +42,7 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
         ```sql
             SELECT * FROM Medals
         ```
-    Tester chacune des requêtes suivantes en **observant bien les résultats renvoyés**. En déduire quels données sont extraites de la base à l'aide de ces requêtes
+    Tester chacune des requêtes suivantes en **observant bien les résultats renvoyés**. En déduire quelles données sont extraites de la base à l'aide de ces requêtes
 
     1. 
         ```sql
@@ -99,10 +99,10 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
 3. Des opérations sur les colonnes
     1. Ecrire une requête {{ sc("sql") }} permettant d'obtenir le pays et l'année où la dette a été la plus importante.
     2. Vous avez *normalement* écrit une requête de classement par ordre décroissant associée à une clause `LIMIT`. En réalité on recherche ici le **maximum** d'une colonne, le langage {{ sc("sql") }} permet d'opérer sur des colonnes : <br>
-    :octicons-triangle-right-16: `min` et `max` permettent d'obtenir respectivement le maximum ou le minimum d'un champ.<br>
-    :octicons-triangle-right-16: `sum` permet de calculer la somme sur un ensemble d'enregistrement.<br>
-    :octicons-triangle-right-16: `avg` permet de calculer la moyenne sur un ensemble d'enregistrement.<br>
-    :octicons-triangle-right-16: `count` permet de compter le nombre d'enregistrement.<br>
+    :octicons-triangle-right-16: `MIN` et `MAX` permettent d'obtenir respectivement le maximum ou le minimum d'un champ.<br>
+    :octicons-triangle-right-16: `SUM` permet de calculer la somme sur un ensemble d'enregistrement.<br>
+    :octicons-triangle-right-16: `AVG` permet de calculer la moyenne sur un ensemble d'enregistrement.<br>
+    :octicons-triangle-right-16: `COUNT` permet de compter le nombre d'enregistrement.<br>
     Exécuter la requête :
 
     ```sql
@@ -111,7 +111,33 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
 
     Quelle différence constatez-vous par rapport à la solution précédente ?
 
+4. En vous aidant de ces nouvelles fonctionnalités, retrouver à l'aide de {{ sc("sql") }}n les **vraies* valeurs de croissance moyenne en fonction de la catégorie de dette dans laquelle se trouve le pays et qu'on rappelle ci-dessous :
+    
+    |Catégorie| Croissance moyenne |
+    |---------|--------------------|
+    | 1       | 4,2 % |
+    | 2       | 3,1 % |
+    | 3       | 3,2 % |
+    | 4       | 2,2 % |
 
+5. Pour aller plus loin ...
+
+Les opérations sur les colonnes sont particulièrement utiles en lien avec la clause `GROUP BY`. Par exemple, si on souhaite obtenir la somme de la croissance pour chacun des 20 pays depuis 1970 : 
+    
+```sql
+    SELECT country, SUM(Growth) from RR WHERE Year>=1970 GROUP BY Country
+```
+
+On peut même renommer la  colonne `SUM(Growth)` des résultats grâce à `AS` et donc l'utiliser comme critère de classement: 
+    
+```sql
+        SELECT country, SUM(Growth) AS moy70 from RR WHERE Year>=1970 GROUP BY Country ORDER BY moy70 DESC
+```
+
+Ecrire une *seule* requête permettant d'obtenir les taux de croissance moyenne pour chacune des catégories de dette.
+
+!!! Attention
+    La clause  `GROUP BY` n'est pas exigible au niveau terminale NSI et ne fera pas partie des évaluations.
 
 ## Cours
 
@@ -119,7 +145,39 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
 
 ## Exercices
 
-{{ exo("Créer une base de données à partir d'un fichier csv",[],0)}}
+
+{{ exo("Modélisation d'une base de données de livres",[],0) }}
+
+Pour mettre en place une base de données dans une médiathèque; on décide de stocker les livres dans une table de cette base. On donne ci-dessous la représentation de cette table avec simplement deux éléments donnés en exemple :
+
+|Titre|Auteur|Pays|Année|
+|-----|------|----|-----|
+|Les misérables|Victor Hugo|France|1862|
+|1984|George Orwell | Angleterre | 1949|
+
+1. Quels sont les attributs de cette table ?
+2. Proposer un type et un domaine pour l'attribut `Année`
+3. Certains livres sont achetés en plusieurs exemplaires dans cette médiathèque, expliquer pourquoi le modèle de table choisi ci-dessus ne convient plus et proposer une correction.
+
+{{ exo("Modélisation d'une liste de contacts téléphoniques",[]) }}
+
+Proposer une modélisation d'une liste de contact téléphonique dans laquelle chaque personne (nom, prénom) est associé à un numéro de téléphone.
+
+{{ exo("Prix Nobel",[])}}
+
+1. Télécharger ci-dessous une base de données des Prix Nobel :
+{{telecharger("Prix Nobel","./files/C2/Nobel.db")}}
+2. Ouvrir cette base avec `sqlitebrowser`
+3. Dans <span class='encadre'>Parcourir les données</span> prendre note du noms des colonnes et de leur signification. 
+4. Ecrire les requêtes {{ sc("sql") }} permettant :
+    1. d'obtenir les catégories dans lesquelles sont attribuées les prix Nobel.
+    2. de lister par ordre alphabétique les lauréats du prix Nobel nés en France ou travaillant pour une organisation Française.
+    3. de lister les années où le \textit{Comité international de la Croix Rouge} a obtenu le prix Nobel
+    4. de connaître le nombre de femmes ayant obtenu un prix Nobel
+    5. de lister par âge décroissant les lauréats du prix Nobel qui sont toujours en vie.
+    6. de rechercher les lauréats dont le nom contient {\tt Curie}.
+
+{{ exo("Créer une base de données à partir d'un fichier csv",[])}}
 
 !!! Remarque
     La création de base de données est hors programme et ne fera donc pas l'objet d'évaluations. Cependant, on présente ici la création d'une base de données composée d'une seule table que l'on importera à partir d'un fichier `csv`. Ce format de fichier a été vu en classe de première (voir [le chapitre correspondant](https://fabricenativel.github.io/NSIPremiere/donneestable/){target=_blank}).
@@ -133,5 +191,3 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
 
 !!! Attention
     Attention lors du traitement des données à vérifier sous quel format elles ont été importées ! C'est une source d'erreur fréquente, par exemple classer par ordre décroissant des données en pensant qu'elles sont numériques alors qu'elles sont au format texte ne donnera sûrement pas le résultat escompté.
-
-{{ exo("Prix Nobel",[]) }}

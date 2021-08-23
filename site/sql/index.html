@@ -134,8 +134,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#activite-2-creation-dun-base-de-donnees-a-partir-dun-fichier-csv">
-    Activité 2 : Création d'un base de données à partir d'un fichier csv
+<a class="md-nav__link" href="#activite-2-premier-pas-en-sql">
+    Activité 2 : Premier pas en SQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-operations-sur-les-colonnes">
+    Activité 3 : Opérations sur les colonnes
   </a>
 </li>
 </ul>
@@ -153,8 +158,13 @@
 <nav aria-label="Exercices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-1-prix-nobel">
-    Exercice 1 : Prix Nobel
+<a class="md-nav__link" href="#exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
+    Exercice 1 : Créer une base de données à partir d'un fichier csv
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-prix-nobel">
+    Exercice 2 : Prix Nobel
   </a>
 </li>
 </ul>
@@ -254,8 +264,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#activite-2-creation-dun-base-de-donnees-a-partir-dun-fichier-csv">
-    Activité 2 : Création d'un base de données à partir d'un fichier csv
+<a class="md-nav__link" href="#activite-2-premier-pas-en-sql">
+    Activité 2 : Premier pas en SQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-operations-sur-les-colonnes">
+    Activité 3 : Opérations sur les colonnes
   </a>
 </li>
 </ul>
@@ -273,8 +288,13 @@
 <nav aria-label="Exercices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-1-prix-nobel">
-    Exercice 1 : Prix Nobel
+<a class="md-nav__link" href="#exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
+    Exercice 1 : Créer une base de données à partir d'un fichier csv
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-prix-nobel">
+    Exercice 2 : Prix Nobel
   </a>
 </li>
 </ul>
@@ -300,11 +320,100 @@
 <li>Que signifie l'<em>intégrité</em> pour une base de données ?</li>
 <li>Donner les noms de quelques <span style="font-variant:small-caps;">sgbd</span> connus en indiquant s'il s'agit de logiciels libres ou propriétaires.</li>
 </ol>
-<h3 id="activite-2-creation-dun-base-de-donnees-a-partir-dun-fichier-csv"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Activité 2 : <em>Création d'un base de données à partir d'un fichier csv</em></h3>
-<div class="admonition remarque">
-<p class="admonition-title">Remarque</p>
-<p>lksdflksdf</p>
+<div class="admonition remarques">
+<p class="admonition-title">Remarques<ul>
+<li>Le <span style="font-variant:small-caps;">sgbd</span> utilisé dans le cadre de ce cours est <a href="https://www.sqlite.org/index.html" target="_blank">sqlite</a>, accompagné de son interface graphique <a href="https://sqlitebrowser.org/" target="_blank">DB Browser for sqlite</a>. Ces logiciels sont libres, gratuits et multiplateformes.</li>
+<li>La création de base de données ne figurant pas au programme de NSI en terminale, on travaille avec des bases déjà crées. Cependant, le processus de création d'un base de données avec une seule table importée à partir d'un fichier <code>csv</code> est décrit dans cet <a href="#exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv">exercice</a>. </li>
+</ul>
+</p>
 </div>
+<h3 id="activite-2-premier-pas-en-sql"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Activité 2 : <em>Premier pas en SQL</em></h3>
+<ol>
+<li>Préparation<ol>
+<li>Télécharger la base de données des médailles olympiques de 1976 à 2008 et la sauvegarder dans le répertoire de votre choix  :
+<span class="centre"><a class="md-button" href="../files/C2/olympics1976-2008.db">Médailles Olympiques 1976-2008 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></li>
+<li>Lancer <em>DB Browser for sqlite</em> (depuis un terminale avec la commande <code>sqlitebrowser</code> ou via le menu des applications) et ouvrir la base de données téléchargée ci-dessus. Effectuer une sauvegarde dans le dossier de votre choix.</li>
+<li>Dans le menu <code>Edition &gt; Préférences</code>, mettre le logiciel en français.</li>
+<li>Dans le menu <code>Vue</code>, décocher <code>jounal SQL</code>, <code>Graphique</code>, ...</li>
+</ol>
+</li>
+<li>
+<p>Cliquer sur l'onglet <code>Exécuter le SQL</code>, la fenêtre qui apparaît est divisée en trois sections : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> En haut, la zone où on entre les requêtes SQL. <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> Au milieu les données renvoyées par la requête<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> En bas, des informations sur le temps d'exécution ou les erreurs éventuelles
+    <img alt="dbrowser" src="../images/C2/dbbrowser.png"/>
+    Par exemple, sur l'illustration précédente, on a entré la requête :
+        <div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Medals</span>
+</code></pre></div>
+    Tester chacune des requêtes suivantes en <strong>observant bien les résultats renvoyés</strong>. En déduire quelles données sont extraites de la base à l'aide de ces requêtes</p>
+<ol>
+<li>
+<div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Medals</span> <span class="k">WHERE</span> <span class="k">Year</span><span class="o">=</span><span class="mi">2008</span> <span class="k">AND</span> <span class="n">Country</span><span class="o">=</span><span class="ss">"FRANCE"</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="n">City</span><span class="p">,</span> <span class="k">Year</span><span class="p">,</span> <span class="n">Athlete</span> <span class="k">FROM</span> <span class="n">Medals</span> <span class="k">WHERE</span> <span class="n">Medal</span><span class="o">=</span><span class="ss">"Gold"</span> <span class="k">and</span> <span class="n">Event</span><span class="o">=</span><span class="ss">"110m hurdles"</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="n">Athlete</span><span class="p">,</span> <span class="n">Event</span> <span class="k">FROM</span> <span class="n">Medals</span> <span class="k">WHERE</span> <span class="n">Medal</span><span class="o">=</span><span class="ss">"Gold"</span> <span class="k">AND</span> <span class="n">Country</span><span class="o">=</span><span class="ss">"France"</span> <span class="k">AND</span> <span class="k">Year</span><span class="o">=</span><span class="mi">2000</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Athlete</span> <span class="k">ASC</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">Country</span> <span class="k">FROM</span> <span class="n">Medals</span> <span class="k">where</span> <span class="n">Medal</span><span class="o">=</span><span class="ss">"Gold"</span> <span class="k">and</span> <span class="k">YEAR</span><span class="o">=</span><span class="ss">"1984"</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Country</span> <span class="k">DESC</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="n">Athlete</span><span class="p">,</span> <span class="n">City</span><span class="p">,</span> <span class="k">Year</span><span class="p">,</span> <span class="n">Medal</span><span class="p">,</span> <span class="n">country</span> <span class="k">FROM</span> <span class="n">medals</span> <span class="k">where</span> <span class="n">country</span> <span class="k">LIKE</span> <span class="ss">"%nia"</span>
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>N'hésitez pas à faire vos propres tests en modifiant légèrement ces requêtes ou à en tester d'autres pour comprendre.</p>
+</div>
+</li>
+<li>
+<p>Ecrire les requêtes SQL permettant d'extraire de cette base de données les informations suivantes :</p>
+<ol>
+<li>Les noms de tous les athlètes français ayant obtenu une médaille d'or aux jeux olympiques de 1984.</li>
+<li>Les noms de tous les champions olympiques du marathon de 1976 à 2008.</li>
+<li>Les épreuves dans lesquelles le champion de natation américain <a href="https://fr.wikipedia.org/wiki/Michael_Phelps" target="_blank">Michael Phelps</a> a obtenu des médailles en 2004.</li>
+<li>Tous les athletes médaillés entre 1976 et 2008 dont le nom contient "Richardson". Le handballeur d'origine réunionnaise <a href="https://fr.wikipedia.org/wiki/Jackson_Richardson" target="_blank">Jackson Richardson</a> devrai bien sûr y figurer !</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-3-operations-sur-les-colonnes"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Activité 3 : <em>Opérations sur les colonnes</em></h3>
+<div class="centre"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/yeX_Zs7zztY" title="YouTube video player" width="560"></iframe></div>
+<ol>
+<li>Télécharger les données présentées dans la vidéo précédente sous la forme d'une base de données :
+    <span class="centre"><a class="md-button" href="../files/C2/DettePIB.db">Dette et Croissance <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span> et l'ouvrir à l'aide de <code>sqlitebrowser</code>. On précise la signification des champs suivants :<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>DebtToGDP</code> : la dette en pourcentage du <span style="font-variant:small-caps;">pib</span>.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>Growth</code> : la croissance.<br/></li>
+<li>Quelques requêtes pour s'échauffer<ol>
+<li>Vérifier comme indiqué dans la vidéo que les données contiennent bien 20 pays. Les lister.</li>
+<li>Vérifier aussi que les années vont de 1946 à 2009 comme indiqué dans la vidéo.</li>
+<li>Lister par ordre croissant les dix années où la croissance a été la plus faible en France.</li>
+<li>Lister les pays où la croissance a dépassé 15 %</li>
+</ol>
+</li>
+<li>
+<p>Des opérations sur les colonnes</p>
+<ol>
+<li>Ecrire une requête <span style="font-variant:small-caps;">sql</span> permettant d'obtenir le pays et l'année où la dette a été la plus importante.</li>
+<li>Vous avez <em>normalement</em> écrit une requête de classement par ordre décroissant associée à une clause <code>LIMIT</code>. En réalité on recherche ici le <strong>maximum</strong> d'une colonne, le langage <span style="font-variant:small-caps;">sql</span> permet d'opérer sur des colonnes : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>MIN</code> et <code>MAX</code> permettent d'obtenir respectivement le maximum ou le minimum d'un champ.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>SUM</code> permet de calculer la somme sur un ensemble d'enregistrement.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>AVG</code> permet de calculer la moyenne sur un ensemble d'enregistrement.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>COUNT</code> permet de compter le nombre d'enregistrement.<br/>
+Exécuter la requête :</li>
+</ol>
+<div class="highlight"><pre><span></span><code>        <span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">DebtToGDP</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">RR</span>
+</code></pre></div>
+<p>Quelle différence constatez-vous par rapport à la solution précédente ?</p>
+</li>
+</ol>
 <h2 id="cours">Cours</h2>
 <p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
 <p><span class="centre"><a class="md-button" href="../pdf/C2/C2-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
@@ -313,7 +422,24 @@
 <p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
 </div>
 <h2 id="exercices">Exercices</h2>
-<h3 id="exercice-1-prix-nobel"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 1 : <em>Prix Nobel</em></h3>
+<h3 id="exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 1 : <em>Créer une base de données à partir d'un fichier csv</em></h3>
+<div class="admonition remarque">
+<p class="admonition-title">Remarque</p>
+<p>La création de base de données est hors programme et ne fera donc pas l'objet d'évaluations. Cependant, on présente ici la création d'une base de données composée d'une seule table que l'on importera à partir d'un fichier <code>csv</code>. Ce format de fichier a été vu en classe de première (voir <a href="https://fabricenativel.github.io/NSIPremiere/donneestable/" target="_blank">le chapitre correspondant</a>).</p>
+</div>
+<ol>
+<li>Télécharger le fichier <code>csv</code> d'indicateurs de réussite des lycées sur <a href="https://www.data.gouv.fr/en/datasets/indicateurs-de-valeur-ajoutee-des-lycees-denseignement-general-et-technologique/" target="_blank">data.gouv.fr</a>. Par souci de simplification, renommer le fichier en <code>lycees.csv</code>.</li>
+<li>Lancer <em>DB Browser for sqlite</em> (depuis un terminale avec la commande <code>sqlitebrowser</code> ou via le menu des applications). Mettre le logiciel en français. Sélectionner <span class="encadre"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 14h2v3h3v2h-3v3h-2v-3h-3v-2h3v-3M12 3c4.42 0 8 1.79 8 4s-3.58 4-8 4-8-1.79-8-4 3.58-4 8-4M4 9c0 2.21 3.58 4 8 4s8-1.79 8-4v3.08L19 12c-2.59 0-4.8 1.64-5.64 3.94L12 16c-4.42 0-8-1.79-8-4V9m0 5c0 2.21 3.58 4 8 4h1c0 1.05.27 2.04.75 2.9L12 21c-4.42 0-8-1.79-8-4v-3z"></path></svg></span> Nouvelle base de données</span> dans la barre de menu supérieur. Nommer votre base de données <code>lycees.db</code> et l'enregistrer dans le dossier de votre choix. <strong>Refermer</strong> l'interface qui apparaît ensuite (fenêtre <em>édition de la définition de la table</em>) et qui permet de créer les tables, nous allons simplement importer une table au format <code>csv</code>.</li>
+<li>Aller dans le menu  <code>Fichier &gt; Importer &gt; Table depuis un fichier csv</code>, sélectionner alors le fichier <code>lycees.csv</code> téléchargé précédemment (par défaut seul les fichiers texte s'affichent, changer l'option en bas et à droite de la fenêtre de sélection de fichiers).</li>
+<li>Nommer la table <code>indicateurs</code> et régler les options d'importations comme dans la fenêtre ci-dessous . Puis sauvegarder votre base de données sous le nom <code>lycees.db</code>.
+<img alt="importation dans sqlite" src="../images/C2/sqlite1.png"/></li>
+<li>Dans l'onglet <code>structure de la base de données</code>, cliquer sur la table <code>indicateurs</code> puis sur <span class="encadre"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6H6m7 1.5L18.5 9H13V3.5m7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.544.544 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15-2.09-2.08z"></path></svg></span> Modifier une table</span>. Certaines données ont été importées au format <span style="font-variant:small-caps;">text</span> et d'autres au format <span style="font-variant:small-caps;">integer</span>. Les taux de réussites devraient être des valeurs numériques entières, est-ce bien le cas ? sinon corriger.</li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Attention lors du traitement des données à vérifier sous quel format elles ont été importées ! C'est une source d'erreur fréquente, par exemple classer par ordre décroissant des données en pensant qu'elles sont numériques alors qu'elles sont au format texte ne donnera sûrement pas le résultat escompté.</p>
+</div>
+<h3 id="exercice-2-prix-nobel"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 2 : <em>Prix Nobel</em></h3>
 </article>
 </div>
 </div>

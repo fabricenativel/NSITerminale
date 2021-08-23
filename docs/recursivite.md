@@ -228,7 +228,48 @@ def courbe_koch(tortue,longueur,ordre):
 2. En utilisant cette fonction construire le [flocon de Koch](https://fr.wikipedia.org/wiki/Flocon_de_Koch){target=_blank}, c'est à dire la figure obtenu en construisant les courbe de Koch sur les trois côtés d'un triangle équilatéral. 
 3. Le flocon de Koch est un exemple classique de courbe *fractale*, construire un autre exemple de fractale : [le triangle de Sierpinski](https://fr.wikipedia.org/wiki/Triangle_de_Sierpi%C5%84ski){target=_blank}.
 
+{{ exo("Les tours de Hanoï",[]) }}
+Inventé par le mathématicien français [Edouard Lucas](https://fr.wikipedia.org/wiki/%C3%89douard_Lucas){target=_blank},  [les tours de Hanoï](https://fr.wikipedia.org/wiki/Tours_de_Hano%C3%AF){target=_blank} sont un jeu de réflexion dans lequel on doit déplacer des disques de tailles croissantes d'une tour de départ à une tour d'arrivée en respectant les contraintes suivantes : <br>
+:octicons-triangle-right-16: on ne peut déplacer qu'un disque à la fois, celui situé en haut de la tour <br>
+:octicons-triangle-right-16: on ne peut jamais déplacer un disque sur un disque plus petit.<br>
 
+1. Faire quelques parties en ligne à [cette adresse](http://championmath.free.fr/tourhanoi.htm){target=_blank} pour comprendre le jeu.
+2. Module `hanoi.py`
+    1. Télécharger ci-dessous le module Python `Hanoi.py` et le sauver dans le répertoire de votre choix.
+    {{ telecharger("Module Hanoi","./files/C1/hanoi.py")}} 
+    2. Ce module propose les fonctions suivantes : <br>
+        :octicons-triangle-right-16: `dessine_depart(n)` qui dessine l'état de départ du jeu avec `n` disques.<br>
+        :octicons-triangle-right-16: `fin()` affiche dans la fenêtre "Cliquer pour terminer" et termine le programme après un clic.<br>
+        :octicons-triangle-right-16: `deplace_disque(depart,arrive)` déplace le disque de la tour `depart` à la tour `arrivee` si cela est possible (sinon affiche un message d'erreur).<br>
+        On donne ci-dessous un exemple d'utilisation de ce module, le compléter de façon à afficher la résolution complète du jeu avec 3 disques.
+        ```python
+            import hanoi
+
+            hanoi.dessine_depart(3)
+            hanoi.deplace_disque(1,3)
+            hanoi.fin()
+        ```
+3. Résolution automatique par récursivité
+    1. Compléter la description de chacune des étapes de la résolution du problème pour 6 disques illustrées ci-dessous :
+
+    |Etape | Illustration | Descriptions |
+    |------|--------------|--------------|
+    |:zero:|![hanoi0](./images/C1/etape0.png)| 6 disques empilés sur la tour 1|
+    |:one:|![hanoi1](./images/C1/etape1.png)| Déplacement de ... disques de la tour 1 vers la tour ....|
+    |:two:|![hanoi2](./images/C1/etape2.png)| Déplacement du disque de la tour ... vers la tour ...|
+    |:three:|![hanoi3](./images/C1/etape3.png)| Déplacement de ... disques de la tour 1 vers la tour ....|
+
+    2. Exprimer les étapes 1 et 3 sous la forme de la résolution d'un problème de tours de Hanoi dont on précisera la tour d'arrivée, la tour de départ ainsi que le nombre de disque.
+    3. Compléter :
+
+        > Pour résoudre `hanoi` à 6 disques :<br>
+        :octicons-triangle-right-16: Résoudre hanoi à ... disques <br>
+        :octicons-triangle-right-16: Déplacer le disque de taille 6<br>
+        :octicons-triangle-right-16: Résoudre hanoi à ... disques <br>
+
+
+    3. En déduire un algorithme récursif pour résoudre le problème des tours de Hanoï.
+    4. Coder et faire fonctionner cet algorithme à l'aide des fonctions présentes dans le module `hanoi.py`.
 
 {{ exo("Algorithme d'Euclide de calcul du pgcd",["rappel","maths"]) }}
 1. Faites des recherches sur [l'algorithme d'Euclide](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide){target=_blank}.

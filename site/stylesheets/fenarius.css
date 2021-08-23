@@ -3,6 +3,19 @@
   font-size : 72pt;
 }
 
+.encadre{
+  color: black;
+  background-color: #DDDDDD;
+  white-space: nowrap;
+  border-style: solid;
+  border-width: 1pt;
+  border-color : black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .vert {
   color : limegreen;
 }
