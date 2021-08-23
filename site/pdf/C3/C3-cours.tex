@@ -1,0 +1,87 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usepackage{Cours}
+
+\begin{document}
+
+\input{\detokenize{/home/fenarius/Travail/Cours/NSITerminale/docs/commun/MacrosCours.tex}}
+\setcounter{numchap}{3}
+
+\newcommand{\Processus}{\cnum Processus}
+
+\pythonmode
+
+
+\begin{frame}	
+	\mframe{\Processus}
+	\begin{alertblock}{Définition}
+		Un \textcolor{red}{processus} est un programme en cours d'execution.
+	\end{alertblock}
+	\begin{block}{Remarques}
+	\begin{itemize}
+	\item<2-> Ne pas confondre \textit{processus} et \textit{programme}. Un même programme, exécuté par différents utilisateurs et/ou à différents moments dans le temps correspond à des processus différents. On dit qu'un processus est associé à un \textcolor{blue}{contexte d'exécution}.
+	\item<3-> Sur un sytème de type Linux, la commande {\tt ps} permet de lister les processus actifs, la commande {\tt htop} permet d'en avoir une vue dynamique. Ces commandes affichent notamment un numéro appelé {\sc pid} (pour {\sc p}rocess {\sc id}entifier) qui identifie de façon unique chaque processus.
+	\item<4-> Les ressources de l'ordinateur  ne peuvent pas être utilisées de façon simultanée par les nombreux processus. Le temps d'utilisation de ces ressources est donc partagé en intervalle très courts et attribués aux processus par une partie spécifique de l'OS : \textcolor{red}{l'odonnanceur}.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}	
+	\mframe{\Processus}
+	\begin{alertblock}{Définition}
+		L' \textcolor{red}{ordonnanceur} (\textit{scheduler} en anglais) est la partie du système d'exploitation qui choisit l'ordre d'exécution des processus. Parmi les algorithmes d'ordonnancement possibles, on peut citer :
+		\begin{itemize}
+		\item<2-> \textcolor{blue}{le tourniquet} : la ressource est affectée à chaque processus à tour de rôle
+		\item<3-> \textcolor{blue}{le premier entré, premier sorti}, ({\sc fifo}, pour \textit{first in first out}) : c'est le principe d'une file d'attente.
+		\item<4-> \textcolor{blue}{le plus court d'abord} : il faut évaluer le temps d'execution des processus.
+		\item<5-> La mise en place d'un \textcolor{blue}{ordre de priorité} entre les processus.
+		\end{itemize}
+	\end{alertblock}
+	\begin{block}{Remarques}
+	\begin{itemize}
+	\item<6-> L'exemple typique de la méthode {\sc fifo}, est la gestion de la file d'attente d'une imprimante.
+	\item<7-> Sur un sytème de type Linux, la commande {\tt nice} permet d'attribuer un ordre de priorité à un processus de $-20$ (le plus prioritaire) à 19 (le moins prioritaire). 
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}	
+	\mframe{\Processus}
+	\begin{block}{Ressources}
+		Les ressources peuvent être attribuées aux processus de façon :
+		\begin{itemize}
+		\item<2-> \textcolor{blue}{partagée} c'est à dire que la ressource peut être utilisé de façon simultanée par plusieurs processus. 
+		\onslide<3-> Par exemple, un fichier dans lequel on souhaite seulement lire des informations est une ressource partagé.
+		\item<4-> \textcolor{blue}{exclusive} c'est à dire que la ressource est vérouillée et attribuée à un unique processus.
+		\onslide<5-> Par exemple, une imprimante est une ressource attribuée de façon exclusive.
+		\end{itemize}
+	\end{block}
+	\onslide<6->{\begin{alertblock}{Interblocage}
+		On se trouve dans une situation d'\textcolor{red}{interblocage} (en anglais \textcolor{red}{\textit{deadlock}}), lorsque des ressources exclusives requises par des processus sont utilisées par d'autres qui attendent eux mêmes des ressources utilisées par les premiers.
+	\end{alertblock}}
+\end{frame}
+
+
+
+\begin{frame}	
+	\mframe{\Processus}
+	\setlength{\shadowsize}{1pt}
+	\psset{linewidth=1.5pt}
+	\begin{block}{Illustration d'une situation d'interblocage}
+		\begin{center}
+		\begin{tabularx}{\textwidth}{p{2.5cm}Xp{2.5cm}Xp{2.5cm}}
+		& & \rnode{R1}{\textcolor{red}{\ovalbox{\makebox[2.5cm]{Ressource R1}}}} & & \\
+			\vspace{0.5cm} \ 	& & & &  \\
+			\rnode{P1}{\textcolor{blue}{\shadowbox{\makebox[2.5cm]{Processus P1}}}}	& &  & & \rnode{P2}{\textcolor{blue}{\shadowbox{\makebox[2.5cm]{Processus P2}}}} \\
+			\vspace{0.5cm} \ 	& & & &  \\
+		& & \rnode{R2}{\textcolor{red}{\ovalbox{\makebox[2.5cm]{Ressource R2}}}} & & \\
+		\end{tabularx}
+		\end{center}
+		\onslide<2-> {\ncangle[angleA=90, armA=0, nodesepA=-0.5cm,angleB=180]{->}{P1}{R2} \naput{ Attend la}}
+		\onslide<3-> {\ncangle[angleA=0, angleB=-90]{->}{R2}{P2} \naput{ attribuée au}}
+		\onslide<4-> {\ncangle[angleA=90, angleB=0]{->}{P2}{R1} \naput{ Attend la }}
+		\onslide<5-> {\ncangle[angleA=180, angleB=90]{->}{R1}{P1} \naput{ attribuée au}}
+	\end{block}
+\end{frame}
+
+\end{document}

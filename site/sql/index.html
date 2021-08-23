@@ -158,13 +158,33 @@
 <nav aria-label="Exercices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
-    Exercice 1 : Créer une base de données à partir d'un fichier csv
+<a class="md-nav__link" href="#exercice-1-modelisation-dune-base-de-donnees-de-livres">
+    Exercice 1 : Modélisation d'une base de données de livres
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-2-prix-nobel">
-    Exercice 2 : Prix Nobel
+<a class="md-nav__link" href="#exercice-2-modelisation-dune-liste-de-contacts-telephoniques">
+    Exercice 2 : Modélisation d'une liste de contacts téléphoniques
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-prix-nobel">
+    Exercice 3 : Prix Nobel
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-tremblements-de-terre">
+    Exercice 4 : Tremblements de terre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-titanic">
+    Exercice 5 : Titanic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
+    Exercice 6 : Créer une base de données à partir d'un fichier csv
   </a>
 </li>
 </ul>
@@ -174,7 +194,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../processus.md">
+<a class="md-nav__link" href="../processus/">
         C3-Processus
       </a>
 </li>
@@ -288,13 +308,33 @@
 <nav aria-label="Exercices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
-    Exercice 1 : Créer une base de données à partir d'un fichier csv
+<a class="md-nav__link" href="#exercice-1-modelisation-dune-base-de-donnees-de-livres">
+    Exercice 1 : Modélisation d'une base de données de livres
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-2-prix-nobel">
-    Exercice 2 : Prix Nobel
+<a class="md-nav__link" href="#exercice-2-modelisation-dune-liste-de-contacts-telephoniques">
+    Exercice 2 : Modélisation d'une liste de contacts téléphoniques
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-prix-nobel">
+    Exercice 3 : Prix Nobel
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-tremblements-de-terre">
+    Exercice 4 : Tremblements de terre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-titanic">
+    Exercice 5 : Titanic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
+    Exercice 6 : Créer une base de données à partir d'un fichier csv
   </a>
 </li>
 </ul>
@@ -413,7 +453,50 @@ Exécuter la requête :</li>
 </code></pre></div>
 <p>Quelle différence constatez-vous par rapport à la solution précédente ?</p>
 </li>
+<li>
+<p>En vous aidant de ces nouvelles fonctionnalités, retrouver à l'aide de <span style="font-variant:small-caps;">sql</span>n les *<em>vraies</em> valeurs de croissance moyenne en fonction de la catégorie de dette dans laquelle se trouve le pays et qu'on rappelle ci-dessous :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Croissance moyenne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4,2 %</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3,1 %</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3,2 %</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2,2 %</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Pour aller plus loin ...</p>
+</li>
 </ol>
+<p>Les opérations sur les colonnes sont particulièrement utiles en lien avec la clause <code>GROUP BY</code>. Par exemple, si on souhaite obtenir la somme de la croissance pour chacun des 20 pays depuis 1970 : </p>
+<div class="highlight"><pre><span></span><code>    <span class="k">SELECT</span> <span class="n">country</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span><span class="n">Growth</span><span class="p">)</span> <span class="k">from</span> <span class="n">RR</span> <span class="k">WHERE</span> <span class="k">Year</span><span class="o">&gt;=</span><span class="mi">1970</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Country</span>
+</code></pre></div>
+<p>On peut même renommer la  colonne <code>SUM(Growth)</code> des résultats grâce à <code>AS</code> et donc l'utiliser comme critère de classement: </p>
+<div class="highlight"><pre><span></span><code>        <span class="k">SELECT</span> <span class="n">country</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span><span class="n">Growth</span><span class="p">)</span> <span class="k">AS</span> <span class="n">moy70</span> <span class="k">from</span> <span class="n">RR</span> <span class="k">WHERE</span> <span class="k">Year</span><span class="o">&gt;=</span><span class="mi">1970</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Country</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">moy70</span> <span class="k">DESC</span>
+</code></pre></div>
+<p>Ecrire une <em>seule</em> requête permettant d'obtenir les taux de croissance moyenne pour chacune des catégories de dette.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>La clause  <code>GROUP BY</code> n'est pas exigible au niveau terminale NSI et ne fera pas partie des évaluations.</p>
+</div>
 <h2 id="cours">Cours</h2>
 <p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
 <p><span class="centre"><a class="md-button" href="../pdf/C2/C2-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
@@ -422,7 +505,115 @@ Exécuter la requête :</li>
 <p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
 </div>
 <h2 id="exercices">Exercices</h2>
-<h3 id="exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 1 : <em>Créer une base de données à partir d'un fichier csv</em></h3>
+<h3 id="exercice-1-modelisation-dune-base-de-donnees-de-livres"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 1 : <em>Modélisation d'une base de données de livres</em></h3>
+<p>Pour mettre en place une base de données dans une médiathèque; on décide de stocker les livres dans une table de cette base. On donne ci-dessous la représentation de cette table avec simplement deux éléments donnés en exemple :</p>
+<table>
+<thead>
+<tr>
+<th>Titre</th>
+<th>Auteur</th>
+<th>Pays</th>
+<th>Année</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les misérables</td>
+<td>Victor Hugo</td>
+<td>France</td>
+<td>1862</td>
+</tr>
+<tr>
+<td>1984</td>
+<td>George Orwell</td>
+<td>Angleterre</td>
+<td>1949</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Quels sont les attributs de cette table ?</li>
+<li>Proposer un type et un domaine pour l'attribut <code>Année</code></li>
+<li>Certains livres sont achetés en plusieurs exemplaires dans cette médiathèque, expliquer pourquoi le modèle de table choisi ci-dessus ne convient plus et proposer une correction.</li>
+</ol>
+<h3 id="exercice-2-modelisation-dune-liste-de-contacts-telephoniques"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 2 : <em>Modélisation d'une liste de contacts téléphoniques</em></h3>
+<p>Proposer une modélisation d'une liste de contact téléphonique dans laquelle chaque personne (nom, prénom) est associée à un numéro de téléphone.</p>
+<h3 id="exercice-3-prix-nobel"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 3 : <em>Prix Nobel</em></h3>
+<ol>
+<li>Télécharger ci-dessous une base de données des Prix Nobel :
+<span class="centre"><a class="md-button" href="../files/C2/Nobel.db">Prix Nobel <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></li>
+<li>Ouvrir cette base avec <code>sqlitebrowser</code></li>
+<li>Dans <span class="encadre">Parcourir les données</span> prendre note du noms des colonnes et de leur signification. </li>
+<li>Ecrire les requêtes <span style="font-variant:small-caps;">sql</span> permettant :<ol>
+<li>d'obtenir les catégories dans lesquelles sont attribuées les prix Nobel,</li>
+<li>de lister par ordre alphabétique les lauréats du prix Nobel nés en France ou travaillant pour une organisation Française,</li>
+<li>de lister les années où le "Comité international de la Croix Rouge" a obtenu le prix Nobel,</li>
+<li>de connaître le nombre de femmes ayant obtenu un prix Nobel,</li>
+<li>de lister par âge décroissant les lauréats du prix Nobel qui sont toujours en vie,</li>
+<li>de rechercher les lauréats dont le nom contient "Curie".</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-4-tremblements-de-terre"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 4 : <em>Tremblements de terre</em></h3>
+<ol>
+<li>Télécharger ci-dessous une base de données des tremblements de terre :
+<span class="centre"><a class="md-button" href="././files/C2/earthquakes.db">Tremblements de terre <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></li>
+<li>Ouvrir cette base avec <code>sqlitebrowser</code></li>
+<li>Dans <span class="encadre">Parcourir les données</span> prendre note du noms des colonnes et de leur signification. </li>
+<li>
+<p>Ecrire les requêtes <span style="font-variant:small-caps;">sql</span> permettant :</p>
+<ol>
+<li>de lister  tremblements de terre qui se sont produits au Japon,</li>
+<li>
+<p>de lister les tremblements de terre qui se sont produits en l'an 2000 classés par magnitude,</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Remarquer que le champ <code>occured_on</code> qui indique la date est au format texte.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>Utiliser cette base pour répondre aux questions suivantes :</p>
+<ol>
+<li>
+<p>les tremblements de terre sont-ils plus fréquents dans l'hémisphère nord ou l'hémisphère sud ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle que l'hémisphère nord correspond à une latitude positive et le sud à une latitude négative.</p>
+</div>
+</li>
+<li>
+<p>Où étaient effectuées les essais nucléaires français ?</p>
+</li>
+<li>
+<p>L'un des séisme de cette base de données s'est-il produit à proximité de l'île de la Réunion ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Rechercher la latitude et la longitude de l'île de Réunion et considérer que "à proximité" signifie qu'on s'écarte de moins de 10 degrés de latitude ou de longitude</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-5-titanic"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 5 : <em>Titanic</em></h3>
+<ol>
+<li>Consulter la page wikipedia consacrée au <a href="https://fr.wikipedia.org/wiki/Titanic" target="_blank">Titanic</a> pour connaître l'histoire tragique de ce paquebot.</li>
+<li>Télécharger ci-dessous une base de données partielle des passagers du titanic :
+<span class="centre"><a class="md-button" href="../files/C2/titanic.db">Passagers du titanic <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span>
+On précise la signification des champs suivants : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>survived</code> : un entier qui vaut 0 (passager décédé) ou 1 (passager survivant). <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>pclasse</code> : un entier qui indique la classe dans laquelle voyageait le passenger : de 1 pour la première classe à 3 pour la classe la moins chère.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>sibsp</code> : le nombre de frères et soeurs présents à bord.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>parch</code> : le nombre de parents et enfants présents à bord.<br/></li>
+<li>En <em>argumentant</em> vos réponses à l'aide d'informations extraites de cette base, donner votre avis sur les affirmations suivantes :<ol>
+<li>Les passengers de la première classe avaient plus de chance de survie.</li>
+<li>Les femmes et les enfants ont été sauvées en priorité.</li>
+<li>Les passenger âgés de plus de 50 avaient moins de chance de survie que les autres.</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-6-creer-une-base-de-donnees-a-partir-dun-fichier-csv"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 6 : <em>Créer une base de données à partir d'un fichier csv</em></h3>
 <div class="admonition remarque">
 <p class="admonition-title">Remarque</p>
 <p>La création de base de données est hors programme et ne fera donc pas l'objet d'évaluations. Cependant, on présente ici la création d'une base de données composée d'une seule table que l'on importera à partir d'un fichier <code>csv</code>. Ce format de fichier a été vu en classe de première (voir <a href="https://fabricenativel.github.io/NSIPremiere/donneestable/" target="_blank">le chapitre correspondant</a>).</p>
@@ -439,7 +630,6 @@ Exécuter la requête :</li>
 <p class="admonition-title">Attention</p>
 <p>Attention lors du traitement des données à vérifier sous quel format elles ont été importées ! C'est une source d'erreur fréquente, par exemple classer par ordre décroissant des données en pensant qu'elles sont numériques alors qu'elles sont au format texte ne donnera sûrement pas le résultat escompté.</p>
 </div>
-<h3 id="exercice-2-prix-nobel"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 2 : <em>Prix Nobel</em></h3>
 </article>
 </div>
 </div>
@@ -457,6 +647,19 @@ Exécuter la requête :</li>
               </span>
               C1-Récursivité
             </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../processus/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C3-Processus
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
