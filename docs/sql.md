@@ -30,9 +30,27 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
 1. Préparation
     1. Télécharger la base de données des médailles olympiques de 1976 à 2008 et la sauvegarder dans le répertoire de votre choix  :
     {{ telecharger("Médailles Olympiques 1976-2008","files/C2/olympics1976-2008.db")}}
+    Cette base de donnée est composée d'une seule table :
+    <table>
+    <tr><th colspan="2" align="center"> Medals </th></tr>
+    <tr><td>^^`Id`^^</td><td>`INTEGER` :material-key:</td></tr>
+    <tr><td>`City`</td><td>`TEXT`</td></tr>
+    <tr><td>`Year`</td><td>`INTEGER`</td></tr>
+    <tr><td>`Sport`</td><td>`TEXT`</td></tr>
+    <tr><td>`Discipline`</td><td>`TEXT`</td></tr>
+    <tr><td>`Event`</td><td>`TEXT`</td></tr>
+    <tr><td>`Athlete`</td><td>`TEXT`</td></tr>
+    <tr><td>`Gender`</td><td>`TEXT`</td></tr>
+    <tr><td>`Country_code`</td><td>`TEXT`</td></tr>
+    <tr><td>`Country`</td><td>`TEXT`</td></tr>
+    <tr><td>`Event_Gender`</td><td>`TEXT`</td></tr>
+    <tr><td>`Medal`</td><td>`TEXT`</td></tr>
+    </table>
+    
     2. Lancer *DB Browser for sqlite* (depuis un terminale avec la commande `sqlitebrowser` ou via le menu des applications) et ouvrir la base de données téléchargée ci-dessus. Effectuer une sauvegarde dans le dossier de votre choix.
     3. Dans le menu `Edition > Préférences`, mettre le logiciel en français.
     4. Dans le menu `Vue`, décocher `jounal SQL`, `Graphique`, ...
+
 2. Cliquer sur l'onglet `Exécuter le SQL`, la fenêtre qui apparaît est divisée en trois sections : <br>
     :octicons-triangle-right-16: En haut, la zone où on entre les requêtes SQL. <br>
     :octicons-triangle-right-16: Au milieu les données renvoyées par la requête<br>
@@ -45,6 +63,7 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
     Tester chacune des requêtes suivantes en **observant bien les résultats renvoyés**. En déduire quelles données sont extraites de la base à l'aide de ces requêtes
 
     1. 
+
         ```sql
             SELECT * FROM Medals WHERE Year=2008 AND Country="FRANCE"
         ```
@@ -81,14 +100,24 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
     1. Les noms de tous les athlètes français ayant obtenu une médaille d'or aux jeux olympiques de 1984.
     2. Les noms de tous les champions olympiques du marathon de 1976 à 2008.
     3. Les épreuves dans lesquelles le champion de natation américain [Michael Phelps](https://fr.wikipedia.org/wiki/Michael_Phelps){target=_blank} a obtenu des médailles en 2004.
-    4. Tous les athletes médaillés entre 1976 et 2008 dont le nom contient "Richardson". Le handballeur d'origine réunionnaise [Jackson Richardson](https://fr.wikipedia.org/wiki/Jackson_Richardson){target=_blank} devrai bien sûr y figurer !
+    4. Tous les athletes médaillés entre 1976 et 2008 dont le nom contient "Richardson". Le handballeur d'origine réunionnaise [Jackson Richardson](https://fr.wikipedia.org/wiki/Jackson_Richardson){target=_blank} devrait bien sûr y figurer !
 
 {{ titre_activite("Opérations sur les colonnes",[]) }}
 
 <div class="centre"><iframe width="560" height="315" src="https://www.youtube.com/embed/yeX_Zs7zztY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 1. Télécharger les données présentées dans la vidéo précédente sous la forme d'une base de données :
-    {{ telecharger("Dette et Croissance","files/C2/DettePIB.db")}} et l'ouvrir à l'aide de `sqlitebrowser`. On précise la signification des champs suivants :<br>
+    {{ telecharger("Dette et Croissance","files/C2/DettePIB.db")}} et l'ouvrir à l'aide de `sqlitebrowser`. Cette base est composée d'une seule table :
+    <table>
+    <tr><th colspan="2" align="center"> RR </th></tr>
+    <tr><td>^^`Id`^^</td><td>`INTEGER` :material-key:</td></tr>
+    <tr><td>`Country`</td><td>`TEXT`</td></tr>
+    <tr><td>`Year`</td><td>`INTEGER`</td></tr>
+    <tr><td>`DebtToGDP`</td><td>`REAL`</td></tr>
+    <tr><td>`Growth`</td><td>`REAL`</td></tr>
+    <tr><td>`DebtCategory`</td><td>`INTEGER`</td></tr>
+    </table>
+    On précise la signification des champs suivants : <br>
     :octicons-triangle-right-16: `DebtToGDP` : la dette en pourcentage du {{ sc("pib") }}.<br>
     :octicons-triangle-right-16: `Growth` : la croissance.<br>
 2. Quelques requêtes pour s'échauffer
@@ -176,9 +205,6 @@ Proposer une modélisation d'une liste de contact téléphonique dans laquelle c
     4. de connaître le nombre de femmes ayant obtenu un prix Nobel,
     5. de lister par âge décroissant les lauréats du prix Nobel qui sont toujours en vie,
     6. de rechercher les lauréats dont le nom contient "Curie".
-
-
-
 
 {{ exo("Tremblements de terre",[]) }} 
 1. Télécharger ci-dessous une base de données des tremblements de terre :

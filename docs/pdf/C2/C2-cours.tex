@@ -77,6 +77,35 @@
 \end{frame}
 
 
+% Schéma relationnel
+\begin{frame}
+	\mframe{\DB}
+	\begin{alertblock}{Schéma relationnel}
+		Le schéma relationnel d'une base de données présente les tables de cette base sous la forme de liste ou de tableau. Dans les deux cas, on précise la clé primaire de la table en soulignant l'attribut. On indique aussi parfois le type des attributs.
+	\end{alertblock}
+	\begin{exampleblock}{Exemple}
+		\onslide<2->{Le schéma relationnel de la table {\tt personne} peut s'écrire :}
+		\begin{itemize}
+			\item<3-> Sous forme de liste : \\
+			      \onslide<4->  \textbf{personnes} {\tt (\underline{id} : {\sc int},  {\tt Nom} : {\sc text}, {\tt Prenom} : {\sc text}, {\tt Naissance} : {\sc int})}
+			\item<5-> {Sous forme de tableau : \\
+			      \begin{tabular}{|lll|}
+				      \hline
+				      \multicolumn{3}{|c|}{\textbf{personnes}} \\
+				      \hline
+				      {\tt \underline{id}} & : & {\sc int}     \\
+				      \hline
+				      {\tt Nom}            & : & {\sc text}    \\
+				      \hline
+				      {\tt Prenom}         & : & {\sc text}    \\
+				      \hline
+				      {\tt Naissance}      & : & {\sc int}     \\
+				      \hline
+			      \end{tabular}}
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
 % Premiers pas en SQL
 \begin{frame}
 	\mframe{\DB}

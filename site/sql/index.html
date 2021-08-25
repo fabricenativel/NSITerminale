@@ -369,10 +369,32 @@
 </div>
 <h3 id="activite-2-premier-pas-en-sql"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Activité 2 : <em>Premier pas en SQL</em></h3>
 <ol>
-<li>Préparation<ol>
-<li>Télécharger la base de données des médailles olympiques de 1976 à 2008 et la sauvegarder dans le répertoire de votre choix  :
-<span class="centre"><a class="md-button" href="../files/C2/olympics1976-2008.db">Médailles Olympiques 1976-2008 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></li>
-<li>Lancer <em>DB Browser for sqlite</em> (depuis un terminale avec la commande <code>sqlitebrowser</code> ou via le menu des applications) et ouvrir la base de données téléchargée ci-dessus. Effectuer une sauvegarde dans le dossier de votre choix.</li>
+<li>
+<p>Préparation</p>
+<ol>
+<li>
+<p>Télécharger la base de données des médailles olympiques de 1976 à 2008 et la sauvegarder dans le répertoire de votre choix  :
+<span class="centre"><a class="md-button" href="../files/C2/olympics1976-2008.db">Médailles Olympiques 1976-2008 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span>
+Cette base de donnée est composée d'une seule table :
+<table>
+<tr><th align="center" colspan="2"> Medals </th></tr>
+<tr><td><ins><code>Id</code></ins></td><td><code>INTEGER</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2m5.65-4A5.99 5.99 0 0 0 7 6a6 6 0 0 0-6 6 6 6 0 0 0 6 6 5.99 5.99 0 0 0 5.65-4H17v4h4v-4h2v-4H12.65z"></path></svg></span></td></tr>
+<tr><td><code>City</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Year</code></td><td><code>INTEGER</code></td></tr>
+<tr><td><code>Sport</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Discipline</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Event</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Athlete</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Gender</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Country_code</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Country</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Event_Gender</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Medal</code></td><td><code>TEXT</code></td></tr>
+</table></p>
+</li>
+<li>
+<p>Lancer <em>DB Browser for sqlite</em> (depuis un terminale avec la commande <code>sqlitebrowser</code> ou via le menu des applications) et ouvrir la base de données téléchargée ci-dessus. Effectuer une sauvegarde dans le dossier de votre choix.</p>
+</li>
 <li>Dans le menu <code>Edition &gt; Préférences</code>, mettre le logiciel en français.</li>
 <li>Dans le menu <code>Vue</code>, décocher <code>jounal SQL</code>, <code>Graphique</code>, ...</li>
 </ol>
@@ -420,7 +442,7 @@
 <li>Les noms de tous les athlètes français ayant obtenu une médaille d'or aux jeux olympiques de 1984.</li>
 <li>Les noms de tous les champions olympiques du marathon de 1976 à 2008.</li>
 <li>Les épreuves dans lesquelles le champion de natation américain <a href="https://fr.wikipedia.org/wiki/Michael_Phelps" target="_blank">Michael Phelps</a> a obtenu des médailles en 2004.</li>
-<li>Tous les athletes médaillés entre 1976 et 2008 dont le nom contient "Richardson". Le handballeur d'origine réunionnaise <a href="https://fr.wikipedia.org/wiki/Jackson_Richardson" target="_blank">Jackson Richardson</a> devrai bien sûr y figurer !</li>
+<li>Tous les athletes médaillés entre 1976 et 2008 dont le nom contient "Richardson". Le handballeur d'origine réunionnaise <a href="https://fr.wikipedia.org/wiki/Jackson_Richardson" target="_blank">Jackson Richardson</a> devrait bien sûr y figurer !</li>
 </ol>
 </li>
 </ol>
@@ -428,7 +450,17 @@
 <div class="centre"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/yeX_Zs7zztY" title="YouTube video player" width="560"></iframe></div>
 <ol>
 <li>Télécharger les données présentées dans la vidéo précédente sous la forme d'une base de données :
-    <span class="centre"><a class="md-button" href="../files/C2/DettePIB.db">Dette et Croissance <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span> et l'ouvrir à l'aide de <code>sqlitebrowser</code>. On précise la signification des champs suivants :<br/>
+    <span class="centre"><a class="md-button" href="../files/C2/DettePIB.db">Dette et Croissance <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span> et l'ouvrir à l'aide de <code>sqlitebrowser</code>. Cette base est composée d'une seule table :
+    <table>
+<tr><th align="center" colspan="2"> RR </th></tr>
+<tr><td><ins><code>Id</code></ins></td><td><code>INTEGER</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2m5.65-4A5.99 5.99 0 0 0 7 6a6 6 0 0 0-6 6 6 6 0 0 0 6 6 5.99 5.99 0 0 0 5.65-4H17v4h4v-4h2v-4H12.65z"></path></svg></span></td></tr>
+<tr><td><code>Country</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Year</code></td><td><code>INTEGER</code></td></tr>
+<tr><td><code>DebtToGDP</code></td><td><code>REAL</code></td></tr>
+<tr><td><code>Growth</code></td><td><code>REAL</code></td></tr>
+<tr><td><code>DebtCategory</code></td><td><code>INTEGER</code></td></tr>
+</table>
+    On précise la signification des champs suivants : <br/>
 <span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>DebtToGDP</code> : la dette en pourcentage du <span style="font-variant:small-caps;">pib</span>.<br/>
 <span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>Growth</code> : la croissance.<br/></li>
 <li>Quelques requêtes pour s'échauffer<ol>
