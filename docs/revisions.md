@@ -292,6 +292,38 @@ Construire les figures suivantes (le repère est là pour vous aider et ne dois 
 ![cercles](./images/C0/cercles.png){: .imgcentre}
 
 
+{{ exo("Pour réviser les listes",[]) }}
+1. On considère le programme suivant :
+
+    ```python
+        liste1 = [0]*100
+        liste2 = [0 for k in range(100)]
+        liste3 = []
+        for k in range(100):
+            liste3.append(0)
+    ```
+
+    2. Quel est le contenu de chacune des listes ?
+    3. Indiquer par quel procédé chacune de ces listes a été crée.
+
+2. Ecrire un programme python permettant de créer les listes suivantes :
+    1. Une liste contenant 12 fois le chiffre 7.
+    2. La liste des nombres entiers de 1 à 100.
+    3. Une liste contenant 1000 nombres tirés au sort entre 1 et 6. \\
+
+        !!! aide 
+            On rappelle que la fonction `randint` peut être importée depuis le module `random`, elle permet de tirer un nombre au hasard entre deux valeurs `a` et `b` donnés en paramètres.
+
+    4. La liste des cubes des entiers de 1 à 10.
+
+{{ exo("Parcours de liste",[]) }}
+1. Ecrire une fonction `somme(l)` qui renvoie la somme des éléments de la liste `l`. Vérifier que tous les éléments de `l` sont biens des nombres entiers (`int`) ou flottants (`float`).
+2. Ecrire une fonction `indice(elt,l)` qui renvoie l'indice de la première apparition de `elt` si `elt` est dans `l` et $-1$ sinon.
+
+    !!! Example "Exemples"
+        * `indice(3,[1,2,3,5,7,11])` renvoie `2` puisque `3` est dans cette liste à l'indice 2.
+        * `indice(13,[1,2,3,5,7,11])` renvoie `-1` puisque `13` n'est pas dans cette liste.
+
 {{ exo("Polygone régulier",["maths"]) }}
 
 1. Ecrire une fonction `triangle_equilateral(c)` qui trace un triangle équilatéral de côte `c` à partir de la position courante de la tortue.

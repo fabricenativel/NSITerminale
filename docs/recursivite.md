@@ -186,6 +186,54 @@ On suppose qu'on ne dispose que de deux opérations : ajouter 1 ou retrancher 1.
     !!! aide
         Vous aurez peut être besoin d'une fonction `reste(chaine)` qui renvoie la chaine passée en paramètre privée de son premier élément. Par exemple `reste("python")` renvoie `ython`. Ecrire vous même cette fonction, ou chercher comment utiliser les *slices* de Python.
 
+{{ exo("Mélange d'une liste ",["bac"]) }}
+*Cet exercice est extrait d'un sujet de {{sc("bac")}} de la session 2021*
+
+On s'intéresse dans cet exercice à un algorithme de mélange des éléments d'une liste.
+
+1. Pour la suite, il sera utile de disposer d'une fonction `echange` qui permet d'échanger dans une liste lst les éléments d'indice i1 et i2.
+Expliquer pourquoi le code Python ci-dessous ne réalise pas cet échange et en proposer une modification.
+```python
+    def echange(lst, i1, i2):
+        lst[i2] = lst[i1]
+        lst[i1] = lst[i2]
+```
+2. La documentation du module random de Python fournit les informations ci-dessous concernant la fonction randint(a,b) : 
+    
+    > `Renvoie un entier aléatoire N tel que a <= N <= b. Alias pour randrange(a,b+1).`
+
+    Parmi les valeurs ci-dessous, quelles sont celles qui peuvent être renvoyées par
+    l'appel `randint(0, 10) ?` <br>
+    0 &nbsp; &nbsp; &nbsp;&nbsp; 1 &nbsp; &nbsp; &nbsp;&nbsp; 3.5&nbsp; &nbsp; &nbsp;&nbsp; 9&nbsp; &nbsp; &nbsp;&nbsp;10&nbsp; &nbsp;&nbsp; &nbsp;11
+
+3. Le mélange de Fischer Yates est un algorithme permettant de permuter aléatoirement les éléments d'une liste. On donne ci-dessous une mise en œuvre récursive de cet algorithme en Python.
+```python
+from random import randint
+def melange(lst, ind):
+    print(lst)
+    if ind > 0:
+    j = randint(0, ind)
+    echange(lst, ind, j)
+    melange(lst, ind-1)
+```
+    1. Expliquer pourquoi la fonction `melange` se termine toujours.
+    2. Lors de l’appel de la fonction melange, la valeur du paramètre `ind` doit être égal au plus grand indice possible de la liste `lst`. Pour une liste de longueur `n`, quel est le nombre d'appels récursifs de la fonction melange effectués, sans compter l’appel initial ?
+    3. On considère le script ci-dessous :
+
+        ```python
+            lst=[v for v in range(5)]
+            melange(lst,4)
+        ```
+
+        On suppose que les valeurs successivement renvoyées par la fonction `randint` sont `2, 1, 2` et `0`.
+        Les deux premiers affichages produits par l'instruction `print(lst)` de la fonction `melange` sont : <br>
+        `[0,1,2,3,4]`<br>
+        `[0,1,4,3,2]`<br>
+        Donner les affichages suivants produits par la fonction `melange`
+        
+    4. Proposer une version itérative du mélange de Fischer Yates.
+
+
 {{ exo("Recherche dichotomique dans un tableau trié",["rappel"]) }}
 
 1. Rappeler l'algorithme de recherche dichotomique dans un tableau trié vu en classe de première et donner son fonctionnement sur un exemple simple.

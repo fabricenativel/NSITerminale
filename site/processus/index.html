@@ -163,10 +163,25 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-2-processus-et-interblocage">
-    Exercice 2 : Processus et interblocage  
+<a class="md-nav__link" href="#exercice-2-tuer-un-processus">
+    Exercice 2 : Tuer un processus
   </a>
-<nav aria-label="Exercice 2 : Processus et interblocage  " class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-interblocage">
+    Exercice 3 : Interblocage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-etats-dun-processus">
+    Exercice 4 : Etats d'un processus  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-processus-et-interblocage">
+    Exercice 5 : Processus et interblocage  
+  </a>
+<nav aria-label="Exercice 5 : Processus et interblocage  " class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#partie-a">
@@ -182,10 +197,10 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-3-gestion-des-processus-et-des-ressources">
-    Exercice 3 : Gestion des processus et des ressources  
+<a class="md-nav__link" href="#exercice-6-gestion-des-processus-et-des-ressources">
+    Exercice 6 : Gestion des processus et des ressources  
   </a>
-<nav aria-label="Exercice 3 : Gestion des processus et des ressources  " class="md-nav">
+<nav aria-label="Exercice 6 : Gestion des processus et des ressources  " class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#partie-a_1">
@@ -201,8 +216,8 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-4-processus-et-base-de-donnees">
-    Exercice 4 : Processus et base de données
+<a class="md-nav__link" href="#exercice-7-processus-et-base-de-donnees">
+    Exercice 7 : Processus et base de données
   </a>
 </li>
 </ul>
@@ -321,10 +336,25 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-2-processus-et-interblocage">
-    Exercice 2 : Processus et interblocage  
+<a class="md-nav__link" href="#exercice-2-tuer-un-processus">
+    Exercice 2 : Tuer un processus
   </a>
-<nav aria-label="Exercice 2 : Processus et interblocage  " class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-interblocage">
+    Exercice 3 : Interblocage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-etats-dun-processus">
+    Exercice 4 : Etats d'un processus  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-processus-et-interblocage">
+    Exercice 5 : Processus et interblocage  
+  </a>
+<nav aria-label="Exercice 5 : Processus et interblocage  " class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#partie-a">
@@ -340,10 +370,10 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-3-gestion-des-processus-et-des-ressources">
-    Exercice 3 : Gestion des processus et des ressources  
+<a class="md-nav__link" href="#exercice-6-gestion-des-processus-et-des-ressources">
+    Exercice 6 : Gestion des processus et des ressources  
   </a>
-<nav aria-label="Exercice 3 : Gestion des processus et des ressources  " class="md-nav">
+<nav aria-label="Exercice 6 : Gestion des processus et des ressources  " class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#partie-a_1">
@@ -359,8 +389,8 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-4-processus-et-base-de-donnees">
-    Exercice 4 : Processus et base de données
+<a class="md-nav__link" href="#exercice-7-processus-et-base-de-donnees">
+    Exercice 7 : Processus et base de données
   </a>
 </li>
 </ul>
@@ -400,22 +430,50 @@
 </code></pre></div>
     On va à présent lancer la calculatrice <code>gnome-calculator</code> à partir de ce terminal, pour conserver la main dans le terminal, il faut faire suivre la commande d'un <code>&amp;</code>, il faut donc entrer : <code>gnome-calculator &amp;</code>.</li>
 <li>Entrer de nouveau la commande <code>ps</code> pour constater l'apparition d'un nouveau processus, noter son <code>PID</code>.</li>
-<li>Lancer une nouvelle fois et de la même façon la calculatrice <code>gnome-calculator</code>. On a donc lancé deux fois le <em>même programme</em>, obtient-on deux fois le <em>même processus</em> ? Que peut-on en conclure sur les notions de programmes et de processus ?</li>
-</ol>
+<li>
+<p>Lancer une nouvelle fois et de la même façon la calculatrice <code>gnome-calculator</code>. On a donc lancé deux fois le <em>même programme</em>, obtient-on deux fois le <em>même processus</em> ? Que peut-on en conclure sur les notions de programmes et de processus ?</p>
 <div class="admonition remarque">
 <p class="admonition-title">Remarque</p>
 <p>La commande <code>pstree</code> permet de visualiser les processus sous la forme d'une arboresence.</p>
 </div>
 </li>
+</ol>
+</li>
 <li>
 <p>Tuer un processus</p>
 <ol>
 <li>Recherche la page de documentation de la commande <code>kill</code>.</li>
-<li>A partir du terminal arrêter l'un des processus <code>gnome-calculator</code> crée à la question précédente.</li>
+<li>A partir du terminal arrêter les processus <code>gnome-calculator</code> crées à la question précédente.</li>
+</ol>
+</li>
+<li>
+<p>Les commandes <code>top</code> (ou en version "améliorée" <code>htop</code>), permettent de visualiser un affichage dynamique des processus, contrairement à un <code>ps</code> qui les listent à un instant donné.</p>
+<ol>
+<li>Tester ces commandes</li>
+<li>Rechercher la signification de la colonne <code>S</code>, quelles sont les valeurs possibles ?</li>
+<li>Rechercher la signification de la colonne <code>NI</code>. Comment interpréter les valeurs de cette colonne ?</li>
 </ol>
 </li>
 </ol>
 <h3 id="activite-2-le-diner-des-philosophes"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Activité 2 : <em>Le diner des philosophes</em></h3>
+<ol>
+<li>Consulter la <a href="https://fr.wikipedia.org/wiki/D%C3%AEner_des_philosophes" target="_blank">page wikipedia du problème du <em>diner des philosophes</em></a> pour comprendre le problème.</li>
+<li>
+<p>Que se passe-t-il s'il n'y a que deux philosophes et que chacun de ces deux philosophes prend la fourchette située à sa gauche ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle que :</p>
+<ul>
+<li>S'il y a 2 philosophes, alors il y a deux fourchettes.</li>
+<li>Un philosophe a besoin de deux fourchettes pour manger.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Par rapport aux vocabulaire des systèmes d'exploitation, que représentent les philosophes ? les fourchettes ?</p>
+</li>
+<li>Dans le vocabulaire des processus, comment appelle-t-on la situation de la question 2. ?</li>
+</ol>
 <h2 id="cours">Cours</h2>
 <p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
 <p><span class="centre"><a class="md-button" href="../pdf/C3/C3-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
@@ -443,7 +501,31 @@
 </ol>
 </li>
 </ol>
-<h3 id="exercice-2-processus-et-interblocage"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 2 : <em>Processus et interblocage</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></h3>
+<h3 id="exercice-2-tuer-un-processus"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 2 : <em>Tuer un processus</em></h3>
+<ol>
+<li>
+<p>Créer et lancer un programme Python contenant une boucle infinie</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra par exemple créer un programme affichant les entiers 1,2,3,... </p>
+</div>
+</li>
+<li>
+<p>Arrêter ce programme à partir d'un terminal (repérer d'abord le <span style="font-variant:small-caps;">pid</span> du processus, puis utiliser la commande <code>kill</code>)</p>
+</li>
+</ol>
+<h3 id="exercice-3-interblocage"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 3 : <em>Interblocage</em></h3>
+<p>Imaginer, puis illustrer par un schéma, une situation d'interblocage faisant intervenir trois processus P1,P2 et P3 et trois ressources R1, R2 et R3.</p>
+<h3 id="exercice-4-etats-dun-processus"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 4 : <em>Etats d'un processus</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></h3>
+<p><em>Cet exercice est extrait  d'un sujet de <span style="font-variant:small-caps;">bac</span> de la session 2021</em></p>
+<ol>
+<li>Les états possibles d'un processus sont : <em>prêt, élu, terminé</em> et <em>bloqué</em>.<ol>
+<li>Expliquer à quoi correspond l'état <em>élu</em></li>
+<li>Proposer un schéma illustrant les passages entre les différents états.</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-5-processus-et-interblocage"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 5 : <em>Processus et interblocage</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></h3>
 <p><em>Cet exercice correspond aux parties A et B  d'un sujet de <span style="font-variant:small-caps;">bac</span> de la session 2021</em></p>
 <h4 id="partie-a">Partie A</h4>
 <p>Pour chacune des questions, une seule des quatres réponses est exacte.</p>
@@ -523,7 +605,7 @@ Le numéro de priorité est d’autant plus petit que la priorité est grande. O
 </li>
 </ol>
 <p><img alt="scenarios" src="../images/C3/exo2.png"/></p>
-<h3 id="exercice-3-gestion-des-processus-et-des-ressources"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 3 : <em>Gestion des processus et des ressources</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></h3>
+<h3 id="exercice-6-gestion-des-processus-et-des-ressources"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 6 : <em>Gestion des processus et des ressources</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></h3>
 <p><em>Cet exercice est extrait  d'un sujet de <span style="font-variant:small-caps;">bac</span> de la session 2021</em></p>
 <h4 id="partie-a_1">Partie A</h4>
 <p>Dans un bureau d’architectes, on dispose de certaines ressources qui ne peuvent être utilisées
@@ -566,7 +648,7 @@ navigateur Web (chromium-browser) ?</p>
 </li>
 <li>Quel est l'identifiant du processus dont le temps d'exécution est le plus long ?</li>
 </ol>
-<h3 id="exercice-4-processus-et-base-de-donnees"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 4 : <em>Processus et base de données</em></h3>
+<h3 id="exercice-7-processus-et-base-de-donnees"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 7 : <em>Processus et base de données</em></h3>
 <p>On suppose qu'on dispose d'une base de données des processus lancés sur un ordinateur à un instant donné. Cette base de données est constituée d'une seule table appelée <code>processus</code> et contenant les champs suivants :<br/>
 <span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>pid</code> : Le <code>PID</code> du processus <br/>
 <span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>ppid</code> : Le <code>PPID</code> du processus <br/>

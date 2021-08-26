@@ -188,13 +188,23 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-6-polygone-regulier">
-    Exercice 6 : Polygone régulier  
+<a class="md-nav__link" href="#exercice-6-pour-reviser-les-listes">
+    Exercice 6 : Pour réviser les listes
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-7-panneau-de-signalisation">
-    Exercice 7 : Panneau de signalisation
+<a class="md-nav__link" href="#exercice-7-parcours-de-liste">
+    Exercice 7 : Parcours de liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-8-polygone-regulier">
+    Exercice 8 : Polygone régulier  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-9-panneau-de-signalisation">
+    Exercice 9 : Panneau de signalisation
   </a>
 </li>
 </ul>
@@ -368,13 +378,23 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-6-polygone-regulier">
-    Exercice 6 : Polygone régulier  
+<a class="md-nav__link" href="#exercice-6-pour-reviser-les-listes">
+    Exercice 6 : Pour réviser les listes
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-7-panneau-de-signalisation">
-    Exercice 7 : Panneau de signalisation
+<a class="md-nav__link" href="#exercice-7-parcours-de-liste">
+    Exercice 7 : Parcours de liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-8-polygone-regulier">
+    Exercice 8 : Polygone régulier  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-9-panneau-de-signalisation">
+    Exercice 9 : Panneau de signalisation
   </a>
 </li>
 </ul>
@@ -758,7 +778,54 @@ On dispose déjà d'un début de programme qui définit les propriétés du papi
 <li>Cercles concentriques (les couleurs alternent entre <code>blue</code> et <code>lightblue</code>, le crayon a une épaisseur de 10, les cercles ont pour rayon 10,20,30, ...)
 <img alt="cercles" class="imgcentre" src="../images/C0/cercles.png"/></li>
 </ol>
-<h3 id="exercice-6-polygone-regulier"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 6 : <em>Polygone régulier</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice en lien avec les mathématiques"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.1 96C405 96 353.3 137.3 320 174.6 286.7 137.3 235 96 168.9 96 75.8 96 0 167.8 0 256s75.8 160 168.9 160c66.1 0 117.8-41.3 151.1-78.6 33.3 37.3 85 78.6 151.1 78.6 93.1 0 168.9-71.8 168.9-160S564.2 96 471.1 96zM168.9 320c-40.2 0-72.9-28.7-72.9-64s32.7-64 72.9-64c38.2 0 73.4 36.1 94 64-20.4 27.6-55.9 64-94 64zm302.2 0c-38.2 0-73.4-36.1-94-64 20.4-27.6 55.9-64 94-64 40.2 0 72.9 28.7 72.9 64s-32.7 64-72.9 64z"></path></svg></span></span></span></h3>
+<h3 id="exercice-6-pour-reviser-les-listes"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 6 : <em>Pour réviser les listes</em></h3>
+<ol>
+<li>
+<p>On considère le programme suivant :</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+    <span class="n">liste3</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">liste3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Quel est le contenu de chacune des listes ?</li>
+<li>Indiquer par quel procédé chacune de ces listes a été crée.</li>
+</ol>
+</li>
+<li>
+<p>Ecrire un programme python permettant de créer les listes suivantes :</p>
+<ol>
+<li>Une liste contenant 12 fois le chiffre 7.</li>
+<li>La liste des nombres entiers de 1 à 100.</li>
+<li>
+<p>Une liste contenant 1000 nombres tirés au sort entre 1 et 6. \</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle que la fonction <code>randint</code> peut être importée depuis le module <code>random</code>, elle permet de tirer un nombre au hasard entre deux valeurs <code>a</code> et <code>b</code> donnés en paramètres.</p>
+</div>
+</li>
+<li>
+<p>La liste des cubes des entiers de 1 à 10.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-7-parcours-de-liste"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 7 : <em>Parcours de liste</em></h3>
+<ol>
+<li>Ecrire une fonction <code>somme(l)</code> qui renvoie la somme des éléments de la liste <code>l</code>. Vérifier que tous les éléments de <code>l</code> sont biens des nombres entiers (<code>int</code>) ou flottants (<code>float</code>).</li>
+<li>
+<p>Ecrire une fonction <code>indice(elt,l)</code> qui renvoie l'indice de la première apparition de <code>elt</code> si <code>elt</code> est dans <code>l</code> et <span class="arithmatex">\(-1\)</span> sinon.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemples</p>
+<ul>
+<li><code>indice(3,[1,2,3,5,7,11])</code> renvoie <code>2</code> puisque <code>3</code> est dans cette liste à l'indice 2.</li>
+<li><code>indice(13,[1,2,3,5,7,11])</code> renvoie <code>-1</code> puisque <code>13</code> n'est pas dans cette liste.</li>
+</ul>
+</div>
+</li>
+</ol>
+<h3 id="exercice-8-polygone-regulier"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 8 : <em>Polygone régulier</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice en lien avec les mathématiques"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.1 96C405 96 353.3 137.3 320 174.6 286.7 137.3 235 96 168.9 96 75.8 96 0 167.8 0 256s75.8 160 168.9 160c66.1 0 117.8-41.3 151.1-78.6 33.3 37.3 85 78.6 151.1 78.6 93.1 0 168.9-71.8 168.9-160S564.2 96 471.1 96zM168.9 320c-40.2 0-72.9-28.7-72.9-64s32.7-64 72.9-64c38.2 0 73.4 36.1 94 64-20.4 27.6-55.9 64-94 64zm302.2 0c-38.2 0-73.4-36.1-94-64 20.4-27.6 55.9-64 94-64 40.2 0 72.9 28.7 72.9 64s-32.7 64-72.9 64z"></path></svg></span></span></span></h3>
 <ol>
 <li>Ecrire une fonction <code>triangle_equilateral(c)</code> qui trace un triangle équilatéral de côte <code>c</code> à partir de la position courante de la tortue.</li>
 <li>Ecrire une fonction <code>carre(c)</code> qui trace un carré de côte <code>c</code> à partir de la position courante de la tortue.</li>
@@ -773,7 +840,7 @@ On dispose déjà d'un début de programme qui définit les propriétés du papi
 </div>
 </li>
 </ol>
-<h3 id="exercice-7-panneau-de-signalisation"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 7 : <em>Panneau de signalisation</em></h3>
+<h3 id="exercice-9-panneau-de-signalisation"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 9 : <em>Panneau de signalisation</em></h3>
 <p>Ecrire un programme Python permettant de dessiner le panneau de signalisation de votre choix. Quelques exemples sont proposés ci-dessous.<br/>
 <img alt="sens interdit" src="../images/C0/sensinterdit.jpg" width="150px"/>  
 <img alt="croisement" src="../images/C0/croisement.svg" width="150px"/>   

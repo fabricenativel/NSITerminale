@@ -27,17 +27,31 @@
     2. Entrer de nouveau la commande `ps` pour constater l'apparition d'un nouveau processus, noter son `PID`.
     3. Lancer une nouvelle fois et de la même façon la calculatrice `gnome-calculator`. On a donc lancé deux fois le *même programme*, obtient-on deux fois le *même processus* ? Que peut-on en conclure sur les notions de programmes et de processus ?
 
-    !!! Remarque
-        La commande `pstree` permet de visualiser les processus sous la forme d'une arboresence.
-        
+        !!! Remarque
+            La commande `pstree` permet de visualiser les processus sous la forme d'une arboresence.
+
 3. Tuer un processus
     1. Recherche la page de documentation de la commande `kill`.
-    2. A partir du terminal arrêter l'un des processus `gnome-calculator` crée à la question précédente.
+    2. A partir du terminal arrêter les processus `gnome-calculator` crées à la question précédente.
 
-
-
+4. Les commandes `top` (ou en version "améliorée" `htop`), permettent de visualiser un affichage dynamique des processus, contrairement à un `ps` qui les listent à un instant donné.
+    1. Tester ces commandes
+    2. Rechercher la signification de la colonne `S`, quelles sont les valeurs possibles ?
+    3. Rechercher la signification de la colonne `NI`. Comment interpréter les valeurs de cette colonne ?
 
 {{ titre_activite("Le diner des philosophes",[]) }}
+
+1. Consulter la [page wikipedia du problème du *diner des philosophes*](https://fr.wikipedia.org/wiki/D%C3%AEner_des_philosophes){target=_blank} pour comprendre le problème.
+2. Que se passe-t-il s'il n'y a que deux philosophes et que chacun de ces deux philosophes prend la fourchette située à sa gauche ?
+    
+    !!! Aide
+        On rappelle que :
+
+        * S'il y a 2 philosophes, alors il y a deux fourchettes.
+        * Un philosophe a besoin de deux fourchettes pour manger.
+
+3. Par rapport aux vocabulaire des systèmes d'exploitation, que représentent les philosophes ? les fourchettes ?
+4. Dans le vocabulaire des processus, comment appelle-t-on la situation de la question 2. ?
 
 ## Cours
 
@@ -57,7 +71,25 @@
 2. Quelles commandes permettent d'effectuer les actions suivantes :
     1. Afficher les processus en cours de l'utilisateur toto
     2. Tuer le processus ayant pour `PID` 12139
-    
+
+{{ exo("Tuer un processus",[]) }}
+1. Créer et lancer un programme Python contenant une boucle infinie
+
+    !!! Aide
+        On pourra par exemple créer un programme affichant les entiers 1,2,3,... 
+
+2. Arrêter ce programme à partir d'un terminal (repérer d'abord le {{sc("pid")}} du processus, puis utiliser la commande `kill`)
+
+{{ exo("Interblocage",[]) }}
+Imaginer, puis illustrer par un schéma, une situation d'interblocage faisant intervenir trois processus P1,P2 et P3 et trois ressources R1, R2 et R3.
+
+
+{{ exo("Etats d'un processus",["bac"]) }}
+*Cet exercice est extrait  d'un sujet de {{sc("bac")}} de la session 2021*
+
+1. Les états possibles d'un processus sont : *prêt, élu, terminé* et *bloqué*.
+    1. Expliquer à quoi correspond l'état *élu*
+    2. Proposer un schéma illustrant les passages entre les différents états.
 
 {{ exo("Processus et interblocage",["bac"]) }}
 *Cet exercice correspond aux parties A et B  d'un sujet de {{sc("bac")}} de la session 2021*
