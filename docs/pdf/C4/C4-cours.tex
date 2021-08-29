@@ -1,0 +1,56 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usepackage{Cours}
+
+\begin{document}
+
+\input{\detokenize{/home/fenarius/Travail/Cours/NSITerminale/docs/commun/MacrosCours.tex}}
+\setcounter{numchap}{3}
+
+\newcommand{\DR}{\cnum Diviser pour régner}
+
+\pythonmode
+
+
+\begin{frame}
+	\mframe{\DR}
+	\begin{alertblock}{Principe de la méthode}
+		La méthode \textcolor{red}{diviser pour régner} (en anglais \textit{divide and conquer})  est une technique algorithmique qui consiste à :        \begin{enumerate}
+            \item<2-> décomposer le problème initial en un ou plusieurs sous problèmes de taille inférieure,
+            \item<3-> résoudre chacun des sous problèmes,
+            \item<4-> combiner les solutions des sous problèmes pour obtenir la solution au problème initial.
+        \end{enumerate}
+	\end{alertblock}
+    \onslide<5->{
+	\begin{exampleblock}{Exemple}
+		L'algorithme de \textcolor{blue}{recherche dichotomique} dans un tableau \textbf{trié} déjà rencontré en classe de première est un exemple de la méthode diviser pour régner.
+        Le sous problème est alors la recherche dans une liste de taille deux fois plus petite.
+	\end{exampleblock}}
+\end{frame}
+
+\begin{frame}
+	\mframe{\DR}
+	\begin{alertblock}{Tri fusion}
+		L'algorithme du \textcolor{red}{tri fusion} (en anglais \textit{merge sort})  illustre parfaitement la méthode diviser pour régner, en effet, il consiste à
+        \begin{enumerate}
+            \item<2-> Décomposer la liste en deux sous listes de longueur égale (à une unité près).
+            \item<3-> Trier chacune des sous listes (c'est donc un algorithme récursif)
+            \item<4-> Fusionner les parties triées
+        \end{enumerate}
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \mframe{DR}
+    \begin{exampleblock}{Exemples}
+        Pour illuster la méthode diviser pour régner, on peut aussi citer :
+        \begin{itemize}
+            \item<2-> La tri rapide (en anglais \textit{quicksort}),
+            \item<3-> Le quart de tour d'une image,
+            \item<4-> La recherche des deux points les plus proches,
+            \item<5-> L'algorithme de multiplication rapide de Karatsuba.
+        \end{itemize}
+    \end{exampleblock}   
+\end{frame}
+
+\end{document}

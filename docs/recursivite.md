@@ -212,12 +212,12 @@ from random import randint
 def melange(lst, ind):
     print(lst)
     if ind > 0:
-    j = randint(0, ind)
-    echange(lst, ind, j)
-    melange(lst, ind-1)
+        j = randint(0, ind)
+        echange(lst, ind, j)
+        melange(lst, ind-1)
 ```
     1. Expliquer pourquoi la fonction `melange` se termine toujours.
-    2. Lors de l’appel de la fonction melange, la valeur du paramètre `ind` doit être égal au plus grand indice possible de la liste `lst`. Pour une liste de longueur `n`, quel est le nombre d'appels récursifs de la fonction melange effectués, sans compter l’appel initial ?
+    2. Lors de l’appel de la fonction `melange`, la valeur du paramètre `ind` doit être égal au plus grand indice possible de la liste `lst`. Pour une liste de longueur `n`, quel est le nombre d'appels récursifs de la fonction melange effectués, sans compter l’appel initial ?
     3. On considère le script ci-dessous :
 
         ```python
