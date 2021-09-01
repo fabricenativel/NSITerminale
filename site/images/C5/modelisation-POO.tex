@@ -1,0 +1,110 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass{beamer}
+\usefonttheme[onlymath]{serif}
+%Mise en page theme
+%\useinnertheme[shadow=true]{rounded}
+
+\usetheme{Madrid}
+\usecolortheme{orchid}
+\usecolortheme{whale}
+%\useoutertheme{shadow}
+\definecolor{fondvert}{rgb}{0.898,0.937,0.902}
+\definecolor{fondrouge}{rgb}{0.976,0.906,0.906}
+\definecolor{fondbleu}{rgb}{0.914,0.914,0.953}
+\definecolor{grisclair}{rgb}{0.9,0.9,0.9}
+\definecolor{gris1}{RGB}{225,225,225}
+\definecolor{gris2}{RGB}{200,200,200}
+\definecolor{gris3}{RGB}{45,45,45}
+\definecolor{gris4}{RGB}{20,20,20}
+
+%Paquet habituel
+\usepackage{etex,times}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+%Package pour utilisation des divers symboles mathématiques
+\usepackage{textcomp,amsmath,amsfonts,amssymb,mathrsfs,eurosym,stmaryrd,pifont,cancel}
+%Package multido pour faire des boucles et xtring de manipulation de chaine et hyperref pour les liens ifthen pour les instructions conditionnelles
+\usepackage{multido,xstring, hyperref,ifthen}
+%Package fancybox : boites ovales et ombrées et fancyhdr pour les en-têtes
+\usepackage{fancybox,fancyhdr}
+%Ecriture cursive
+\usepackage{frcursive}
+% Multicolonnes, tableau etendu et fonte de toutes tailles
+\usepackage{anyfontsize,multicol,tabularx}
+%xlop pour poser des opérations
+\usepackage{xlop}
+%Package graphique
+\usepackage{graphicx,listings}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eps,pst-fill,pst-node,pst-math,pst-eucl,pstricks-add}
+% Définition des marges du document avec package geometry
+
+%Auteur,Titre, etc ...
+
+
+\author
+{F. {\sc Nativel}}
+
+\institute
+{Lycée Nord}
+
+\date
+{Année scolaire 2018-2019}
+
+\setlength\headsep{10pt}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0pt}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\partopsep}{0pt}
+
+
+\begin{document}
+
+\input{\detokenize{/home/fenarius/Travail/Cours/Commun/latex/Macros.tex}}
+
+%Numérotation des diapos et commande de création
+\newcounter{numframe}
+\setcounter{numframe}{0}
+\newcommand{\mframe}[1]{\frametitle{#1} \addtocounter{numframe}{1}}
+
+
+
+
+
+
+\begin{frame}
+	\begin{tabularx}{\textwidth}{YYYYY}
+		\fbox{\begin{minipage}[c][3cm][c]{2cm}
+				\includegraphics[scale=0.3]{des.eps}
+			\end{minipage}}               & \textcolor{Blue}{\Huge $\Rightarrow$} \newline  {\scriptsize Modélisation}                         &
+		\begin{minipage}[c][5cm][c]{3.1cm}
+			\begin{tabular}{|X|}
+				\hline
+				\textcolor{red}{\textbf{Attributs}} \\
+				\hline
+				-Faces \newline -Couleur            \\
+				\hline
+				\textcolor{red}{\textbf{Méthode}}   \\
+				\hline
+				-Lancer                             \\
+				\hline
+				\textbf{Méthode spéciale}           \\
+				\hline
+				\textcolor{red}{constructeur}       \\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		                                               & \textcolor{OliveGreen}{\Huge $\Rightarrow$} \newline  {\scriptsize \textcolor{red}{Instanciation}} &
+		\begin{minipage}[c][3cm][c]{2.5cm}
+			\begin{footnotesize}
+				Représentation informatique d'un dé en particulier, par exemple un dé orange à 6 faces.
+
+			\end{footnotesize} \end{minipage}                                                                                                                                                                                                              \\
+		{\footnotesize Objets (ici du monde physique)} &                                                                                                    & \textcolor{red}{\footnotesize Classe } &  & \textcolor{red}{\footnotesize Objet}
+	\end{tabularx}
+\end{frame}
+
+
+\end{document}
