@@ -166,7 +166,7 @@ def produit(a,b):
 On suppose qu'on ne dispose que de deux opérations : ajouter 1 ou retrancher 1.
 
 1. Écrire à l'aide de ces deux opérations, une version itérative de l'addition de deux entiers.
-2. Même question avec une version itérative.
+2. Même question avec une version récursive.
 
 {{ exo("Dessin récursif",[]) }}
 
