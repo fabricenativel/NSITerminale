@@ -177,6 +177,20 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
     def nok():
         return ":fontawesome-solid-times:{.rouge title='Non compatible'}"
     
+    @env.macro
+    def ep(annee):
+        aff="\n"
+        aff+= "|Numéro | Lien de téléchargement| Thème exercice 1 | Thème exercice 2  | Code fourni |\n"
+        aff+= "|-------|-----------------------|------------------|-------------------|-------------|\n"
+        FNAME = f"./docs/officiels/Annales/EP/{annee}/l{annee}.txt"
+        with open(FNAME,"r",encoding="utf-8") as f:
+            nums=1
+            for s in f:
+                lf=s.split(",",2)
+                aff+=f"|{nums}|[Sujet N°{nums}](./officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.pdf) | {lf[1]} | {lf[2][:-1]} | [:material-download: Code](./officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.py) \n"
+                nums+=1
+        return aff
+    
 
     
 

@@ -140,7 +140,7 @@ En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le *We
 
     Quelle différence constatez-vous par rapport à la solution précédente ?
 
-4. En vous aidant de ces nouvelles fonctionnalités, retrouver à l'aide de {{ sc("sql") }}n les **vraies* valeurs de croissance moyenne en fonction de la catégorie de dette dans laquelle se trouve le pays et qu'on rappelle ci-dessous :
+4. En vous aidant de ces nouvelles fonctionnalités, retrouver à l'aide de {{ sc("sql") }}n les *vraies* valeurs de croissance moyenne en fonction de la catégorie de dette dans laquelle se trouve le pays et qu'on rappelle ci-dessous :
     
     |Catégorie| Croissance moyenne |
     |---------|--------------------|

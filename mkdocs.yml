@@ -4,23 +4,34 @@ site_description: Cours de NSI en classe de terminale du lycée Hintermann-Affé
 site_author: Fabrice NATIVEL
 
 # Les éléments de la barre de navigation
-nav:  
-  - "C0-Révisions" : revisions.md
-  - "C1-Récursivité" : recursivite.md
-  - "C2-Bases de données et SQL" : sql.md
-  - "C3-Processus" : processus.md
-  - "C4-Diviser pour régner" : diviser.md
-  - "C5-Notions de programmation orienté objet" : poo.md
-  - "C6-Structures de données linéaires" : sl.md
-  - "C7-Système sur puce" : puces.md
-  - "C8-Arbres" : arbres.md
-  - "C9-Schéma relationnel d'une base de données" : sgbd.md
-  - "C10-Algorithmes sur les arbres" : algoarbre.md
-  - "C11-Graphes" : graphes.md
-  - "C12-Protocoles de routage" : routage.md
-  - "C13-Recherche textuelle" : texte.md
-  - "C14-Calculabilité, décidabilité" : calculabilite.md
-  - "C15-Sécurisation des communications" : cryptage.md
+nav:
+- "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px>&thinsp; Accueil" :
+    - index.md
+- "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px>&thinsp; Liste des chapitres" :
+      - "Progression" : progression.md
+      - "C0-Révisions" : revisions.md
+      - "C1-Récursivité" : recursivite.md
+      - "C2-Bases de données et SQL" : sql.md
+      - "C3-Processus" : processus.md
+      - "C4-Diviser pour régner" : diviser.md
+      - "C5-Notions de programmation orienté objet" : poo.md
+      - "C6-Structures de données linéaires" : sl.md
+      - "C7-Système sur puce" : puces.md
+      - "C8-Arbres" : arbres.md
+      - "C9-Schéma relationnel d'une base de données" : sgbd.md
+      - "C10-Algorithmes sur les arbres" : algoarbre.md
+      - "C11-Graphes" : graphes.md
+      - "C12-Protocoles de routage" : routage.md
+      - "C13-Recherche textuelle" : texte.md
+      - "C14-Calculabilité, décidabilité" : calculabilite.md
+      - "C15-Sécurisation des communications" : cryptage.md
+- "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels" :
+    - docs.md
+- "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets" :
+    - projets.md
+- "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px>&thinsp; A propos" :
+    - apropos.md
+  
 
 
 
@@ -35,6 +46,9 @@ theme:
   # Les couleurs, on utilise la palette par défaut avec qques tweaks via css (voir https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/stylesheets/main/_colors.scss)
   palette: 
     scheme: default
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
   
 
 markdown_extensions:

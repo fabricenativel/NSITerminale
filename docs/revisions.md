@@ -284,7 +284,7 @@ Le but de l'activité est d'écrire un programme permettant de résoudre le [pro
     Modifier votre fonction rectangle de façon à pouvoir tracer un rectangle rempli avec une couleur passée en paramètre.
 
 {{ exo("Quelques figures avec `turtle`",[]) }}
-Construire les figures suivantes (le repère est là pour vous aider et ne dois pas être reproduit):
+Construire les figures suivantes (le repère est là pour vous aider et ne doit pas être reproduit):
 
 1. L'escalier
 ![escalier](./images/C0/escalier.png){: .imgcentre}
