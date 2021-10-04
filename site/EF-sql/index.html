@@ -9,7 +9,7 @@
 <meta content="Fabrice NATIVEL" name="author"/>
 <link href="../images/dragon.svg" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.1.6" name="generator"/>
-<title>Scripts d'administration - Numériques et Sciences Informatiques Terminale</title>
+<title>Evaluation de NSI du 05/10/2021 - Numériques et Sciences Informatiques Terminale</title>
 <link href="../assets/stylesheets/main.875de78c.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.f1a3b89f.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#scripts-dadministration">
+<a class="md-skip" href="#evaluation-de-nsi-du-05102021">
           Aller au contenu
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Scripts d'administration
+              Evaluation de NSI du 05/10/2021
             
           </span>
 </div>
@@ -323,8 +323,46 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gestion-des-qcm">
-    Gestion des qcm
+<a class="md-nav__link" href="#exercice-1">
+    Exercice 1
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2">
+    Exercice 2
+  </a>
+<nav aria-label="Exercice 2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-pays-du-monde">
+    Exercice 1 : Pays du monde
+  </a>
+<nav aria-label="Exercice 1 : Pays du monde" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preambule">
+    Préambule
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requetes-sql">
+    Requêtes SQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recherches-dinformations">
+    Recherches d'informations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3">
+    Exercice 3
   </a>
 </li>
 </ul>
@@ -334,28 +372,87 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="scripts-dadministration">Scripts d'administration</h1>
-<h2 id="gestion-des-qcm">Gestion des qcm</h2>
+<h1 id="evaluation-de-nsi-du-05102021">Evaluation de NSI du 05/10/2021</h1>
+<div class="admonition danger">
+<p class="admonition-title">Attention</p>
 <ul>
-<li>Partie barre de navigation du fichier mkdocs.yml :
-<div class="highlight"><pre><span></span><code>  - "C0-Révisions" : revisions.md
-  - "C1-Récursivité" : recursivite.md
-  - "C2-Bases de données et SQL" : sql.md
-  - "C3-Processus" : processus.md
-  - "C4-Diviser pour régner" : diviser.md
-  - "C5-Notions de programmation orienté objet" : poo.md
-  - "C6-Structures de données linéaires" : sl.md
-  - "C7-Système sur puce" : puces.md
-  - "C8-Arbres" : arbres.md
-  - "C9-Schéma relationnel d'une base de données" : sgbd.md
-  - "C10-Algorithmes sur les arbres" : algoarbre.md
-  - "C11-Graphes" : graphes.md
-  - "C12-Protocoles de routage" : routage.md
-  - "C13-Recherche textuelle" : texte.md
-  - "C14-Calculabilité, décidabilité" : calculabilite.md
-  - "C15-Sécurisation des communications" : cryptage.md
-</code></pre></div></li>
+<li>Répondre sur un document <em>libreoffice writer</em></li>
+<li>Enregistrer ce document dans votre dossier personnel dans <code>Evaluations/DS3/</code></li>
 </ul>
+</div>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Un collectionneur de disque vinyl  souhaite créer une base de données des morceaux de musique qu'il possède. Cette base serait composée d'une seule table :
+    <table>
+<tr><th align="center" colspan="2"> Vinyl </th></tr>
+<tr><td><code>Titre</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Auteur</code></td><td><code>INTEGER</code></td></tr>
+<tr><td><code>Année</code></td><td><code>INTEGER</code></td></tr>
+<tr><td><code>Catégorie</code></td><td><code>INTEGER</code></td></tr>
+</table></p>
+<ol>
+<li>Quels sont les attributs de cette table ?</li>
+<li>On souhaite ajouter un attribut <code>Durée</code> qui indique la durée du morceau de musique, proposer un type pour cette attribut.</li>
+<li>Proposer un domaine pour l'attribut <code>Année</code>.</li>
+<li>Expliquer dans quelle situation le <strong>principe d'unicité</strong> des bases de données n'est pas respectée avec cette table. Que faire pour y remedier ?</li>
+</ol>
+<h2 id="exercice-2">Exercice 2</h2>
+<h3 id="exercice-1-pays-du-monde"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Pays du monde</em></img></h3>
+<h4 id="preambule">Préambule</h4>
+<ol>
+<li>Télécharger ci-dessous une base de données des pays du monde :
+<span class="centre"><a class="md-button" href="././files/C2/countries.db">Pays <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></li>
+<li>Ouvrir cette base avec <code>sqlitebrowser</code></li>
+<li>
+<p>Dans <span class="encadre">Parcourir les données</span> prendre note du noms des colonnes. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On précise la signification des champs suivants ainsi que leur type :</p>
+<ul>
+<li><code>Population</code> : le nombre d'habitants (type entier)</li>
+<li><code>Region</code> : la région (en anglais) dans laquelle se trouve le pays (type texte). Par exemple la France se trouve en <span style="font-variant:small-caps;">western europe</span></li>
+<li><code>Area</code> : la surface du pays (en <em>mile</em> carré)  (type entier)</li>
+<li><code>Coastline</code> : la surface côtière du pays (type réel), cette valeur vaut <code>0.0</code> lorsque le pays n'a pas d'ouverture sur la mer.</li>
+<li><code>GDP</code> : le produit intérieur brut par habitant (type entier). C'est une mesure de la richesse du pays.</li>
+</ul>
+</div>
+</li>
+</ol>
+<h4 id="requetes-sql">Requêtes SQL</h4>
+<p>Dans chaque cas, répondre en <strong>écrivant une requête <span style="font-variant:small-caps;">sql</span></strong> dont on donnera les résultats :</p>
+<ol>
+<li>
+<p>Donner la population et le produit intérieur brut de l'Allemagne (<em>Germany</em> en anglais)</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Le modèle de réponse attendue est donc : <br/>
+<em>"La population de l'Allemagne est ..... et son <span style="font-variant:small-caps;">pib</span> est .... <br/>
+Résultats obtenus avec la requête .................................... "</em></p>
+</div>
+</li>
+<li>
+<p>Combien de régions différentes pour les pays figurent dans cette base de données ?</p>
+</li>
+<li>Lister par ordre croissant les trois pays les plus peuplés au monde.</li>
+<li>Donner les noms des pays commençant par un <code>t</code> et finissant par <code>istan</code>.</li>
+<li>Donner le plus grand pays (en surface) n'ayant pas d'ouverture sur la mer.</li>
+</ol>
+<h4 id="recherches-dinformations">Recherches d'informations</h4>
+<p>En argumentant vos réponses à l'aide d'informations extraites de ces données, donner votre opinion sur les affirmations suivantes :</p>
+<ol>
+<li>Les pays les plus riches sont souvent aussi les plus grands (en surface).</li>
+<li>L'europe de l'ouest est la région la plus riche de la planète.</li>
+</ol>
+<h2 id="exercice-3">Exercice 3</h2>
+<ol>
+<li>En consultant cette <a href="https://fr.wikipedia.org/wiki/Loi_de_Benford" target="_blank">page wikipedia</a>, ou en faisant vos propres recherches sur le <em>Web</em>, expliquer rapidement ce qu'est la <strong>loi de Benford</strong></li>
+<li>
+<p>Les populations des pays de la base de données de l'exercice précédent suivent-elles la loi de Benford ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Bien que le champ <code>population</code> soit de type entier, on peut utiliser <code>LIKE</code> comme sur une chaine de caractère pour extraire les pays dont la population commence par un 1 et les compter.</p>
+</div>
+</li>
+</ol>
 </article>
 </div>
 </div>
