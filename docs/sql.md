@@ -208,7 +208,7 @@ Proposer une modélisation d'une liste de contact téléphonique dans laquelle c
 
 {{ exo("Tremblements de terre",[]) }} 
 1. Télécharger ci-dessous une base de données des tremblements de terre :
-{{telecharger("Tremblements de terre","./files/C2/earthquake.db")}}
+{{telecharger("Tremblements de terre","./files/C2/earthquakes.db")}}
 2. Ouvrir cette base avec `sqlitebrowser`
 3. Dans <span class='encadre'>Parcourir les données</span> prendre note du noms des colonnes et de leur signification. 
 4. Ecrire les requêtes {{ sc("sql") }} permettant :
