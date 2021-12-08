@@ -118,7 +118,7 @@ $(3+2)\textcolor{red}{\underline{)}}-(4+1)$
     3. $5)-4\times2($ 
     4. $((3+2)\times(5-3))$
 
-2. Ecrire une fonction `bien\_parenthesee(expression)` qui renvoie $-1$ lorsque l'expression est bien parenthésée et sinon un entier indiquant l'emplacement dans l'expression où l'erreur de parenthésage est détectée.
+2. Ecrire une fonction `bien_parenthesee` qui prend en argument un expression (sous la forme d'une chaine de caractères) et qui renvoie $-1$ lorsque l'expression est bien parenthésée et sinon un entier indiquant l'emplacement dans l'expression où l'erreur de parenthésage est détectée.
 
     !!! Aide
         On pourra, parcourir l'expression et utiliser une pile qui stocke les indices de chaque parenthèses ouvrante. On dépile, lorsqu'on rencontre une parenthèse fermante.
