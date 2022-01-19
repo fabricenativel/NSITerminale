@@ -21,7 +21,8 @@ hide: - navigation  in apropos.md
 
 ## Autres sites proposant des cours de NSI
 
-* [Pixees informatique lycée ](https://pixees.fr/informatiquelycee/){target=_blank}
+* [Pixees informatique lycée](https://pixees.fr/informatiquelycee/){target=_blank}
+* [Les cours en Vidéo Lumni](https://www.lumni.fr/lycee/premiere/specialites/numerique-et-sciences-informatiques){target=_blank}
 
 
 
