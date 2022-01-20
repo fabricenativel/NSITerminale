@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.7" name="generator"/>
+<title>C8-Arbres - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.ca7ac06f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.f1a3b89f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c8-arbres">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              C8-Arbres
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../revisions/">
+        C0-Révisions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        C2-Bases de données et SQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diviser/">
+        C4-Diviser pour régner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sl/">
+        C6-Structures de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          C8-Arbres
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        C8-Arbres
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-vocabulaire">
+    Activité 1 : Vocabulaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-arbre-binaire">
+    Activité 2 : Arbre binaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire">
+    Activité 3 : Relation entre la hauteur et la taille d'un arbre binaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-4-implementation-des-arbres-binaires-en-python">
+    Activité 4 : Implémentation des arbres binaires en Python
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-dom">
+    Exercice 1 : DOM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-vocabulaire-sur-les-arbres">
+    Exercice 2 : Vocabulaire sur les arbres
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-representer-un-arbre-binaire">
+    Exercice 3 : Représenter un arbre binaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-representer-un-arbre-binaire-par-un-triplet">
+    Exercice 4 : Représenter un arbre binaire par un triplet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-retour-sur-limplementation">
+    Exercice 5 : Retour sur l'implémentation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../algoarbre/">
+        C10-Algorithmes sur les arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-vocabulaire">
+    Activité 1 : Vocabulaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-arbre-binaire">
+    Activité 2 : Arbre binaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire">
+    Activité 3 : Relation entre la hauteur et la taille d'un arbre binaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-4-implementation-des-arbres-binaires-en-python">
+    Activité 4 : Implémentation des arbres binaires en Python
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-dom">
+    Exercice 1 : DOM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-vocabulaire-sur-les-arbres">
+    Exercice 2 : Vocabulaire sur les arbres
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-representer-un-arbre-binaire">
+    Exercice 3 : Représenter un arbre binaire
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-representer-un-arbre-binaire-par-un-triplet">
+    Exercice 4 : Représenter un arbre binaire par un triplet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-retour-sur-limplementation">
+    Exercice 5 : Retour sur l'implémentation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c8-arbres"><span class="numchapitre">C8</span> Arbres <span style="float:right;"><span class="twemoji" title="Structures de données"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"></path></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-vocabulaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 1 : <em>Vocabulaire</em></img></h3>
+<ol>
+<li>
+<p>Après execution d'une commande dans un terminal Linux on a obtenu l'affichage ci-dessous :
+<img alt="arborescence de repertoires" class="centre" src="../images/C8/arborescence.png"/></p>
+<ol>
+<li>De quelle commande s'agissait-il ? Quelle est sa traduction en français ?</li>
+<li>Que sont <code>Maths</code> et <code>NSI</code> pour le système d'exploitation ?</li>
+<li>Un point (<strong>.</strong>) figure en haut du schéma, quelle en est la signification ?</li>
+<li>Que signifie le lien entre <code>NSI</code> et <code>Projet</code> ?</li>
+</ol>
+</li>
+<li>
+<p>Le schéma ci-dessus est un exemple d'<strong>arbre</strong> (on parle d'ailleurs de l'arborescence des dossiers dans un système d'exploitation). Un arbre est constitué de <strong>noeuds</strong> et un lien entre deux noeuds s'appelle une <strong>arête</strong>.</p>
+<ol>
+<li>Citer trois noeuds de l'arbre ci-dessus et donner un exemple d'arête.</li>
+<li>Quel noeud est le répertoire parent de <code>Systèmes</code>  ? On dira dans le vocabulaire des arbres que le noeud <code>Systèmes</code> est un <strong>fils</strong> de ce noeud.</li>
+<li>Citer tous les fils du noeud <code>NSI</code>.</li>
+<li>Dans un arbre, un seul et unique noeud n'est le fils de personne, on l'appelle la <strong>racine</strong> de l'arbre. De qui s'agit-il ici ?</li>
+<li>Nommer les noeuds n'ayant aucun fils (on les appelle <strong>feuilles</strong> de l'arbre).</li>
+<li>Une <strong>branche</strong> est une suite (finie) de noeuds depuis la racine vers une feuille. Donner une branche de cette arbre constituée de trois noeuds.</li>
+<li>Donner la <strong>taille</strong> de cet arbre (c'est à dire son nombre de noeuds).</li>
+<li>Donner l'<strong>arité</strong> de cet arbre, c'est à dire le nombre maximal de fils qu'un noeud peut avoir.</li>
+<li>
+<p>Donner la <strong>hauteur</strong> de cet arbre c'est à dire le nombre maximal de noeuds dans une branche.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention<p>La hauteur d'un arbre est parfois définie comme le plus grand nombre d'arêtes dans une branche. Dans les sujets de <span style="font-variant:small-caps;">bac</span> faire attention à la définition utilisée qui est normalement donnée dans l'énoncé.</p>
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-2-arbre-binaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 2 : <em>Arbre binaire</em></img></h3>
+<p>Chez les abeilles, le système de reproduction fait que :</p>
+<ul>
+<li>une abeille femelle est issue de deux abeilles, un mâle et une femelle,</li>
+<li>une abeille mâle est issue d'une seule abeille femelle.</li>
+</ul>
+<p>Cela s'explique par le fait qu'un oeuf non fécondé (donc issu uniquement d'une femelle) donne toujours naissance à une abeille mâle, alors qu'une oeuf fécondé (donc issu d'un mâle et d'une femelle) donne toujours naissance à une abeille femelle. On a représenté ci-contre les quatre premiers niveaux de l'arbre généalogique d'une abeille mâle en notant avec la lettre <strong>M</strong> les mâles et la lettre <strong>F</strong> les femelles.</p>
+<div class="centre">
+<div class="mermaid">    graph TD
+    F0["F"] --&gt; F1["F"]
+    F0["F"] --&gt; M1["M"]
+    M1 --&gt; F2["F"]
+    F1 --&gt; M2["M"]
+    F1 --&gt; F3["F"]
+    F2 --&gt; F4["F"]
+    F2 --&gt; M3["M"]
+    M2 --&gt; F5["F"]
+    F3 --&gt; F6["F"]
+    F3 --&gt; M4["M"]
+</div>
+</div>
+<ol>
+<li>
+<p>Définition des arbres binaires  </p>
+<ol>
+<li>Recopier et compléter cet arbre en ajoutant le 5<sup>e</sup> niveau.</li>
+<li>Rappeler la définition de l'<em>arité</em> d'un arbre et d'un noeud. Quelle est l'arité des feuilles d'un arbre ?</li>
+<li>Déterminer le degré (arité) des noeuds qui ne sont pas des feuilles selon que le noeud représente une abeille male ou une abeille femelle.</li>
+<li>On appelle <strong>arbre binaire</strong>, un arbre dans lequel les noeuds ont au maximum deux fils. Donner une définition équivalente utilisant le mot <em>arité</em> et justifier rapidement que l'arbre généalogique d'une abeille est binaire.</li>
+</ol>
+</li>
+<li>
+<p>Une définition récursive
+On reprend l'exemple de l'abre généalogique d'une abeille femelle jusqu'au cinquième niveau dessinée ci-dessus. On appelle <em>sous arbre gauche</em> et <em>sous arbre droit</em> l'arbre généalogique de chacune des deux parents de la racine. L'arbre est alors noté sous la forme d'un triplet constitué de la racine et des deux sous arbres : <code>(racine, sous arbre gauche, sous arbre droit)</code>. </p>
+<ol>
+<li>Justifier rapidement que les deux sous arbres sont des arbres binaires.</li>
+<li>Que dire du sous arbre droit lorsque l'abeille est un mâle ?</li>
+<li>Pour une feuille, que dire du sous arbre droit et du sous arbre gauche ?</li>
+<li>En déduire une version récursive de la définition d'un arbre binaire.</li>
+<li>Donner une définition récursive de la taille d'un arbre binaire.</li>
+<li>Donner une définition récursive de la hauteur d'un arbre binaire.</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 3 : <em>Relation entre la hauteur et la taille d'un arbre binaire</em></img></h3>
+<ol>
+<li>On note <span class="arithmatex">\(h\)</span> la hauteur d'un arbre binaire et <span class="arithmatex">\(n\)</span> sa taille, on suppose dans la suite que <span class="arithmatex">\(n \geq 2\)</span>. En rappelant les définitions de la hauteur et de la taille d'un arbre, justifier que <span class="arithmatex">\(n \geq h\)</span>.</li>
+<li>
+<p>On numérote les noeuds d'un arbre binaire de la suivante :  </p>
+<ul>
+<li>la racine porte le numéro 1,</li>
+<li>le fils gauche d'un noeud porte le numéro de son père suivi d'un 0,</li>
+<li>le fils droit d'un noeud porte le numéro de son père suivi d'un 1.</li>
+</ul>
+</li>
+</ol>
+<p>On a entamé la numérotation de l'arbre binaire ci-dessous, recopier cet arbre et compléter cette numérotation.</p>
+<div class="centre">
+<div class="mermaid">    graph TD
+    A["A : 1"] --&gt; B["B : 10"]
+    A --&gt; C["C : 11"]
+    B --&gt; D["D : ..."]
+    B --&gt; E["E : 101"]
+    C --&gt; V1[" "]
+    C --&gt; F["F: ..."]
+    D --&gt; G["G: ..."]
+    D --&gt; H["H: ..."]
+    F --&gt; I["I: ..."]
+    F --&gt; V2[" "]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px
+</div>
+</div>
+<ol>
+<li>Justifier que sur un niveau donné de l'arbre tous les numéros de noeud ont le même nombre de caractères.</li>
+<li>En déduire en fonction de <span class="arithmatex">\(h\)</span>, le nombre de caractères formant le numéro des feuilles</li>
+<li>En utilisant vos connaissances sur la numérotation binaire d'un entier positif, prouver que <span class="arithmatex">\(n \leq 2^h - 1\)</span>.</li>
+</ol>
+<h3 id="activite-4-implementation-des-arbres-binaires-en-python"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 4 : <em>Implémentation des arbres binaires en Python</em></img></h3>
+<p>Le notebook suivant présente une implémentation <em>possible</em> des arbres binaires en Python. Cette implémentation pourra être sauvegardée et utilisée en exercice.</p>
+<p><span class="centre"><a class="md-button" href="../notebook/ArbresBinaires.ipynb">Jupyter Notebook <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h2 id="cours">Cours</h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C8/C8-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-dom"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>DOM</em></img></h3>
+<p>On considère le code  <span style="font-variant:small-caps;">html</span> suivant :
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Exemple<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Un titre <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Bonjour ! <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Case 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Case 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+Ce document peut se représenter par un arbre :
+<div class="mermaid">    graph TD
+    HTML["html"] --&gt; HEAD["head"]
+    HTML["html"] --&gt; BODY["body"]
+    HEAD --&gt; META["meta"]
+    HEAD --&gt; TITLE["title"]
+    BODY --&gt; H1["h1"]
+    BODY --&gt; P["p"]
+    BODY --&gt; TABLE["table"] 
+    TABLE --&gt; TR["tr"]
+    TR --&gt; TD1["td"]
+    TR --&gt; TD2["td"]
+</div></p>
+<ol>
+<li>Que représentent les noeuds de cet arbre ?</li>
+<li>Que signifie du point de vue du <span style="font-variant:small-caps;">html</span> une arête de cet arbre ?</li>
+<li>Quelle est la racine de cet arbre ?</li>
+<li>Donner les feuilles de cet arbre.</li>
+<li>Donner une branche de cet arbre.</li>
+<li>Donner l'arité de cet arbre.</li>
+<li>Donner la hauteur de cet arbre.</li>
+</ol>
+<h3 id="exercice-2-vocabulaire-sur-les-arbres"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Vocabulaire sur les arbres</em></img></h3>
+<p>On considère l'arbre ci-dessous :</p>
+<div class="centre">
+<div class="mermaid">    graph TD
+    A["A"] --&gt; L["L"]
+    A --&gt; G["G"]
+    L --&gt; O["O"]
+    L --&gt; R["R"]
+    G --&gt; V1[" "]
+    G --&gt; I["I"]
+    O --&gt; T["T"]
+    O --&gt; H["H"]
+    R --&gt; M["M"]
+    R --&gt; E["E"]
+    I --&gt; S["S"]
+    I --&gt; V2[" "]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 11 stroke:#FFFFFF,stroke-width:0px
+</div>
+</div>
+<ol>
+<li>Justifier qu'il s'agit d'un arbre binaire. Quelle est sa taille ?</li>
+<li>Quelle est sa racine ? Nommer les feuilles.</li>
+<li>Donner une branche de cet arbre.</li>
+<li>Donner la hauteur de cet arbre.</li>
+<li>Donner une branche de longueur 3 dans cet </li>
+<li>On considère le sous arbre gauche de la racine, quel est l'arité de chaque noeud ? Que peut-on dire du sous arbre gauche ?</li>
+<li>Même question pour le sous arbre droit de la racine.</li>
+</ol>
+<h3 id="exercice-3-representer-un-arbre-binaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Représenter un arbre binaire</em></img></h3>
+<ol>
+<li>Dessiner tous les arbres binaires à 3 noeuds. Attention à bien distinguer le fils droit du fils gauche.</li>
+<li>Dessiner un arbre binaire de taille 4 et de profondeur 4.</li>
+<li>Dessiner un arbre binaire de taille 4 et de profondeur 3.</li>
+<li>
+<p>Quelle est la taille maximale d'un arbre binaire de hauteur 10 ? Justifier </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra utiliser sans justification, la formule vue en cours qui permet d'encadrer la taille d'un arbre en fonction de sa hauteur.</p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-4-representer-un-arbre-binaire-par-un-triplet"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Représenter un arbre binaire par un triplet</em></img></h3>
+<p>On rappelle qu'on peut définir un arbre binaire de façon récursive, en effet, un arbre binaire est soit vide (noté <span class="arithmatex">\(\Delta\)</span>), soit un triplet <span class="arithmatex">\((etiquette,sag,sad)\)</span> où <span class="arithmatex">\(sag\)</span> (pour sous arbre gauche) et <span class="arithmatex">\(sad\)</span> (pour sous arbre droit) sont eux-mêmes des arbres binaires. </p>
+<p>On considère les arbres suivants :</p>
+<ul>
+<li><span class="arithmatex">\(A = (7,\Delta,\Delta)\)</span></li>
+<li><span class="arithmatex">\(B = (2,(3,\Delta,(9,\Delta,\Delta)),(10,\Delta,\Delta))\)</span></li>
+<li><span class="arithmatex">\(C = (4,(1,(8,\Delta,\Delta),(7,\Delta,\Delta)),(3,(6,\Delta,\Delta),(5,\Delta,\Delta)))\)</span></li>
+</ul>
+<p>Pour chacun de ces arbres :</p>
+<ol>
+<li>Faire un schéma pour le représenter.</li>
+<li>Donner sa taille, sa hauteur, son nombre de feuilles.</li>
+</ol>
+<h3 id="exercice-5-retour-sur-limplementation"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Retour sur l'implémentation</em></img></h3>
+<p>On reprend ici l'implémentation des arbres binaires vu en cours que vous pouvez télécharger ci-dessous :
+<span class="centre"><a class="md-button" href="../files/C8/ab.py">Implémentation arbres binaires <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<ol>
+<li>Compléter cette implémentation en écrivant une fonction <code>degenere(n)</code> qui prend en argument un entier positif <code>n</code> et qui renvoie l'arbre binaire dégénéré de taille <code>n</code>. On utilisera comme étiquette des noeuds <code>D0, D1, D2 ...</code>.</li>
+<li>Compléter cette implémentation en écrivant une fonction <code>complet(h)</code> qui prend en argument en entier positif <code>h</code> et qui renvoie l'arbre binaire complet de hauteur <code>h</code>. On utilisera comme étiquette des noeuds <code>C0, C1, C2, ...</code>.</li>
+<li>Reprendre ces deux fonctions et en écrire une version prenant aussi en paramètre une liste de chaines de caractères qui sera utilisée comme étiquette des noeuds. Par exemple <code>complet(2,["T","O","P"])</code> renvoie l'arbre binaire complet de hauteur 2 dont la racine porte l'étiquette <code>T</code> et a pour fils gauche <code>O</code> et fils droit <code>P</code>.</li>
+<li>Utiliser ces deux fonctions de façons à créer rapidement l'arbre de l'exercice 2.</li>
+</ol>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Précédent: C7-Système sur puce" class="md-footer__link md-footer__link--prev" href="../puces/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              C7-Système sur puce
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: C9-Schéma relationnel d'une base de données" class="md-footer__link md-footer__link--next" href="../sgbd/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C9-Schéma relationnel d'une base de données
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({});</script></body>
+</html>

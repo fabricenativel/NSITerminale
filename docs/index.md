@@ -2,7 +2,7 @@
 
 ## Liste des chapitres 
 
-{{ affiche_progression() }} 
+{{ affiche_progression() }}  
  
 ## Thèmes traités sur l'année :
 

@@ -1,0 +1,19 @@
+\mframe{\GR}
+	\begin{exampleblock}{Exemple}
+		\begin{enumerate}
+			\item<1-> Ecrire les listes d'adjacences du graphe suivante :
+			      \begin{center}
+				      \includegraphics[scale=0.5]{graph3.eps}
+			      \end{center}
+			\item<2-> Dessiner le graphe représenté par le dictionnaire Python suivante :
+			      \begin{lstlisting}
+{ 	
+	'A' : ['C'],
+ 	'B' : ['D','E'],
+ 	'C' : ['A','B'],
+ 	'D' : ['A','C'],
+ 	'E' : ['B','C','D']
+}
+\end{lstlisting}
+		\end{enumerate}
+	\end{exampleblock}

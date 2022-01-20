@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2021.5.4)  30 AUG 2021 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2021.5.4)  3 NOV 2021 09:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -743,51 +743,70 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@O@erf=\skip74
 \f@nch@O@olf=\skip75
 \f@nch@O@orf=\skip76
-) (/usr/share/texlive/texmf-dist/tex/generic/variations/variations.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/numprint/numprint.sty
+Package: numprint 2012/08/20 v1.39 Print numbers (HH)
+\c@nprt@mantissa@digitsbefore=\count337
+\c@nprt@mantissa@digitsafter=\count338
+\c@nprt@exponent@digitsbefore=\count339
+\c@nprt@exponent@digitsafter=\count340
+\nprt@digitwidth=\skip77
+\nprt@sepwidth=\skip78
+\nprt@decimalwidth=\skip79
+\nprt@blockwidth=\skip80
+\nprt@digittoks=\toks58
+\nprt@pretoks=\toks59
+\nprt@posttoks=\toks60
+\nprt@thisdigit=\count341
+\nprt@curpos=\count342
+\nprt@rndpos=\count343
+\c@nprt@digitsfirstblock=\count344
+\c@nprt@blockcnt=\count345
+\c@nprt@cntprint=\count346
+ No configuration file `numprint.cfg' found.) (/usr/share/texlive/texmf-dist/tex/generic/variations/variations.sty
 Package: variations 2006/09/13 v0.3 Tableaux de variations
  (/usr/share/texlive/texmf-dist/tex/generic/variations/variations.tex)) (/usr/share/texlive/texmf-dist/tex/latex/frcursive/frcursive.sty
 Package: frcursive 2004/02/01 v1.2 support package for French Cursive
-\seyesThickness=\skip77
+\seyesThickness=\skip81
 \seyes@box=\box94
-\seyes@ln=\skip78
+\seyes@ln=\skip82
 ) (/usr/share/texlive/texmf-dist/tex/latex/multido/multido.sty
 Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
  (/usr/share/texlive/texmf-dist/tex/generic/multido/multido.tex  v1.42, 2010/05/14 <tvz>
-\multido@count=\count337
-\multidocount=\count338
-\multido@stuff=\toks58
+\multido@count=\count347
+\multidocount=\count348
+\multido@stuff=\toks61
 )
 File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
 ) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count339
-\decimalpart=\count340
+\integerpart=\count349
+\decimalpart=\count350
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count341
-\calc@Bcount=\count342
+\calc@Acount=\count351
+\calc@Bcount=\count352
 \calc@Adimen=\dimen297
 \calc@Bdimen=\dimen298
-\calc@Askip=\skip79
-\calc@Bskip=\skip80
+\calc@Askip=\skip83
+\calc@Bskip=\skip84
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count343
-\calc@Cskip=\skip81
+\calc@Ccount=\count353
+\calc@Cskip=\skip85
 ) (/usr/share/texlive/texmf-dist/tex/generic/xlop/xlop.sty
 Package: xlop 2009/12/02 package wrapper for xlop.tex
  (/usr/share/texlive/texmf-dist/tex/generic/xlop/xlop.tex
-\op@count@z=\count344
-\op@count@i=\count345
-\op@count@ii=\count346
-\op@count@iii=\count347
-\op@count@iv=\count348
-\op@count@v=\count349
-\op@count@vi=\count350
-\op@currentstyle=\toks59
+\op@count@z=\count354
+\op@count@i=\count355
+\op@count@ii=\count356
+\op@count@iii=\count357
+\op@count@iv=\count358
+\op@count@v=\count359
+\op@count@vi=\count360
+\op@currentstyle=\toks62
 
 `xlop' v0.26  <2017/01/07> (jcc)
 \opcolumnwidth=\dimen299
@@ -797,10 +816,10 @@ Package: xlop 2009/12/02 package wrapper for xlop.tex
 \op@decimalsepoffset=\dimen302
 \op@hrulewidth=\dimen303
 \op@vrulewidth=\dimen304
-\op@parenthesis=\count351
-\op@token=\count352
-\op@stack=\count353
-\op@stackb=\count354
+\op@parenthesis=\count361
+\op@token=\count362
+\op@stack=\count363
+\op@stackb=\count364
 )) (/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty
 Package: pstricks 2018/12/21 v0.69 LaTeX wrapper for `PSTricks' (RN,HV)
  (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
@@ -811,23 +830,23 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
  (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
  (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks60
-\XKV@tempa@toks=\toks61
+\XKV@toks=\toks63
+\XKV@tempa@toks=\toks64
 )
-\XKV@depth=\count355
+\XKV@depth=\count365
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.tex (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count356
-\pstFP@xia=\count357
-\pstFP@xib=\count358
-\pstFP@xfa=\count359
-\pstFP@xfb=\count360
-\pstFP@rega=\count361
-\pstFP@regb=\count362
-\pstFP@regs=\count363
-\pstFP@times=\count364
+\pstFP@xs=\count366
+\pstFP@xia=\count367
+\pstFP@xib=\count368
+\pstFP@xfa=\count369
+\pstFP@xfb=\count370
+\pstFP@rega=\count371
+\pstFP@regb=\count372
+\pstFP@regs=\count373
+\pstFP@times=\count374
 )
-\psLoopIndex=\count365
+\psLoopIndex=\count375
 
 `PSTricks' v2.97  <2019/05/11> (tvz,hv)
 \pst@dima=\dimen305
@@ -843,32 +862,32 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 \pst@hbox=\box96
 \pst@ibox=\box97
 \pst@boxg=\box98
-\pst@cnta=\count366
-\pst@cntb=\count367
-\pst@cntc=\count368
-\pst@cntd=\count369
-\pst@cntg=\count370
-\pst@cnth=\count371
-\pst@cntm=\count372
-\pst@cntn=\count373
-\pst@cnto=\count374
-\pst@cntp=\count375
-\@zero=\count376
-\pst@toks=\toks62
+\pst@cnta=\count376
+\pst@cntb=\count377
+\pst@cntc=\count378
+\pst@cntd=\count379
+\pst@cntg=\count380
+\pst@cnth=\count381
+\pst@cntm=\count382
+\pst@cntn=\count383
+\pst@cnto=\count384
+\pst@cntp=\count385
+\@zero=\count386
+\pst@toks=\toks65
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen315
 \psxunit=\dimen316
 \psyunit=\dimen317
-\pst@C@@rType=\count377
+\pst@C@@rType=\count387
 \pslinewidth=\dimen318
 \psk@startLW=\dimen319
 \psk@endLW=\dimen320
-\pst@customdefs=\toks63
+\pst@customdefs=\toks66
 \pslinearc=\dimen321
 \pst@symbolStep=\dimen322
 \pst@symbolWidth=\dimen323
 \pst@symbolLinewidth=\dimen324
-\everypsbox=\toks64
+\everypsbox=\toks67
 \psframesep=\dimen325
 \pslabelsep=\dimen326
 \sh@wgridXunit=\dimen327
@@ -885,32 +904,32 @@ Package: pst-xkey 2005/11/25 v1.6 package wrapper for pst-xkey.tex (HA)
 )
 Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
  (/usr/share/texlive/texmf-dist/tex/generic/pst-plot/pst-plot.tex (/usr/share/texlive/texmf-dist/tex/generic/pst-tools/pst-tools.tex `PST-tools' v0.09b, 2017/12/03 (hv)) (/usr/share/texlive/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex (/usr/share/texlive/texmf-dist/tex/generic/pst-node/pst-node.tex  v1.42, 2019/03/03
-\psrow=\count378
-\pscol=\count379
-\psmatrixcnt=\count380
-\psrowsep=\skip82
-\pscolsep=\skip83
-\pst@args=\count381
-\num@pts=\count382
-\pst@argcnt=\count383
+\psrow=\count388
+\pscol=\count389
+\psmatrixcnt=\count390
+\psrowsep=\skip86
+\pscolsep=\skip87
+\pst@args=\count391
+\num@pts=\count392
+\pst@argcnt=\count393
 ) (/usr/share/texlive/texmf-dist/tex/generic/pst-arrow/pst-arrow.tex `pst-arrow' v0.01, 2016/09/01 (dr,hv)
 \pshooklength=\dimen330
 \pshookwidth=\dimen331
 ) (/usr/share/texlive/texmf-dist/tex/generic/pst-3d/pst-3d.tex `PST-3d' v1.11, 2010/02/14 (tvz)) (/usr/share/texlive/texmf-dist/tex/generic/pst-math/pst-math.tex `pst-math' v0.64 , (CJ,hv)) `pstricks-add' v3.89a, 2020/02/12 (dr,hv)
 \psparallelogramsep=\dimen332
-\pst@cntC=\count384
-\pst@stepcount=\count385
+\pst@cntC=\count394
+\pst@stepcount=\count395
 \chart@ColorIndex=\dimen333
 \chart@ColorStep=\dimen334
 \pst@chartHeight=\dimen335
 \pst@chartStackDepth=\dimen336
 \pst@chartStackWidth=\dimen337
-\chart@Toggle=\count386
-\psVectorCtr=\count387
+\chart@Toggle=\count396
+\psVectorCtr=\count397
 )  v1.92, 2019/05/16 (tvz,hv)
 \pstRadUnit=\dimen338
 \pstRadUnitInv=\dimen339
-\pst@linecnt=\count388
+\pst@linecnt=\count398
 \RCD@file=\read6
 \psxlabelsep=\dimen340
 \psylabelsep=\dimen341
@@ -921,7 +940,7 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \pst@yticksizeA=\dimen346
 \pst@yticksizeB=\dimen347
 \pst@yticksizeC=\dimen348
-\@digitcounter=\count389
+\@digitcounter=\count399
 \psk@llx=\dimen349
 \psk@lly=\dimen350
 \psk@urx=\dimen351
@@ -939,11 +958,11 @@ Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
  (/usr/share/texlive/texmf-dist/tex/generic/pst-tree/pst-tree.tex  v1.13, 2017/02/18(tvz,dg,hv)
 \pstree@rootbox=\box99
 \pstree@box=\box100
-\psnodecnt=\count390
-\pstreelevel=\count391
-\pstreecnt=\count392
-\pstree@cnt=\count393
-\pstree@stop=\count394
+\psnodecnt=\count400
+\pstreelevel=\count401
+\pstreecnt=\count402
+\pstree@cnt=\count403
+\pstree@stop=\count404
 )
 File: pst-tree.tex 2017/02/18 1.13 `pst-tree' (tvz,hv)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pst-eps/pst-eps.sty
@@ -972,29 +991,29 @@ Package: pst-calculate 2019/01/24 v. 0.02(Herbert Voss) Support for caculations 
 Package: siunitx 2020/01/15 v2.7u A comprehensive (SI) units package
 \l__siunitx_tmp_box=\box102
 \l__siunitx_tmp_dim=\dimen355
-\l__siunitx_tmp_int=\count395
-\l__siunitx_number_mantissa_length_int=\count396
-\l__siunitx_number_uncert_length_int=\count397
-\l__siunitx_round_int=\count398
-\l__siunitx_process_decimal_int=\count399
-\l__siunitx_process_uncertainty_int=\count400
-\l__siunitx_process_fixed_int=\count401
-\l__siunitx_process_integer_min_int=\count402
-\l__siunitx_process_precision_int=\count403
-\l__siunitx_group_min_int=\count404
+\l__siunitx_tmp_int=\count405
+\l__siunitx_number_mantissa_length_int=\count406
+\l__siunitx_number_uncert_length_int=\count407
+\l__siunitx_round_int=\count408
+\l__siunitx_process_decimal_int=\count409
+\l__siunitx_process_uncertainty_int=\count410
+\l__siunitx_process_fixed_int=\count411
+\l__siunitx_process_integer_min_int=\count412
+\l__siunitx_process_precision_int=\count413
+\l__siunitx_group_min_int=\count414
 \l__siunitx_angle_marker_box=\box103
 \l__siunitx_angle_unit_box=\box104
 \l__siunitx_angle_marker_dim=\dimen356
 \l__siunitx_angle_unit_dim=\dimen357
-\l__siunitx_unit_int=\count405
-\l__siunitx_unit_denominator_int=\count406
-\l__siunitx_unit_numerator_int=\count407
-\l__siunitx_unit_prefix_int=\count408
-\l__siunitx_unit_prefix_base_int=\count409
-\l__siunitx_unit_prefix_gram_int=\count410
-\l__siunitx_number_product_int=\count411
-\c__siunitx_one_fill_skip=\skip84
-\l__siunitx_table_unit_align_skip=\skip85
+\l__siunitx_unit_int=\count415
+\l__siunitx_unit_denominator_int=\count416
+\l__siunitx_unit_numerator_int=\count417
+\l__siunitx_unit_prefix_int=\count418
+\l__siunitx_unit_prefix_base_int=\count419
+\l__siunitx_unit_prefix_gram_int=\count420
+\l__siunitx_number_product_int=\count421
+\c__siunitx_one_fill_skip=\skip88
+\l__siunitx_table_unit_align_skip=\skip89
 \l__siunitx_table_exponent_dim=\dimen358
 \l__siunitx_table_integer_dim=\dimen359
 \l__siunitx_table_mantissa_dim=\dimen360
@@ -1008,16 +1027,16 @@ Package: siunitx 2020/01/15 v2.7u A comprehensive (SI) units package
 \l__siunitx_table_post_box=\box106
 \l__siunitx_table_mantissa_box=\box107
 \l__siunitx_table_result_box=\box108
-\l__siunitx_table_number_align_skip=\skip86
-\l__siunitx_table_text_align_skip=\skip87
+\l__siunitx_table_number_align_skip=\skip90
+\l__siunitx_table_text_align_skip=\skip91
 )) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (/usr/share/texlive/texmf-dist/tex/generic/pst-math/pst-math.tex)
 File: pst-math.tex 2007/03/10 v1.01 `PST-math' (hv)
-\c@Rand@No=\count412
-\c@Random@Left=\count413
-\c@Random@Right=\count414
-\c@Random@No@max=\count415
+\c@Rand@No=\count422
+\c@Random@Left=\count423
+\c@Random@Right=\count424
+\c@Random@No@max=\count425
 ) (/usr/share/texlive/texmf-dist/tex/latex/pst-eucl/pst-eucl.sty (/usr/share/texlive/texmf-dist/tex/latex/pst-tools/pst-tools.sty
 Package: pst-tools 2012/01/01 package wrapper for pst-tools.tex (hv)
  (/usr/share/texlive/texmf-dist/tex/generic/pst-tools/pst-tools.tex)
@@ -1041,46 +1060,135 @@ File: pstricks-add.tex 2020/01/29 v1.70 `PSTricks-add' (hv)
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
  (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count416
-\float@exts=\toks65
+\c@float@type=\count426
+\float@exts=\toks68
 \float@box=\box109
-\@float@everytoks=\toks66
+\@float@everytoks=\toks69
 \@floatcapt=\box110
 )
-\@float@every@algorithm=\toks67
-\c@algorithm=\count417
+\@float@every@algorithm=\toks70
+\c@algorithm=\count427
 ) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count418
-\c@ALC@line=\count419
-\c@ALC@rem=\count420
-\c@ALC@depth=\count421
-\ALC@tlm=\skip88
-\algorithmicindent=\skip89
+\c@ALC@unique=\count428
+\c@ALC@line=\count429
+\c@ALC@rem=\count430
+\c@ALC@depth=\count431
+\ALC@tlm=\skip92
+\algorithmicindent=\skip93
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count422
+\lst@mode=\count432
 \lst@gtempboxa=\box111
-\lst@token=\toks68
-\lst@length=\count423
+\lst@token=\toks71
+\lst@length=\count433
 \lst@currlwidth=\dimen369
-\lst@column=\count424
-\lst@pos=\count425
+\lst@column=\count434
+\lst@pos=\count435
 \lst@lostspace=\dimen370
 \lst@width=\dimen371
-\lst@newlines=\count426
-\lst@lineno=\count427
+\lst@newlines=\count436
+\lst@lineno=\count437
 \lst@maxwidth=\dimen372
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count428
-\lst@skipnumbers=\count429
+\c@lstnumber=\count438
+\lst@skipnumbers=\count439
 \lst@framebox=\box112
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
- (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)))
-No file C4-cours.aux.
+ (/usr/share/texlive/texmf-dist/tex/latex/circuitikz/circuitikz.sty
+Package: circuitikz 2020/02/04{} The CircuiTikz circuit drawing package version 1.0
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Loading pgffor.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen373
+\pgffor@skip=\dimen374
+\pgffor@stack=\toks72
+\pgffor@toks=\toks73
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Loading tikz.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count440
+\pgfplotmarksize=\dimen375
+)
+\tikz@lastx=\dimen376
+\tikz@lasty=\dimen377
+\tikz@lastxsaved=\dimen378
+\tikz@lastysaved=\dimen379
+\tikz@lastmovetox=\dimen380
+\tikz@lastmovetoy=\dimen381
+\tikzleveldistance=\dimen382
+\tikzsiblingdistance=\dimen383
+\tikz@figbox=\box113
+\tikz@figbox@bg=\box114
+\tikz@tempbox=\box115
+\tikz@tempbox@bg=\box116
+\tikztreelevel=\count441
+\tikznumberofchildren=\count442
+\tikznumberofcurrentchild=\count443
+\tikz@fig@count=\count444
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count445
+\pgfmatrixcurrentcolumn=\count446
+\pgf@matrix@numberofcolumns=\count447
+)
+\tikz@expandcount=\count448
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowinset=\dimen384
+\pgfarrowlength=\dimen385
+\pgfarrowwidth=\dimen386
+\pgfarrowlinewidth=\dimen387
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgftransformnonlinearflatness=\dimen388
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@curvilinear@time@a=\dimen389
+\pgf@curvilinear@length@a=\dimen390
+\pgf@curvilinear@length@b=\dimen391
+\pgf@curvilinear@length@c=\dimen392
+\pgf@curvilinear@length@d=\dimen393
+)
+\pgf@arrows@the@rigidity=\dimen394
+)) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
+\pgf@circ@count@a=\count449
+\pgf@circ@count@b=\count450
+\pgf@circ@count@c=\count451
+\pgf@circ@res@up=\dimen395
+\pgf@circ@res@down=\dimen396
+\pgf@circ@res@zero=\dimen397
+\pgf@circ@res@left=\dimen398
+\pgf@circ@res@right=\dimen399
+\pgf@circ@res@other=\dimen400
+\pgf@circ@res@step=\dimen401
+\pgf@circ@res@temp=\dimen402
+\pgfstartlinewidth=\dimen403
+\pgf@circ@Rlen=\dimen404
+\pgf@circ@scaled@Rlen=\dimen405
+) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex
+\pgf@circ@res@count=\count452
+) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex) (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex)
+
+Package circuitikz Warning: You did not specify one of the voltage directions:
+(circuitikz)                  oldvoltagedirection, nooldvoltagedirection, 
+(circuitikz)                  RPvoltages or EFvoltages 
+(circuitikz)                Default directions may have changed, 
+(circuitikz)                please check the manual.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty))) (./C4-cours.aux)
 \openout1 = `C4-cours.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1099,6 +1207,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -1134,7 +1243,7 @@ LaTeX Font Info:    ... okay on input line 5.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box113
+\AtBeginShipoutBox=\box117
 Package hyperref Info: Link coloring OFF on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1143,19 +1252,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count430
+\c@section@level=\count453
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
 LaTeX Info: Redefining \nameref on input line 5.
+ (./C4-cours.out) (./C4-cours.out)
 \@outlinefile=\write10
 \openout10 = `C4-cours.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+ (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
@@ -1174,11 +1280,10 @@ LaTeX Info: Redefining \up on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-\c@lstlisting=\count431
-
-No file C4-cours.nav.
+\c@lstlisting=\count454
+ (./C4-cours.nav)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 5.
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
@@ -1229,21 +1334,20 @@ LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 5
  (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/home/fenarius/Travail/Cours/NSITerminale/docs/commun/MacrosCours.tex
-\c@numchap=\count432
-\c@numframe=\count433
-\ltxt=\skip90
-\c@tempangle=\count434
-\c@numact=\count435
-\c@numseance=\count436
-\c@numexo=\count437
-\c@numprojet=\count438
-\c@numquestion=\count439
+\c@numchap=\count455
+\c@numframe=\count456
+\ltxt=\skip94
+\c@tempangle=\count457
+\c@numact=\count458
+\c@numseance=\count459
+\c@numexo=\count460
+\c@numprojet=\count461
+\c@numquestion=\count462
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 29.
- [1
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 25.
+ (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd) [1
 
 ] [2
 
@@ -1272,6 +1376,53 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
 ] [14
 
 ]
+File: complexite.eps Graphic file (type eps)
+ <complexite.eps> [15
+
+] [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] [21
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 117.
+ [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+] [32
+
+] [33
+
+] [34
+
+] [35
+
+]
 \tf@nav=\write11
 \openout11 = `C4-cours.nav'.
 
@@ -1281,28 +1432,21 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
 \tf@snm=\write13
 \openout13 = `C4-cours.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
  (./C4-cours.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 56.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
-
-
-Package rerunfilecheck Warning: File `C4-cours.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `C4-cours.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 145.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package rerunfilecheck Info: File `C4-cours.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36520 strings out of 481240
- 709963 string characters out of 5920404
- 1371103 words of memory out of 5000000
- 50955 multiletter control sequences out of 15000+600000
- 580808 words of font info for 64 fonts, out of 8000000 for 9000
+ 50232 strings out of 481240
+ 1108084 string characters out of 5920404
+ 1903153 words of memory out of 5000000
+ 64551 multiletter control sequences out of 15000+600000
+ 581114 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,16n,89p,847b,1043s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on C4-cours.dvi (14 pages, 281572 bytes).
+Output written on C4-cours.dvi (35 pages, 682224 bytes).

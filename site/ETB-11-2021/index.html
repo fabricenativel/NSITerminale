@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.7" name="generator"/>
+<title>Epreuve d'entrainement de type Bac du 06-11-2021 - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.ca7ac06f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.f1a3b89f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#epreuve-dentrainement-de-type-bac-du-06-11-2021">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Epreuve d'entrainement de type Bac du 06-11-2021
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../revisions/">
+        C0-Révisions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        C2-Bases de données et SQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diviser/">
+        C4-Diviser pour régner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sl/">
+        C6-Structures de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arbres/">
+        C8-Arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../algoarbre/">
+        C10-Algorithmes sur les arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sujet">
+    Sujet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#correction">
+    Correction
+  </a>
+<nav aria-label="Correction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1">
+    Exercice 1
+  </a>
+<nav aria-label="Exercice 1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-1-a-2-pts">
+    Question 1. (a) : 2 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-1-b-1-pt">
+    Question 1. (b) : 1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-2-1-pts">
+    Question 2 : 1 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-3-a-2-pts">
+    Question 3. (a) : 2 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-3-b-1-pt">
+    Question 3. (b) : 1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-4-a-1-pt">
+    Question 4. (a) : 1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-4-b-1-pt">
+    Question 4. (b) : 1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-4-c-1-pt">
+    Question 4. (c) : 1 pt
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2">
+    Exercice 2
+  </a>
+<nav aria-label="Exercice 2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partie-a">
+    Partie A
+  </a>
+<nav aria-label="Partie A" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-1-3-pts">
+    Question 1 : 3 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-2-3-pt">
+    Question 2 : 3 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-3-1-pt">
+    Question 3 : 1 pt
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partie-b">
+    Partie B
+  </a>
+<nav aria-label="Partie B" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-1-1-pt">
+    Question 1 : 1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-2-1-pt">
+    Question 2 :  1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-3-1-pt_1">
+    Question 3 : 1 pt
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3">
+    Exercice 3
+  </a>
+<nav aria-label="Exercice 3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-1-2-pts">
+    Question 1. : 2 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-2a-1-pt">
+    Question 2.a : 1 pt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-2b-2-pts">
+    Question 2.b : 2 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-3-2-pts">
+    Question 3 : 2 pts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#question-4-3-pts">
+    Question 4 : 3 pts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="epreuve-dentrainement-de-type-bac-du-06-11-2021">Epreuve d'entrainement de type Bac du 06-11-2021</h1>
+<h2 id="sujet">Sujet</h2>
+<p><span class="centre"><a class="md-button" href="../typebac/Nov2021.pdf">Sujet épreuve entrainement du 06-11-2021 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h2 id="correction">Correction</h2>
+<h3 id="exercice-1">Exercice 1</h3>
+<h4 id="question-1-a-2-pts">Question 1. (a) : 2 pts</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="sd">'''Calcul la somme des éléments de tab'''</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">==</span><span class="nb">list</span><span class="p">,</span> <span class="s2">"L'argument doit être une liste"</span>
+    <span class="n">thr</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">prix</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span><span class="o">==</span><span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span><span class="o">==</span><span class="nb">float</span><span class="p">,</span><span class="s2">"Les prix doivent être de types numériques"</span>
+        <span class="n">thr</span> <span class="o">+=</span> <span class="n">prix</span>
+    <span class="k">return</span> <span class="n">thr</span>
+</code></pre></div>
+<h4 id="question-1-b-1-pt">Question 1. (b) : 1 pt</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">offre_bienvenue</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="sd">""" tableau -&gt; float """</span>
+    <span class="n">somme</span> <span class="o">=</span><span class="mi">0</span>
+    <span class="n">longueur</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span> <span class="mi">0</span><span class="p">,</span><span class="mi">8</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span><span class="mi">7</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">longueur</span><span class="p">):</span>
+            <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</code></pre></div>
+<h4 id="question-2-1-pts">Question 2 : 1 pts</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prix_solde</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">*</span><span class="mf">0.6</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">*</span><span class="mf">0.7</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">*</span><span class="mf">0.8</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">*</span><span class="mf">0.9</span>
+</code></pre></div>
+<h4 id="question-3-a-2-pts">Question 3. (a) : 2 pts</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="n">min_courant</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">elt</span><span class="o">&lt;</span><span class="n">min_courant</span><span class="p">:</span>
+            <span class="n">min_courant</span> <span class="o">=</span> <span class="n">elt</span>
+    <span class="k">return</span> <span class="n">min_courant</span>
+</code></pre></div>
+<h4 id="question-3-b-1-pt">Question 3. (b) : 1 pt</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">offre_bon_client</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span><span class="o">-</span><span class="n">minimum</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">total_hors_reduction</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="question-4-a-1-pt">Question 4. (a) : 1 pt</h4>
+<p><div class="highlight"><pre><span></span><code>tab = [35.0,30.5,20.0,15.0,10.5,5.0,6.0]
+</code></pre></div>
+Le total des prix du papier est de <span class="arithmatex">\(35 + 30,5 + 20 + 15 + 10.5 + 6 + 5=122\)</span>. Compte tenu de l'ordre des articles les articles coutant 20 € et 5 € seront offerts. Et donc le prix à payer sera 97 €.</p>
+<h4 id="question-4-b-1-pt">Question 4. (b) : 1 pt</h4>
+<p><div class="highlight"><pre><span></span><code>tab = [35.0,30.5,20.0,15.0,10.5,6.0,5.0]
+</code></pre></div>
+Le prix total a payer est de 96 euros.</p>
+<h4 id="question-4-c-1-pt">Question 4. (c) : 1 pt</h4>
+<p>Il faut trier les objets par ordre décroissant de prix.</p>
+<h3 id="exercice-2">Exercice 2</h3>
+<h4 id="partie-a">Partie A</h4>
+<h5 id="question-1-3-pts">Question 1 : 3 pts</h5>
+<p>Si chaque programme s'exécute à tour de rôle, après la première instruction de chaque programme les 3 ressources sont prises. Un interblocage se produit donc car chaque programme a besoin d'une ressource détenu par un autre pour continuer son exécution.</p>
+<h5 id="question-2-3-pt">Question 2 : 3 pt</h5>
+<p>On inverse l'ordre des demandes dans le programme 3. Ainsi c'est la table traçante qui est demandé en premier, comme elle est détenue par le programme 1. Le programme 3 est bloqué. Mais le programme 2 peut continuer car il dispose de sa seconde ressource (l'imprimante). Donc il peut s'exécuter et libérer ses ressources ce qui permet au programme 3 et 1 de terminer aussi.</p>
+<h5 id="question-3-1-pt">Question 3 : 1 pt</h5>
+<p>Le processus p1 sera dans l'état bloqué, c'est donc la réponse b)</p>
+<h4 id="partie-b">Partie B</h4>
+<h5 id="question-1-1-pt">Question 1 : 1 pt</h5>
+<p>C'est la commande <code>ps -ef</code> c'est donc la réponse b)</p>
+<h5 id="question-2-1-pt">Question 2 :  1 pt</h5>
+<p>C'est l'identifiant 831</p>
+<h5 id="question-3-1-pt_1">Question 3 : 1 pt</h5>
+<p>C'est l'identifiant 6211</p>
+<h3 id="exercice-3">Exercice 3</h3>
+<h4 id="question-1-2-pts">Question 1. : 2 pts</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mur</span><span class="p">(</span><span class="n">laby</span><span class="p">,</span><span class="n">lig</span><span class="p">,</span><span class="n">col</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">laby</span><span class="p">[</span><span class="n">lig</span><span class="p">][</span><span class="n">col</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<h4 id="question-2a-1-pt">Question 2.a : 1 pt</h4>
+<p>Deux cases sont adjacentes si leur lignes ou colonnes diffèrent d'une unité. C'est un ou exclusif, c'est à dire soit les lignes  diffèrent d'une unité, soient les colonnes mais pas les deux. Comme la différence est <span class="arithmatex">\(+1\)</span> ou 
+<span class="arithmatex">\(-1\)</span> selon le sens de la soustraction l'élévation au carré permet de se ramener à un et donc de comparer <code>d==1</code></p>
+<h4 id="question-2b-2-pts">Question 2.b : 2 pts</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">adjacentes</span><span class="p">(</span><span class="n">liste_cases</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listes_cases</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">voisine</span><span class="p">(</span><span class="n">liste_cases</span><span class="p">[</span><span class="n">indice</span><span class="p">],</span><span class="n">liste_cases</span><span class="p">[</span><span class="n">indice</span><span class="o">+</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+<h4 id="question-3-2-pts">Question 3 : 2 pts</h4>
+<p>La suite <code>len(cases)-i</code> est une suite strictement décroissante d'entiers naturels et c'est donc un variant de la boucle <code>while</code></p>
+<h4 id="question-4-3-pts">Question 4 : 3 pts</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">echappe</span><span class="p">(</span><span class="n">cases</span><span class="p">,</span><span class="n">laby</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">cases</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">laby</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">laby</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">adjacentes</span><span class="p">(</span><span class="n">cases</span><span class="p">)</span>
+</code></pre></div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+</body>
+</html>

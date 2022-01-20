@@ -24,7 +24,7 @@ nav:
       - "C12-Protocoles de routage" : routage.md
       - "C13-Recherche textuelle" : texte.md
       - "C14-Calculabilité, décidabilité" : calculabilite.md
-      - "C15-Sécurisation des communications" : cryptage.md
+      - "C15-Sécurisation des communications" : cryptographie.md
 - "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels" :
     - docs.md
 - "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets" :

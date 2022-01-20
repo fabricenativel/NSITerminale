@@ -8,9 +8,9 @@
 <meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
 <meta content="Fabrice NATIVEL" name="author"/>
 <link href="../images/dragon.svg" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.1.6" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.7" name="generator"/>
 <title>C5-Notions de programmation orienté objet - Numériques et Sciences Informatiques Terminale</title>
-<link href="../assets/stylesheets/main.875de78c.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.ca7ac06f.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.f1a3b89f.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -108,7 +108,12 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../apropos.md">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
 <img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
       </a>
 </li>
@@ -222,8 +227,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#activite-3-calcul-fractionnaire">
-    Activité 3 : Calcul fractionnaire
+<a class="md-nav__link" href="#activite-3-getters-et-setters">
+    Activité 3 : Getters et setters
   </a>
 </li>
 </ul>
@@ -241,8 +246,38 @@
 <nav aria-label="Exercices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-1-definir-et-instancier-une-classe">
-    Exercice 1 : Définir et instancier une classe
+<a class="md-nav__link" href="#exercice-1-personnage-dun-jeu-video">
+    Exercice 1 : Personnage d'un jeu vidéo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-modeliser-un-compte-en-banque">
+    Exercice 2 : Modéliser un compte en banque
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-un-peu-de-geometrie">
+    Exercice 3 : Un peu de géométrie  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-une-classe-date">
+    Exercice 4 : Une classe date
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-cartes-a-jouer">
+    Exercice 5 : Cartes à jouer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-module-fraction">
+    Exercice 6 : Module fraction  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-7-cryptage-selon-le-code-de-cesar">
+    Exercice 7 : Cryptage selon le code de César  
   </a>
 </li>
 </ul>
@@ -252,52 +287,52 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../sl.md">
+<a class="md-nav__link" href="../sl/">
         C6-Structures de données linéaires
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../puces.md">
+<a class="md-nav__link" href="../puces/">
         C7-Système sur puce
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../arbres.md">
+<a class="md-nav__link" href="../arbres/">
         C8-Arbres
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../sgbd.md">
+<a class="md-nav__link" href="../sgbd/">
         C9-Schéma relationnel d'une base de données
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../algoarbre.md">
+<a class="md-nav__link" href="../algoarbre/">
         C10-Algorithmes sur les arbres
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../graphes.md">
+<a class="md-nav__link" href="../graphes/">
         C11-Graphes
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../routage.md">
+<a class="md-nav__link" href="../routage/">
         C12-Protocoles de routage
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../texte.md">
+<a class="md-nav__link" href="../texte/">
         C13-Recherche textuelle
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../calculabilite.md">
+<a class="md-nav__link" href="../calculabilite/">
         C14-Calculabilité, décidabilité
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cryptage.md">
+<a class="md-nav__link" href="../cryptographie/">
         C15-Sécurisation des communications
       </a>
 </li>
@@ -347,18 +382,38 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
 <img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 <img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../apropos.md">
-        None
+<a class="md-nav__link" href="../apropos/">
+        A Propos
       </a>
 </li>
 </ul>
@@ -395,8 +450,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#activite-3-calcul-fractionnaire">
-    Activité 3 : Calcul fractionnaire
+<a class="md-nav__link" href="#activite-3-getters-et-setters">
+    Activité 3 : Getters et setters
   </a>
 </li>
 </ul>
@@ -414,8 +469,38 @@
 <nav aria-label="Exercices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exercice-1-definir-et-instancier-une-classe">
-    Exercice 1 : Définir et instancier une classe
+<a class="md-nav__link" href="#exercice-1-personnage-dun-jeu-video">
+    Exercice 1 : Personnage d'un jeu vidéo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-modeliser-un-compte-en-banque">
+    Exercice 2 : Modéliser un compte en banque
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-un-peu-de-geometrie">
+    Exercice 3 : Un peu de géométrie  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-une-classe-date">
+    Exercice 4 : Une classe date
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-cartes-a-jouer">
+    Exercice 5 : Cartes à jouer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-module-fraction">
+    Exercice 6 : Module fraction  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-7-cryptage-selon-le-code-de-cesar">
+    Exercice 7 : Cryptage selon le code de César  
   </a>
 </li>
 </ul>
@@ -438,13 +523,13 @@
 <p>On donne le code python suivant :
 <div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Duree</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">heures</span><span class="p">,</span><span class="n">minutes</span><span class="p">,</span><span class="n">secondes</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">heures</span><span class="o">=</span><span class="n">heures</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">minutes</span><span class="o">=</span><span class="n">minutes</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">secondes</span><span class="o">=</span><span class="n">secondes</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">heures</span><span class="p">,</span><span class="n">minutes</span><span class="p">,</span><span class="n">secondes</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">heures</span><span class="o">=</span><span class="n">heures</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">minutes</span><span class="o">=</span><span class="n">minutes</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">secondes</span><span class="o">=</span><span class="n">secondes</span>
 
-    <span class="k">def</span> <span class="nf">__strt__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">heures</span><span class="si">}</span><span class="s2">h </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">minutes</span><span class="si">}</span><span class="s2">m </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">secondes</span><span class="si">}</span><span class="s2">s"</span>
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">heures</span><span class="si">}</span><span class="s2">h </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">minutes</span><span class="si">}</span><span class="s2">m </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">secondes</span><span class="si">}</span><span class="s2">s"</span>
 </code></pre></div></p>
 <ol>
 <li>Quelle classe est crée ? Quels sont les attributs des objets de cette classe ?</li>
@@ -454,9 +539,31 @@
 <li>
 <p>Le record du monde du marathon est actuellement de deux heures, une minute et trente neuf secondes, créer à l'aide de la classe ci-dessus un objet <code>record_marathon</code> représentant cette durée et l'afficher.</p>
 </li>
+<li>
+<p>Ecrire une méthode <code>nombre_secondes</code> qui renvoie le nombre de secondes d'un objet durée. L'utiliser pour afficher le record du monde du marathon en secondes.</p>
+</li>
+<li>
+<p>Ajouter une méthode <code>ajoute_secondes(nb_secondes)</code> à la classe  <code>Duree</code> qui permet d'ajouter <code>nb_secondes</code> à un objet de type durée.</p>
+</li>
 </ol>
-<h3 id="activite-3-calcul-fractionnaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 3 : <em>Calcul fractionnaire</em></img></h3>
-<p><span class="centre"><a class="md-button" href="../notebook/IntroPOO.ipynb">Fiche d'activité <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h3 id="activite-3-getters-et-setters"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 3 : <em>Getters et setters</em></img></h3>
+<ol>
+<li>Créer une classe <code>Eleve</code> possédant les attributs suivants : nom, prénom, et classe.</li>
+<li>Instancier cette classe pour créer l'élève <code>spiderman</code>, son nom est Parker, son prénom Peter et il est en première 5.</li>
+<li>
+<p>Quel est l'effet de l'instruction  <code>spiderman.classe = 'Terminale 2'</code> ?</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Bien que l'instruction précédente soit correcte, elle est contraire à l'esprit de la programmation objet dans lequel l'accès aux attributs d'un objet (ou la modification) devrait toujours se faire par des méthodes de l'objet. On respecte ainsi le principe d'<strong>encapsulation</strong> qui assure que l'utilisation des objets se fait indépendamment de leur structure interne (qui est susceptible d'être modifiée)
+Les méthodes permettant d'accéder à un attribut s'appellent des <em>getters</em> (accesseur) et celles permettant de modifier un attribut s'appellent des <em>setter</em> (mutateur)</p>
+</div>
+</li>
+<li>
+<p>Ecrire une méthode permettant d'accéder la classe d'un élève (le <em>getter</em>).</p>
+</li>
+<li>Ecrire une méthode permettant de modifier la classe d'un élève (le <em>setter</em>).</li>
+<li>Modifier de nouveau (mais cette fois "proprement") la classe de <code>spiderman</code>.</li>
+</ol>
 <h2 id="cours">Cours</h2>
 <p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
 <p><span class="centre"><a class="md-button" href="../pdf/C5/C5-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
@@ -465,14 +572,171 @@
 <p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
 </div>
 <h2 id="exercices">Exercices</h2>
-<h3 id="exercice-1-definir-et-instancier-une-classe"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Définir et instancier une classe</em></img></h3>
+<h3 id="exercice-1-personnage-dun-jeu-video"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Personnage d'un jeu vidéo</em></img></h3>
+<p>Dans un jeu vidéo, un personnage doit se déplacer dans un environnement à deux dimensions, sa position y est repéré par son abscisse et son ordonnée. D'autre part ce personnage dispose d'un certain nombre de points de vie qui peuvent évoluer durant le jeu. On considère la définition de la classe <code>Perso</code> suivante :</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Perso</span><span class="p">:</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nom</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pv</span> <span class="o">=</span> <span class="mi">100</span>    
+</code></pre></div>
+<ol>
+<li>Au départ combien de points de vie possède un personnage ? Et à quel coordonnées du repère est-il positionné ?</li>
+<li>Lorsqu'un personnage boit une potion de vie, il récupère 10 points de vie mais sans dépasser le maximum de vie qui est 100. Ecrire la méthode <code>boit_potion</code> qui implémente ce fonctionnement.</li>
+<li>Ecrire la méthode <code>avance(nbcases)</code> qui permet au personnage d'avancer de <code>nbcases</code> vers l'avant.</li>
+</ol>
+<h3 id="exercice-2-modeliser-un-compte-en-banque"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Modéliser un compte en banque</em></img></h3>
+<p>On modélise un compte bancaire par : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> un numéro de compte <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> un nom de titulaire <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> un solde (négatif si le compte est débiteur)</p>
+<ol>
+<li>Ecrire une classe <code>CompteBancaire</code> représentant cette modélisation</li>
+<li>Créer le compte n°421 de M. Tartampion ayant un solde de <span class="arithmatex">\(-125,10\)</span> € et le compte n° 705 de Mme Untel ayant un solde de <span class="arithmatex">\(3120,07\)</span> €.</li>
+<li>Ecrire et tester la méthode spéciale  <code>__str__</code> permettant d'afficher l'objet CompteBancaire. Par exemple l'affichage de l'objet représentant le compte bancaire de M. Tartampion donnera : <code>N°421 - M. Tartampion : -125,10 euros</code></li>
+<li>Ecrire les  méthodes <code>depot</code> et <code>retrait</code> permettant respectivement d'ajouter ou de retirer une somme d'argent d'un objet CompteBancaire.</li>
+<li>Ecrire la méthode <code>virement</code> permettant de transférer une somme d'argent entre deux comptes. Par exemple si <code>C1</code> et <code>C2</code> sont deux objets de type <code>CompteBancaire</code>, alors <code>C1.virement(C2,montant)</code> aura pour effet d'enlever <code>montant</code> euros du compte <code>C1</code> et de les transférer au compte <code>C2</code>.</li>
+</ol>
+<h3 id="exercice-3-un-peu-de-geometrie"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Un peu de géométrie</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice en lien avec les mathématiques"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.1 96C405 96 353.3 137.3 320 174.6 286.7 137.3 235 96 168.9 96 75.8 96 0 167.8 0 256s75.8 160 168.9 160c66.1 0 117.8-41.3 151.1-78.6 33.3 37.3 85 78.6 151.1 78.6 93.1 0 168.9-71.8 168.9-160S564.2 96 471.1 96zM168.9 320c-40.2 0-72.9-28.7-72.9-64s32.7-64 72.9-64c38.2 0 73.4 36.1 94 64-20.4 27.6-55.9 64-94 64zm302.2 0c-38.2 0-73.4-36.1-94-64 20.4-27.6 55.9-64 94-64 40.2 0 72.9 28.7 72.9 64s-32.7 64-72.9 64z"></path></svg></span></span></span></img></h3>
+<p>On donne la classe <code>Point</code> définie ci-dessous qui représente un point du plan par son nom et ses coordonnées dans un repère. Cette classe est déjà dotée d'une méthode d'affichage.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nom</span><span class="p">,</span><span class="n">abcisse</span><span class="p">,</span><span class="n">ordonnee</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">abcisse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">ordonnee</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)'</span>
+</code></pre></div>
+<ol>
+<li>En utilisant cette classe, créer et afficher les points <span class="arithmatex">\(A(3;-2)\)</span> et <span class="arithmatex">\(B(-1;6)\)</span>.</li>
+<li>
+<p>Ecrire une méthode <code>milieu(self,other,nom_milieu)</code> qui renvoie le point milieu du segment ayant pour extrémités les deux points passés en paramètres (<code>self</code> et <code>other</code>) en lui donnant le nom contenu dans <code>nom_milieu</code>. </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle (mais c'est au programme de classe de seconde) que pour deux points <span class="arithmatex">\(A(x_A,y_A)\)</span> et <span class="arithmatex">\(B(x_B,y_B)\)</span>  les coordonnes <span class="arithmatex">\(x_I\)</span> et <span class="arithmatex">\(y_I\)</span> du milieu <span class="arithmatex">\(I\)</span> du segment <span class="arithmatex">\([AB]\)</span> sont :<br>
+<span class="arithmatex">\(x_I = \dfrac{x_A+y_B}{2}\)</span> et <span class="arithmatex">\(y_I = \dfrac{y_A+y_B}{2}\)</span></br></p>
+</div>
+</li>
+<li>
+<p>Utiliser cette méthode pour calculer le milieu <span class="arithmatex">\(I\)</span> des points <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span> définis plus haut et l'afficher. </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Vous devrier obtenir <span class="arithmatex">\(I(1;2)\)</span></p>
+</div>
+</li>
+<li>
+<p>Ecrire et tester une méthode permettant de calculer la distance entre deux points.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle que pour deux points <span class="arithmatex">\(A(x_A,y_A)\)</span> et <span class="arithmatex">\(B(x_B,y_B)\)</span> on a <span class="arithmatex">\(AB = \sqrt{(x_B-x_A)^2+(y_B-y_A)^2}\)</span>.
+D'autre part la fonction racine carrée doit être importée depuis le module <code>math</code></p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-4-une-classe-date"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Une classe date</em></img></h3>
+<ol>
+<li>Définir et écrire le constructeur  d'une classe <code>date</code> possédant trois attributs : <code>jour</code>, <code>mois</code>, <code>année</code>. Ces trois attributs sont entiers, par exemple le 27 octobre 2020 a comme attribut <code>jour : 27</code>, <code>mois : 10</code> et <code>année : 2020</code>. </li>
+<li>
+<p>Affiner le constructeur défini plus haut pour n'accepter que des dates valides, c'est à dire avec un mois compris entre 1 et 12 et le jour ne dépassant pas le nombre de jours du mois.  </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Une idée consiste par exemple à utiliser un dictionnaire contenant les jours de chaque mois : 
+<code>nb_jours = { 1:31, 2:28, 3:31, 4:30, 5:31 ... }</code></p>
+</div>
+<p>Pour aller plus loin, on pourra tenir compte des années bissextiles de façon à accepter le 29/02/2004 mais pas le 29/02/2005 !</p>
+</li>
+<li>
+<p>Ecrire et tester une méthode spéciale permettant de renvoyer une chaîne de caractères de la forme JJ/MM/AAAA pour la date.</p>
+</li>
+<li>Proposer et implémenter un autre format d'affichage par exemple 5 Avril 2005 pour le 05/04/2005.</li>
+<li>Ecrire et tester une méthode <code>date.lendemain()</code> qui retourne le lendemain de l'objet <code>date</code>. Par exemple si l'objet <code>date</code> correspond au 27/10/2020 alors <code>date.lendemain()</code> doit retourner l'objet date correspondant au 28/10/2020.</li>
+<li>
+<p>Ecrire et tester la méthode spéciale permettant de tester si une date |<code>date1</code> est antérieure à une autre <code>date2</code> en écrivant simplement <code>d1&lt;d2</code>.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Cette méthode spéciale est <code>__lt__</code></p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-5-cartes-a-jouer"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Cartes à jouer</em></img></h3>
+<p>Un jeu de cartes traditionnel contient 32 cartes, chaque carte a une couleur (pique, coeur, carreau ou trèfle) et une valeur (de 7 à 10 puis valet, dame, roi et as).</p>
+<ol>
+<li>Créer une classe Carte ayant deux attributs : couleur et valeur. </li>
+<li>
+<p>Ecrire une méthode spéciale permettant d'afficher une carte en utilisant le caractère unicode qui la représente. Consulter  la page wikipedia de la  liste des <a href="https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode/U1F0A0" target="_blank">caractère unicode des cartes</a>.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>En python pour afficher le caractère unicode <code>U+1F0A7</code>, on peut par exemple écrire  <code>print(chr(0x1F0A7))</code></p>
+</div>
+<ol>
+<li>Ecrire une méthode pour comparer deux cartes</li>
+<li>Utiliser la programmation objet afin de simuler le jeu de la bataille entre deux joueurs.</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-6-module-fraction"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 6 : <em>Module fraction</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice en lien avec les mathématiques"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M471.1 96C405 96 353.3 137.3 320 174.6 286.7 137.3 235 96 168.9 96 75.8 96 0 167.8 0 256s75.8 160 168.9 160c66.1 0 117.8-41.3 151.1-78.6 33.3 37.3 85 78.6 151.1 78.6 93.1 0 168.9-71.8 168.9-160S564.2 96 471.1 96zM168.9 320c-40.2 0-72.9-28.7-72.9-64s32.7-64 72.9-64c38.2 0 73.4 36.1 94 64-20.4 27.6-55.9 64-94 64zm302.2 0c-38.2 0-73.4-36.1-94-64 20.4-27.6 55.9-64 94-64 40.2 0 72.9 28.7 72.9 64s-32.7 64-72.9 64z"></path></svg></span></span></span></img></h3>
+<p>L'énoncé est au format <code>pdf</code>, téléchargeable ci-dessous :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C5/C5-exofractions.pdf">Ecriture d'un module fraction <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h3 id="exercice-7-cryptage-selon-le-code-de-cesar"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 7 : <em>Cryptage selon le code de César</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></img></h3>
+<p>Dans cet exercice, on étudie une méthode de chiffrement de chaînes de caractères alphabétiques. Pour des raisons historiques, cette méthode de chiffrement est appelée "code de César". On considère que les messages ne contiennent que les lettres capitales de l’alphabet "ABCDEFGHIJKLMNOPQRSTUVWXYZ" et la méthode de chiffrement utilise un nombre entier fixé appelé la clé de chiffrement.</p>
+<ol>
+<li>Soit la classe <code>CodeCesar</code> définie ci-dessous :</li>
+</ol>
+<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">CodeCesar</span><span class="p">:</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cle</span> <span class="o">=</span> <span class="n">cle</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span> <span class="o">=</span> <span class="s2">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>
+
+        <span class="k">def</span> <span class="nf">decale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lettre</span><span class="p">):</span>
+            <span class="n">num1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">lettre</span><span class="p">)</span>
+            <span class="n">num2</span> <span class="o">=</span> <span class="n">num1</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">cle</span>
+            <span class="k">if</span> <span class="n">num2</span> <span class="o">&gt;=</span> <span class="mi">26</span><span class="p">:</span>
+                <span class="n">num2</span> <span class="o">=</span> <span class="n">num2</span><span class="o">-</span><span class="mi">26</span>
+            <span class="k">if</span> <span class="n">num2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">num2</span> <span class="o">=</span> <span class="n">num2</span><span class="o">+</span><span class="mi">26</span>
+            <span class="n">nouvelle_lettre</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span><span class="p">[</span><span class="n">num2</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">nouvelle_lettre</span>
+</code></pre></div>
+<p>On rappelle que la méthode <code>str.find(lettre)</code> renvoie l'indice (index) de la <code>lettre</code> dans la chaîne de caractères <code>str</code></p>
+<p><strong>Représenter</strong> le résultat d'exécution du code Python suivant :
+<div class="highlight"><pre><span></span><code><span class="n">code1</span> <span class="o">=</span> <span class="n">CodeCesar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">code1</span><span class="o">.</span><span class="n">decale</span><span class="p">(</span><span class="s1">'A'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">code1</span><span class="o">.</span><span class="n">decale</span><span class="p">(</span><span class="s1">'X'</span><span class="p">))</span>
+</code></pre></div>
+2. La méthode de chiffrement du « code César » consiste à décaler les lettres du message dans l’alphabet d'un nombre de rangs fixé par la clé. Par exemple, avec la clé 3, toutes les lettres sont décalées de 3 rangs vers la droite : le A devient le D, le B devient le E, etc.</p>
+<p><strong>Ajouter</strong> une méthode <code>cryptage(self,texte)</code> dans la classe <code>CodeCesar</code> définieà la question précédente, qui reçoit en paramètre une chaîne de caractères (le message à crypter) et qui retourne une chaîne de caractères (le message crypté). </p>
+<p>Cette méthode <code>cryptage(self, texte)</code> doit crypter la chaîne texte avec la clé de l'objet de la classe CodeCesar qui a été instancié.</p>
+<p>Exemple :</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">code1</span> <span class="o">=</span> <span class="n">CodeCesar</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">code1</span><span class="o">.</span><span class="n">cryptage</span><span class="p">(</span><span class="s2">"NSI"</span><span class="p">)</span>
+<span class="s1">'QVL'</span>
+</code></pre></div>
+3. <strong>Ecrire</strong> un programme qui : <br/></p>
+<p><span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill-rule="evenodd"></path></svg></span> demande de saisir la clé de chiffrement <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill-rule="evenodd"></path></svg></span> crée un objet de classe <code>CodeCesar</code><br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill-rule="evenodd"></path></svg></span> demande de saisir le texte à chiffrer<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill-rule="evenodd"></path></svg></span> affiche le texte chiffré en appelant la méthode <code>cryptage</code> <br/></p>
+<p>4- On ajoute la méthode <code>transforme(texte)</code> à la classe <code>CodeCesar</code> :</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">transforme</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">texte</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cle</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">cle</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cryptage</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cle</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">cle</span>
+    <span class="k">return</span> <span class="n">message</span>
+</code></pre></div>
+On exécute la ligne suivante : <code>print(CodeCesar(10).transforme("PSX"))</code></p>
+<p><strong>Que va-t-il s'afficher ? Expliquer</strong> votre réponse.</p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../diviser/" rel="prev">
+<a aria-label="Précédent: C4-Diviser pour régner" class="md-footer__link md-footer__link--prev" href="../diviser/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -485,13 +749,13 @@
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../docs/" rel="next">
+<a aria-label="Suivant: C6-Structures de données linéaires" class="md-footer__link md-footer__link--next" href="../sl/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Suivant
               </span>
-              Documents officiels
+              C6-Structures de données linéaires
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -515,8 +779,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
-<script src="../assets/javascripts/bundle.34eae1b6.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.76f349be.min.js"></script>
 <script src="../javascripts/config.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

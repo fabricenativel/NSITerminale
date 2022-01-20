@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.7" name="generator"/>
+<title>C6-Structures de données linéaires - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.ca7ac06f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.f1a3b89f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c6-structures-de-donnees-lineaires">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              C6-Structures de données linéaires
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../revisions/">
+        C0-Révisions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        C2-Bases de données et SQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diviser/">
+        C4-Diviser pour régner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          C6-Structures de données linéaires
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        C6-Structures de données linéaires
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-notebook-dintroduction">
+    Activité 1 : Notebook d'introduction
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-choix-dune-structure-de-donnees">
+    Exercice 1 : Choix d'une structure de données
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-le-module-deque-de-python">
+    Exercice 2 : Le module deque de Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-manipulation-dune-pile">
+    Exercice 3 : Manipulation d'une pile
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-retour-sur-limplementation-dune-pile">
+    Exercice 4 : Retour sur l'implémentation d'une pile
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-expression-bien-parenthesee">
+    Exercice 5 : Expression bien parenthésée
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-implementation-naive-dune-file">
+    Exercice 6 : Implémentation naïve d'une file
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-7-implementation-dune-file-avec-deux-piles">
+    Exercice 7 : Implémentation d'une file avec deux piles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-8-buffer">
+    Exercice 8 : Buffer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-9-comparaison-de-plusieurs-implementation-du-tad-liste">
+    Exercice 9 : Comparaison de plusieurs implémentation du TAD liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-10-exercices-extraits-de-sujet-de-bac">
+    Exercice 10 : Exercices extraits de sujet de bac  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arbres/">
+        C8-Arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../algoarbre/">
+        C10-Algorithmes sur les arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-notebook-dintroduction">
+    Activité 1 : Notebook d'introduction
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-choix-dune-structure-de-donnees">
+    Exercice 1 : Choix d'une structure de données
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-le-module-deque-de-python">
+    Exercice 2 : Le module deque de Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-manipulation-dune-pile">
+    Exercice 3 : Manipulation d'une pile
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-retour-sur-limplementation-dune-pile">
+    Exercice 4 : Retour sur l'implémentation d'une pile
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-expression-bien-parenthesee">
+    Exercice 5 : Expression bien parenthésée
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-implementation-naive-dune-file">
+    Exercice 6 : Implémentation naïve d'une file
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-7-implementation-dune-file-avec-deux-piles">
+    Exercice 7 : Implémentation d'une file avec deux piles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-8-buffer">
+    Exercice 8 : Buffer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-9-comparaison-de-plusieurs-implementation-du-tad-liste">
+    Exercice 9 : Comparaison de plusieurs implémentation du TAD liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-10-exercices-extraits-de-sujet-de-bac">
+    Exercice 10 : Exercices extraits de sujet de bac  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c6-structures-de-donnees-lineaires"><span class="numchapitre">C6</span> Structures de données linéaires <span style="float:right;"><span class="twemoji" title="Structures de données"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"></path></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-notebook-dintroduction"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 1 : <em>Notebook d'introduction</em></img></h3>
+<p><span class="centre"><a class="md-button" href="../notebook/StructuresLineaires.ipynb">Jupyter Notebook <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h2 id="cours">Cours</h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C6/C6-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-choix-dune-structure-de-donnees"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Choix d'une structure de données</em></img></h3>
+<p>Dans chacune des situations suivantes, indiquer en justifiant votre réponse, quelle structure de données pourrait être adoptée :</p>
+<ol>
+<li>La gestion du bouton "Revenir à l'étape précédente" d'un logiciel de retouche d'images.</li>
+<li>Une application permettant de gérer une liste de courses dans laquelle on peut ajouter/supprimer/modifier des éléments.</li>
+<li>L'envoi de travaux d'impression à une imprimante.</li>
+<li>La représentation dans un programme d'un plateau de jeu (comme un équiquier ou un damier) dont on connaît à l'avance les dimensions.</li>
+<li>La saisie d'une ligne de commande dans un terminal où on ne peut utiliser que la touche retour arrière pour éditer ses commandes</li>
+</ol>
+<h3 id="exercice-2-le-module-deque-de-python"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Le module <code>deque</code> de Python</em></img></h3>
+<p>Bien que Python ne propose pas de façon native le type abstrait de donnée file, le module <code>collections</code>  permet d'importer <code>deque</code> (<strong>d</strong>ouble <strong>e</strong>nded <strong>que</strong>ue). Cette structure de données permet l'insertion ou la suppression aux deux extrémités en temps constant (donc en <span class="arithmatex">\(O(1)\)</span>). Elle correspond à des listes chaînées disposant d'un accès direct au premier et au dernier élément (d'où le nom <em>double ended</em>). L'insertion d'un élément en début d'un objet de type <code>deque</code> s'effectue à l'aide de la méthode <code>appendleft</code> et la suppression d'un élément en fin s'effectue (comme pour les listes de Python) à l'aide de la méthode <code>pop</code>.</p>
+<ol>
+<li>
+<p>Importer <code>deque</code> depuis le module <code>collections</code>, et écrire puis tester une nouvelle implémentation de file utilisant un objet de type <code>deque</code> plutôt qu'une liste.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>La fonction <code>len</code> existe sur les objets de type <code>deque</code> et pourra être appelée pour tester si la file est vide.</p>
+</div>
+</li>
+<li>
+<p>Vérifier que cette nouvelle implémentation est plus efficace que l'implémentation sous forme de liste vue ci-dessus.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Comparer par exemple les temps d'exécution pour enfiler puis defiler les entiers de 1 à un cent mille.</p>
+</div>
+</li>
+<li>
+<p>Reprendre ce qui a été vu dans le notebook d'introduction à ce chapitre et tracer les graphiques de temps d'exécution en fonction de la taille de la file. </p>
+</li>
+<li>
+<p>Compléter cette nouvelle implémentation par les méthodes suivantes :</p>
+<ol>
+<li>Un attribut <code>taille</code> ainsi qu'une méthode <code>get_taille</code> permettant de lire le nombre d'éléments dans la file.</li>
+<li>
+<p>Une méthode d'affichage d'un objet file  (séparer les éléments  par des virgules et choisir les caractères de début et de fin). </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Les objets de type <code>deque</code> autorisent l'accès par indice avec la notation crochet (comme les listes de Python).</p>
+</div>
+</li>
+<li>
+<p>Un attribut <code>taille_max</code> fixant une taille maximale pour la file, si cette taille est dépassée, on ne peut plus enfiler.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Dans la documentation du module <code>deque</code> on peut lire : <em>"L'accès par indice est en O(1) aux extrémités mais en O(n) au milieu. Pour des accès aléatoires rapides, il est préférable d'utiliser des listes.</em>". Justifier rapidement, par exemple par un schéma, ces remarques sur la complexité des opérations et la comparaison avec les listes de Python.</p>
+</li>
+</ol>
+<h3 id="exercice-3-manipulation-dune-pile"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Manipulation d'une pile</em></img></h3>
+<p>On suppose qu'on dispose d'une pile notée <code>P</code> et de son interface usuelle, c'est à dire :</p>
+<ul>
+<li><code>est_vide</code>,</li>
+<li><code>empile</code> et</li>
+<li><code>depile</code>.</li>
+</ul>
+<p>Ecrire une fonction qui échange les deux éléments, situés au sommet de la pile. Si la pile contient moins de deux éléments, la fonction ne fait rien.
+Par exemple si la l'état de la pile est <code>|a,b,c,d&gt;</code>, elle devient <code>|a,b,d,c&gt;</code> comme illustré sur le schéma ci-dessous : 
+<img alt="Inversion des deux éléments situés au sommet d'une pile" class="imgcentre" src="../images/C6/pileinv.png"/></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>On ne doit utiliser <strong>que</strong> l'interface d'une pile par conséquent la notation usuelle de Python avec les crochets pour accéder aux éléments d'une liste n'est pas autorisée !</p>
+</div>
+<h3 id="exercice-4-retour-sur-limplementation-dune-pile"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Retour sur l'implémentation d'une pile</em></img></h3>
+<p>On revient sur l'implémentation d'une pile en Python à l'aide de la <span style="font-variant:small-caps;">poo</span> (déjà vu dans le notebook d'introduction à ce chapitre) : 
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Pile</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">empiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">element</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span><span class="o">==</span><span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">depiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">(),</span> <span class="s2">"Pile vide"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</code></pre></div></p>
+<ol>
+<li>Recopier et enregistrer cette implémentation de façon à disposer d'un module <code>Pile</code> que nous pourrons utiliser par la suite.</li>
+<li>Dans cette implémentation, la pile est représentée par une liste de Python, le sommet de la pile est-il le début ou la fin de cette liste ? Ce choix est-il judicieux ? Justifier votre réponse.</li>
+<li>
+<p>Compléter cette implémentation en ajoutant :</p>
+<ol>
+<li>
+<p>Une méthode d'affichage en séparant les éléments par des virgules et en adoptant les caractères de votre choix pour le début et la fin de la pile.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Pour le problème de la virgule après le dernier élément, on peut utiliser un <strong>slice</strong> pour l'enlever, ou alors faire un test permettant de ne pas mettre de virgule lors qu'on atteint le dernier élément.</p>
+</div>
+</li>
+<li>
+<p>Une méthode <code>sommet</code>, permettant de lire la valeur situé au sommet de la pile <em>sans l'enlever</em>.</p>
+</li>
+<li>Un attribut <code>taille</code> à la pile indiquant le nombre d'éléments contenus dans la pile.</li>
+<li>
+<p>Un attribut <code>taille_max</code> à la pile, lorsque cette taille est dépassée, on ne peut plus empiler. </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Le module <code>math</code> de Python propose la constante <code>inf</code> pour simuler l'infini, on pourra donner cette valeur par défaut à <code>taille_max</code> de façon à avoir une pile de taille "infinie" lorsque le paramètre <code>taille_max</code> n'est pas donné.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>En utilisant le module <code>Pile</code>, écrire une fonction Python qui prend en entrée une liste et renvoie cette liste retournée. Par exemple <code>retourne([1,2,3])</code> renvoie <code>[3,2,1]</code>.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle (voir activité) qu'il suffit d'empiler les éléments de la liste puis de les dépiler.</p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-5-expression-bien-parenthesee"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Expression bien parenthésée</em></img></h3>
+<p>On dit qu'une expression est bien parenthésée lorsque chaque parenthèse ouvrante est associée à une unique parenthèse fermante et inversement. Par exemple, on a souligné dans l'expression suivante le problème de parenthésages : 
+<span class="arithmatex">\((3+2)\textcolor{red}{\underline{)}}-(4+1)\)</span></p>
+<ol>
+<li>
+<p>Les expressions suivantes sont-elles bien parenthésées ? Sinon, indiquer l'emplacement dans la chaîne de caractères où l'erreur est détectée.</p>
+<ol>
+<li><span class="arithmatex">\(3+(5-4\div(3+2)))+10\)</span></li>
+<li><span class="arithmatex">\(((3+2)\times 5\)</span> </li>
+<li><span class="arithmatex">\(5)-4\times2(\)</span> </li>
+<li><span class="arithmatex">\(((3+2)\times(5-3))\)</span></li>
+</ol>
+</li>
+<li>
+<p>Ecrire une fonction <code>bien_parenthesee</code> qui prend en argument un expression (sous la forme d'une chaine de caractères) et qui renvoie <span class="arithmatex">\(-1\)</span> lorsque l'expression est bien parenthésée et sinon un entier indiquant l'emplacement dans l'expression où l'erreur de parenthésage est détectée.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra, parcourir l'expression et utiliser une pile qui stocke les indices de chaque parenthèses ouvrante. On dépile, lorsqu'on rencontre une parenthèse fermante.</p>
+</div>
+</li>
+<li>
+<p>Tester votre fonction sur les expressions de la question <strong>1.</strong></p>
+</li>
+<li>
+<p>Utiliser cette fonction afin de produire un affichage de l'erreur à la façon de Python c'est à dire avec un caractère <code>^</code> en dessous de l'erreur. Par exemple  : <span class="arithmatex">\((2+3)\underset{\textcolor{red}{\wedge}}{)}-5\)</span></p>
+</li>
+<li>
+<p>Poursuivre ce travail en travaillant sur des expressions pouvant contenir simultanément d'autres types de parenthèses, par exemple : <code>[]</code> ou encore <code>{}</code>.</p>
+</li>
+</ol>
+<h3 id="exercice-6-implementation-naive-dune-file"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 6 : <em>Implémentation naïve d'une file</em></img></h3>
+<p>On souhaite implémenter une file en Python à l'aide d'une liste de Python et de la <span style="font-variant:small-caps;">poo</span> à la façon de ce qui a été fait pour les piles dans l'exercice <strong>4</strong>.</p>
+<ol>
+<li>Recopier et compléter le code ci-dessous de façon à ce qu'on enfile un élément en l'ajoutant en début de liste. (et que donc on défile en enlevant en fin de liste.
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">enfiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">element</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span> <span class="o">=</span> <span class="o">.............</span>
+
+    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">contenu</span><span class="o">==</span><span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">defiler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">(),</span> <span class="s2">"File vide"</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.............</span>
+</code></pre></div></li>
+<li>Tester cette implémentation en créant une file dans laquelle on enfilera puis défilera les entiers de 1 à 100.</li>
+<li>
+<p>Reprendre le test précédent en mesurant les performances du programme pour les entiers jusqu'à cent mille.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Par souci de simplicité, on utilisera la fonction <code>time</code> du module <code>time</code> (même si le temps d'exécution mesuré dépend d'autres facteurs).</p>
+</div>
+</li>
+<li>
+<p>Cette implémentation est-elle satisfaisante en terme de complexité des opérations ? Justifier.</p>
+</li>
+<li>Même question si on décide, plutôt d'enfiler en fin de liste (et donc de défiler en début).</li>
+</ol>
+<h3 id="exercice-7-implementation-dune-file-avec-deux-piles"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 7 : <em>Implémentation d'une file avec deux piles</em></img></h3>
+<p>On considère la file suivante  :
+<img alt="file" class="imgcentre" src="../images/C6/file1.png">
+On peut aussi la schématiser  sous la forme de deux piles :
+<img alt="file" class="imgcentre" src="../images/C6/file2.png">
+Pour comprendre ce fonctionnement, on part d'une file vide et on montre par quelques exemples l'état de la file et des deux piles qui la représente : </img></img></p>
+<table>
+<thead>
+<tr>
+<th>Etape</th>
+<th>Opération</th>
+<th>Etat de la file</th>
+<th>Pile d'entrée</th>
+<th>Pile de sortie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="1⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/31-20e3.svg" title=":one:"/></td>
+<td>Enfiler <code>a</code></td>
+<td><code>&gt;a&gt;</code></td>
+<td><code>|a&gt;</code></td>
+<td><code>|&gt;</code></td>
+</tr>
+<tr>
+<td><img alt="2⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/32-20e3.svg" title=":two:"/></td>
+<td>Enfiler <code>b</code></td>
+<td><code>&gt;b,a&gt;</code></td>
+<td><code>|a,b&gt;</code></td>
+<td><code>|&gt;</code></td>
+</tr>
+<tr>
+<td><img alt="3⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/33-20e3.svg" title=":three:"/></td>
+<td>Enfiler <code>c</code></td>
+<td><code>&gt;c,b,a&gt;</code></td>
+<td><code>|a,b,c&gt;</code></td>
+<td><code>|&gt;</code></td>
+</tr>
+<tr>
+<td><img alt="4⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/34-20e3.svg" title=":four:"/></td>
+<td>Defiler</td>
+<td><code>&gt;c,b&gt;</code></td>
+<td><code>|&gt;</code></td>
+<td><code>|c,b&gt;</code></td>
+</tr>
+<tr>
+<td><img alt="5⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/35-20e3.svg" title=":five:"/></td>
+<td>Defiler</td>
+<td><code>&gt;c&gt;</code></td>
+<td><code>|&gt;</code></td>
+<td><code>|c&gt;</code></td>
+</tr>
+<tr>
+<td><img alt="6⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/36-20e3.svg" title=":six:"/></td>
+<td>Enfiler <code>d</code></td>
+<td><code>&gt;d,c&gt;</code></td>
+<td><code>|d&gt;</code></td>
+<td><code>|c&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Observer attentivement ce qui se passe à l'étape <img alt="4⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/34-20e3.svg" title=":four:"> : la pile de sortie étant vide, la <em>totalité</em> de la pile d'entrée est dépilé dans la pile de sortie.</img></p>
+</div>
+<ol>
+<li>
+<p>Compléter le tableau ci-dessous avec les étapes suivantes :</p>
+<ol>
+<li>Defiler </li>
+<li>Enfiler <code>e</code></li>
+<li>Defiler</li>
+</ol>
+</li>
+<li>
+<p>Recopier et compléter : <br/>
+Une file peut s'implémenter en gérant .... pile :</p>
+<ul>
+<li>enfiler un élément revient à .......... dans une pile d'entrée</li>
+<li>defiler un élément revient à ............. d'une pile de sortie  (cette pile est ........... au départ)</li>
+<li>Si la pile de sortie est  ............ on .......... la totalité de la pile ........... dans ...................</li>
+</ul>
+</li>
+<li>
+<p>Ecrire en Python une implémentation d'une file sous la forme de deux piles en utilisant la <span style="font-variant:small-caps;">poo</span>.</p>
+</li>
+<li>
+<p>Tester votre implémentation (reprendre éventuellement les opérations <img alt="1⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/31-20e3.svg" title=":one:"/> à <img alt="6⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/36-20e3.svg" title=":six:"/> en faisant afficher l'état de la file et des deux piles à chaque étape). </p>
+<div class="admonition lien">
+<p class="admonition-title">Pour aller plus loin</p>
+<p>Rechercher la complexité des opérations de cette implémentation (hors programme).</p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-8-buffer"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 8 : <em>Buffer</em></h3>
+<p>On considère le programme Python suivant :
+<div class="highlight"><pre><span></span><code><span class="n">fic1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sortie.txt"</span><span class="p">,</span><span class="s2">"w"</span><span class="p">)</span>
+<span class="n">fic1</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Python a écrit ici"</span><span class="p">)</span>
+<span class="n">fic2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sortie.txt"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">)</span>
+<span class="n">contenu</span> <span class="o">=</span> <span class="n">fic2</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">fic1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">fic2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
+</code></pre></div></p>
+<ol>
+<li>
+<p>La mémoire tampon</p>
+<ol>
+<li>Que fait ce programme et quel résultat devrait produire l'affichage de la variable {\tt contenu} ?</li>
+<li>Recopier et executer ce programme, le résultat est-il celui attendu ?</li>
+<li>L'écriture dans un fichier est géré par Python à l'aide d'une mémoire tampon (<em>buffer</em> en anglais), Python attend que ce buffer atteigne une certaine taille (ou que le fichier soit fermé) avant d'écrire de façon effective dans le fichier, ce qui explique le fonctionnement ci-dessous. Selon vous, pourquoi cette gestion du <code>write</code> via un <em>buffer</em> ?</li>
+<li>On peut forcer l'écriture sans attendre que le <em>buffer</em> soit plein grâce à la méthode <code>flush</code> des descripteurs de fichiers. Insérer <code>fic1.flush()</code> après l'instruction <code>write</code> du programme ci-dessous et l'exécuter de nouveau pour constater la différence.</li>
+</ol>
+</li>
+<li>
+<p>Simuler un <em>buffer</em> 
+On considère le programme suivant qui écrit des nombres tirés au hasard dans un fichier <em>sans utiliser de buffer</em>, c'est à dire qu'on force l'écriture de chaque nombre à l'aide de <code>flush</code>:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="c1"># Création liste de nombres à écrire</span>
+<span class="n">SIZE</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">SIZE</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE</span><span class="p">)]</span>
+
+<span class="n">debut</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">fic</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sortie.txt"</span><span class="p">,</span><span class="s2">"w"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">nb</span> <span class="ow">in</span> <span class="n">nombres</span><span class="p">:</span>
+    <span class="n">fic</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span><span class="o">+</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">fic</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="n">fic</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">fin</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">fin</span><span class="o">-</span><span class="n">debut</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Temps sans buffer "</span><span class="p">,</span><span class="n">temps</span><span class="p">)</span>
+</code></pre></div></p>
+<ol>
+<li>Recopier et exécuter ce programme et en noter le temps d'exécution</li>
+<li>A quel type de structure de données correspond un <em>buffer</em> ?</li>
+<li>Ecrire une seconde version de ce programme en simulant l'utilisation d'un buffer, c'est à dire qu'on enregistre dans une structure de données les nombres à écrire et qu'on attend que cette structure soit pleine pour écrire tous les éléments en une fois (on pourra créer une constante <code>BUFFER_SIZE</code>).</li>
+<li>Comparer le temps d'exécution de cette nouvelle version avec celui du programme précédent.</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-9-comparaison-de-plusieurs-implementation-du-tad-liste"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 9 : <em>Comparaison de plusieurs implémentation du TAD liste</em></h3>
+<p>On rappelle l'implémentation du TAD liste sous forme de liste chaînée vue dans le notebook d'introduction à ce chapitre :
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Maillon</span><span class="p">:</span>
+    <span class="sd">'''Le maillon d'une liste chainée représenté par sa valeur et un lien vers le maillon suivant'''</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">valeur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">valeur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">Liste</span><span class="p">:</span>
+    <span class="sd">'''Une liste est un lien vers son premier maillon'''</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">==</span><span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">ajoute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">valeur</span><span class="p">):</span>
+        <span class="n">nouveau_maillon</span> <span class="o">=</span> <span class="n">Maillon</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+        <span class="n">nouveau_maillon</span><span class="o">.</span><span class="n">suivant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">nouveau_maillon</span>
+
+    <span class="k">def</span> <span class="nf">supprime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">(),</span><span class="s2">"Liste vide, suppression impossible"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suivant</span>
+</code></pre></div></p>
+<ol>
+<li>Compléter cette implémentation en ajoutant une méthode d'affichage.</li>
+<li>Ajouter une méthode <code>tete</code> qui renvoie la valeur du maillon situé en tête de liste.</li>
+<li>Le type <em>list</em> de Python est aussi une implémentation de ce TAD. Quelles opérations sur le type <em>list</em> de Python correspondent à <code>ajoute</code> et <code>supprime</code> définis ci-dessus ?</li>
+<li>
+<p>Compléter le tableau suivant permettant de comparer en terme de complexité diverses implémentations du type abstrait de données liste: </p>
+<table>
+<thead>
+<tr>
+<th>Opération</th>
+<th><em>list</em> (type Python)</th>
+<th>class Liste</th>
+<th>Module deque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insertion en tête</td>
+<td>......</td>
+<td>......</td>
+<td>......</td>
+</tr>
+<tr>
+<td>Ajout en queue</td>
+<td>......</td>
+<td>......</td>
+<td>......</td>
+</tr>
+<tr>
+<td>Accès à un élément</td>
+<td>......</td>
+<td>......</td>
+<td>......</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h3 id="exercice-10-exercices-extraits-de-sujet-de-bac"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 10 : <em>Exercices extraits de sujet de bac</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></h3>
+<ol>
+<li>
+<p><span class="centre"><a class="md-button" href="../pdf/C6/AmeriqueNord2021-exo5.pdf">Amérique du nord 2021 - exercice 5 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+</li>
+<li>
+<p><span class="centre"><a class="md-button" href="../pdf/C6/MetropoleCL2021-exo2.pdf">Métropole CL 2021 - exercice 2 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+</li>
+<li>
+<p><span class="centre"><a class="md-button" href="../pdf/C6/Metropole2021-exo5.pdf">Métropole sujet 2 2021 - exercice 5 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+</li>
+</ol>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Précédent: C5-Notions de programmation orienté objet" class="md-footer__link md-footer__link--prev" href="../poo/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              C5-Notions de programmation orienté objet
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: C7-Système sur puce" class="md-footer__link md-footer__link--next" href="../puces/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C7-Système sur puce
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+</body>
+</html>

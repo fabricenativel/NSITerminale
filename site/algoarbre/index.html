@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.7" name="generator"/>
+<title>C10-Algorithmes sur les arbres - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.ca7ac06f.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.f1a3b89f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c10-algorithmes-sur-les-arbres">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              C10-Algorithmes sur les arbres
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M18.32 255.78 192 223.96l-91.28 68.69c-10.08 10.08-2.94 27.31 11.31 27.31h222.7c-9.44-26.4-14.73-54.47-14.73-83.38v-42.27l-119.73-87.6c-23.82-15.88-55.29-14.01-77.06 4.59L5.81 227.64c-12.38 10.33-3.45 30.42 12.51 28.14zm556.87 34.1-100.66-50.31A47.992 47.992 0 0 1 448 196.65v-36.69h64l28.09 22.63c6 6 14.14 9.37 22.63 9.37h30.97a32 32 0 0 0 28.62-17.69l14.31-28.62a32.005 32.005 0 0 0-3.02-33.51l-74.53-99.38C553.02 4.7 543.54 0 533.47 0H296.02c-7.13 0-10.7 8.57-5.66 13.61L352 63.96 292.42 88.8c-5.9 2.95-5.9 11.36 0 14.31L352 127.96v108.62c0 72.08 36.03 139.39 96 179.38-195.59 6.81-344.56 41.01-434.1 60.91C5.78 478.67 0 485.88 0 494.2 0 504 7.95 512 17.76 512h499.08c63.29.01 119.61-47.56 122.99-110.76 2.52-47.28-22.73-90.4-64.64-111.36zM489.18 66.25l45.65 11.41c-2.75 10.91-12.47 18.89-24.13 18.26-12.96-.71-25.85-12.53-21.52-29.67z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../revisions/">
+        C0-Révisions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        C2-Bases de données et SQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diviser/">
+        C4-Diviser pour régner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sl/">
+        C6-Structures de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arbres/">
+        C8-Arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          C10-Algorithmes sur les arbres
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        C10-Algorithmes sur les arbres
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-parcourir-un-arbre">
+    Activité 1 : Parcourir un arbre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-arbre-binaire-de-recherche">
+    Activité 2 : Arbre binaire de recherche
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-parcours-darbre">
+    Exercice 1 : Parcours d'arbre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-amerique-du-nord-2021-exercice-4">
+    Exercice 2 : Amérique du nord 2021- Exercice 4  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-metropole-2021-cl-sujet-2-exercice-3">
+    Exercice 3 : Métropole 2021 CL Sujet 2 - Exercice 3  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-metropole-2021-sujet-1-exercice-1">
+    Exercice 4 : Métropole 2021  Sujet 1 - Exercice 1  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-etranger-2021-sujet-1-exercice-3">
+    Exercice 5 : Etranger 2021  Sujet 1 - Exercice 3  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-parcourir-un-arbre">
+    Activité 1 : Parcourir un arbre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-arbre-binaire-de-recherche">
+    Activité 2 : Arbre binaire de recherche
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-parcours-darbre">
+    Exercice 1 : Parcours d'arbre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-amerique-du-nord-2021-exercice-4">
+    Exercice 2 : Amérique du nord 2021- Exercice 4  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-metropole-2021-cl-sujet-2-exercice-3">
+    Exercice 3 : Métropole 2021 CL Sujet 2 - Exercice 3  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-metropole-2021-sujet-1-exercice-1">
+    Exercice 4 : Métropole 2021  Sujet 1 - Exercice 1  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-etranger-2021-sujet-1-exercice-3">
+    Exercice 5 : Etranger 2021  Sujet 1 - Exercice 3  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c10-algorithmes-sur-les-arbres"><span class="numchapitre">C10</span> Algorithmes sur les arbres <span style="float:right;"><span class="twemoji" title="Structures de données"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"></path></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-parcourir-un-arbre"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 1 : <em>Parcourir un arbre</em></img></h3>
+<ol>
+<li>
+<p>Rappel sur l'implémentation utilisée: </p>
+<ol>
+<li>
+<p>Récupérer et enregistrer l'implémentation des arbres binaires vu au <a href="https://fabricenativel.github.io/NSITerminale/arbres/" target="_blank">chapitre 8</a> :
+<span class="centre"><a class="md-button" href="../files/C8/ab.py">Implémentation arbres binaires <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+</li>
+<li>
+<p>Utiliser cette implémentation pour définir et afficher l'arbre binaire ci-dessous :
+<div class="centre">
+<div class="mermaid">    graph TD
+    A["A"] --&gt; B["B"]
+    A --&gt; C["C"]
+    B --&gt; D["D"]
+    B --&gt; E["E"]
+    C --&gt; V1[" "]
+    C --&gt; F["F"]
+    D --&gt; V2[" "]
+    D --&gt; G["G"]
+    F --&gt; H["H"]
+    F --&gt; V3[" "]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 6 stroke:#FFFFFF,stroke-width:0px
+    style V3 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px
+</div>
+</div></p>
+</li>
+<li>Quelle est la taille de cet arbre ? Vérifier que la méthode <code>taille</code> de l'implémentation renvoie le résultat correct.</li>
+<li>Quelle est la hauteur de cet arbre ? Vérifier que la méthode <code>hauteur</code> de l'implémentation renvoie le résultat correct.</li>
+</ol>
+<p>Le but cette activité est de découvrir (et d'implémenter) quatre algorithmes  de parcours d'un arbre qui donneront les noeuds dans un ordre différent :</p>
+<ul>
+<li>Le parcours en largeur</li>
+<li>Le parcours en profondeur préfixé</li>
+<li>Le parcours en profondeur infixé</li>
+<li>Le parcours en profondeur suffixé</li>
+</ul>
+</li>
+<li>
+<p>Le parcours en largeur</p>
+<ol>
+<li>Selon vous, quel sera l'ordre des noeuds dans un parcours en <em>largeur</em> sur l'arbre ci-dessous ?</li>
+<li>D'un point de vue algorithmique quel est le procédé utilisé pour obtenir cet ordre ?</li>
+<li>
+<p>Pour implémenter ce parcours, on propose la méthode ci-dessous, la compléter et la recopier dans l'implémentation des arbres binaires :
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parcours_largeur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Ordre de traitement : noeud, fils gauche, le fils droit</span>
+        <span class="n">a_traiter</span> <span class="o">=</span> <span class="p">[</span><span class="o">.........</span><span class="p">]</span>
+        <span class="n">pl</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_traiter</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">noeud_courant</span><span class="o">=</span><span class="n">a_traiter</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">pl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">..............</span><span class="p">)</span>
+            <span class="c1"># Si le noeud a un fils gauche l'ajouter à ceux à traiter</span>
+            <span class="k">if</span> <span class="n">noeud_courant</span><span class="o">.</span><span class="n">gauche</span><span class="o">!=.....</span><span class="p">:</span>
+                <span class="n">a_traiter</span><span class="o">........</span><span class="p">(</span><span class="o">.................</span><span class="p">)</span>
+            <span class="c1"># De même s'il a un fils droit</span>
+            <span class="k">if</span> <span class="o">.............</span><span class="p">:</span>
+                <span class="n">a_traiter</span><span class="o">........</span><span class="p">(</span><span class="o">.................</span><span class="p">)</span>
+            <span class="n">a_traiter</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">.</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pl</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Tester cette méthode sur l'arbre définie dans la première partie.</p>
+</li>
+<li>Cette méthode fonctionne-t-elle pour l'arbre vide ? Sinon la corriger.</li>
+<li>Reconnaître la structure de donnée utilisée pour les noeuds à traiter (variable <code>a_traiter</code>). Est-il judicieux d'utiliser une liste pour cette structure de données ?</li>
+</ol>
+</li>
+<li>
+<p>Le parcours en profondeur<br/>
+Dans un parcours en profondeur on s'appuie sur la définition récursive des arbres. Pour parcourir un arbre <span class="arithmatex">\(T=(r,sag,sad)\)</span> on va donc parcourir <span class="arithmatex">\(sag\)</span> et <span class="arithmatex">\(sad\)</span>. On comprend alors qu'on a trois possibilité :</p>
+<ul>
+<li>Lister l'étiquette  <span class="arithmatex">\(r\)</span> avant de parcourir <span class="arithmatex">\(sag\)</span> et <span class="arithmatex">\(sad\)</span>, c'est le parcours prefixé.</li>
+<li>Lister l'étiquette <span class="arithmatex">\(r\)</span> après le parcours de  <span class="arithmatex">\(sag\)</span> mais avant celui de <span class="arithmatex">\(sad\)</span>, c'est le parcours infixé.</li>
+<li>
+<p>Lister l'étiquette <span class="arithmatex">\(r\)</span> après le parcours de <span class="arithmatex">\(sag\)</span> et de <span class="arithmatex">\(sad\)</span>, c'est le parcours suffixé.</p>
+<ol>
+<li>Quel sera l'ordre des noeuds pour chacun de ces trois parcours sur l'arbre de la première partie ?</li>
+<li>
+<p>Ecrire une implémentation du parcours préfixé.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Traduire en méthode récursive que le parcours de <span class="arithmatex">\(T=(r,sag,sad)\)</span> est <span class="arithmatex">\(r\)</span> + le parcours de <span class="arithmatex">\(sag\)</span> + le parcours de <span class="arithmatex">\(sad\)</span></p>
+</div>
+</li>
+<li>
+<p>Ecrire une implémentation du parcours infixé </p>
+</li>
+<li>Ecrire une implémentation du parcours suffixé.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="activite-2-arbre-binaire-de-recherche"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 2 : <em>Arbre binaire de recherche</em></img></h3>
+<p>On considère l'arbre binaire suivant noté <span class="arithmatex">\(T\)</span> et dont les étiquettes sont des nombres entiers. </p>
+<div class="centre">
+<div class="mermaid">    graph TD
+    N28["28"] --&gt; N25["25"]
+    N28 --&gt; N32["32"]
+    N25 --&gt; N6["6"]
+    N25 --&gt; N27["27"]
+    N32 --&gt; N31["31"]
+    N32 --&gt; N33["33"]
+    N6 --&gt; N3["3"]
+    N6 --&gt; N15["15"]
+    N27 --&gt; N26["26"]
+    N27 --&gt; V1[" "]
+    N33 --&gt; V2[" "]
+    N33 --&gt; N35["35"]
+    N15 --&gt; N12["12"]
+    N15 --&gt; N20["20"]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 10 stroke:#FFFFFF,stroke-width:0px
+</div>
+</div>
+<ol>
+<li>
+<p>Propriété des arbres binaires de recherche</p>
+<ol>
+<li>On considère la racine de cette arbre. Ecrire son étiquette puis lister toutes les étiquettes de son sous arbre gauche et toutes les étiquettes de son sous arbre droit. Que remarquez-vous ?</li>
+<li>Pour un autre noeud quelconque de cet arbre, donner son étiquette puis toutes les étiquettes de son sous arbre gauche et toutes les étiquettes de son sous arbre droit. Que remarquez-vous ?</li>
+<li>
+<p>L'arbre binaire précédent est un arbre binaire de <em>recherche</em>. Proposer une définition des arbres binaire de recherche en vous basant sur la propriété observée ci-dessus.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Par souci de simplicité on considère par la suite que toutes les étiquettes d'un arbre binaire de recherche (noté <span style="font-variant:small-caps;">abr</span>) sont <em>uniques</em>. Ainsi dans l'arbre précédent un entier donné ne peut pas apparaître deux fois.</p>
+</div>
+</li>
+<li>
+<p>Dessiner tous les <span style="font-variant:small-caps;">abr</span> ayant 3 noeuds et contenant les nombres 1, 2 et 3.</p>
+</li>
+<li>Dessiner un <span style="font-variant:small-caps;">abr</span> dégénéré de hauteur 5 et contenant les nombres 1,2,3,4 et 5.</li>
+<li>Dessiner un <span style="font-variant:small-caps;">abr</span> complet de taille 7 et contenant les nombres 1,2,3,4,5,6 et 7.</li>
+</ol>
+</li>
+<li>
+<p>Recherche d'un élément dans un arbre binaire de recherche</p>
+<ol>
+<li>On cherche à savoir si la valeur 18 est présente dans l'arbre <span class="arithmatex">\(T\)</span>. L'arbre entier doit-il être exploré ? Justifier.</li>
+<li>Quel chemin faut-il explorer dans <span class="arithmatex">\(T\)</span> pour rechercher la valeur 15 (surligner en rouge).</li>
+<li>Même question pour 37 (surligner en bleu).</li>
+<li>
+<p>Proposer un algorithme permettant de rechercher une valeur dans un arbre binaire de recherche.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Penser récursif !</p>
+</div>
+</li>
+<li>
+<p>Que peut-on dire de la complexité de cet algorithme ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra s'appuyer sur les cas extrêmes (arbre complet ou arbre dégénéré) et faire le lien avec la recherche dans une liste ou la recherche dichotomique dans une liste triée. D'autre part on pourra remarquer qu'à chaque étape de la recherche on descend d'un niveau dans l'arbre.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>Insertion d'un élément dans un arbre binaire de recherche</p>
+<ol>
+<li>A quelle position faut-il insérer le noeud d'étiquette 4 dans <span class="arithmatex">\(T\)</span> pour qu'il conserve sa propriété ?</li>
+<li>Même question pour le noeud d'étiquette 30.</li>
+<li>
+<p>Proposer un algorithme permettant d'insérer une valeur dans un arbre binaire de recherche.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Comme ci-dessus, penser à utiliser la récursivité. D'autre part on rappelle qu'on a supposé que les étiquettes sont uniques, par conséquent, on renverra une erreur dans le cas où la valeur à insérer existe déjà dans l'arbre.</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="cours">Cours</h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C10/C10-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M369.9 97.9 286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-parcours-darbre"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Parcours d'arbre</em></img></h3>
+<div class="centre">
+<div class="mermaid">    graph TD
+    P["P"] --&gt; Y["Y"]
+    P --&gt; T["T"]
+    T --&gt; H["H"]
+    T --&gt; O["O"]
+    O --&gt; E[" "]
+    style E fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px;
+    O --&gt; N["N"]
+</div>
+</div>
+<ol>
+<li>
+<p>Quel sera l'ordre des noeuds lors du parcours de l'arbre ci-dessus :</p>
+<ol>
+<li>lors d'un parcours en largeur,</li>
+<li>lors d'un parcours en profondeur prefixe,</li>
+<li>lors d'un parcours en profondeur infixe,</li>
+<li>lors d'un parcours en profondeur suffixe.</li>
+</ol>
+</li>
+<li>
+<p>Vérifier vos réponses à la question précédente en utilisant les fonctions de parcours définies sur l'implémentation des arbres binaires vue en cours.</p>
+</li>
+<li>
+<p>Mêmes questions avec l'arbre binaire suivant :</p>
+</li>
+</ol>
+<div class="centre">
+<div class="mermaid">    graph TD
+    Y["Y"] --&gt; C["C"]
+    Y --&gt; A["A"]
+    C --&gt; V1[" "]
+    C --&gt; R["R"]
+    A --&gt; B["B"]
+    A --&gt; L["L"]
+    R --&gt; I["I"]
+    R --&gt; O["O"]
+    B --&gt; N["N"]
+    B --&gt; V2[" "]
+    L --&gt; V3[" "]
+    L --&gt; E["E"]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 2 stroke:#FFFFFF,stroke-width:0px;
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px;
+    style V3 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 10 stroke:#FFFFFF,stroke-width:0px;
+</div>
+</div>
+<h3 id="exercice-2-amerique-du-nord-2021-exercice-4"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Amérique du nord 2021- Exercice 4</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></img></h3>
+<p><span class="centre"><a class="md-button" href="../pdf/C10/AmeriqueNord2021ex4.pdf">Enoncé <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h3 id="exercice-3-metropole-2021-cl-sujet-2-exercice-3"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Métropole 2021 CL Sujet 2 - Exercice 3</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></img></h3>
+<p><span class="centre"><a class="md-button" href="../pdf/C10/Metropole2021CL-Sujet2-ex3.pdf">Enoncé <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h3 id="exercice-4-metropole-2021-sujet-1-exercice-1"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Métropole 2021  Sujet 1 - Exercice 1</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></img></h3>
+<p><span class="centre"><a class="md-button" href="../pdf/C10/Metropole2021-Sujet2-ex1.pdf">Enoncé <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+<h3 id="exercice-5-etranger-2021-sujet-1-exercice-3"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Etranger 2021  Sujet 1 - Exercice 3</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2 343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span></span></span></img></h3>
+<p><span class="centre"><a class="md-button" href="../pdf/C10/Etranger2021-Sujet1-ex3.pdf">Enoncé <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"></path></svg></span></a></span></p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Précédent: C9-Schéma relationnel d'une base de données" class="md-footer__link md-footer__link--prev" href="../sgbd/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              C9-Schéma relationnel d'une base de données
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: C11-Graphes" class="md-footer__link md-footer__link--next" href="../graphes/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C11-Graphes
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({});</script></body>
+</html>

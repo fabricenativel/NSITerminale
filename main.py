@@ -61,7 +61,7 @@ def define_env(env):
         12: ["os","Protocoles de routage",2,"routage.md"],
         13: ["algorithmique","Recherche textuelle",2,"texte.md"],
         14: ["python","Calculabilité, décidabilité",2,"calculabilite.md"],
-        15: ["os","Sécurisation des communications",2,"cryptage.md"]
+        15: ["os","Sécurisation des communications",2,"cryptographie.md"]
     }
     
     env.variables['nchap']=0
