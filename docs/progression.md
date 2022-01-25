@@ -9,7 +9,3 @@
 {{ sec_titre("histoire","Histoire de l'informatique")}}
 
 {{ sec_titre("projet","Projet")}}
-
-
-
---8<-- "includes/glossaire.md"

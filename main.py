@@ -86,6 +86,27 @@ def define_env(env):
         return ligne
     
     @env.macro
+    def titre_correction(annee,numero):
+        ligne=f"# Corrigé sujet <span class='numchapitre'>{numero}</span> - Année : {annee} "
+        return ligne
+    
+    @env.macro
+    def correction_ex1(annee,numero):
+        modele = f'''
+```python3 linenums="1" \n
+--8<-- "python/{annee}-S{numero}-ex1.py"\n
+```\n'''
+        return modele
+    
+    @env.macro
+    def correction_ex2(annee,numero,hl):
+        modele = f'''
+```python3 linenums="1" hl_lines="{hl}"\n
+--8<-- "python/{annee}-S{numero}-ex2.py"\n\n
+```'''
+        return modele
+    
+    @env.macro
     def titre_activite(titre,licones,numero=1):
         if numero==0:
             env.variables['num_act']=1
@@ -180,17 +201,25 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
     @env.macro
     def ep(annee):
         aff="\n"
-        aff+= "|Numéro | Lien de téléchargement| Thème exercice 1 | Thème exercice 2  | Code fourni |\n"
-        aff+= "|-------|-----------------------|------------------|-------------------|-------------|\n"
+        aff+= "|Numéro | Lien de téléchargement| Thème exercice 1 | Thème exercice 2  | Code fourni |Correction|\n"
+        aff+= "|-------|-----------------------|------------------|-------------------|-------------|----------|\n"
         FNAME = f"./docs/officiels/Annales/EP/{annee}/l{annee}.txt"
         with open(FNAME,"r",encoding="utf-8") as f:
             nums=1
             for s in f:
-                lf=s.split(",",2)
-                aff+=f"|{nums}|[Sujet N°{nums}](./officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.pdf) | {lf[1]} | {lf[2][:-1]} | [:material-download: Code](./officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.py) \n"
+                lf=s.split(",")
+                if lf[-1][0]=='0':
+                    correction = f"[Sur Pixees](https://pixees.fr/informatiquelycee/term/ep/s{nums}.html)"+"{target=_blank}"
+                else:
+                    correction = f"[{annee}-S{str(nums).zfill(2)}](/Annales/Corriges/{annee}-S{str(nums).zfill(2)}/)"
+                aff+=f"|{nums}|[Sujet N°{nums}](/officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.pdf) | {lf[1]} | {lf[2][:-1]} | [:material-download: Code](/officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.py) | {correction} |\n"
                 nums+=1
         return aff
     
+    @env.macro
+    def enonce_ep(annee,numero):
+        code = f'{str(annee)[-2:]}-NSI-{numero}'
+        return f"<span class='centre'>[Sujet {numero} - 20222 :material-download:](/officiels/Annales/EP/{annee}/{code}/{code}.pdf)"+"{.md-button}</span>"
 
     
 

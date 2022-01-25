@@ -27,6 +27,55 @@ nav:
       - "C15-Sécurisation des communications" : cryptographie.md
 - "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels" :
     - docs.md
+- "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px>&thinsp; Annales du Bac" :
+    - index_annales.md
+    - '2021': 
+      - "Epreuves écrites" : Annales/2021/EE.md
+      - "Epreuves pratiques" : Annales/2021/EP.md
+    - '2022': 
+      - "Epreuves écrites" : Annales/2022/EE.md
+      - "Epreuves pratiques" : Annales/2022/EP.md
+      - "Corrigés épreuves pratiques":
+        - "Sujet 1" : Annales/Corriges/2022-S01.md
+        - "Sujet 2" : Annales/Corriges/2022-S02.md
+        - "Sujet 3" : Annales/Corriges/2022-S03.md
+        - "Sujet 4" : Annales/Corriges/2022-S04.md
+        - "Sujet 5" : Annales/Corriges/2022-S05.md
+        - "Sujet 6" : Annales/Corriges/2022-S06.md
+        - "Sujet 7" : Annales/Corriges/2022-S07.md
+        - "Sujet 8" : Annales/Corriges/2022-S08.md
+        - "Sujet 9" : Annales/Corriges/2022-S09.md
+        - "Sujet 10" : Annales/Corriges/2022-S10.md
+        - "Sujet 11" : Annales/Corriges/2022-S11.md
+        - "Sujet 12" : Annales/Corriges/2022-S12.md
+        - "Sujet 13" : Annales/Corriges/2022-S13.md
+        - "Sujet 14" : Annales/Corriges/2022-S14.md
+        - "Sujet 15" : Annales/Corriges/2022-S15.md
+        - "Sujet 16" : Annales/Corriges/2022-S16.md
+        - "Sujet 17" : Annales/Corriges/2022-S17.md
+        - "Sujet 18" : Annales/Corriges/2022-S18.md
+        - "Sujet 19" : Annales/Corriges/2022-S19.md
+        - "Sujet 20" : Annales/Corriges/2022-S20.md
+        - "Sujet 21" : Annales/Corriges/2022-S21.md
+        - "Sujet 22" : Annales/Corriges/2022-S22.md
+        - "Sujet 23" : Annales/Corriges/2022-S23.md
+        - "Sujet 24" : Annales/Corriges/2022-S24.md
+        - "Sujet 25" : Annales/Corriges/2022-S25.md
+        - "Sujet 26" : Annales/Corriges/2022-S26.md
+        - "Sujet 27" : Annales/Corriges/2022-S27.md
+        - "Sujet 28" : Annales/Corriges/2022-S28.md
+        - "Sujet 29" : Annales/Corriges/2022-S29.md
+        - "Sujet 30" : Annales/Corriges/2022-S30.md
+        - "Sujet 31" : Annales/Corriges/2022-S31.md
+        - "Sujet 32" : Annales/Corriges/2022-S32.md
+        - "Sujet 33" : Annales/Corriges/2022-S33.md
+        - "Sujet 34" : Annales/Corriges/2022-S34.md
+        - "Sujet 35" : Annales/Corriges/2022-S35.md
+        - "Sujet 36" : Annales/Corriges/2022-S36.md
+        - "Sujet 37" : Annales/Corriges/2022-S37.md
+        - "Sujet 38" : Annales/Corriges/2022-S38.md
+        - "Sujet 39" : Annales/Corriges/2022-S39.md
+        - "Sujet 40" : Annales/Corriges/2022-S40.md
 - "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets" :
     - projets.md
 - "<img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px>&thinsp; Liens" :
@@ -51,7 +100,8 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-  
+    - content.code.annotate 
+    - navigation.expand
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -70,7 +120,8 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
 
-  - pymdownx.tabbed               # Volets glissants.  === "Mon volet"
+  - pymdownx.tabbed:
+      alternate_style: true          # Volets glissants.  === "Mon volet"
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
@@ -91,9 +142,11 @@ markdown_extensions:
 
 
 plugins:
-  - macros
   - search
   - mermaid2
+  - git-revision-date
+  - macros
+
 
 extra_css:
   - stylesheets/fenarius.css
