@@ -6,12 +6,12 @@ dico = {"A":1, "B":2, "C":3, "D":4, "E":5, "F":6, "G":7, \
 def est_parfait(mot) :
     #mot est une chaîne de caractères (en lettres majuscules)
     code_c = ""
-    code_a = ???
+    code_a = 0 #(1)
     for c in mot :
-        code_c = code_c + ???
-        code_a = ???
+        code_c = code_c + str(dico[c]) #(2)
+        code_a = code_a + dico[c] #(3)
     code_c = int(code_c)
-    if ??? :
+    if code_c%code_a==0 : #(4)
         mot_est_parfait = True
     else :
         mot_est_parfait = False
