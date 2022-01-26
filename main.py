@@ -211,15 +211,15 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
                 if lf[-1][0]=='0':
                     correction = f"[Sur Pixees](https://pixees.fr/informatiquelycee/term/ep/s{nums}.html)"+"{target=_blank}"
                 else:
-                    correction = f"[{annee}-S{str(nums).zfill(2)}](/NSITerminale/Annales/Corriges/{annee}-S{str(nums).zfill(2)}/)"
-                aff+=f"|{nums}|[Sujet N°{nums}](/NSITerminale/officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.pdf) | {lf[1]} | {lf[2][:-1]} | [:material-download: Code](/NSITerminale/officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.py) | {correction} |\n"
+                    correction = f"[{annee}-S{str(nums).zfill(2)}](../../Corriges/{annee}-S{str(nums).zfill(2)}/)"
+                aff+=f"|{nums}|[Sujet N°{nums}](../../officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.pdf) | {lf[1]} | {lf[2][:-1]} | [:material-download: Code](../../officiels/Annales/EP/{annee}/{lf[0]}/{lf[0]}.py) | {correction} |\n"
                 nums+=1
         return aff
     
     @env.macro
     def enonce_ep(annee,numero):
         code = f'{str(annee)[-2:]}-NSI-{numero}'
-        return f"<span class='centre'>[Sujet {numero} - 20222 :material-download:](/NSITerminale/officiels/Annales/EP/{annee}/{code}/{code}.pdf)"+"{.md-button}</span>"
+        return f"<span class='centre'>[Sujet {numero} - 20222 :material-download:](/officiels/Annales/EP/{annee}/{code}/{code}.pdf)"+"{.md-button}</span>"
 
     
 
