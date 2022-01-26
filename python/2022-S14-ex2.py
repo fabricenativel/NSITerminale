@@ -7,10 +7,10 @@ def est_cyclique(plan):
     et False sinon. 
     '''
     personne = 'A'
-    N = len(...)                          
-    for i in range(...):
-        if plan[...] == ...:
-            return ...
+    N = len(plan)                          
+    for i in range(N-1): #(1)
+        if plan[personne] == 'A': #(2)
+            return False
         else:
-            personne = ...
-    return ...
+            personne = plan[personne] #(3)
+    return True
