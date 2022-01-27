@@ -21,15 +21,11 @@ def parenthesage (ch):
     """Renvoie True si la chaîne ch est bien parenthésée et False sinon"""
     p = Pile()
     for c in ch:
-        if c == ...:
+        if c == "(": #(1)
             p.empiler(c)
-        elif c == ...:
+        elif c == ")": #(2)
             if p.est_vide():
-                return ...
+                return False
             else:
-                ...
-    return p.est_vide()
-
-assert parenthesage("((()())(()))") == True
-assert parenthesage("())(()") == False
-assert parenthesage("(())(()") == False
+                p.depiler()
+    return p.est_vide() #(3)
