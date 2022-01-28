@@ -26,10 +26,10 @@ def affiche(dessin):
 def zoomListe(liste_depart,k):
     '''renvoie une liste contenant k fois chaque 
        element de liste_depart'''
-    liste_zoom = ...
-    for elt in ... :
+    liste_zoom = [] #(1)
+    for elt in liste_depart :
         for i in range(k):
-            ...
+            liste_zoom.append(elt)
     return liste_zoom
 
 def zoomDessin(grille,k):
@@ -37,7 +37,7 @@ def zoomDessin(grille,k):
        ET repetees k fois'''
     grille_zoom=[]
     for elt in grille:
-        liste_zoom = ...
+        liste_zoom = zoomListe(elt,k) #(2)
         for i in range(k):
-            ... .append(...)
+            grille_zoom.append(liste_zoom)
     return grille_zoom
