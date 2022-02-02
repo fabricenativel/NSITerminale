@@ -1,6 +1,15 @@
 hide: - navigation  in apropos.md
 # Liens
 
+
+## Autres sites proposant des cours de NSI
+
+* [Pixees informatique lycée](https://pixees.fr/informatiquelycee/){target=_blank}
+* [Github de Gilles Lassus](https://glassus.github.io/terminale_nsi/){target=_blank}
+* [Cours de Franck Chambon](https://ens-fr.gitlab.io/nsi2/){target=_blank}
+* [Cours de Vincent-Xavier Jumel](https://lamadone.frama.io/informatique/terminale-nsi/index.html){target=_blank}
+* [Les cours en Vidéo Lumni](https://www.lumni.fr/lycee/premiere/specialites/numerique-et-sciences-informatiques){target=_blank}
+
 ## Site officiel  Python
 
 * [Documentation officielle de Python3](https://docs.python.org/fr/3/index.html){target=_blank}
@@ -19,11 +28,6 @@ hide: - navigation  in apropos.md
 * [Python Challenge](http://www.pythonchallenge.com/){target=_blank} : un site d'énigmes à résoudre en utilisant Python (en anglais).
 * [Codingame](https://www.codingame.com/){target=_blank} : site de défi de programmation, attention le niveau est élevé.
 
-## Autres sites proposant des cours de NSI
-
-* [Pixees informatique lycée](https://pixees.fr/informatiquelycee/){target=_blank}
-* [Github de Gilles Lassus](https://glassus.github.io/terminale_nsi/){target=_blank}
-* [Les cours en Vidéo Lumni](https://www.lumni.fr/lycee/premiere/specialites/numerique-et-sciences-informatiques){target=_blank}
 
 
 
