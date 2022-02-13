@@ -8,6 +8,9 @@ hide: - navigation  in apropos.md
 * [Github de Gilles Lassus](https://glassus.github.io/terminale_nsi/){target=_blank}
 * [Cours de Franck Chambon](https://ens-fr.gitlab.io/nsi2/){target=_blank}
 * [Cours de Vincent-Xavier Jumel](https://lamadone.frama.io/informatique/terminale-nsi/index.html){target=_blank}
+* [Cours du lycée Angellier](https://angellier.gitlab.io/nsi/terminale/){target=_blank}
+* [Site d'Oliver Lecluse](https://www.lecluse.fr/nsi/NSI_T/){target=_blank}
+* [Qkzk](https://qkzk.xyz/docs/nsi/){ttarget=_blank}
 * [Les cours en Vidéo Lumni](https://www.lumni.fr/lycee/premiere/specialites/numerique-et-sciences-informatiques){target=_blank}
 
 ## Site officiel  Python
