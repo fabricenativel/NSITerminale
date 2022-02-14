@@ -13,17 +13,17 @@ def define_env(env):
         "python":"Langages et programmation"
     }
     env.variables['icones'] = {
-        "histoire":':fontawesome-solid-university:{title="'+env.variables['themes']['histoire']+'"}',
+        "histoire":':fontawesome-solid-building-columns:{title="'+env.variables['themes']['histoire']+'"}',
         "projet":':fontawesome-solid-lightbulb:{title="'+env.variables['themes']['projet']+'"}',
-        "sd":':fontawesome-solid-project-diagram:{title="'+env.variables['themes']['sd']+'"}',
+        "sd":':fontawesome-solid-diagram-project:{title="'+env.variables['themes']['sd']+'"}',
         "db":':fontawesome-solid-database:{title="'+env.variables['themes']['db']+'"}',
         "os":':fontawesome-solid-microchip:{title="'+env.variables['themes']['os']+'"}',
-        "algorithmique":':fontawesome-solid-cogs:{title="'+env.variables['themes']['algorithmique']+'"}',
+        "algorithmique":':fontawesome-solid-gears:{title="'+env.variables['themes']['algorithmique']+'"}',
         "python":':fontawesome-brands-python:{title="'+env.variables['themes']['python']+'"}'
     }
     env.variables['icones_exo']={
         "dur": ":fontawesome-solid-bomb:{title='Exercice difficile'}",
-        "rappel": ":fontawesome-solid-history:{title='Retour sur des notions antérieures'}",
+        "rappel": ":fontawesome-solid-clock-rotate-left:{title='Retour sur des notions antérieures'}",
         "recherche": ":fontawesome-solid-search:{title='Exercice de recherche'}",
         "capacite": ":fontawesome-solid-puzzle-piece:{title='Exercice testant une capacité du chapitre'}",
         "python": ":fontawesome-brands-python:{title='Exercice en lien avec la programmation en Python'}",
