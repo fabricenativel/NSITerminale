@@ -21,5 +21,4 @@ def expression_infixe(e):
         s = s + expression_infixe(e.droit)
     if e.est_une_feuille(): #(4)
         return s
-    
     return '('+ s +')'

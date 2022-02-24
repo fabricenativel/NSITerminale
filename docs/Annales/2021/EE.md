@@ -91,3 +91,5 @@
 * **Exercice 3**  : conversion décimal/binaire, table de vérité, codage des caractères.
 * **Exercice 4**  : Base de données.
 * **Exercice 5**  : Programmation Python (commande d'un bandeau de diodes à l'aide d'un raspberry).
+
+[Proposition de correction](../Corriges/21-EtrangerJ2.md)
