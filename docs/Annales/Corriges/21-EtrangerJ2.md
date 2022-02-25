@@ -204,7 +204,9 @@ WHERE matchs.adversaire = 'LSC' and matchs.date = '2021-06-19'
 ### Exercice 5
 
 1.  a. L'instruction `Obj_bandeau.get_pixel_rgb(1)`renvoie un tuple de trois entiers correspondant à la couleur {{sc("rgb")}} de la {{sc("led")}} n°1, c'est à dire (0,0,255) car la couleur actuelle de la {{sc("led")}} 1 est le bleu.
+
     b. Cette instruction renvoie un entier correspondant à la couleur {{sc("rgb")}} `(0,0,255)`, d'après le tableau donné en annexe cet entier est `16711680`.
+    
     c. La première instruction récupère la couleur de la {{sc("led")}} 0, donc `(255,0,0)` car cette {{sc("led")}} est rouge. La seconde instruction affiche le numéro de couleur correspond qui (tableau de l'annexe) est `255`
 
 2.  a. On obtient un bandeau avec les 5 premières {{sc("led")}} bleues (`num_color=16711680`), les 5 suivantes blanches (`num_color=1677215`) et les 5 suivantes rouges (`num_color=255`)
