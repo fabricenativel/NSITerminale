@@ -37,12 +37,22 @@ def liste_vers_pile(L):
     !!! Bug
         L'énoncé précise que la méthode est `empiler`, la fonction `partage` donnée utilise `empile`.
 
-4. On peut par exemple faire la liste de schémas ci-dessous, en précisant que la fusion se termine lorsque les piles sont vides (l'énoncé garantit que les deux piles ont le même nombre d'éléments)
+4.  a. On peut par exemple faire la liste de schémas ci-dessous, en précisant que la fusion se termine lorsque les piles sont vides (l'énoncé garantit que les deux piles ont le même nombre d'éléments)
 
     ![schema1](../../images/Corriges/21-EtrangerJ2-1.png){: .imgcentre width=400px}
     ![schema2](../../images/Corriges/21-EtrangerJ2-2.png){: .imgcentre width=400px}
     ![schema3](../../images/Corriges/21-EtrangerJ2-3.png){: .imgcentre width=400px}
     ![schema4](../../images/Corriges/21-EtrangerJ2-4.png){: .imgcentre width=400px}
+
+    b. 
+    ```python
+        def fusion(p1,p2):
+            liste = []
+            while note p1.est_vide():
+                liste.append(p1.depiler())
+                liste.append(p2.depiler())
+            return liste
+    ```
 
 2. 
 ```python linenums="1" hl_lines="8"
