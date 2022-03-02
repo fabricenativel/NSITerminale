@@ -2,6 +2,14 @@ hide: - navigation  in apropos.md
 # Liens
 
 
+## S'entrainer en ligne pour l'épreuve pratique
+
+Un collectif d'enseignants d'informatique propose des exercices de programmation, corrigés utilisables en ligne *sans rien installer* sur votre ordinateur.
+
+* [Niveau 1 : type exercice 1 de l'épreuve pratique du Bac](https://e-nsi.gitlab.io/nsi-pratique/N1/antecedents/sujet/){target=_blank}
+* [Niveau 2 : type exercice 2 de l'épreuve pratique du Bac](https://e-nsi.gitlab.io/nsi-pratique/N2/ABR/sujet/){target=_blank}
+* [Niveau 3 : exercices plus délicats](https://e-nsi.gitlab.io/nsi-pratique/N3/correspondance_Lukasiewicz/sujet/){target=_blank}
+
 ## Autres sites proposant des cours de NSI
 
 * [Pixees informatique lycée](https://pixees.fr/informatiquelycee/){target=_blank}

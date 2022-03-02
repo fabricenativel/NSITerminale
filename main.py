@@ -196,7 +196,7 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
     
     @env.macro
     def nok():
-        return ":fontawesome-solid-times:{.rouge title='Non compatible'}"
+        return ":fontawesome-solid-xmark:{.rouge title='Non compatible'}"
     
     @env.macro
     def ep(annee):

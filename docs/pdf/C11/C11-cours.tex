@@ -164,4 +164,27 @@
 	\end{exampleblock}
 \end{frame}
 
+% Exemple de matrice d'adjacences
+\begin{frame}
+	\mframe{\GR}
+	\begin{block}{Parcours d'un graphe}
+		De la même façon que pour les arbres, un graphe peut être parcouru de plusieurs façons :
+		\begin{itemize}
+			\item<1-> dans un \textcolor{blue}{parcours en profondeur}, consiste à passer par le premier voisin non encore parcouru à chaque étape.
+			\item<2-> dans un \textcolor{blue}{parcours en largeur}, consiste à parcourir les voisins immédiats, puis les voisins des voisins, etc ...
+		\end{itemize}
+	\end{block}
+	\onslide<3->{
+	\begin{exampleblock}{Exemple}
+		\begin{center}
+			\includegraphics[scale=0.5]{graph3.eps}
+		\end{center}
+		\begin{itemize}
+			\item<4-> En profondeur : \onslide<5->{\textcolor{OliveGreen}{A, B, D, C, E}}.
+			\item<6-> En largeur : \onslide<7->{\textcolor{OliveGreen}{A, B, E, D, C}}.
+		\end{itemize}
+	\end{exampleblock}}
+\end{frame}
+
+
 \end{document}

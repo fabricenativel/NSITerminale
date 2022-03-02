@@ -3,4 +3,7 @@
 !!!Danger "Attention"
     Des erreurs d'énoncé figurent dans certains des sujets, dans la correction ils sont signalés par une mention <span class="rouge">:material-bug:&nbsp;Bug</span>. De la même façon, certains sujets contiennent des techniques de programmation problématiques indiquées par une mention <span class="orange">:fontawesome-solid-exclamation-triangle:&nbsp;Attention</span>.
 
+!!!Important "Mise à jour"
+    Les sujets suivants : 1, 3, 5, 22, 27, 33, 34 et 37 ont été mis à jour afin de corriger des erreurs qui s'y trouvaient. C'est toujours l'ancienne version du sujet que vous trouverez sur ce site
+
 {{ ep(2022) }} 
