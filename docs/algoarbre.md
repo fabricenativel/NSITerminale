@@ -210,6 +210,76 @@ On considère l'arbre binaire suivant noté $T$ et dont les étiquettes sont des
 ```
 </div>
 
+{{ exo("Arbre binaire de recherche",[])}}
+<div class="centre">
+```mermaid
+    graph TD
+    A["14"] --> B["9"]
+    A --> C["22"]
+    B --> D["5"]
+    B --> E["10"]
+    C --> V1[" "]
+    C --> F["28"]
+    D --> V2[" "]
+    D --> G["7"]
+    F --> H["24"]
+    F --> V3[" "]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 6 stroke:#FFFFFF,stroke-width:0px
+    style V3 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px
+```
+</div>
+
+1. Prouver que cet arbre est un arbre binaire de recherche.
+2. Dessiner l'arbre obtenu après insertion de la valeur `11` dans cet abre.
+
+{{ exo("Dessiner un arbre binaire de recherche",[])}}
+
+1. Dessiner un arbre binaire de recherche *complet*, contenant les valeurs suivantes : 2,7,10,15,19,24,25.
+2. Dessiner un arbre binaire de recherche *dégénéré* contenant ces sept même valeurs.
+3. Même question lorsque l'arbre à la structure suivante :
+```mermaid
+    graph TD
+    A[" "] --> B[" "]
+    A --> C[" "]
+    B --> D[" "]
+    B --> E[" "]
+    C --> V1[" "]
+    C --> F[" "]
+    D --> V2[" "]
+    D --> G[" "]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 6 stroke:#FFFFFF,stroke-width:0px
+```
+
+
+{{ exo("Implémentation des arbres binaires de recherche",[])}}
+
+1. Récupérer et enregistrer l'implémentation des arbres binaires de recherche ci-dessous :
+    {{ telecharger("Implémentation arbres binaires de recherche","./files/C10/abr.py")}}
+2. Compléter puis tester la méthode `appartient` ci-dessous qui permet de tester avec cette implémentation si un élément se trouve ou non dans un arbre binaire de recherche 
+```python
+    def appartient(self,valeur):
+        # Si l'arbre est vide, la valeur ne s'y trouve pas
+        if self.racine==None:
+            return False
+        else:
+        # Sinon on compare avec l'étiquette de la racine
+            if int(self.racine.etiquette)==valeur:
+                return ........
+            if valeur<int(self.racine.etiquette):
+                # Création du sous arbre gauche
+                sag = ArbreBinaire(.............)
+                return ..........
+            sad = ArbreBinaire(..............)
+            return .................
+```
+3. Ecrire une méthode `insere` qui permet d'insérer une valeur dans un arbre binaire de recherche.
 
 {{ exo("Amérique du nord 2021- Exercice 4",["bac"]) }}
 
