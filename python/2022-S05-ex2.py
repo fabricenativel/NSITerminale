@@ -1,5 +1,5 @@
 class Carte:
-    """Initialise Couleur (entre 1 à 4), et Valeur (entre 1 à 13)"""
+    """Initialise Couleur (entre 1 a 4), et Valeur (entre 1 a 13)"""
     def __init__(self, c, v):
         assert 1<=c<=4, "La couleur est entre 1 et 4" 
         assert 1<=v<=13, "La valeur est entre 1 et 13" #(1)
@@ -30,16 +30,10 @@ class PaquetDeCarte:
 
     """Remplit le paquet de cartes"""
     def remplir(self):
-        for couleur in range(1,5): #(2)
-            for valeur in range(1,14):
-                self.contenu.append(Carte(couleur,valeur))
+	    self.contenu = [Carte(couleur,valeur) for couleur in range(1, 5) for valeur in range(1, 14)] #(2)
 
-    """Renvoie la Carte qui se trouve à la position donnée"""
+    """Renvoie la Carte qui se trouve à la position donnee"""
     def getCarteAt(self, pos):
-        assert 0<=pos<=51, "La position de la carte est entre 0 et 51" #(3)
-        return self.contenu[pos] #A compléter
-
-unPaquet = PaquetDeCarte()
-unPaquet.remplir()
-uneCarte = unPaquet.getCarteAt(20)
-print(uneCarte.getNom() + " de " + uneCarte.getCouleur())
+        assert 0<=pos<52, "Le numéro de la carte doit être entre 0 et 51"
+        if 0 <= pos < 52 :
+            return self.contenu[pos]

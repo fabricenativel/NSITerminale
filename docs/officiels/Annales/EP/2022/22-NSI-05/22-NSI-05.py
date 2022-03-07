@@ -1,5 +1,5 @@
 class Carte:
-    """Initialise Couleur (entre 1 à 4), et Valeur (entre 1 à 13)"""
+    """Initialise Couleur (entre 1 a 4), et Valeur (entre 1 a 13)"""
     def __init__(self, c, v):
         self.Couleur = c
         self.Valeur = v
@@ -28,8 +28,9 @@ class PaquetDeCarte:
 
     """Remplit le paquet de cartes"""
     def remplir(self):
-	#A compléter
+	??? = [ ??? for couleur in range(1, ???) for valeur in range( 1, ???)]
 
-    """Renvoie la Carte qui se trouve à la position donnée"""
+    """Renvoie la Carte qui se trouve a� la position donnee"""
     def getCarteAt(self, pos):
-        #A compléter
+        if 0 <= pos < ??? :
+            return ???

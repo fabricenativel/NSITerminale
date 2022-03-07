@@ -12,13 +12,13 @@ class Noeud:
         return self.gauche is None and self.droit is None
 
 
+
 def expression_infixe(e):
     s = "" #(1)
     if e.gauche is not None: #(2)
-        s = s + expression_infixe(e.gauche) 
+        s = '(' + s + expression_infixe(e.gauche)
     s = s + str(e.valeur)
     if e.droit is not None: #(3)
-        s = s + expression_infixe(e.droit)
-    if e.est_une_feuille(): #(4)
+        s = s + expression_infixe(e.droit) + ')'
+    if True : #(4)
         return s
-    return '('+ s +')'

@@ -9,8 +9,10 @@ def nbCol(image):
 def negatif(image):
     '''renvoie le negatif de l'image sous la forme 
        d'une liste de listes'''
-    L = [[0 for k in range(nbCol(image))] for i in range(nbLig(image))] 
-# on cree une image de 0 aux memes dimensions que le parametre image 
+
+    # on cree une image de 0 aux memes dimensions que le parametre image 
+    L = [[0 for k in range(nbCol(image))] for i in range(nbLig(image))]
+
     for i in range(len(image)):
         for j in range(...):
             L[i][j] = ...
@@ -21,7 +23,10 @@ def binaire(image, seuil):
        d'une liste de listes contenant des 0 si la valeur 
        du pixel est strictement inferieure au seuil 
        et 1 sinon'''
-    L = [[0 for k in range(nbCol(image))] for i in range(nbLig(image))] # on cree une image de 0 aux memes dimensions que le parametre image 
+
+    # on cree une image de 0 aux memes dimensions que le parametre image 
+    L = [[0 for k in range(nbCol(image))] for i in range(nbLig(image))] 
+    
     for i in range(len(image)):
         for j in range(...):
             if image[i][j] < ... :
