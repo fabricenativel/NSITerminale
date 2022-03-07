@@ -69,34 +69,4 @@ class ArbreBinaire:
             sad = ArbreBinaire(self.racine.droit)
             return 1+max(sag.hauteur(),sad.hauteur())
 
-    
-    def ajoute(self,val):
-        if self.racine == None:
-            self.racine = Noeud(val)
-        else:
-            sag = ArbreBinaire(self.racine.gauche)
-            sad = ArbreBinaire(self.racine.droit)
-            if int(val) < int(self.racine.etiquette):
-                sag.ajoute(val)
-            else:
-                sad.ajoute(val)
-            self.racine = Noeud(self.racine.etiquette,sag.racine,sad.racine)
-
-    def appartient(self,valeur):
-        if self.racine==None:
-            return False
-        else:
-            if int(self.racine.etiquette)==valeur:
-                return True
-            if valeur<int(self.racine.etiquette):
-                sag = ArbreBinaire(self.racine.gauche)
-                return sag.appartient(valeur)
-            sad = ArbreBinaire(self.racine.droit)
-            return sad.appartient(valeur)
-
-
-
-
-
-
 
