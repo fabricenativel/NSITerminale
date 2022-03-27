@@ -33,6 +33,7 @@ nav:
       - "Epreuves écrites" : Annales/2021/EE.md
       - "Corrigés épreuves écrites" :
         - "Etranger CL Sujet 2" : Annales/Corriges/21-EtrangerJ2.md
+        - "Amérique du nord" : Annales/Corriges/21-Amerique.md
       - "Epreuves pratiques" : Annales/2021/EP.md
     - '2022': 
       - "Epreuves écrites" : Annales/2022/EE.md

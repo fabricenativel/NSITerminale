@@ -74,7 +74,7 @@ Dans cet exemple, plusieurs chemins permettent de relier `A` à `C`. Un *protoco
 
 1.  Le protocole {{sc("rip")}} : **R**outing **I**nformation **P**rotocol
 
-    1.  Sachant que dans ce protocole, on tente de minimiser le  nombre de routeurs traversés, quel serait les chemins empruntés pour :
+    1.  Sachant que dans ce protocole, on tente de minimiser le  nombre de routeurs traversés, quels seraient les chemins empruntés pour :
 
         1.  relier `A` et `E` ?
         2.  relier `A` et `C` ?
@@ -128,12 +128,46 @@ Dans cet exemple, plusieurs chemins permettent de relier `A` à `C`. Un *protoco
                 ```
     </div>
 
-    1.  Sachant que dans ce protocole, on tente de minimiser le poids du chemin parcouru, quel serait les chemins empruntés pour :
+    1.  Sachant que dans ce protocole, on tente de minimiser le poids du chemin parcouru, quels seraient les chemins empruntés pour :
 
-        1.  relier `A` et `E` ?
+        1.  relier `A` et `B` ?
         2.  relier `A` et `C` ?
         3.  relier `E` et `D` ?
 
+        !!! note
+            Le protocole consiste donc à trouver un *plus court chemin dans un graphe pondéré*. Dans un cas simple tel que ci-dessus, la réponse est intuitive. Pour des graphes plus complexes, l'[algorithme de Djikstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm){target=_blank} permet de répondre au problème. Cet algorithme ne sera pas étudié en détail, mais un exemple d'application se trouve dans le diaporama de cours.
+
+    2.  Poids des liaisons
+
+        Le poids d'une liaison est directement lié au débit des liaisons entres les routeurs. Plus le débit est élevé et plus le coût est faible. Par exemple le coût d'une liaison *bluetooth* (débit de 3 Mbits/s) est bien plus élevé que celui d'une connection par fibre (débit de 10 Gbits/s). Pour calculer le coût $c$, d'une liaison de débit $d$ (exprimé en Mbit/s), on décide d'utiliser la formule suivante :
+        $$ c = \dfrac{10^8}{d} $$
+        Par exemple, avec cette formule  la liaison *bluetooth* ci-dessus a pour coût $\dfrac{10^8}{3}$
+        En utilisant cette formule, calculer le poids des liaisons suivantes :
+
+        1. Une liaison ethernet, ayant un débit de 10 Mbit/s.
+        2. Une liaison adsl, ayant un débit montant de 1 Mbits/s et un débit descendant de 12 Mbits/s.
+        3. Une liaison fibre ayant un débit de 10 Gbit/s.
+    
+    3.  Donner le graphe pondéré associé au réseau suivant en calculant le coût d'une liaison avec la formule $c = \dfrac{10^8}{d}$.
+
+    <div class="centre">
+                ```mermaid
+                graph LR
+                A(("A"))
+                B(("B"))
+                C(("C"))
+                D(("D"))
+                E(("E"))
+                F(("F"))
+                A-- 100 Mbit/s ---B
+                A-- 10 Mbit/s ---D
+                B-- 0,5 Gbit/s ---C
+                C-- 100 Mbit/s ---E
+                C-- 200 Mbit/s ---D
+                D-- 100 Mbit/s ---E
+                E-- 10 Mbit/s ---F
+                ```
+    </div>
 ## Cours
 
 {{ aff_cours(num) }}
@@ -141,5 +175,27 @@ Dans cet exemple, plusieurs chemins permettent de relier `A` à `C`. Un *protoco
 
 ## Exercices
 
-{{ exo("....",[],0) }}
 
+{{ exo("Un peu de programmation",[],0)}}
+
+
+1. Ecrire une fonction Python `masque_valide` prenant en argument une chaîne de caractère et renvoyant `True` si cette chaîne de caractères est un masque de sous réseau valide.Par exemple, `masque_valide("255.255.240.0")` renvoie `True`, `masque_valide("255.255.2228.0")` renvoie `False`
+
+    !!! aide 
+        On pourra utiliser la fonction `bin` de Python, même si écrire son propre outil de conversion en binaire est déjà un bon exercice de programmation que tout élève de terminale devrait savoir faire !
+
+2. Ecrire une fonction Python `ip_valide` prenant en argument une chaîne de caractère et renvoyant `True` si cette chaîne de caractères est une adresse {{sc("ip")}} valide.
+3. Ecrire une fonction Python prenant comme paramètres trois chaines de caractères, après avoir vérifié  que les deux premières sont des adresses {{sc("ip")}} valide et la troisième un masque de sous réseau valide. Cette fonction renvoie `True` si les deux adresses font partie du même réseau.
+4. Tester votre fonction sur les exemples vus en cours.
+
+{{ exo("Sujet zéro- Exercice 5",["bac"]) }}
+
+{{telecharger("Enoncé","./pdf/C12/Routage-sujet_zero.pdf")}}
+
+{{ exo("Métropole 2021 sujet 1- Exercice 5",["bac"]) }}
+
+{{telecharger("Enoncé","./pdf/C12/Routage-Metropole2021-1.pdf")}}
+
+{{ exo("Métropole 2021 sujet 2- Exercice 3",["bac"],0) }}
+
+{{telecharger("Enoncé","./pdf/C12/Routage-Metropole2021-2.pdf")}}

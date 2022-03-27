@@ -38,7 +38,8 @@ def define_env(env):
         "vscode": ":material-microsoft-visual-studio-code:{title='Activité utilisant VS Code'}",
         "video": ":fontawesome-solid-film:{title='Activité utilisant un support vidéo'}",
         "notebook": ":fontawesome-solid-book:{title='Activité utilisant un jupyter notebook'}",
-        "python": ":fontawesome-brands-python:{title='Activité en lien avec la programmation en Python'}"
+        "python": ":fontawesome-brands-python:{title='Activité en lien avec la programmation en Python'}",
+        "maths": ":fontawesome-solid-infinity:{title='Activité en lien avec les mathématiques'}"
     }
     env.variables['devant_exo']=':black_small_square:'
     env.variables['devant_act']=':black_small_square:'
