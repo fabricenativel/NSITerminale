@@ -76,7 +76,7 @@ Dans cette activité, après quelques rappels mathématiques, nous allons détai
     a. Il est 22h, quelle heure sera-t-il 8h plus tard ?
 
     b. Si vous avez répondu 6h (et pas 30h à la question précédente), vous venez de faire de l'*arithmétique modulaire*, en effet vous n'avez conservé que le reste dans la division euclidienne par 24:  
-    $30 = 1 \times 24 + 6$ on écrira que $30 \equiv 6 [24]$ et on lira $30 est égal à 26 modulo 24$ (ce qui peut se traduire par leur différence est un multiple de 24, c'est donc la même heure sur des jours différents).
+    $30 = 1 \times 24 + 6$ on écrira que $30 \equiv 6 [24]$ et on lira $30$ est égal à $26$ modulo $24$ (ce qui peut se traduire par leur différence est un multiple de 24, c'est donc la même heure sur des jours différents).
 
     c. Vérifier (en faisant la division euclidienne) que $42 \equiv 18 [24]$
 
@@ -84,7 +84,7 @@ Dans cette activité, après quelques rappels mathématiques, nous allons détai
 
     e. Compléter : $13 \equiv \dots [5]$
 
-    e. Compléter : $42 \equiv \dots [7]$
+    f. Compléter : $42 \equiv \dots [7]$
 
 2. Nombres premiers et nombres premiers entre eux.
 
@@ -101,7 +101,7 @@ Dans cette activité, après quelques rappels mathématiques, nous allons détai
     * Pour déterminer la clé privé, il faut trouver un nombre $d$ tel que $ed \equiv 1 [\phi(n)]$. Dans notre exemple il s'agit donc de trouver $d$ tel que $3d \equiv 1 [20]$, le nombre 7 convient.
 
         !!! note
-            On dit que $d$ est un inverse de $e$ modulo $\phi(n)$ (leur produit vaut 1 modulo $\phi(n)$. Dans la pratique un [algorithme](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu){target=_blank} permet la détermination de $d$.
+            On dit que $d$ est un inverse de $e$ modulo $\phi(n)$ (leur produit vaut 1 modulo $\phi(n)$). Dans la pratique un [algorithme](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu){target=_blank} permet la détermination de $d$.
     
     * Le couple $(d,n)$ est la clé privée qui permet le déchiffrage. Dans notre exemple c'est donc $(7,33)$.
     
