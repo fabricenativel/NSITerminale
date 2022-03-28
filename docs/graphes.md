@@ -43,17 +43,21 @@ On rappelle que le but du problème est de trouver un chemin qui permet de passe
     b. Le schéma obtenu s'appelle un **graphe**, rechercher sur le *Web* comment se nomment les zones et les ponts dans le vocabulaire de la théorie des graphes.
 
     c. Donner le **degré** de chaque sommet de ce graphe
-        !!! aide
+
+    !!! aide
         On pourra remarquer que les arbres sont des graphes particuliers et se rappeler de la notion de degré (ou arité) d'un noeud dans un arbre.
 
 3. Preuve mathématique
 
     a. Supposons qu'une solution au problème qui commence et finit dans la même zone existe, en déduire une propriété du degré de chaque sommet.
-        !!! aide
-            Raisonner sur le fait que si on entre dans une zone, il faut pouvoir en sortir par un pont non encore utilisé.
+
+    !!! aide
+        Raisonner sur le fait que si on entre dans une zone, il faut pouvoir en sortir par un pont non encore utilisé.
+
     b. Même question si on suppose que la solution commence et finit dans deux zones différentes.
-        !!! aide
-            Traiter séparemment des autres zones, celle de départ et d'arrivée.
+    
+    !!! aide
+        Traiter séparément des autres zones, celle de départ et d'arrivée.
 
 4. Pour aller plus loin ...
     
