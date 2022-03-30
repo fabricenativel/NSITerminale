@@ -1,14 +1,7 @@
-# Amérique du nord 
+{% set repere_sujet = "21-NSIJ1AN1" %}
+{% set numero_exo = 1 %}
 
-Le repère de ce sujet est **21-NSIJ1AN1**.
-
-## Enoncé
-
-{{ telecharger("Etranger Amérique du nord 2021","../../officiels/Annales/EE/2021/AmeriqueNord2021.pdf")}}
-
-## Correction 
-
-### Exercice 1 
+{{ correction_exobac(repere_sujet,numero_exo) }}
 
 1.  a.  Cette requête affiche les champs et `salle` et `marque_ordi` de la table `Ordinateur`. 
 

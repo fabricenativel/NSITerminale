@@ -1,3 +1,5 @@
+import csv
+
 def define_env(env):
     env.variables['transversal']=["histoire","projet","typesconstruits","python"]
     env.variables['projet'] = {"icone":":fontawesome-solid-lightbulb:","style":"projet"}
@@ -67,6 +69,9 @@ def define_env(env):
     
     env.variables['nchap']=0
     env.variables['nelements']=0
+    with open("exo_bac.csv","r",encoding="utf-8") as f:
+        exo_bac = list(csv.DictReader(f,delimiter=","))
+    env.variables['exo_bac']=exo_bac
     
     # Titres des items travaillés sur l'année
     @env.macro
@@ -222,8 +227,44 @@ Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de c
         code = f'{str(annee)[-2:]}-NSI-{numero}'
         return f"<span class='centre'>[Sujet {numero} - 20222 :material-download:](https://fabricenativel.github.io/NSITerminale/officiels/Annales/EP/{annee}/{code}/{code}.pdf)"+"{.md-button}</span>"
 
-    
+    @env.macro
+    def correction_exobac(repere,numero):
+            aff = f"# <span class='reperesujet'>{repere}</span> Correction exercice <span class='numchapitre'>{numero}</span> \n"
+            index = 0
+            while index<len(env.variables.exo_bac) and (env.variables.exo_bac[index]["Repere"]!=repere or env.variables.exo_bac[index]["Numero"]!=str(numero)):
+                index += 1
+            if index<len(env.variables.exo_bac):
+                exo = env.variables.exo_bac[index]
+                aff += f"Année : {exo['Annee']} &#8212; Jour : {exo['Jour']} <br>"
+                aff += f"Centre : {exo['Centre']} <br>"
+                aff += f"Thème : **{exo['Theme']}** <br> \n"
+                aff += f"## Enoncé \n"
+                aff += telecharger(f'Enoncé {repere} - Ex {numero}',f'../../Enoncés/{repere}-{numero}.pdf')
+                aff += "\n"
+                aff += "## Correction \n"
+            return aff            
 
 
-
-    
+    @env.macro
+    def correction_ecrit(annee):
+        liste_repere = set(sujet["Repere"] for sujet in env.variables.exo_bac if sujet['Annee']==annee)
+        aff = f"#<span class='titre_num'>{annee}</span> Correction épreuves écrites\n"
+        for repere in liste_repere:
+            index = 0
+            while index<len(env.variables.exo_bac) and env.variables.exo_bac[index]["Repere"]!=repere:
+                index += 1
+            centre = env.variables.exo_bac[index]["Centre"]
+            jour = env.variables.exo_bac[index]["Jour"]
+            aff += f"## {repere} : {centre} - Jour {jour} \n"
+            for num_exo in range(1,6):
+                index = 0
+                while index<len(env.variables.exo_bac) and (env.variables.exo_bac[index]["Repere"]!=repere or env.variables.exo_bac[index]["Numero"]!=str(num_exo)):
+                    index += 1
+                aff += f"* Exercice {num_exo} : "
+                if index<len(env.variables.exo_bac):
+                    exo = env.variables.exo_bac[index]
+                    aff+= f"[{exo['Theme']}](../../Corriges/{repere}-{num_exo}) \n"
+                else:
+                    aff+= ":fontawesome-solid-xmark:{.rouge title='Non disponible'} \n"
+            aff+= '\n \n'
+        return aff
