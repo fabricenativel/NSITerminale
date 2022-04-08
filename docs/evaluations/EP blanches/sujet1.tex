@@ -1,0 +1,24 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{Act}
+\usepackage{listings}
+
+\begin{document}
+\input{\detokenize{/home/fenarius/Travail/Cours/Commun/latex/Macros.tex}}
+
+\EP{1}{2022}
+\pythonmode
+
+\Exo{Vérification de palindrome}{}
+
+Une chaine de caractères est un \textit{palindrome} lorsqu'elle peut être lue indifféremment de gauche à droite ou de droite à gauche, par exemple \og KAYAK \fg ou \og ANNA \fg sont des palindromes.
+Ecrire une fonction {\tt est\_palindrome} qui prend en argument une chaine de caractères et renvoie {\tt True} si cette chaine est un palindrome et {\tt False} sinon. 
+
+\textbf{Exemples :} 
+\begin{lstlisting}
+>>> est_palindrome("toto")
+False
+>>> est_palindrome("ressasser")
+True
+\end{lstlisting}
+\end{document}
