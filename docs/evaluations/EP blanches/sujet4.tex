@@ -1,0 +1,26 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{Act}
+\usepackage{listings}
+
+\begin{document}
+\input{\detokenize{/home/fenarius/Travail/Cours/Commun/latex/Macros.tex}}
+
+\EP{4}{2022}
+\pythonmode
+
+\Exo{Conversion du binaire vers le décimal}{}
+
+Ecrire une fonction {\tt binaire\_vers\_decimal}  qui prend en paramètre une chaîne de caractères composée uniquement de "0" et de "1" et renvoie l'entier ayant cette chaîne de caractères comme écriture binaire. Par exemple, {\tt binaire\_vers\_decimal("1001011")} renvoie 75. En effet : $2^6+2^3+2^1+2^0 = 75$.
+
+\textbf{Exemples :} 
+\begin{lstlisting}
+>>> binaire_vers_decimal("1000000")
+64
+>>> binaire_vers_decimal("1111010")
+122
+>>> binaire_vers_decimal("11001100")
+204
+\end{lstlisting}
+
+\end{document}

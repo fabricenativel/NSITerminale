@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2021.5.4)  7 APR 2022 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2021.5.4)  7 APR 2022 18:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/home/fenarius/Travail/Cours/NSITerminale/site/evaluations/POO.tex
-(/home/fenarius/Travail/Cours/NSITerminale/site/evaluations/POO.tex
+**"/home/fenarius/Travail/Cours/NSITerminale/docs/evaluations/EP blanches/sujet4.tex"
+(/home/fenarius/Travail/Cours/NSITerminale/docs/evaluations/EP blanches/sujet4.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -1104,8 +1104,8 @@ Package: catoptions 2014/08/29 v0.2.7h Securing catcodes and parsing options (AM
 \cpt@exprcnt=\count450
 )
 \c@tw@hyphen@char@num=\count451
-)) (./POO.aux)
-\openout1 = `POO.aux'.
+)) (./sujet4.aux)
+\openout1 = `sujet4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -1147,9 +1147,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
- (./POO.out) (./POO.out)
+ (./sujet4.out) (./sujet4.out)
 \@outlinefile=\write9
-\openout9 = `POO.out'.
+\openout9 = `sujet4.out'.
 
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1215,31 +1215,31 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 6.
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 13.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 12.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 13.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 14.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [1
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
- (./POO.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 80.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
-Package rerunfilecheck Info: File `POO.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 26.
+ (./sujet4.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 26.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 26.
+Package rerunfilecheck Info: File `sujet4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39765 strings out of 481240
- 750659 string characters out of 5920404
- 1494264 words of memory out of 5000000
- 54276 multiletter control sequences out of 15000+600000
- 547038 words of font info for 67 fonts, out of 8000000 for 9000
+ 39745 strings out of 481240
+ 750382 string characters out of 5920404
+ 1456320 words of memory out of 5000000
+ 54256 multiletter control sequences out of 15000+600000
+ 547582 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,11n,91p,917b,1288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,11n,91p,934b,1289s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on POO.dvi (1 page, 26332 bytes).
+Output written on sujet4.dvi (1 page, 16500 bytes).

@@ -1,11 +1,26 @@
-Repere,Annee,Centre,Jour,Numero,Theme
-21-NSIJ1G11,2021,Etranger,1,3,Arbres binaires de recherche
-21-NSIJ2PO1,2021,Polynésie,2,3,Arbres binaires de recherche
-21-NSIJ2G11,2021,Etranger,2,1,Strucutre de données : piles
-21-NSIJ2G11,2021,Etranger,2,2,"Programmation Python, tuples et listes"
-21-NSIJ2G11,2021,Etranger,2,3,"Conversion décimal/binaire, table de vérité, codades des caractères"
-21-NSIJ2G11,2021,Etranger,2,4,Base de données
-21-NSIJ2G11,2021,Etranger,2,5,"Programmation Python : commande d'un bandeau de diodes à l'aide d'un raspberry."
-21-NSIJ1AN1,2021,Amérique du nord,1,1,"Bases de données relationnelles et le langage SQL"
-21-NSIJ1AN1,2021,Amérique du nord,1,3,"Programmation Python, tableaux"
-21-NSIJ2ME1,2021,Métropole,2,4,"Systèmes d'exploitation : gestion des processus et des ressources"
+Repere,Annee,Centre,Jour,Numero,Theme,Correction
+21-NSIJ1G11,2021,Etranger,1,1,Programmation orientée objet (code de César),0
+21-NSIJ1G11,2021,Etranger,1,2,Structure de données : dictionnaires,0
+21-NSIJ1G11,2021,Etranger,1,3,Arbres binaires de recherche,1
+21-NSIJ1G11,2021,Etranger,1,4,Réseau,0
+21-NSIJ1G11,2021,Etranger,1,5,Structure de données : piles,0
+21-NSIJ2PO1,2021,Polynésie,2,1,Algorithmes de tri,1
+21-NSIJ2PO1,2021,Polynésie,2,2,Base de données,0
+21-NSIJ2PO1,2021,Polynésie,2,3,Arbres binaires de recherche,1
+21-NSIJ2PO1,2021,Polynésie,2,4,Réseau et protocoles de routage,0
+21-NSIJ2PO1,2021,Polynésie,2,5,Bases de données,0
+21-NSIJ2G11,2021,Etranger,2,1,Structure de données : piles,1
+21-NSIJ2G11,2021,Etranger,2,2,"Programmation Python, tuples et listes",1
+21-NSIJ2G11,2021,Etranger,2,3,"Conversion décimal/binaire, table de vérité, codades des caractères",1
+21-NSIJ2G11,2021,Etranger,2,4,Base de données,1
+21-NSIJ2G11,2021,Etranger,2,5,"Programmation Python : commande d'un bandeau de diodes à l'aide d'un raspberry.",1
+21-NSIJ1AN1,2021,Amérique du nord,1,1,"Bases de données relationnelles et le langage SQL",1
+21-NSIJ1AN1,2021,Amérique du nord,1,2,"Protocoles de routage, processus, systèmes sur puces",0
+21-NSIJ1AN1,2021,Amérique du nord,1,3,"Programmation Python, tableaux",1
+21-NSIJ1AN1,2021,Amérique du nord,1,4,"Arbres binaires et algorithmes associées",0
+21-NSIJ1AN1,2021,Amérique du nord,1,5,"Structure de données : piles et files. Programmation Python",0
+21-NSIJ2ME1,2021,Métropole,2,1,"Arbres et programmation orientée objet",0
+21-NSIJ2ME1,2021,Métropole,2,2,"Base de données relationnelles",0
+21-NSIJ2ME1,2021,Métropole,2,3,"Réseaux et protocoles de routage",0
+21-NSIJ2ME1,2021,Métropole,2,4,"Systèmes d'exploitation : gestion des processus et des ressources",1
+21-NSIJ2ME1,2021,Métropole,2,5,"Structures de données linéaires",0
