@@ -2,7 +2,7 @@ from Crypto.Util import number
 from Crypto.Random import get_random_bytes 
 from time import time
 
-n_length = 24
+n_length = 25
 p = number.getPrime(n_length,randfunc=get_random_bytes)
 q = number.getPrime(n_length,randfunc=get_random_bytes)
 
