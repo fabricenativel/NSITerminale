@@ -1,0 +1,15 @@
+Prof : Bureau 	: AlanTuring 		
+
+Elèves                 : Num/position : Nom du poste
+Ilian Lucion           : 1 (Gauche)	: AdaLovelace		*
+Clain Jules            : 2 (Gauche)	: KenThomson		*
+Sautron Noah           : 3 (Gauche)	: DennisRitchie	*
+Taile-Manikom Gabriel  : 4 (Gauche)  	: GeorgeBoole		*
+Lallemeand Raphael     : 5 (Face)  	: LinusTordvalds	*
+Morisse Lorenzo        : 6 (Face)	: EdgarCodd		*
+Paquiry Matteo         : 7 (Face)	: JohnVonNeumann	*   (élève de brassens)
+Grosset Gael           : 8 (Face)	: GraceHooper		*  (élève de brassens)
+Fadhul Said				: FrancesAllen
+Maillot Damien         : 9 (Droite)    : BlaisePascal 	*
+Boucher Romain         : 10 (Droite)	: TimBernersLee	*
+Hoarau Laurianne 	: 11 (Droite)  :3 GuidoVanRossum	*

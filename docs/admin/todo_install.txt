@@ -1,0 +1,86 @@
+A faire après installation d'Ubuntu sur un ordinateur du lycée :
+
+** Modifier l'ordre de démarrage pour que Windows démarre par défaut :
+1. Editer le fichier /etc/default/grub et mettre GRUB_DEFAULT=2 
+2. Exécuter la commande update-grub pour mettre à jour le menu de demarrage
+
+
+** Certains ordinateurs (client légers) ont un souci de freeze sur l'écran d'accueil d'ubuntu
+** Pour corriger ce souci
+1. Faire un démarrage en mode "recovery mode" si le problème survient
+2. Poursuivre le démarrage normal
+3. Editer le fichier de configuration grub comme ci-dessus
+4. Changer la ligne GRUB_CMDLINE_LINUX_DEFAULT en ajoutant nomodeset, ce qui donne :
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
+5. Mettre à jour Grub avec update-grub
+
+** Changer le nom du poste
+sudo hostname <le_nom_ici>
+** La liste des noms sur un document à part
+
+
+** Configurer l'accès au réseau en activant le proxy système
+Proxy : 172.19.240.1 
+Port : 3129
+ (identique pour tous les protocoles)
+ 
+** Configurer ssh pour avoir accès à  distance et pouvoir faire toutes les modifications depuis le bureau
+sudo apt-get install openssh-server
+sudo ufw allow ssh
+sudo systemctl  enable ssh
+sudo systemctl  start ssh
+** Il faut rebooter la machine pour que le ssh avec le nom du poste fonctionne, sinon utiliser l'addresse ip de la machine qu'on obtient avec ifconfig (installer les outils réseaux ci dessous pour disposer de la commande)
+ 
+** Installer les outils réseaux
+ sudo apt-get install net-tools
+ sudo apt-get install traceroute 
+ 
+ ** Installer pip pour pouvoir installer Jupyter Notebook et pylint (pour vscode)
+sudo apt-install python3-pip
+sudo pip3 install --proxy=https://username:password@172.19.240.1:3129 jupyterlab
+sudo pip3 install --proxy=https://username:password@172.19.240.1:3129 pylint
+sudo pip3 install --proxy=https://username:password@172.19.240.1:3129 matplotlib
+sudo pip3 install --proxy=https://username:password@172.19.240.1:3129 Image
+sudo pip3 install --proxy=https://username:password@172.19.240.1:3129 pygame
+ 
+ ** Installer vs code
+ ** Il faut déclarer le proxy pour la commande snap, installer l'appli puis enlever le proxy :
+ sudo snap set system proxy.https="http://user:password@172.19.240.1:3129"
+ sudo snap install --classic code
+ sudo snap set system proxy.https=""
+ 
+ ** Créer un compte invité avec login invite et mot de passe invite
+ ** Modifier aussi le proxy system du compte invite
+ sudo adduser invite
+ 
+ ** Installer python3-tk (pour le module turtle et tkinter)
+ sudo apt-get install python3-tk
+ 
+ ** Télécharger et installer Veyon
+sudo apt-get install veyon-master
+
+** Installer commande htop pour voir les processus
+sudo apt-get install htop
+
+
+** Installer Gameshell pour l'initiation à la ligne de commande
+L'archive se trouve dans /home/fenarius/Travail/Cours/MkDocs/docs/gameshell
+
+** Installer sqlite3 et sqlitebrowser pour le cours BdD de terminale :
+sudo apt-get install sqlite3
+sudo apt-get install sqlitebrowser
+
+** Outil graphviz de visualisation d'un graph
+sudo apt-get graphviz
+udo pip3 install --proxy=https://username:password@172.19.240.1:3129 graphviz
+
+** Installation de java (pour notamment filius)
+sudo apt-get install default-jre
+
+** Installation d'un serveur de paquet local (pour installation de logiciels tels que filius) :
+1) Installer un serveur apache sur le poste prof (alanturing.local)
+2) Créer le répertoire /etc/www/html/deb/amd64 et y stocker les paquets .deb
+3) Mettre à jour le descriptif des paquets avec la commande :
+4) Ajouter sur toutes les machines une exception pour l'adresse alanturing.local dans le proxy réseau
+5) Modifier le fichier /etc/apt/sources.list et y ajouter la ligne : 
+6) installation normale avec apt-get (update puis install) avec le nom du paquet

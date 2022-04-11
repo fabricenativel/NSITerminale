@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+from os import path,mkdir,chmod
+import shutil
+
+SOURCE = "/home/exam/Travail/"
+PREFIXE = "/home/exam/Sauvegarde"
+
+def get_destination():
+    num = 1
+    dest = f"/home/exam/Sauvegarde/Session{num}/"
+    while path.exists(dest):
+        num += 1
+        dest = f"/home/exam/Sauvegarde/Session{num}/"
+    return dest
+
+chmod(PREFIXE,0o777)
+destination = get_destination()
+shutil.copytree(SOURCE,destination)
+shutil.rmtree(SOURCE)
+mkdir("/home/exam/Travail")
+chmod(PREFIXE,0o000)
