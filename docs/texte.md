@@ -36,7 +36,7 @@
 
 1. Le même [outil en ligne](https://boyer-moore.codekodo.net/recherche_boyer.php){target=_blank} que dans l'activité précédente permet de visualiser un second algorithme plus performant . Utiliser cette outil (en variant éventuellement le motif et la chaîne). 
 
-        [Visualisation algorithme Boyer-Moore :octicons-link-external-24:](https://boyer-moore.codekodo.net/recherche_boyer.php){ .md-button target=_blank}
+    [Visualisation algorithme Boyer-Moore :octicons-link-external-24:](https://boyer-moore.codekodo.net/recherche_boyer.php){ .md-button target=_blank}
 
     !!! aide
         On pourra remarquer que :
