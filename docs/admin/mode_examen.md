@@ -38,11 +38,15 @@ chmod a-rwx Sauvegarde
 
 9. Créer un script de copie des fichiers et de nettoyage lors de la déconnexion
 Le gestionnaire de connection est `gdm3`, le script de déconnexion est `/etc/gdm3/PostSession/Default/`. Il faut donc éditer ce fichier et modifier le contenu :
+
 ```sh
 sudo gedit /etc/gdm3/PostSession/Default/
 ```
+
 Nouveau contenu :
-```#!/usr/bin/python3
+
+```python
+#!/usr/bin/python3
 from os import path,mkdir,chmod
 import shutil
 
