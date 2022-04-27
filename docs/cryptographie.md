@@ -55,7 +55,7 @@ On décide d'utiliser l'opération {{sc("xor")}} pour chiffrer un message, on ch
         f. Dans le cas d'un chiffrement symétrique, deux personnes peuvent-elles s'échanger des messages si elles n'ont pas encore convenu ensemble d'une clé de chiffrement ? En déduire un inconvénient de cette méthode de chiffrement.
 
     !!! note
-        Pour prolonger cette activité on pourra faire [l'exercice 3 de ce sujet de Bac 2021](http://localhost:8000/Annales/2021/EE/#centres-etrangers-candidats-libres-sujet-2-21-nsij2g11){target=_blank} dont la correction se trouve [ici](http://localhost:8000/Annales/Corriges/21-EtrangerJ2/#exercice-3){target=_blank}. En effet, cet exercice traite du chiffrement par {{sc("xor")}} en utilisant une chaîne de caractère comme clé.
+        Pour prolonger cette activité on pourra faire [l'exercice 3 de ce sujet de Bac 2021](https://fabricenativel.github.io/NSITerminale/Annales/2021/EE/#centres-etrangers-candidats-libres-sujet-2-21-nsij2g11){target=_blank} dont la correction se trouve [ici](https://fabricenativel.github.io/NSITerminale/Annales/Corriges/21-NSIJ2G11-3/){target=_blank}. En effet, cet exercice traite du chiffrement par {{sc("xor")}} en utilisant une chaîne de caractère comme clé.
 
 
 {{ titre_activite("Chiffrement asymétrique",["maths"]) }}
@@ -76,7 +76,7 @@ Dans cette activité, après quelques rappels mathématiques, nous allons détai
     a. Il est 22h, quelle heure sera-t-il 8h plus tard ?
 
     b. Si vous avez répondu 6h (et pas 30h à la question précédente), vous venez de faire de l'*arithmétique modulaire*, en effet vous n'avez conservé que le reste dans la division euclidienne par 24:  
-    $30 = 1 \times 24 + 6$ on écrira que $30 \equiv 6 [24]$ et on lira $30$ est égal à $26$ modulo $24$ (ce qui peut se traduire par leur différence est un multiple de 24, c'est donc la même heure sur des jours différents).
+    $30 = 1 \times 24 + 6$ on écrira que $30 \equiv 6 [24]$ et on lira $30$ est égal à $6$ modulo $24$ (ce qui peut se traduire par leur différence est un multiple de 24, c'est donc la même heure sur des jours différents).
 
     c. Vérifier (en faisant la division euclidienne) que $42 \equiv 18 [24]$
 
