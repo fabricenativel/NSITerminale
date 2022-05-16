@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from os import path,mkdir,chmod
+import subprocess
 import shutil
 
 SOURCE = "/home/examen/Travail"
@@ -13,9 +14,11 @@ def get_destination():
         dest = f"{PREFIXE}/Session{num}/"
     return dest
 
-chmod(PREFIXE,0o777)
-destination = get_destination()
-shutil.copytree(SOURCE,destination)
-shutil.rmtree(SOURCE)
-mkdir(SOURCE)
-chmod(PREFIXE,0o000)
+user = subprocess.getoutput("whoami")
+if user=="examen":
+    chmod(PREFIXE,0o777)
+    destination = get_destination()
+    shutil.copytree(SOURCE,destination)
+    shutil.rmtree(SOURCE)
+    mkdir(SOURCE)
+    chmod(PREFIXE,0o000)
