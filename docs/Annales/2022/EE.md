@@ -1,1 +1,3 @@
-# Année 2022 : Sujets d'épreuves écrites
+{{liste_sujets("2022")}}
+
+

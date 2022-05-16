@@ -33,19 +33,25 @@ nav:
       - "Epreuves écrites" : Annales/2021/EE.md
       - "Corrigés épreuves écrites" : 
           - "Index" : Annales/2021/Correction_EE.md
-          - "Etranger J1 Ex 3" : Annales/Corriges/21-NSIJ1G11-3.md
-          - "Polynésie J2 Ex 3" : Annales/Corriges/21-NSIJ2PO1-3.md
-          - "Etranger J2 Ex1" : Annales/Corriges/21-NSIJ2G11-1.md
-          - "Etranger J2 Ex2" : Annales/Corriges/21-NSIJ2G11-2.md
-          - "Etranger J2 Ex3" : Annales/Corriges/21-NSIJ2G11-3.md
-          - "Etranger J2 Ex4" : Annales/Corriges/21-NSIJ2G11-4.md
-          - "Etranger J2 Ex5" : Annales/Corriges/21-NSIJ2G11-5.md
-          - "Amérique J1 Ex1" : Annales/Corriges/21-NSIJ1AN1-1.md
-          - "Amérique J1 Ex3" : Annales/Corriges/21-NSIJ1AN1-3.md
-          - "Métropole J2 Ex4" : Annales/Corriges/21-NSIJ2ME1-4.md
+          - "21-NSIJ1AN1" : Annales/Corriges/21-NSIJ1AN1.md
+          - "21-NSIJ1G11" : Annales/Corriges/21-NSIJ1G11.md
+          - "21-NSIJ1ME1" : Annales/Corriges/21-NSIJ1ME1.md
+          - "21-NSIJ1ME2" : Annales/Corriges/21-NSIJ1ME2.md
+          - "21-NSIJ2G11" : Annales/Corriges/21-NSIJ2G11.md
+          - "21-NSIJ2ME1" : Annales/Corriges/21-NSIJ2ME1.md
+          - "21-NSIJ2ME2" : Annales/Corriges/21-NSIJ2ME2.md
+          - "21-NSIJ2ME3" : Annales/Corriges/21-NSIJ2ME3.md
+          - "21-NSIJ2PO1" : Annales/Corriges/21-NSIJ2PO1.md
       - "Epreuves pratiques" : Annales/2021/EP.md
     - '2022': 
       - "Epreuves écrites" : Annales/2022/EE.md
+      - "Corrigés épreuves écrites" : 
+          - "Index" : Annales/2022/Correction_EE.md
+          - "22-NSIJ1G11" : Annales/Corriges/22-NSIJ1G11.md
+          - "22-NSIJ1ME1" : Annales/Corriges/22-NSIJ1ME1.md
+          - "22-NSIJ1PO1" : Annales/Corriges/22-NSIJ1PO1.md
+          - "22-NSIJ2G11" : Annales/Corriges/22-NSIJ2G11.md
+          - "22-NSIJ2ME1" : Annales/Corriges/22-NSIJ2ME1.md
       - "Epreuves pratiques" : Annales/2022/EP.md
       - "Corrigés épreuves pratiques":
         - "Sujet 1" : Annales/Corriges/2022-S01.md

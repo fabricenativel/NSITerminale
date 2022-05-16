@@ -1,7 +1,16 @@
 {% set repere_sujet = "21-NSIJ2ME1" %}
-{% set numero_exo = 4 %}
 
-{{ correction_exobac(repere_sujet,numero_exo) }}
+{{ corrige_sujetbac(repere_sujet) }}
+
+
+
+{{ corrige_exobac(repere_sujet,1) }}
+
+{{ corrige_exobac(repere_sujet,2) }}
+
+{{ corrige_exobac(repere_sujet,3) }}
+
+{{ corrige_exobac(repere_sujet,4) }}
 
 
 #### Partie A
@@ -20,3 +29,5 @@
 
 3. C'est l'identifiant 6211
 
+
+{{ corrige_exobac(repere_sujet,5) }}

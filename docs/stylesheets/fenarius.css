@@ -3,6 +3,18 @@
   font-size : 72pt;
 }
 
+.box {
+  line-height: 1.1;
+  font-family: 'Courier New', monospace;
+  font-size: large;
+}
+
+.theme_exo  {
+  color : black;
+  font-size: smaller;
+  font-style: italic;
+}
+
 .encadre{
   color: black;
   background-color: #DDDDDD;
