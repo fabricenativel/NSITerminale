@@ -1,0 +1,1385 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.3.0, mkdocs-material-8.2.15" name="generator"/>
+<title>C4-Diviser pour régner - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.c382b1dc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cc9b2e1e.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c4-diviser-pour-regner">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M18.43 255.8 192 224l-91.2 68.6c-10.13 10.2-3 27.4 11.2 27.4h222.7c-9.499-26.5-14.75-54.5-14.75-83.38V194.2L200.3 106.8c-23.8-15.92-55.3-14.05-77 4.4L5.8 227.6C-6.562 238 2.436 258 18.43 255.8zm556.77 34.1-100.7-50.25c-16.25-8.125-26.5-24.75-26.5-43V160h63.99l28.12 22.62c5.99 5.98 14.09 9.38 22.59 9.38h30.1c11.1 0 23.12-6.875 28.5-17.75l14.37-28.62c5.374-10.87 4.25-23.75-2.999-33.5l-74.49-99.37C552.1 4.75 543.5 0 533.5 0H296c-7.1 0-10.6 8.625-5.6 13.62L351.1 64l-58.7 24.75c-5.874 3-5.874 11.37 0 14.37L351.1 128l-.001 108.6c0 72 35.99 139.4 95.99 179.4-195.6 6.75-344.4 41-434.1 60.88-8.124 1.75-13.87 9-13.87 17.38C.046 504 8.045 512 17.79 512h499.1c63.24 0 119.6-47.5 122.1-110.8 3.31-47.2-21.89-90.3-63.79-111.3zM489.1 66.25l45.74 11.38c-2.75 11-12.5 18.88-24.12 18.25-13.02-.63-25.92-12.5-21.62-29.63z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              C4-Diviser pour régner
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index_annales/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M18.43 255.8 192 224l-91.2 68.6c-10.13 10.2-3 27.4 11.2 27.4h222.7c-9.499-26.5-14.75-54.5-14.75-83.38V194.2L200.3 106.8c-23.8-15.92-55.3-14.05-77 4.4L5.8 227.6C-6.562 238 2.436 258 18.43 255.8zm556.77 34.1-100.7-50.25c-16.25-8.125-26.5-24.75-26.5-43V160h63.99l28.12 22.62c5.99 5.98 14.09 9.38 22.59 9.38h30.1c11.1 0 23.12-6.875 28.5-17.75l14.37-28.62c5.374-10.87 4.25-23.75-2.999-33.5l-74.49-99.37C552.1 4.75 543.5 0 533.5 0H296c-7.1 0-10.6 8.625-5.6 13.62L351.1 64l-58.7 24.75c-5.874 3-5.874 11.37 0 14.37L351.1 128l-.001 108.6c0 72 35.99 139.4 95.99 179.4-195.6 6.75-344.4 41-434.1 60.88-8.124 1.75-13.87 9-13.87 17.38C.046 504 8.045 512 17.79 512h499.1c63.24 0 119.6-47.5 122.1-110.8 3.31-47.2-21.89-90.3-63.79-111.3zM489.1 66.25l45.74 11.38c-2.75 11-12.5 18.88-24.12 18.25-13.02-.63-25.92-12.5-21.62-29.63z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../revisions/">
+        C0-Révisions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        C2-Bases de données et SQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          C4-Diviser pour régner
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        C4-Diviser pour régner
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-recherche-dans-une-liste-fontawesome-solid-historytitleretour-sur-des-notions-anterieures">
+    Activité 1 : Recherche dans une liste  :fontawesome-solid-history:{title='Retour sur des notions antérieures'}
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-tri-fusion">
+    Activité 2 : Tri fusion
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-maximum-des-elements-dune-liste">
+    Exercice 1 : Maximum des éléments d'une liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-inversions-dans-une-liste">
+    Exercice 2 : Inversions dans une liste  
+  </a>
+<nav aria-label="Exercice 2 : Inversions dans une liste  " class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#questions-preliminaires">
+    Questions préliminaires
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partie-a-methode-iterative">
+    Partie A : Méthode itérative
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partie-b-methode-recursive">
+    Partie B : Méthode récursive
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-quart-de-tour-dune-image">
+    Exercice 3 : Quart de tour d'une image
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-algorithme-de-karatsuba">
+    Exercice 4 : Algorithme de Karatsuba    
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-quicksort">
+    Exercice 5 : Quicksort  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sl/">
+        C6-Structures de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arbres/">
+        C8-Arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../algoarbre/">
+        C10-Algorithmes sur les arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px&gt;  Annales du Bac" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index_annales/">
+        Annales du bac
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+          2021
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2021" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/EE/">
+        Epreuves écrites
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_2_2" id="__nav_4_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves écrites" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/Correction_EE/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1AN1/">
+        21-NSIJ1AN1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1G11/">
+        21-NSIJ1G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1ME1/">
+        21-NSIJ1ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1ME2/">
+        21-NSIJ1ME2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2G11/">
+        21-NSIJ2G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME1/">
+        21-NSIJ2ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME2/">
+        21-NSIJ2ME2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME3/">
+        21-NSIJ2ME3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2PO1/">
+        21-NSIJ2PO1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/EP/">
+        Epreuves pratiques
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2022" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/EE/">
+        Epreuves écrites
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3_2" id="__nav_4_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves écrites" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/Correction_EE/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1G11/">
+        22-NSIJ1G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1ME1/">
+        22-NSIJ1ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1PO1/">
+        22-NSIJ1PO1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ2G11/">
+        22-NSIJ2G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ2ME1/">
+        22-NSIJ2ME1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/EP/">
+        Epreuves pratiques
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3_4" id="__nav_4_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_4">
+          Corrigés épreuves pratiques
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves pratiques" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves pratiques
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S01/">
+        Sujet 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S02/">
+        Sujet 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S03/">
+        Sujet 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S04/">
+        Sujet 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S05/">
+        Sujet 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S06/">
+        Sujet 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S07/">
+        Sujet 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S08/">
+        Sujet 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S09/">
+        Sujet 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S10/">
+        Sujet 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S11/">
+        Sujet 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S12/">
+        Sujet 12
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S13/">
+        Sujet 13
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S14/">
+        Sujet 14
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S15/">
+        Sujet 15
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S16/">
+        Sujet 16
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S17/">
+        Sujet 17
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S18/">
+        Sujet 18
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S19/">
+        Sujet 19
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S20/">
+        Sujet 20
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S21/">
+        Sujet 21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S22/">
+        Sujet 22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S23/">
+        Sujet 23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S24/">
+        Sujet 24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S25/">
+        Sujet 25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S26/">
+        Sujet 26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S27/">
+        Sujet 27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S28/">
+        Sujet 28
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S29/">
+        Sujet 29
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S30/">
+        Sujet 30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S31/">
+        Sujet 31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S32/">
+        Sujet 32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S33/">
+        Sujet 33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S34/">
+        Sujet 34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S35/">
+        Sujet 35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S36/">
+        Sujet 36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S37/">
+        Sujet 37
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S38/">
+        Sujet 38
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S39/">
+        Sujet 39
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S40/">
+        Sujet 40
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-recherche-dans-une-liste-fontawesome-solid-historytitleretour-sur-des-notions-anterieures">
+    Activité 1 : Recherche dans une liste  :fontawesome-solid-history:{title='Retour sur des notions antérieures'}
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-tri-fusion">
+    Activité 2 : Tri fusion
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-maximum-des-elements-dune-liste">
+    Exercice 1 : Maximum des éléments d'une liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-inversions-dans-une-liste">
+    Exercice 2 : Inversions dans une liste  
+  </a>
+<nav aria-label="Exercice 2 : Inversions dans une liste  " class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#questions-preliminaires">
+    Questions préliminaires
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partie-a-methode-iterative">
+    Partie A : Méthode itérative
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partie-b-methode-recursive">
+    Partie B : Méthode récursive
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-quart-de-tour-dune-image">
+    Exercice 3 : Quart de tour d'une image
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-algorithme-de-karatsuba">
+    Exercice 4 : Algorithme de Karatsuba    
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-quicksort">
+    Exercice 5 : Quicksort  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c4-diviser-pour-regner"><span class="numchapitre">C4</span> Diviser pour régner <span style="float:right;"><span class="twemoji" title="Algorithmique"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M286.3 155.1c1.1 6.8 1.7 13.8 1.7 20 0 8-.6 15-1.7 21.8l22.2 19.8c7 6.3 9.9 15.4 6.2 25-2.3 4.4-4.8 10.5-7.6 15.5l-3.1 5.4c-3.9 5-6.3 9.8-9.8 14.5-5.7 7.6-15.7 10.1-24.7 7.1l-28.3-9.3c-10.7 8.9-22.9 16-36.2 21l-6.9 29c-1.1 9.3-8.3 16.7-17.7 17.9-6.7.8-13.5 1.2-20.4 1.2-6.9 0-13.7-.4-20.4-1.2-9.4-1.2-17.5-8.6-18.6-17.9l-6.9-29c-12.4-5-24.6-12.1-35.35-21l-28.22 9.3c-8.99 3-19.01.5-24.71-7.1-3.54-4.7-6.84-9.6-9.88-14.6l-3.02-5.3c-2.79-5-5.328-10.2-7.596-15.5-3.704-9.6-.866-18.7 6.196-25l22.18-19.8c-1.12-6.8-2.6-13.8-2.6-21.8 0-6.2 1.48-13.2 2.6-20l-22.18-19.8c-7.062-7.2-9.9-16.3-6.196-25 2.268-6.2 4.806-10.51 7.586-15.54l3.04-5.25c3.03-5.05 6.33-9.93 9.87-14.62 5.7-7.55 15.72-10.06 24.71-7.1l28.22 9.3c10.75-8.84 22.95-15.96 35.35-20.94l6.9-29.07c1.1-9.28 9.2-16.71 18.6-17.849A169.2 169.2 0 0 1 160 8c6.9 0 13.7.418 20.4 1.23 9.4 1.14 16.6 8.57 17.7 17.85l6.9 29.07c13.3 4.98 25.5 12.1 36.2 20.94l28.3-9.3c9-2.96 19-.45 24.7 7.1 3.5 4.67 5.9 9.53 9.8 14.55l3.1 5.39c2.8 5.01 5.3 10.17 7.6 15.47 3.7 8.7.8 17.8-6.2 25l-22.2 19.8zm-126.3-28c-26.5 0-48 22.4-48 48 0 27.4 21.5 48 48 48s48-20.6 48-48c0-25.6-21.5-48-48-48zm324.9 351.2c-6.8 1.1-13.8 1.7-20.9 1.7-7.1 0-14.1-.6-20.9-1.7l-19.8 22.2c-7.2 7-16.3 9.9-25 6.2-5.3-2.3-10.5-4.8-15.5-7.6l-5.4-3.1c-5-3.9-9.8-6.3-14.5-9.8-7.6-5.7-10.1-15.7-7.1-24.7l9.3-28.3c-8.9-10.7-16-22.9-21-36.2l-29-6.9c-9.3-1.1-16.7-8.3-17.9-17.7-.8-6.7-1.2-13.5-1.2-20.4 0-6.9.4-13.7 1.2-20.4 1.2-9.4 8.6-17.5 17.9-18.6l29-6.9c5-12.4 12.1-24.6 21-35.3l-9.3-28.3c-3-9-.5-19 7.1-24.7 4.7-3.5 9.6-7.7 14.6-9.9l5.3-3c5-2.8 9.3-5.3 15.5-7.6 8.7-3.7 17.8-.8 25 6.2l19.8 22.2c6.8-1.1 13.8-1.7 20.9-1.7 7.1 0 14.1.6 20.9 1.7l19.8-22.2c6.3-7 15.4-9.9 25-6.2 5.3 2.3 10.5 4.8 15.5 7.6l5.3 3c5 2.2 9.9 6.4 14.6 9.9 7.6 5.7 10.1 15.7 7.1 24.7l-9.3 28.3c8.9 10.7 16 22.9 21 35.3l29 6.9c9.3 1.1 16.7 9.2 17.9 18.6.8 6.7 1.2 13.5 1.2 20.4 0 6.9-.4 13.7-1.2 20.4-1.2 9.4-8.6 16.6-17.9 17.7l-29 6.9c-5 13.3-12.1 25.5-21 36.2l9.3 28.3c3 9 .5 19-7.1 24.7-4.7 3.5-9.5 5.9-14.5 9.8l-5.4 3.1c-5 2.8-11.1 5.3-15.5 7.6-9.6 3.7-18.7.8-25-6.2l-19.8-22.2zM512 352c0-26.5-21.5-48-48-48s-48 21.5-48 48 21.5 48 48 48 48-21.5 48-48z"></path></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-recherche-dans-une-liste-fontawesome-solid-historytitleretour-sur-des-notions-anterieures"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 1 : <em>Recherche dans une liste</em><span style="float:right;"><span style="float:right;">  :fontawesome-solid-history:{title='Retour sur des notions antérieures'}</span></span></img></h3>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Cette activité revient sur deux algorithmes de recherche d'un élément dans une liste déjà rencontrés en classe de première et sur la comparaison de leurs efficacités. En cas de difficultés, on pourra donc revenir sur les activités correspondantes :</p>
+<ul>
+<li><a href="https://fabricenativel.github.io/NSIPremiere/notionsalgo/#activite-1-rechercher-dans-une-liste" target="_blank">recherche par parcours simple</a></li>
+<li><a href="https://fabricenativel.github.io/NSIPremiere/notionsalgo/#activite-2-recherche-dichotomique" target="_blank">recherche dichotomique</a></li>
+<li><a href="https://fabricenativel.github.io/NSIPremiere/notionsalgo/#activite-3-complexite-dun-algorithme" target="_blank">comparaison des temps d'exécution</a></li>
+</ul>
+</div>
+<ol>
+<li>
+<p>Ecrire une fonction <code>recherche(x,l)</code> qui en effectuant un parcours simple de la liste, renvoie <code>True</code> ou <code>False</code> selon que l'élément <code>x</code> se trouve ou non dans la liste <code>l</code>.</p>
+</li>
+<li>
+<p>On suppose maintenant que la <strong>liste est triée</strong>, l'algorithme de recherche par dichotomie vue en classe de première consiste alors à <br/>
+<img alt="1⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/31-20e3.svg" title=":one:"> partager la liste en deux listes de longueurs égales (à une unité près) <br/>
+<img alt="2⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/32-20e3.svg" title=":two:"> comparer  l'élément recherché avec celui situé au milieu de la liste<br/>
+<img alt="3⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/33-20e3.svg" title=":three:"> en déduire dans quelle moitié poursuivre la recherche<br/>
+    On s'arrête lorsque la zone de recherche ne contient plus qu'un élément.</img></img></img></p>
+<ol>
+<li>Faire fonctionner "à la main" cet algorithme pour rechercher <code>6</code> dans <code>[1,3,5,7,11,13]</code>.</li>
+<li>Programmer cet algorithme.</li>
+</ol>
+</li>
+<li>
+<p>Que dire de l'efficacité de ces deux algorithmes ?</p>
+</li>
+</ol>
+<h3 id="activite-2-tri-fusion"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 2 : <em>Tri fusion</em></img></h3>
+<ol>
+<li>
+<p>Algorithmes de tri vus en première</p>
+<ol>
+<li>Rappeler rapidement le principe du <a href="https://fabricenativel.github.io/NSIPremiere/algostri/#activite-1-tri-par-selection" target="_blank">tri par sélection</a> vu en classe de première. Donner les étapes de cet algorithme pour trier la liste <code>[10,6,3,9,7,5]</code></li>
+<li>Rappeler rapidement le principe du <a href="https://fabricenativel.github.io/NSIPremiere/algostri/#activite-2-tri-par-insertion" target="_blank">tri par insertion</a> vu en classe de première. Donner les étapes de cet algorithme pour trier la liste <code>[10,6,3,9,7,5]</code> </li>
+<li>Quelle est la complexité de ces deux algorithmes ?</li>
+</ol>
+</li>
+<li>
+<p>L'algorithme du <strong>tri fusion</strong> consiste à : <br/>
+<img alt="1⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/31-20e3.svg" title=":one:"> partager la liste en deux moitiés (à une unité près), <br/>
+<img alt="2⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/32-20e3.svg" title=":two:"> trier chacune des deux moitiés, <br/>
+<img alt="3⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/33-20e3.svg" title=":three:"> les fusionner pour obtenir la liste triée. <br/>
+On a schématisé le tri de la liste <code>[10,6,3,9,7,5]</code> suivant ce principe ci-dessous :
+<div class="mermaid">    graph TD
+    subgraph Partager en deux
+    S["[10,6,3,9,7,5]"] --&gt; S1["[10,6,3]"]
+    S --&gt; S2["[9,7,5]"]
+    end
+    subgraph Fusionner
+    S1 -.Trier.-&gt; T1["[3,6,10]"]
+    S2 -.Trier.-&gt; T2["[5,7,9]"]
+    T1 --&gt; T["[3,5,6,7,9,10]"]
+    T2 --&gt; T
+    end
+</div></img></img></img></p>
+<ol>
+<li>Le tri des deux moitiés est lui-même effectué par tri fusion, par conséquent que peut-on dire de cet algorithme ?</li>
+<li>
+<p>On a schématisé ci-dessous le fonctionnement complet de l'algorithme pour la liste <code>[10,6,3,9,7,5]</code>, recopier et compléter les cases manquantes.</p>
+<div class="mermaid">    graph TD
+            subgraph Partager en deux
+            S["[10,6,3,9,7,5]"] --&gt; S1["[10,6,3]"]
+            S --&gt; S2["[9,7,5]"]
+            S1 --&gt; S11["[10]"]
+            S1 --&gt; S12["[6,3]"]
+            S2 --&gt; S21["[9]"]
+            S2 --&gt; S22["[...,...]"]
+            S12 --&gt; S121["[6]"]
+            S12 --&gt; S122["[3]"]
+            S22 --&gt; S221["[...]"]
+            S22 --&gt; S222["[...]"]
+            end
+            subgraph Fusionner
+            S121 --&gt; T21["[...,...]"]
+            S122 --&gt; T21
+            S221 --&gt; T22["[5,7]"]
+            S222 --&gt; T22["[5,7]"]
+            S11 --&gt; T1["[...,...,...]"]
+            T21 --&gt; T1
+            S21 --&gt; T2["[...,...,...]"]
+            T22 --&gt; T2
+            T1 --&gt; T["[3,5,6,7,9,10]"]
+            T2 --&gt; T
+            end
+
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>Implémentation en Python</p>
+<ol>
+<li>
+<p>Programmer une fonction <code>partage(l)</code> qui prend en argument une liste <code>l</code> et renvoie les deux moitiés <code>l1</code> et <code>l2</code> (à une unité près) de <code>l</code>. Par exemple <code>partage([3,7,5])</code> renvoie <code>[3]</code> et <code>[7,5]</code>.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<ul>
+<li>Penser à utiliser les constructions de listes par compréhension</li>
+<li>Les <em>slices</em> de Python sont un moyen efficace d'effectuer le partage, mais leur connaissance n'est pas un attendu du programme de terminale. Les élèves intéressés pourront leur propre recherche sur le <em>Web</em>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>On donne ci-dessous une fonction <code>fusion(l1,l2)</code> qui prend en argument deux listes <strong>déjà triées</strong> <code>l1</code> et <code>l2</code> et renvoie la liste triée <code>l</code> fusion de <code>l1</code> et <code>l2</code> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">):</span>
+    <span class="n">ind1</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">ind2</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">ind1</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ind2</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">l2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">l1</span><span class="p">[</span><span class="n">ind1</span><span class="p">]</span><span class="o">&lt;</span><span class="n">l2</span><span class="p">[</span><span class="n">ind2</span><span class="p">]:</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l1</span><span class="p">[</span><span class="n">ind1</span><span class="p">])</span>
+            <span class="n">ind1</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l2</span><span class="p">[</span><span class="n">ind2</span><span class="p">])</span>
+            <span class="n">ind2</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">ind1</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">l1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ind2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">l2</span><span class="p">)):</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l2</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ind1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">l1</span><span class="p">)):</span>
+            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l1</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">l</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Recopier et tester cette fonction.</li>
+<li>Quel est le rôle des variables <code>ind1</code> et <code>ind2</code> ?</li>
+<li>Ajouter un commentaire décrivant le rôle de la boucle <code>while</code>.</li>
+<li>Ajouter un commentaire décrivant le rôle des lignes 12 à 17.</li>
+</ol>
+</li>
+<li>
+<p>En utilisant les deux fonctions précédentes, écrire une fonction <code>tri_fusion(l)</code> qui implémente l'algorithme du tri fusion en Python.</p>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>On montre que l'algorithme du tri fusion a une complexité en <span class="arithmatex">\(O(n\log(n))\)</span>, c'est donc un algorithme plus efficace que le tri par insertion ou le tri par sélection qui ont tous les deux une complexité en <span class="arithmatex">\(O(n^2)\)</span>.</p>
+</div>
+<h2 id="cours">Cours</h2>
+</li>
+</ol>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C4/C4-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-maximum-des-elements-dune-liste"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Maximum des éléments d'une liste</em></img></h3>
+<p>On propose l'algorithme suivant pour la recherche du maximum des éléments d'une liste :<br/>
+<img alt="1⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/31-20e3.svg" title=":one:"> Partager la liste en deux moitiés <code>l1</code> et <code>l2</code> <br/>
+<img alt="2⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/32-20e3.svg" title=":two:"> Chercher les maximums <code>m1</code> de <code>l1</code> et <code>m2</code> de <code>l2</code> <br/>
+<img alt="3⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/33-20e3.svg" title=":three:"> En déduire le maximum <code>m</code> de <code>l</code>.</img></img></img></p>
+<ol>
+<li>Expliquer pourquoi cet algorithme fait partie de la méthode <strong>diviser pour régner</strong>.</li>
+<li>Cet algorithme est-il récursif ? Justifier.</li>
+<li>Ecrire une implémentation en Python de cet algorithme.</li>
+</ol>
+<h3 id="exercice-2-inversions-dans-une-liste"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Inversions dans une liste</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice extrait du Bac"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M623.1 136.9 340.4 35.7a62.951 62.951 0 0 0-42.43 0L16.05 136.9C6.438 140.4 0 149.6 0 160s6.438 19.65 16.05 23.09l60.02 21.51c-11.89 15.8-20.26 34.16-24.55 53.95C40.05 263.4 32 274.8 32 288c0 9.953 4.814 18.49 11.94 24.36l-24.83 149C17.48 471.1 25 480 34.89 480h58.22c9.887 0 17.41-8.879 15.78-18.63l-24.83-149C91.19 306.5 96 297.1 96 288c0-10.29-5.174-19.03-12.72-24.89a106.301 106.301 0 0 1 24.94-47.03l190.6 68.23a62.951 62.951 0 0 0 42.43 0l282.7-101.2C633.6 179.6 640 170.4 640 160s-6.4-19.6-16.9-23.1zm-272 177.5c-9.4 3.7-20.2 5.6-31.1 5.6a94.767 94.767 0 0 1-32-5.555L142.8 262.5 128 405.3c0 41.3 85.1 74.7 192 74.7 105.1 0 192-33.4 192-74.67l-14.78-142.9L351.1 314.4z"></path></svg></span></span></span></img></h3>
+<p><em>Cet exercice est extrait  d'un sujet de <span style="font-variant:small-caps;">bac</span> de la session 2021</em></p>
+<p>Dans un tableau Python d'entiers <code>tab</code>, on dit que le couple d'indice <code>(i,j)</code> forme une inversion lorsque <code>i&lt;j</code> et <code>tab[i]&gt;tab[j]</code>. On donne ci-dessous quelques exemples.</p>
+<ul>
+<li>Dans le tableau <code>[1,5,3,7]</code> le couple d'indices <code>(1,2)</code> forme une inversion car <code>5&gt;3</code>. Par contre, le couple  <code>(1,3)</code> ne forme pas d'inversion car <code>5&lt;7</code>.<br/>
+Il n'y a qu'une inversion dans ce tableau</li>
+<li>Il y a trois inversions sans le tableau <code>[1,6,2,7,3]</code>, à savoir les couples d'indices <code>(1,2)</code>, <code>(1,4)</code> et <code>(3,4)</code>.</li>
+<li>On peut compter six inversions dans le tableau <code>[7,6,5,3]</code> : les couples d'indices <code>(0,1), (0,2), (0,3), (1,2), (1,3)</code> et <code>(2,3)</code>.
+On se propose dans cet exercice de déterminer le nombre d'inversions dans un tableau quelconque</li>
+</ul>
+<h4 id="questions-preliminaires">Questions préliminaires</h4>
+<ol>
+<li>Expliquer pourquoi le couple <code>(1,3)</code> est une inversion dans le tableau <code>[4,8,3,7]</code>.</li>
+<li>Justifier que le couple <code>(2,3)</code> n'en est pas une.</li>
+</ol>
+<h4 id="partie-a-methode-iterative">Partie A : Méthode itérative</h4>
+<p>Le but de cette partie est d'ecrire une fonction itérative <code>nombre_inversion</code> qui renvoie le nombre d'inversions dans un tableau. Pour cela, on commence par écrire une fonction <code>fonction1</code> qui sera ensuite utilisé pour écrire la fonction <code>nombre_inversion</code>.</p>
+<ol>
+<li>
+<p>On donne la fonction suivante.</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">fonction1</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="n">nb_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+        <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_elem</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">cpt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">cpt</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Indiquer ce que renvoie la <code>fonction1(tab,i)</code> dans les cas suivants :</p>
+<ul>
+<li>Cas n°1 : <code>tab=[1,5,3,7]</code> et <code>i=0</code></li>
+<li>Cas n°2 : <code>tab=[1,5,3,7]</code> et <code>i=1</code></li>
+<li>Cas n°3 : <code>tab=[1,5,2,6,4]</code> et <code>i=1</code></li>
+</ul>
+</li>
+<li>
+<p>Expliquer ce que permet de déterminer cette fonction.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>En utilisant la fonction précédente, écrire une fonction <code>nombre_inversion(tab)</code> qui prend en argument un tableau et renvoie le nombre d’inversions dans ce tableau. On donne ci-dessous les résultats attendus pour certains appels.
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">nombre_inversions</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nombre_inversions</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nombre_inversions</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="mi">6</span>
+</code></pre></div></p>
+</li>
+<li>Quelle est l’ordre de grandeur de la complexité en temps de l'algorithme obtenu ? Aucune justification n'est attendue.</li>
+</ol>
+<h4 id="partie-b-methode-recursive">Partie B : Méthode récursive</h4>
+<p>Le but de cette partie est de concevoir une version récursive de la fonction <code>nombre_inverion</code>. On définit pour cela des fonctions auxiliaires.</p>
+<ol>
+<li>
+<p>Donner le nom d'un algorithme de tri ayant une complexité meilleure que quadratique.
+Dans la suite de cet exercice, on suppose qu’on dispose d'une fonction <code>tri(tab)</code> qui prend en argument un tableau et renvoie un tableau contenant les mêmes éléments rangés dans l'ordre croissant.</p>
+</li>
+<li>
+<p>Écrire une fonction <code>moitie_gauche(tab)</code> qui prend en argument un tableau tab et renvoie un nouveau tableau contenant la moitié gauche de tab. Si le nombre d'éléments de tab est impair, l'élément du centre se trouve dans cette partie gauche. On donne ci-dessous les résultats attendus pour certains appels.</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span><span class="p">([])</span>
+    <span class="p">[]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">moitie_gauche</span> <span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</code></pre></div>
+Dans la suite, on suppose qu’on dispose de la fonction moitie_droite(tab) qui renvoie la moitié droite sans l’élément du milieu.</p>
+</li>
+<li>
+<p>On suppose qu’une fonction <code>nb_inv_tab(tab1, tab2)</code> a été écrite. Cette fonction renvoie le nombre d’inversions du tableau obtenu en mettant bout à bout les tableaux <code>tab1</code> et <code>tab2</code>, à condition que <code>tab1</code> et <code>tab2</code> soient triés dans l’ordre croissant. On donne ci-dessous deux exemples d’appel de cette fonction :</p>
+<p><div class="highlight"><pre><span></span><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">nb_inv_tab</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+    <span class="mi">3</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">nb_inv_tab</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">13</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">])</span>
+    <span class="mi">3</span>
+</code></pre></div>
+En utilisant la fonction <code>nb_inv_tab</code> et les questions précédentes, écrire une fonction récursive <code>nb_inversions_rec(tab)</code> qui permet de calculer le nombre d'inversions dans un tableau. Cette fonction renverra le même nombre que <code>nombre_inversions(tab)</code> de la partie A. On procédera de la façon suivante :</p>
+<ul>
+<li>Séparer le tableau en deux tableaux de tailles égales (à une unité près).</li>
+<li>Appeler récursivement la fonction <code>nb_inversions_rec</code> pour compter le nombre d’inversions dans chacun des deux tableaux.</li>
+<li>Trier les deux tableaux (on rappelle qu'une fonction de tri est déjà définie).</li>
+<li>Ajouter au nombre d'inversions précédemment comptées le nombre renvoyé par la fonction <code>nb_inv_tab</code> avec pour arguments les deux tableaux triés.</li>
+</ul>
+</li>
+</ol>
+<h3 id="exercice-3-quart-de-tour-dune-image"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Quart de tour d'une image</em></img></h3>
+<ol>
+<li>
+<p>Pour faire tourner une image carré de côté <span class="arithmatex">\(2^n\)</span> pixels d'un quart de tour à gauche, on propose la méthode suivante :</p>
+<ul>
+<li>Diviser l'image en quatre quarts Q1,Q2,Q3,Q4 <br/>
+<img alt="qquarts1" src="../images/C4/qquart1.png" width="200"/></li>
+<li>Faire tourner chacun des quarts d'un quart de tour à gauche <br/>
+<img alt="qquarts2" src="../images/C4/qquart2.png" width="200"/></li>
+<li>Permuter chaque quart afin de le placer correctement <br/>
+<img alt="qquarts3" src="../images/C4/qquart3.png" width="200"/></li>
+</ul>
+<p>Expliquer pourquoi cette méthode est une illustration de la technique diviser pour régner.</p>
+</li>
+<li>
+<p>C'est algorithme est-il du type itératif ou récursif ? Justifier.</p>
+</li>
+<li>
+<p>Découpage de l'image en quatres quarts à l'aide du module <span style="font-variant:small-caps;">pil</span> de manipulation d'images</p>
+<ol>
+<li>On a représenté une image carré de <span class="arithmatex">\(n\)</span> pixels de côté avec le système de coordonnées d'une image dans le module <span style="font-variant:small-caps;">pil</span>. Quelles sont les coordonnées manquantes ? <br/>
+<img alt="coordonnees" src="../images/C4/coordonnees.png" width="300"/></li>
+<li>
+<p>La méthode <code>crop</code> du module <span style="font-variant:small-caps;">pil</span> permet d'extraire une portion rectangulaire d'une image en donnant les coordonnées des coins supérieur gauche et inférieur droit du rectangle. Compléter la fonction Python suivante qui prend en entrée une image et retourne les quatre quarts de cette image.</p>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+    <span class="k">def</span> <span class="nf">partage_quart</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">q1</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">))</span>
+            <span class="n">q2</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+            <span class="n">q3</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+            <span class="n">q4</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">q1</span><span class="p">,</span><span class="n">q2</span><span class="p">,</span><span class="n">q3</span><span class="p">,</span><span class="n">q4</span>
+</code></pre></div>
+</li>
+<li>
+<p>Tester cette fonction (on pourra utiliser <a href="../images/C4/Jess.jpg">cette image carré</a>)</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<ul>
+<li>La création d'une image dans <span style="font-variant:small-caps;">pil</span> à partir d'un fichier s'effectue à l'aide de :
+<div class="highlight"><pre><span></span><code>    <span class="n">img_test</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"mettre ici le nom du fichier"</span><span class="p">)</span>
+</code></pre></div></li>
+<li>La visualisation d'une image s'effectue à l'aide de :
+<div class="highlight"><pre><span></span><code>    <span class="n">img_test</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ajouter une instruction <code>assert</code> permettant de vérifier que l'image est carré (c'est à dire <code>image.width==image.height</code>)</p>
+</li>
+<li>Ajouter une instruction <code>assert</code> permettant de vérifier que <code>n</code> est pair.</li>
+</ol>
+</li>
+<li>
+<p>Compléter puis tester la fonction python qui implémente l'algorithme décrit à la question 1.
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">quart_tour</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span>
+        <span class="c1"># Partage de l'image en quatre quarts</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">q1</span><span class="p">,</span><span class="n">q2</span><span class="p">,</span><span class="n">q3</span><span class="p">,</span><span class="n">q4</span> <span class="o">=</span> <span class="n">partage_quart</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class="c1"># Rotation de chacun des quarts</span>
+            <span class="n">rq1</span> <span class="o">=</span> <span class="n">quart_tour</span><span class="p">(</span><span class="n">q1</span><span class="p">)</span>
+            <span class="n">rq2</span> <span class="o">=</span> <span class="n">quart_tour</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
+            <span class="n">rq3</span> <span class="o">=</span> <span class="n">quart_tour</span><span class="p">(</span><span class="n">q3</span><span class="p">)</span>
+            <span class="n">rq4</span> <span class="o">=</span> <span class="n">quart_tour</span><span class="p">(</span><span class="n">q4</span><span class="p">)</span>
+            <span class="c1"># Reconstruction de l'image</span>
+            <span class="n">resultat</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'RGB'</span><span class="p">,</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">resultat</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">rq2</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+            <span class="n">resultat</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="o">...</span><span class="p">,(</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+            <span class="n">resultat</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">rq1</span><span class="p">,(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+            <span class="n">resultat</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="o">...</span><span class="p">,(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">resultat</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">image</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="exercice-4-algorithme-de-karatsuba"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Algorithme de Karatsuba</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice en lien avec les mathématiques"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M494.9 96.01c-38.78 0-75.22 15.09-102.6 42.5L320 210.8l-72.2-72.3C220.39 111.09 183.96 96 145.2 96 65.11 96.01 0 161.1 0 241.1v29.75c0 80.03 65.11 145.1 145.1 145.1 38.78 0 75.22-15.09 102.6-42.5L320 301.3l72.23 72.25c27.41 27.41 63.84 42.5 102.6 42.5C574.9 416 640 350.9 640 270.9v-29.75c0-80.05-65.1-145.14-145.1-145.14zM202.5 328.3c-15.31 15.31-35.69 23.75-57.38 23.75C100.4 352 64 315.6 64 270.9v-29.75c0-44.72 36.41-81.13 81.14-81.13 21.69 0 42.06 8.438 57.38 23.75l72.23 72.25-72.25 72.28zM576 270.9c0 44.72-36.41 81.13-81.14 81.13-21.69 0-42.06-8.438-57.38-23.75l-72.23-72.25 72.23-72.25c15.31-15.31 35.69-23.75 57.38-23.75C539.6 160 576 196.4 576 241.1v29.8z"></path></svg></span></span><span style="float:right;">  <span class="twemoji" title="Exercice difficile"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M440.8 4.994C441.9 1.99 444.8 0 448 0s6.1 1.99 7.2 4.994l14.1 37.676L507 56.79c3 1.13 5 4 5 7.21s-2 6.08-5 7.21l-37.7 14.12L455.2 123c-1.1 3-4 5-7.2 5s-6.1-2-7.2-5l-14.1-37.67-38.6-14.12c-3-1.13-4.1-4-4.1-7.21s1.1-6.08 4.1-7.21l38.6-14.12 14.1-37.676zM289.4 97.37c12.5-12.49 32.7-12.49 45.2 0l28.7 28.73 17.4-17.4c6.2-6.3 16.4-6.3 22.6 0 6.3 6.2 6.3 16.4 0 22.6l-17.4 17.4 28.7 28.7c12.5 12.5 12.5 32.7 0 45.2l-10.8 10.9c7.9 22 12.2 45.8 12.2 70.5 0 114.9-93.1 208-208 208C93.12 512 0 418.9 0 304S93.12 96 208 96c24.7 0 48.5 4.3 70.5 12.3l10.9-10.93zM95.1 296c0-57.4 47.5-104 104-104h8c9.7 0 16-7.2 16-16s-6.3-16-16-16h-8c-74.2 0-136 60.9-136 136v8c0 8.8 8.06 16 16 16 9.74 0 16-7.2 16-16v-8z"></path></svg></span></span></span></img></h3>
+<ol>
+<li>
+<p>Principe de l'algorithme :</p>
+<ol>
+<li>On a posé ci-dessous la multiplication de deux nombres à deux chiffres : <span class="arithmatex">\(42 \times 37\)</span>, combien de multiplications de nombres à un chiffre (illustrés par les flèches) sont nécessaires à ce calcul ?
+<img alt="Exemple multiplication" class="imgcentre" src="../images/C4/mult.png"/></li>
+<li>Compléter le calcul en ligne correspond à l'opération ci-dessus : <br/>
+<span class="arithmatex">\((40+2) \times (30+7) = (...\times...) + (...\times...) + (...\times...) + (...\times...)\)</span></li>
+<li>
+<p>Si on multiplie deux nombres à <span class="arithmatex">\(n\)</span> chiffres de la même façon, combien de multiplications de nombres à un chiffre sont nécessaires ?</p>
+</li>
+<li>
+<p>En base 10, le produit <span class="arithmatex">\(P\)</span> de deux nombres à <span class="arithmatex">\(2n\)</span> chiffres peut s'écrire : <br/>
+<span class="arithmatex">\(P=(a\times 10^n + b)(c\times 10^n + d) = ac\times 10^{2n} + (ad+bc)\times10^n + bd\)</span> <br/>
+    Vérifier l'égalité :<br/>
+<span class="arithmatex">\(P= ac\times 10^{2n} + \left(ac+bd-(a-b)(c-d)\right)\times10^n + bd\)</span></p>
+</li>
+<li>
+<p>Combien de multiplications sont nécessaires au calcul de <span class="arithmatex">\(P\)</span> sous cette forme ?</p>
+</li>
+<li>Calculer le produit <span class="arithmatex">\(42 \times 37\)</span> sous cette forme.</li>
+</ol>
+</li>
+<li>
+<p>Ecrire en Python une implémentation de l'algorithme de Karabutsa.</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra utiliser la fonction <code>nb_chiffres(n)</code> ci-dessous qui renvoie le nombre de chiffres en base 10 de l'entier positif <code>n</code></p>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span><span class="p">,</span> <span class="n">log10</span>
+
+    <span class="k">def</span> <span class="nf">nb_chiffres</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="s2">"L'argument doit être entier"</span>
+        <span class="k">assert</span> <span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"L'argument doit être positif"</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">floor</span><span class="p">(</span><span class="n">log10</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+</code></pre></div>
+</div>
+<div class="admonition lien">
+<p class="admonition-title">Pour aller plus loin</p>
+<p>Consulter la <a href="https://fr.wikipedia.org/wiki/Algorithme_de_Karatsuba" target="_blank">page wikipédia sur l'algorithme de Karatsuba</a></p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-5-quicksort"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Quicksort</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice difficile"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M440.8 4.994C441.9 1.99 444.8 0 448 0s6.1 1.99 7.2 4.994l14.1 37.676L507 56.79c3 1.13 5 4 5 7.21s-2 6.08-5 7.21l-37.7 14.12L455.2 123c-1.1 3-4 5-7.2 5s-6.1-2-7.2-5l-14.1-37.67-38.6-14.12c-3-1.13-4.1-4-4.1-7.21s1.1-6.08 4.1-7.21l38.6-14.12 14.1-37.676zM289.4 97.37c12.5-12.49 32.7-12.49 45.2 0l28.7 28.73 17.4-17.4c6.2-6.3 16.4-6.3 22.6 0 6.3 6.2 6.3 16.4 0 22.6l-17.4 17.4 28.7 28.7c12.5 12.5 12.5 32.7 0 45.2l-10.8 10.9c7.9 22 12.2 45.8 12.2 70.5 0 114.9-93.1 208-208 208C93.12 512 0 418.9 0 304S93.12 96 208 96c24.7 0 48.5 4.3 70.5 12.3l10.9-10.93zM95.1 296c0-57.4 47.5-104 104-104h8c9.7 0 16-7.2 16-16s-6.3-16-16-16h-8c-74.2 0-136 60.9-136 136v8c0 8.8 8.06 16 16 16 9.74 0 16-7.2 16-16v-8z"></path></svg></span></span></span></img></h3>
+<ol>
+<li>Consulter la <a href="https://fr.wikipedia.org/wiki/Tri_rapide" target="_blank">page wikipédia sur l'algorithme du tri rapide</a><ol>
+<li>Expliquer rapidement le fonctionnement de cet algorithme de tri.</li>
+<li>Justifier qu'il utilise la méthode diviser pour régner.</li>
+<li>Donner un exemple du fonctionnement de cet algorithme sur une liste de petite taille.</li>
+</ol>
+</li>
+<li>Proposer une implémentation en python de cet algorithme.</li>
+</ol>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid">
+<a aria-label="Précédent: C3-Processus" class="md-footer__link md-footer__link--prev" href="../processus/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              C3-Processus
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: C5-Notions de programmation orienté objet" class="md-footer__link md-footer__link--next" href="../poo/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C5-Notions de programmation orienté objet
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({});</script></body>
+</html>

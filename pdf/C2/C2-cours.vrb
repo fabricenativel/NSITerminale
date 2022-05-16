@@ -1,0 +1,13 @@
+\mframe{\DB}
+	\begin{exampleblock}{Exemple}
+	Récupération des éléments du fichier {\tt exemple.csv} ci-dessus dans un dictionnaire :
+	\begin{lstlisting}	
+	import csv
+	fichier_csv=open("exemple.csv","r",encoding="utf-8")
+	# Lecture sous forme de dictionnaire
+	donnees = list(csv.DictReader(fichier_csv,delimiter=';'))
+	fichier_csv.close()
+	\end{lstlisting}
+	\onslide<2->{Après execution, on a pas exemple \\ {\tt donnes[0]=\{'Nom' : 'Pascal', 'Prenom' : 'Blaise', 'Naissance' : '1623'\}} \\}
+	\onslide<3->{C'est à dire que chaque ligne de la table correspond à un dictionnaire}
+	\end{exampleblock}

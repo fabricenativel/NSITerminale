@@ -1,0 +1,1464 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.3.0, mkdocs-material-8.2.15" name="generator"/>
+<title>C0-Révisions - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.c382b1dc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cc9b2e1e.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c0-revisions">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M18.43 255.8 192 224l-91.2 68.6c-10.13 10.2-3 27.4 11.2 27.4h222.7c-9.499-26.5-14.75-54.5-14.75-83.38V194.2L200.3 106.8c-23.8-15.92-55.3-14.05-77 4.4L5.8 227.6C-6.562 238 2.436 258 18.43 255.8zm556.77 34.1-100.7-50.25c-16.25-8.125-26.5-24.75-26.5-43V160h63.99l28.12 22.62c5.99 5.98 14.09 9.38 22.59 9.38h30.1c11.1 0 23.12-6.875 28.5-17.75l14.37-28.62c5.374-10.87 4.25-23.75-2.999-33.5l-74.49-99.37C552.1 4.75 543.5 0 533.5 0H296c-7.1 0-10.6 8.625-5.6 13.62L351.1 64l-58.7 24.75c-5.874 3-5.874 11.37 0 14.37L351.1 128l-.001 108.6c0 72 35.99 139.4 95.99 179.4-195.6 6.75-344.4 41-434.1 60.88-8.124 1.75-13.87 9-13.87 17.38C.046 504 8.045 512 17.79 512h499.1c63.24 0 119.6-47.5 122.1-110.8 3.31-47.2-21.89-90.3-63.79-111.3zM489.1 66.25l45.74 11.38c-2.75 11-12.5 18.88-24.12 18.25-13.02-.63-25.92-12.5-21.62-29.63z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              C0-Révisions
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index_annales/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M18.43 255.8 192 224l-91.2 68.6c-10.13 10.2-3 27.4 11.2 27.4h222.7c-9.499-26.5-14.75-54.5-14.75-83.38V194.2L200.3 106.8c-23.8-15.92-55.3-14.05-77 4.4L5.8 227.6C-6.562 238 2.436 258 18.43 255.8zm556.77 34.1-100.7-50.25c-16.25-8.125-26.5-24.75-26.5-43V160h63.99l28.12 22.62c5.99 5.98 14.09 9.38 22.59 9.38h30.1c11.1 0 23.12-6.875 28.5-17.75l14.37-28.62c5.374-10.87 4.25-23.75-2.999-33.5l-74.49-99.37C552.1 4.75 543.5 0 533.5 0H296c-7.1 0-10.6 8.625-5.6 13.62L351.1 64l-58.7 24.75c-5.874 3-5.874 11.37 0 14.37L351.1 128l-.001 108.6c0 72 35.99 139.4 95.99 179.4-195.6 6.75-344.4 41-434.1 60.88-8.124 1.75-13.87 9-13.87 17.38C.046 504 8.045 512 17.79 512h499.1c63.24 0 119.6-47.5 122.1-110.8 3.31-47.2-21.89-90.3-63.79-111.3zM489.1 66.25l45.74 11.38c-2.75 11-12.5 18.88-24.12 18.25-13.02-.63-25.92-12.5-21.62-29.63z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          C0-Révisions
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        C0-Révisions
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-ligne-de-commande">
+    Activité 1 : Ligne de commande
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-module-turtle-de-python">
+    Activité 2 : Module turtle de Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-de-lutilite-des-fonctions">
+    Activité 3 : De l'utilité des fonctions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-4-une-boucle-pour-repeter">
+    Activité 4 : Une boucle pour répéter
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-5-instructions-conditionnelles">
+    Activité 5 : Instructions conditionnelles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-6-le-probleme-de-josephus">
+    Activité 6 : Le problème de Josephus  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-les-bases-de-la-ligne-de-commande">
+    Exercice 1 : Les bases de la ligne de commande
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-quelques-commandes">
+    Exercice 2 : Quelques commandes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-arborescence">
+    Exercice 3 : Arborescence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-figures-geometriques-avec-turtle">
+    Exercice 4 : Figures géométriques avec Turtle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-quelques-figures-avec-turtle">
+    Exercice 5 : Quelques figures avec turtle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-pour-reviser-les-listes">
+    Exercice 6 : Pour réviser les listes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-7-parcours-de-liste">
+    Exercice 7 : Parcours de liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-8-polygone-regulier">
+    Exercice 8 : Polygone régulier  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-9-panneau-de-signalisation">
+    Exercice 9 : Panneau de signalisation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        C2-Bases de données et SQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diviser/">
+        C4-Diviser pour régner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sl/">
+        C6-Structures de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arbres/">
+        C8-Arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../algoarbre/">
+        C10-Algorithmes sur les arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px&gt;  Annales du Bac" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index_annales/">
+        Annales du bac
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+          2021
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2021" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/EE/">
+        Epreuves écrites
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_2_2" id="__nav_4_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves écrites" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/Correction_EE/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1AN1/">
+        21-NSIJ1AN1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1G11/">
+        21-NSIJ1G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1ME1/">
+        21-NSIJ1ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1ME2/">
+        21-NSIJ1ME2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2G11/">
+        21-NSIJ2G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME1/">
+        21-NSIJ2ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME2/">
+        21-NSIJ2ME2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME3/">
+        21-NSIJ2ME3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2PO1/">
+        21-NSIJ2PO1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/EP/">
+        Epreuves pratiques
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2022" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/EE/">
+        Epreuves écrites
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3_2" id="__nav_4_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves écrites" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/Correction_EE/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1G11/">
+        22-NSIJ1G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1ME1/">
+        22-NSIJ1ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1PO1/">
+        22-NSIJ1PO1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ2G11/">
+        22-NSIJ2G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ2ME1/">
+        22-NSIJ2ME1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/EP/">
+        Epreuves pratiques
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3_4" id="__nav_4_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_4">
+          Corrigés épreuves pratiques
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves pratiques" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves pratiques
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S01/">
+        Sujet 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S02/">
+        Sujet 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S03/">
+        Sujet 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S04/">
+        Sujet 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S05/">
+        Sujet 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S06/">
+        Sujet 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S07/">
+        Sujet 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S08/">
+        Sujet 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S09/">
+        Sujet 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S10/">
+        Sujet 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S11/">
+        Sujet 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S12/">
+        Sujet 12
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S13/">
+        Sujet 13
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S14/">
+        Sujet 14
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S15/">
+        Sujet 15
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S16/">
+        Sujet 16
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S17/">
+        Sujet 17
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S18/">
+        Sujet 18
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S19/">
+        Sujet 19
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S20/">
+        Sujet 20
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S21/">
+        Sujet 21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S22/">
+        Sujet 22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S23/">
+        Sujet 23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S24/">
+        Sujet 24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S25/">
+        Sujet 25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S26/">
+        Sujet 26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S27/">
+        Sujet 27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S28/">
+        Sujet 28
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S29/">
+        Sujet 29
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S30/">
+        Sujet 30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S31/">
+        Sujet 31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S32/">
+        Sujet 32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S33/">
+        Sujet 33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S34/">
+        Sujet 34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S35/">
+        Sujet 35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S36/">
+        Sujet 36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S37/">
+        Sujet 37
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S38/">
+        Sujet 38
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S39/">
+        Sujet 39
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S40/">
+        Sujet 40
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-ligne-de-commande">
+    Activité 1 : Ligne de commande
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-module-turtle-de-python">
+    Activité 2 : Module turtle de Python
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-de-lutilite-des-fonctions">
+    Activité 3 : De l'utilité des fonctions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-4-une-boucle-pour-repeter">
+    Activité 4 : Une boucle pour répéter
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-5-instructions-conditionnelles">
+    Activité 5 : Instructions conditionnelles
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-6-le-probleme-de-josephus">
+    Activité 6 : Le problème de Josephus  
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-les-bases-de-la-ligne-de-commande">
+    Exercice 1 : Les bases de la ligne de commande
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-quelques-commandes">
+    Exercice 2 : Quelques commandes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-arborescence">
+    Exercice 3 : Arborescence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-figures-geometriques-avec-turtle">
+    Exercice 4 : Figures géométriques avec Turtle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-quelques-figures-avec-turtle">
+    Exercice 5 : Quelques figures avec turtle
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-pour-reviser-les-listes">
+    Exercice 6 : Pour réviser les listes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-7-parcours-de-liste">
+    Exercice 7 : Parcours de liste
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-8-polygone-regulier">
+    Exercice 8 : Polygone régulier  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-9-panneau-de-signalisation">
+    Exercice 9 : Panneau de signalisation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c0-revisions"><span class="numchapitre">C0</span> Révisions <span style="float:right;"><span class="twemoji" title="Langages et programmation"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-ligne-de-commande"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 1 : <em>Ligne de commande</em></img></h3>
+<p>Le but de cette activité est de redécouvrir les bases de la ligne de commande. On utilisera <a href="https://github.com/phyver/GameShell" target="_blank">gameshell</a>, un mini-jeu d'aventure où les commandes servent à accomplir des missions.</p>
+<ol>
+<li>
+<p>Installation de Gameshell :</p>
+<ol>
+<li>Télécharger le fichier <a href="../files/C0/gameshell.sh">gameshell</a>.</li>
+<li>Ouvrir l'explorateur de fichier.</li>
+<li>Créer un répertoire <code>gameshell</code> dans votre dossier personnel (en faisant un clic-droit et en sélectionnant <em>nouveau dossier</em>)</li>
+<li>Dans ce répertoire, copier le fichier gameshell que vous avez téléchargé.</li>
+<li>Faire un clic droit sur le fichier et dans l'onglet permission cocher la case '<em>Autoriser l'exécution du fichier comme un programme</em>', comme illustré ci-dessous : <img alt="gameshell1" class="imgcentre" src="../images/C0/gameshell1.png"/></li>
+<li>Faire un clic droit dans la fenêtre de l'explorateur de fichier et sélectionner "<em>ouvrir dans un terminal</em>" comme illustré ci-dessous :<img alt="gameshell2" class="imgcentre" src="../images/C0/gameshell2.png"/></li>
+<li>Dans le terminal taper :
+<div class="highlight"><pre><span></span><code> ./gameshell.sh 
+</code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>Parallèlement à l'exécution des missions :</p>
+<ul>
+<li>Noter les commandes que vous utilisez et leur signification</li>
+<li>Tenir à jour un plan du monde dans lequel se déroule le jeu</li>
+</ul>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Pour la première mission, vous devez donc noter le sens des commandes <code>cd</code>, <code>ls</code> et <code>pwd</code> et commencer le schéma suivant qui sera à poursuivre tout au long des missions :
+<div class="mermaid">    graph TD
+    A[Monde] --&gt; B[Chateau]
+    A --&gt; C[Echoppe]
+    A --&gt; D[Forêt]
+    A --&gt; E[Jardin]
+    A --&gt; F[Montagne]
+</div></p>
+</div>
+</li>
+<li>
+<p>L'installation de Gameshell, faite ci-dessus à l'aide de l'interface graphique aurait pu être réalisé en ligne de commande.</p>
+<ol>
+<li>Quelle commande permet de créer un répertoire <code>gameshell</code> dans votre dossier personnel (question <em>1.c</em> ci-dessus) ?</li>
+<li>Quelle commande correspond à la copie du fichier (question <em>1.d</em> ci-dessus) ?</li>
+<li>Quelle commande correspond à la modification des droits d'exécution (question <em>1.e</em> ci-dessus) ?</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-2-module-turtle-de-python"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 2 : <em>Module <code>turtle</code> de Python</em></img></h3>
+<p>Le but de cette activité est de redécouvrir les bases de la programmation en python en utilisant le module <code>turtle</code> qui permet de dessiner à l'aide d'une "<em>tortue</em>" (équivalente à un crayon) à laquelle on donne des instructions (se déplacer, avancer, tourner, ...) de façon à former le dessin désiré. Cette tortue se déplace sur un écran (équivalent au papier), doté d'un repère comme en mathématiques.</p>
+<ol>
+<li>
+<p>Dessiner une grille de morpion <br/>
+On souhaite dessiner une grille du <a href="https://fr.wikipedia.org/wiki/Morpion_(jeu)" target="_blank">jeu de morpion</a> comme ci-dessous (où le repère du papier est tracé de façon à connaître les dimensions et positions des traits) :
+<img alt="morpion1" class="imgcentre" src="../images/C0/morpion1.png"/></p>
+<ol>
+<li>
+<p>Recopier et executer le programme suivant :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="c1"># Création du "papier" et du "crayon"</span>
+<span class="n">crayon</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">papier</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+
+<span class="c1"># Taille, dimension et couleur pour le papier et le crayon</span>
+<span class="n">papier</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">"beige"</span><span class="p">)</span>
+<span class="n">papier</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">"navy"</span><span class="p">)</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Tracé d'un trait avec les coordonnées des extrémités</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+
+<span class="c1"># Tracé d'un trait en orientant et en faisant avancer la tortue</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">crayon</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Attends un clic pour fermer la fenêtre de dessin</span>
+<span class="n">papier</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>Expliquer le rôle des instructions suivantes :</p>
+<ul>
+<li><code>pensize</code> et <code>color</code></li>
+<li><code>penup</code> et <code>pendown</code></li>
+<li><code>goto</code> et <code>forward</code></li>
+<li><code>setheading</code></li>
+</ul>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Vous pouvez modifier les paramètres ou supprimer certaines instructions pour en voir l'effet sur le dessin. Aider vous aussi des commentaires.</p>
+</div>
+</li>
+<li>
+<p>Compléter ce programme en traçant les deux traits horizontaux manquants afin de compléter le dessin de la grille de morpion.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Dessiner un cercle au centre de la grille de morpion (de rayon 40, de couleur <code>darkred</code> avec un crayon d'épaisseur 7) de façon à obtenir le dessin final suivant :
+<img alt="morpion1" class="imgcentre" src="../images/C0/morpion2.png"/></p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Utiliser <code>circle(r)</code> où <code>r</code> est le rayon du cercle à tracer, on fera attention que le centre du cercle se situe toujours à <em>gauche</em> de l'orientation de la tortue et à une distance <code>r</code> comme représenté ci-dessous :
+<img alt="morpion1" class="imgcentre" src="../images/C0/circle.png"/></p>
+</div>
+</li>
+</ol>
+<h3 id="activite-3-de-lutilite-des-fonctions"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 3 : <em>De l'utilité des fonctions</em></img></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Cette activité est la suite de la précédente, on doit donc déjà disposer d'un programme Python permettant de tracer la grille de morpion ainsi que le cercle central. Même si vous pouvez télécharger ce programme <a href="../files/C0/correction_activite2.py">ici</a>, il est fortement conseillé d'avoir assimilé les notions de l'activité précédente (tracé des lignes et des cercles) avant de continuer.</p>
+</div>
+<ol>
+<li>
+<p>On propose d'écrire une fonction <code>ligne</code> permettant de tracer avec la tortue <code>crayon</code> un trait en donnant les coordonnées <code>x1</code> et <code>y1</code> de l'origine et <code>x2</code> et <code>y2</code> de l'extrémité.</p>
+<ol>
+<li>Par quel mot clé commence la définition d'une fonction en Python ?</li>
+<li>Quels seront ici les arguments de la fonction ?</li>
+<li>Recopier et compléter le code de cette fonction :</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">...</span> <span class="n">ligne</span><span class="p">(</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">):</span>
+    <span class="n">crayon</span><span class="o">....</span><span class="p">()</span>
+    <span class="n">crayon</span><span class="o">....</span><span class="p">(</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">)</span>
+    <span class="n">crayon</span><span class="o">.....</span><span class="p">()</span>
+    <span class="n">crayon</span><span class="o">.....</span><span class="p">(</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Ajouter une chaîne de documentation à cette fonction</li>
+<li>Faire le tracé de la grille de morpion en vous aidant de cette fonction.</li>
+<li>Que peut-on dire par rapport à version du programme qui n'utilisait pas de fonction ?</li>
+</ol>
+</li>
+<li>
+<p>En vous inspirant de l'exemple précédent, écrire une fonction <code>ligne2</code> permettant de tracer un trait en donnant les coordonnées <code>x</code> et <code>y</code> de son origine, ainsi que sa longueur <code>l</code> et sa direction <code>d</code> (sous la forme d'un angle).</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On utilisera <code>forward</code> pour avancer de la longueur indiquée et <code>setheading</code> pour positionner la tortue avec l'orientation désirée.</p>
+</div>
+</li>
+<li>
+<p>Ecrire une fonction <code>cercle</code> permettant de tracer un cercle dont on donne les coordonnées du centre <code>x</code> et <code>y</code> et le rayon <code>r</code></p>
+</li>
+<li>
+<p>Ecrire une fonction <code>croix</code> qui permet de tracer une croix (:fontawesome-solid-times:) en donnant son centre et la longueur des branches.</p>
+</li>
+</ol>
+<h3 id="activite-4-une-boucle-pour-repeter"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 4 : <em>Une boucle pour répéter</em></img></h3>
+<p>On souhaite dessiner la grille suivante à l'aide du module <code>turtle</code> de Python : 
+<img alt="grille" class="imgcentre" src="../images/C0/grille.png">
+On dispose déjà d'un début de programme qui définit les propriétés du papier et du crayon ainsi que  la fonction <code>ligne</code> permettant de tracer une ligne en donnant les deux extrémités (voir activités précédentes) :
+<div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">turtle</span>
+
+    <span class="c1"># Création du "papier" et du "crayon"</span>
+    <span class="n">crayon</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="n">papier</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+    <span class="c1"># Taille, dimension et couleur pour le papier et le crayon</span>
+    <span class="n">papier</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s2">"beige"</span><span class="p">)</span>
+    <span class="n">papier</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">crayon</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">"navy"</span><span class="p">)</span>
+    <span class="n">crayon</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ligne</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">):</span>
+        <span class="n">crayon</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+        <span class="n">crayon</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+        <span class="n">crayon</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+        <span class="n">crayon</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+</code></pre></div></img></p>
+<ol>
+<li>Écrire les instructions permettant de tracer les lignes horizontales.</li>
+<li>Une (bien) meilleure solution<ol>
+<li>Vérifier que les instructions suivantes permettent de tracer les lignes verticales :
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">abscisse</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">ligne</span><span class="p">(</span><span class="n">abscisse</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="n">abscisse</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Quelles sont les valeurs prises successives prises par la variable <code>abscisse</code> dans le programme précédant ?</li>
+<li>Rappeler le rôle des paramètres de <code>range</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-5-instructions-conditionnelles"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 5 : <em>Instructions conditionnelles</em></img></h3>
+<p>On souhaite dessiner la figure suivante à l'aide du module <code>turtle</code> de Python : 
+<img alt="carres" class="imgcentre" src="../images/C0/carres.png"/></p>
+<ol>
+<li>Ecrire une fonction <code>carre(x,y,c)</code> qui trace le carré de côté <code>c</code> dont le coin inférieur gauche a pour coordonnées <code>(x,y)</code>.</li>
+<li>Ecrire une boucle à l'aide d'une instruction <code>for ... in range(....):</code> de façon à tracer la suite de carré bleu.</li>
+<li>
+<p>Ajouter une instruction conditionnelle dans la boucle de façon à ce que le septième carré soit tracé en rouge et avec un crayon plus épais comme sur la figure.</p>
+<div class="admonition rappel">
+<p class="admonition-title">Rappel</p>
+<p>On rappelle que la syntaxe d'une instruction conditionnelle est :
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">instructions1</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">instructions2</span><span class="o">&gt;</span>
+</code></pre></div></p>
+</div>
+</li>
+</ol>
+<h3 id="activite-6-le-probleme-de-josephus"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 6 : <em>Le problème de Josephus</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Activité utilisant un support vidéo"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M463.1 32h-416C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 47.1 48h416c26.51 0 48-21.49 48-48V80c0-26.51-20.6-48-48-48zm-352 376a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8l.9 48zm0-128a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8v48zm0-128a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8l.9 48zm240 248c0 8.836-7.164 16-16 16h-160c-8.836 0-16-7.164-16-16v-96c0-8.838 7.164-16 16-16h160c8.836 0 16 7.162 16 16v96zm0-192c0 8.836-7.164 16-16 16h-160c-8.836 0-16-7.164-16-16v-96c0-8.838 7.164-16 16-16h160c8.836 0 16 7.162 16 16v96zm112 200a8 8 0 0 1-8 8H408c-4.418 0-7.1-3.582-7.1-8v-48a8 8 0 0 1 8-8H456a8 8 0 0 1 8 8v48zm0-128a8 8 0 0 1-8 8H408a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8v48zm0-128a8 8 0 0 1-8 8H408a8 8 0 0 1-8-8v-48c0-4.418 3.582-8 7.1-8h47.1a8 8 0 0 1 8 8v48z"></path></svg></span></span></span></img></h3>
+<div class="centre"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uCsD3ZGzMgE" title="YouTube video player" width="560"></iframe></div>
+<p>Le but de l'activité est d'écrire un programme permettant de résoudre le <a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_Jos%C3%A8phe" target="_blank">problème de Joséphus</a> en révisant les listes de Python.</p>
+<ol>
+<li>On représente un cercle de <code>n</code> soldats par la liste <code>[1,2,...,n]</code><ol>
+<li>Ecrire une fonction <code>soldats(n)</code> qui renvoie la liste <code>[1,2,....,n]</code></li>
+<li>Verifier que <code>n</code> est bien un entier strictement positif à l'aide d'instruction <code>assert</code></li>
+<li>Ajouter une chaîne documentation.</li>
+</ol>
+</li>
+<li>
+<p>Afin de repérer l'épée, on décide que le soldat qui la tient se situe <em>toujours en première position de la liste</em>.</p>
+<ol>
+<li>
+<p>Compléter l'évolution de la liste de soldat ci-dessous</p>
+<table>
+<thead>
+<tr>
+<th>Etat de la liste</th>
+<th>Explications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[<mark>1</mark>,<del>2</del>,3,4,5,6]</td>
+<td><code>1</code> élimine <code>2</code> et passe l'épée à <code>3</code> qui passe donc en tête de liste</td>
+</tr>
+<tr>
+<td>[<mark>3</mark>,...,5,6,1]</td>
+<td><code>3</code> élimine <code>...</code> et passe l'épée à <code>...</code> qui passe donc en tête de liste</td>
+</tr>
+<tr>
+<td>[<mark>...</mark>,<del>6</del>,1,3]</td>
+<td><code>...</code> élimine <code>...</code> et passe l'épée à <code>...</code> qui passe donc en tête de liste</td>
+</tr>
+<tr>
+<td>[...,...,...]</td>
+<td>.....</td>
+</tr>
+<tr>
+<td>[...,...]</td>
+<td>.....</td>
+</tr>
+<tr>
+<td>[...]</td>
+<td>.....</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Compléter l'algorithme suivant d'évolution de la liste et indiquer les instructions Python correspondantes (on désigne par <code>cercle</code> la liste représentant le cercle de soldats):</p>
+<table>
+<thead>
+<tr>
+<th>Etapes</th>
+<th>Opération sur la liste</th>
+<th>Instructions Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="1⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/31-20e3.svg" title=":one:"/></td>
+<td>..........</td>
+<td><code>tueur=cercle.pop(0)</code></td>
+</tr>
+<tr>
+<td><img alt="2⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/32-20e3.svg" title=":two:"/></td>
+<td>Ajouter cet élément en fin de liste</td>
+<td>......</td>
+</tr>
+<tr>
+<td><img alt="3⃣" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/33-20e3.svg" title=":three:"/></td>
+<td>Supprimer le premier élément</td>
+<td>......</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Quel est la condition d'arrêt de l'algorithme ?</p>
+</li>
+<li>Exprimer cette condition par un test en python sur <code>cercle</code></li>
+</ol>
+</li>
+<li>
+<p>Programmer une fonction <code>josephus(n)</code> qui renvoie le soldat survivant pour un cercle de <code>n</code> soldats.</p>
+</li>
+</ol>
+<h2 id="cours">Cours</h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C0/C0-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-les-bases-de-la-ligne-de-commande"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Les bases de la ligne de commande</em></img></h3>
+<ol>
+<li>En utilisant uniquement la  ligne de commande, créer l'arborescence suivante dans votre répertoire personnel :
+        <div class="mermaid">    graph TD
+    A[Cours] --&gt; B[C0-Révisions]
+    A[Cours] --&gt; G[C1-Récursivité]
+    B --&gt; C[Exercices]
+    B --&gt; D[Activités]
+    B --&gt; E[Notes]
+    B --&gt; F[Python]
+</div></li>
+<li>Renommer le dossier <code>Cours</code> en <code>NSI</code></li>
+<li>Créer un fichier vide <code>exercice2.txt</code> dans le dossier <code>Exercices</code></li>
+</ol>
+<h3 id="exercice-2-quelques-commandes"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Quelques commandes</em></img></h3>
+<ol>
+<li>
+<p><strong>Sans les tester</strong>, écrire dans le fichier <code>exercice2.txt</code> crée à l'exercice précédent l'effet des commandes suivantes :</p>
+<ul>
+<li><code>cd ~</code></li>
+<li><code>mkdir Partage</code></li>
+<li><code>chmod a+rwx Partage</code></li>
+<li><code>cd Partage</code></li>
+<li><code>touch hello.txt</code></li>
+<li><code>echo "Salut tout le monde" &gt; hello.txt</code></li>
+<li><code>cat hello.txt</code></li>
+</ul>
+</li>
+<li>
+<p>Taper ces commandes pour vérifier vos précisions.</p>
+</li>
+</ol>
+<h3 id="exercice-3-arborescence"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Arborescence</em></img></h3>
+<ol>
+<li>Rechercher l'aide de la commande <code>tree</code>, quel est l'effet de cette commande ?</li>
+<li>Afficher l'arborescence de votre répertoire personnel</li>
+<li>Afficher l'arborescence de la racine <em>en limitant à un la profondeur</em></li>
+<li>Rechercher sur le <em>Web</em> le rôle des dossiers suivants :<ul>
+<li><code>/etc</code></li>
+<li><code>/home</code></li>
+<li><code>/dev</code></li>
+<li><code>/tmp</code></li>
+</ul>
+</li>
+</ol>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Pour les exercices avec <code>turtle</code>, on peut consulter <a href="https://docs.python.org/fr/3/library/turtle.html" target="_blank">la page de documentation officielle du module</a></p>
+</div>
+<h3 id="exercice-4-figures-geometriques-avec-turtle"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Figures géométriques avec Turtle</em></img></h3>
+<ol>
+<li>Ecrire une fonction <code>rectangle(x,y,l1,l2)</code> qui trace le rectangle de dimensions <code>l1</code> <span class="arithmatex">\(\times\)</span> <code>l2</code> et dont le coin inférieur gauche à pour coordonnées <code>x</code> et <code>y</code>.</li>
+<li>
+<p>On peut remplir une surface construite avec un <code>crayon</code> du module <code>turtle</code> :</p>
+<ul>
+<li>Spécifier une couleur de remplissage par exemple <code>crayon.fillcolor(red)</code></li>
+<li>Au début du tracé de la figure écrire l'instruction <code>crayon.begin_fill()</code></li>
+<li>A la fin du tracé de la figure écrire l'instruction <code>crayon.end_fill()</code></li>
+</ul>
+<p>Modifier votre fonction rectangle de façon à pouvoir tracer un rectangle rempli avec une couleur passée en paramètre.</p>
+</li>
+</ol>
+<h3 id="exercice-5-quelques-figures-avec-turtle"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Quelques figures avec <code>turtle</code></em></img></h3>
+<p>Construire les figures suivantes (le repère est là pour vous aider et ne doit pas être reproduit):</p>
+<ol>
+<li>L'escalier
+<img alt="escalier" class="imgcentre" src="../images/C0/escalier.png"/></li>
+<li>Cercles concentriques (les couleurs alternent entre <code>blue</code> et <code>lightblue</code>, le crayon a une épaisseur de 10, les cercles ont pour rayon 10,20,30, ...)
+<img alt="cercles" class="imgcentre" src="../images/C0/cercles.png"/></li>
+</ol>
+<h3 id="exercice-6-pour-reviser-les-listes"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 6 : <em>Pour réviser les listes</em></h3>
+<ol>
+<li>
+<p>On considère le programme suivant :</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+    <span class="n">liste3</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">liste3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Quel est le contenu de chacune des listes ?</li>
+<li>Indiquer par quel procédé chacune de ces listes a été crée.</li>
+</ol>
+</li>
+<li>
+<p>Ecrire un programme python permettant de créer les listes suivantes :</p>
+<ol>
+<li>Une liste contenant 12 fois le chiffre 7.</li>
+<li>La liste des nombres entiers de 1 à 100.</li>
+<li>
+<p>Une liste contenant 1000 nombres tirés au sort entre 1 et 6. \</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle que la fonction <code>randint</code> peut être importée depuis le module <code>random</code>, elle permet de tirer un nombre au hasard entre deux valeurs <code>a</code> et <code>b</code> donnés en paramètres.</p>
+</div>
+</li>
+<li>
+<p>La liste des cubes des entiers de 1 à 10.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-7-parcours-de-liste"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 7 : <em>Parcours de liste</em></h3>
+<ol>
+<li>Ecrire une fonction <code>somme(l)</code> qui renvoie la somme des éléments de la liste <code>l</code>. Vérifier que tous les éléments de <code>l</code> sont biens des nombres entiers (<code>int</code>) ou flottants (<code>float</code>).</li>
+<li>
+<p>Ecrire une fonction <code>indice(elt,l)</code> qui renvoie l'indice de la première apparition de <code>elt</code> si <code>elt</code> est dans <code>l</code> et <span class="arithmatex">\(-1\)</span> sinon.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemples</p>
+<ul>
+<li><code>indice(3,[1,2,3,5,7,11])</code> renvoie <code>2</code> puisque <code>3</code> est dans cette liste à l'indice 2.</li>
+<li><code>indice(13,[1,2,3,5,7,11])</code> renvoie <code>-1</code> puisque <code>13</code> n'est pas dans cette liste.</li>
+</ul>
+</div>
+</li>
+</ol>
+<h3 id="exercice-8-polygone-regulier"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 8 : <em>Polygone régulier</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Exercice en lien avec les mathématiques"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M494.9 96.01c-38.78 0-75.22 15.09-102.6 42.5L320 210.8l-72.2-72.3C220.39 111.09 183.96 96 145.2 96 65.11 96.01 0 161.1 0 241.1v29.75c0 80.03 65.11 145.1 145.1 145.1 38.78 0 75.22-15.09 102.6-42.5L320 301.3l72.23 72.25c27.41 27.41 63.84 42.5 102.6 42.5C574.9 416 640 350.9 640 270.9v-29.75c0-80.05-65.1-145.14-145.1-145.14zM202.5 328.3c-15.31 15.31-35.69 23.75-57.38 23.75C100.4 352 64 315.6 64 270.9v-29.75c0-44.72 36.41-81.13 81.14-81.13 21.69 0 42.06 8.438 57.38 23.75l72.23 72.25-72.25 72.28zM576 270.9c0 44.72-36.41 81.13-81.14 81.13-21.69 0-42.06-8.438-57.38-23.75l-72.23-72.25 72.23-72.25c15.31-15.31 35.69-23.75 57.38-23.75C539.6 160 576 196.4 576 241.1v29.8z"></path></svg></span></span></span></h3>
+<ol>
+<li>Ecrire une fonction <code>triangle_equilateral(c)</code> qui trace un triangle équilatéral de côte <code>c</code> à partir de la position courante de la tortue.</li>
+<li>Ecrire une fonction <code>carre(c)</code> qui trace un carré de côte <code>c</code> à partir de la position courante de la tortue.</li>
+<li>
+<p>Ecrire une fonction <code>polygone_regulier(n,c)</code> qui trace un polygone régulier de côte <code>c</code> à partir de la position courante de la tortue.</p>
+<div class="admonition rappel">
+<p class="admonition-title">Rappel</p>
+<ul>
+<li>Un polygone régulier est un polygone dont tous les côtés sont de la même longueur et tous les angles sont égaux.</li>
+<li>Les angles d'un polygone régulier à <span class="arithmatex">\(n\)</span> côtés mesurent <span class="arithmatex">\(\dfrac{360}{n}\)</span></li>
+</ul>
+</div>
+</li>
+</ol>
+<h3 id="exercice-9-panneau-de-signalisation"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:"/>   Exercice 9 : <em>Panneau de signalisation</em></h3>
+<p>Ecrire un programme Python permettant de dessiner le panneau de signalisation de votre choix. Quelques exemples sont proposés ci-dessous.<br/>
+<img alt="sens interdit" src="../images/C0/sensinterdit.jpg" width="150px"/>  
+<img alt="croisement" src="../images/C0/croisement.svg" width="150px"/>   
+<img alt="stop" src="../images/C0/stop.svg" width="150px"/>   
+<img alt="doublesens" src="../images/C0/doublesens.png" width="150px"/> </p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid">
+<a aria-label="Précédent: Progression" class="md-footer__link md-footer__link--prev" href="../progression/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              Progression
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: C1-Récursivité" class="md-footer__link md-footer__link--next" href="../recursivite/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C1-Récursivité
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({});</script></body>
+</html>

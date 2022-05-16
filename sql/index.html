@@ -1,0 +1,1280 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee" name="description"/>
+<meta content="Fabrice NATIVEL" name="author"/>
+<link href="../images/dragon.svg" rel="icon"/>
+<meta content="mkdocs-1.3.0, mkdocs-material-8.2.15" name="generator"/>
+<title>C2-Bases de données et SQL - Numériques et Sciences Informatiques Terminale</title>
+<link href="../assets/stylesheets/main.c382b1dc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cc9b2e1e.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/fenarius.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#c2-bases-de-donnees-et-sql">
+          Aller au contenu
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="En-tête" class="md-header__inner md-grid">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M18.43 255.8 192 224l-91.2 68.6c-10.13 10.2-3 27.4 11.2 27.4h222.7c-9.499-26.5-14.75-54.5-14.75-83.38V194.2L200.3 106.8c-23.8-15.92-55.3-14.05-77 4.4L5.8 227.6C-6.562 238 2.436 258 18.43 255.8zm556.77 34.1-100.7-50.25c-16.25-8.125-26.5-24.75-26.5-43V160h63.99l28.12 22.62c5.99 5.98 14.09 9.38 22.59 9.38h30.1c11.1 0 23.12-6.875 28.5-17.75l14.37-28.62c5.374-10.87 4.25-23.75-2.999-33.5l-74.49-99.37C552.1 4.75 543.5 0 533.5 0H296c-7.1 0-10.6 8.625-5.6 13.62L351.1 64l-58.7 24.75c-5.874 3-5.874 11.37 0 14.37L351.1 128l-.001 108.6c0 72 35.99 139.4 95.99 179.4-195.6 6.75-344.4 41-434.1 60.88-8.124 1.75-13.87 9-13.87 17.38C.046 504 8.045 512 17.79 512h499.1c63.24 0 119.6-47.5 122.1-110.8 3.31-47.2-21.89-90.3-63.79-111.3zM489.1 66.25l45.74 11.38c-2.75 11-12.5 18.88-24.12 18.25-13.02-.63-25.92-12.5-21.62-29.63z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              C2-Bases de données et SQL
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Rechercher" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Rechercher" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Effacer" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Onglets" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../progression/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../docs/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index_annales/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../projets/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../liens/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../apropos/">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Numériques et Sciences Informatiques Terminale">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M18.43 255.8 192 224l-91.2 68.6c-10.13 10.2-3 27.4 11.2 27.4h222.7c-9.499-26.5-14.75-54.5-14.75-83.38V194.2L200.3 106.8c-23.8-15.92-55.3-14.05-77 4.4L5.8 227.6C-6.562 238 2.436 258 18.43 255.8zm556.77 34.1-100.7-50.25c-16.25-8.125-26.5-24.75-26.5-43V160h63.99l28.12 22.62c5.99 5.98 14.09 9.38 22.59 9.38h30.1c11.1 0 23.12-6.875 28.5-17.75l14.37-28.62c5.374-10.87 4.25-23.75-2.999-33.5l-74.49-99.37C552.1 4.75 543.5 0 533.5 0H296c-7.1 0-10.6 8.625-5.6 13.62L351.1 64l-58.7 24.75c-5.874 3-5.874 11.37 0 14.37L351.1 128l-.001 108.6c0 72 35.99 139.4 95.99 179.4-195.6 6.75-344.4 41-434.1 60.88-8.124 1.75-13.87 9-13.87 17.38C.046 504 8.045 512 17.79 512h499.1c63.24 0 119.6-47.5 122.1-110.8 3.31-47.2-21.89-90.3-63.79-111.3zM489.1 66.25l45.74 11.38c-2.75 11-12.5 18.88-24.12 18.25-13.02-.63-25.92-12.5-21.62-29.63z"></path></svg>
+</a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px&gt;  Accueil" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/home.svg" width="16px"/>  Accueil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Cours de NSI en Terminale du lycée Hintermann-Afféjee
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px&gt;  Liste des chapitres" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg" width="16px"/>  Liste des chapitres
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../progression/">
+        Progression
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../revisions/">
+        C0-Révisions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recursivite/">
+        C1-Récursivité
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          C2-Bases de données et SQL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        C2-Bases de données et SQL
+      </a>
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-un-peu-dhistoire-et-de-theorie">
+    Activité 1 : Un peu d'histoire et de théorie  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-premier-pas-en-sql">
+    Activité 2 : Premier pas en SQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-operations-sur-les-colonnes">
+    Activité 3 : Opérations sur les colonnes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-modelisation-dune-base-de-donnees-de-livres">
+    Exercice 1 : Modélisation d'une base de données de livres
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-modelisation-dune-liste-de-contacts-telephoniques">
+    Exercice 2 : Modélisation d'une liste de contacts téléphoniques
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-prix-nobel">
+    Exercice 3 : Prix Nobel
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-tremblements-de-terre">
+    Exercice 4 : Tremblements de terre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-titanic">
+    Exercice 5 : Titanic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
+    Exercice 6 : Créer une base de données à partir d'un fichier csv
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../processus/">
+        C3-Processus
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diviser/">
+        C4-Diviser pour régner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../poo/">
+        C5-Notions de programmation orienté objet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sl/">
+        C6-Structures de données linéaires
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../puces/">
+        C7-Système sur puce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arbres/">
+        C8-Arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sgbd/">
+        C9-Schéma relationnel d'une base de données
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../algoarbre/">
+        C10-Algorithmes sur les arbres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../graphes/">
+        C11-Graphes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../routage/">
+        C12-Protocoles de routage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../texte/">
+        C13-Recherche textuelle
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../calculabilite/">
+        C14-Calculabilité, décidabilité
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cryptographie/">
+        C15-Sécurisation des communications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px&gt;  Documents officiels" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg" width="16px"/>  Documents officiels
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/">
+        Documents officiels
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px&gt;  Annales du Bac" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg" width="16px"/>  Annales du Bac
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index_annales/">
+        Annales du bac
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_2" id="__nav_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2">
+          2021
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2021" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/EE/">
+        Epreuves écrites
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_2_2" id="__nav_4_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_2_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves écrites" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/Correction_EE/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1AN1/">
+        21-NSIJ1AN1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1G11/">
+        21-NSIJ1G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1ME1/">
+        21-NSIJ1ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ1ME2/">
+        21-NSIJ1ME2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2G11/">
+        21-NSIJ2G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME1/">
+        21-NSIJ2ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME2/">
+        21-NSIJ2ME2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2ME3/">
+        21-NSIJ2ME3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/21-NSIJ2PO1/">
+        21-NSIJ2PO1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2021/EP/">
+        Epreuves pratiques
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2022" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/EE/">
+        Epreuves écrites
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3_2" id="__nav_4_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves écrites" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_2">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/Correction_EE/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1G11/">
+        22-NSIJ1G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1ME1/">
+        22-NSIJ1ME1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ1PO1/">
+        22-NSIJ1PO1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ2G11/">
+        22-NSIJ2G11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/22-NSIJ2ME1/">
+        22-NSIJ2ME1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/2022/EP/">
+        Epreuves pratiques
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4_3_4" id="__nav_4_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3_4">
+          Corrigés épreuves pratiques
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Corrigés épreuves pratiques" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves pratiques
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S01/">
+        Sujet 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S02/">
+        Sujet 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S03/">
+        Sujet 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S04/">
+        Sujet 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S05/">
+        Sujet 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S06/">
+        Sujet 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S07/">
+        Sujet 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S08/">
+        Sujet 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S09/">
+        Sujet 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S10/">
+        Sujet 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S11/">
+        Sujet 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S12/">
+        Sujet 12
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S13/">
+        Sujet 13
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S14/">
+        Sujet 14
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S15/">
+        Sujet 15
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S16/">
+        Sujet 16
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S17/">
+        Sujet 17
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S18/">
+        Sujet 18
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S19/">
+        Sujet 19
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S20/">
+        Sujet 20
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S21/">
+        Sujet 21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S22/">
+        Sujet 22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S23/">
+        Sujet 23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S24/">
+        Sujet 24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S25/">
+        Sujet 25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S26/">
+        Sujet 26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S27/">
+        Sujet 27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S28/">
+        Sujet 28
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S29/">
+        Sujet 29
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S30/">
+        Sujet 30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S31/">
+        Sujet 31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S32/">
+        Sujet 32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S33/">
+        Sujet 33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S34/">
+        Sujet 34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S35/">
+        Sujet 35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S36/">
+        Sujet 36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S37/">
+        Sujet 37
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S38/">
+        Sujet 38
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S39/">
+        Sujet 39
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Annales/Corriges/2022-S40/">
+        Sujet 40
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px&gt;  Projets" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg" width="16px"/>  Projets
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projets/">
+        Projets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px&gt;  Liens" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/links.svg" width="16px"/>  Liens
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liens/">
+        Liens
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="&lt;img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px&gt;  A propos" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+<img height="16px" src="https://fabricenativel.github.io/NSITerminale/images/icones/information.svg" width="16px"/>  A propos
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apropos/">
+        A Propos
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table des matières" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activites">
+    Activités
+  </a>
+<nav aria-label="Activités" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-1-un-peu-dhistoire-et-de-theorie">
+    Activité 1 : Un peu d'histoire et de théorie  
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-2-premier-pas-en-sql">
+    Activité 2 : Premier pas en SQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#activite-3-operations-sur-les-colonnes">
+    Activité 3 : Opérations sur les colonnes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cours">
+    Cours
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercices">
+    Exercices
+  </a>
+<nav aria-label="Exercices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-1-modelisation-dune-base-de-donnees-de-livres">
+    Exercice 1 : Modélisation d'une base de données de livres
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-2-modelisation-dune-liste-de-contacts-telephoniques">
+    Exercice 2 : Modélisation d'une liste de contacts téléphoniques
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-3-prix-nobel">
+    Exercice 3 : Prix Nobel
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-4-tremblements-de-terre">
+    Exercice 4 : Tremblements de terre
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-5-titanic">
+    Exercice 5 : Titanic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercice-6-creer-une-base-de-donnees-a-partir-dun-fichier-csv">
+    Exercice 6 : Créer une base de données à partir d'un fichier csv
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="c2-bases-de-donnees-et-sql"><span class="numchapitre">C2</span> Bases de données et SQL <span style="float:right;"><span class="twemoji" title="Bases de données"><svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.82 100.3 0 224 0s224 35.82 224 80zm-54.8 134.7c19.9-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.93 11.7 34.02 21.2 54.85 28.6C99.66 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zm-338.35 160C99.66 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c19.9-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432v-85.9c14.93 11.7 34.02 21.2 54.85 28.6z"></path></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-un-peu-dhistoire-et-de-theorie"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 1 : <em>Un peu d'histoire et de théorie</em><span style="float:right;"><span style="float:right;">  <span class="twemoji" title="Activité utilisant un support vidéo"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M463.1 32h-416C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 47.1 48h416c26.51 0 48-21.49 48-48V80c0-26.51-20.6-48-48-48zm-352 376a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8l.9 48zm0-128a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8v48zm0-128a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8l.9 48zm240 248c0 8.836-7.164 16-16 16h-160c-8.836 0-16-7.164-16-16v-96c0-8.838 7.164-16 16-16h160c8.836 0 16 7.162 16 16v96zm0-192c0 8.836-7.164 16-16 16h-160c-8.836 0-16-7.164-16-16v-96c0-8.838 7.164-16 16-16h160c8.836 0 16 7.162 16 16v96zm112 200a8 8 0 0 1-8 8H408c-4.418 0-7.1-3.582-7.1-8v-48a8 8 0 0 1 8-8H456a8 8 0 0 1 8 8v48zm0-128a8 8 0 0 1-8 8H408a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8h47.1a8 8 0 0 1 8 8v48zm0-128a8 8 0 0 1-8 8H408a8 8 0 0 1-8-8v-48c0-4.418 3.582-8 7.1-8h47.1a8 8 0 0 1 8 8v48z"></path></svg></span></span></span></img></h3>
+<div class="centre"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/pqoIBiM2AvE" title="YouTube video player" width="560"></iframe></div>
+<p>En utilisant la vidéo ci-dessus et en faisant vos propres recherches sur le <em>Web</em>, répondre aux questions suivantes :</p>
+<ol>
+<li>Quel mathématicien est à l'origine de la théorie des bases de données ? En quelle année ?</li>
+<li>Avant l'avènement des bases de données, les données étaient stockés sous la forme de simples fichiers, quels étaient les inconvénients de ce fonctionnement ?</li>
+<li>Que signifie l'<em>absence de redondance</em> pour une base de données ?</li>
+<li>Que signifie l'<em>indépendance logique</em> pour une base de données ?</li>
+<li>Que signifie l'<em>intégrité</em> pour une base de données ?</li>
+<li>Donner les noms de quelques <span style="font-variant:small-caps;">sgbd</span> connus en indiquant s'il s'agit de logiciels libres ou propriétaires.</li>
+</ol>
+<div class="admonition remarques">
+<p class="admonition-title">Remarques<ul>
+<li>Le <span style="font-variant:small-caps;">sgbd</span> utilisé dans le cadre de ce cours est <a href="https://www.sqlite.org/index.html" target="_blank">sqlite</a>, accompagné de son interface graphique <a href="https://sqlitebrowser.org/" target="_blank">DB Browser for sqlite</a>. Ces logiciels sont libres, gratuits et multiplateformes.</li>
+<li>La création de base de données ne figurant pas au programme de NSI en terminale, on travaille avec des bases déjà crées. Cependant, le processus de création d'un base de données avec une seule table importée à partir d'un fichier <code>csv</code> est décrit dans cet <a href="#exercice-1-creer-une-base-de-donnees-a-partir-dun-fichier-csv">exercice</a>. </li>
+</ul>
+</p>
+</div>
+<h3 id="activite-2-premier-pas-en-sql"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 2 : <em>Premier pas en SQL</em></img></h3>
+<ol>
+<li>
+<p>Préparation</p>
+<ol>
+<li>
+<p>Télécharger la base de données des médailles olympiques de 1976 à 2008 et la sauvegarder dans le répertoire de votre choix  :
+<span class="centre"><a class="md-button" href="../files/C2/olympics1976-2008.db">Médailles Olympiques 1976-2008 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span>
+Cette base de donnée est composée d'une seule table :
+<table>
+<tr><th align="center" colspan="2"> Medals </th></tr>
+<tr><td><ins><code>Id</code></ins></td><td><code>INTEGER</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m5.6-4c-.8-2.3-3-4-5.6-4-3.3 0-6 2.7-6 6s2.7 6 6 6c2.6 0 4.8-1.7 5.6-4H16v4h4v-4h3v-4H12.6Z"></path></svg></span></td></tr>
+<tr><td><code>City</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Year</code></td><td><code>INTEGER</code></td></tr>
+<tr><td><code>Sport</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Discipline</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Event</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Athlete</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Gender</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Country_code</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Country</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Event_Gender</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Medal</code></td><td><code>TEXT</code></td></tr>
+</table></p>
+</li>
+<li>
+<p>Lancer <em>DB Browser for sqlite</em> (depuis un terminale avec la commande <code>sqlitebrowser</code> ou via le menu des applications) et ouvrir la base de données téléchargée ci-dessus. Effectuer une sauvegarde dans le dossier de votre choix.</p>
+</li>
+<li>Dans le menu <code>Edition &gt; Préférences</code>, mettre le logiciel en français.</li>
+<li>Dans le menu <code>Vue</code>, décocher <code>jounal SQL</code>, <code>Graphique</code>, ...</li>
+</ol>
+</li>
+<li>
+<p>Cliquer sur l'onglet <code>Exécuter le SQL</code>, la fenêtre qui apparaît est divisée en trois sections : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> En haut, la zone où on entre les requêtes SQL. <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> Au milieu les données renvoyées par la requête<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> En bas, des informations sur le temps d'exécution ou les erreurs éventuelles
+    <img alt="dbrowser" src="../images/C2/dbbrowser.png">
+    Par exemple, sur l'illustration précédente, on a entré la requête :
+        <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Medals</span><span class="w"></span>
+</code></pre></div>
+    Tester chacune des requêtes suivantes en <strong>observant bien les résultats renvoyés</strong>. En déduire quelles données sont extraites de la base à l'aide de ces requêtes</img></p>
+<ol>
+<li>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Medals</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">Year</span><span class="o">=</span><span class="mi">2008</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Country</span><span class="o">=</span><span class="ss">"FRANCE"</span><span class="w"></span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">City</span><span class="p">,</span><span class="w"> </span><span class="k">Year</span><span class="p">,</span><span class="w"> </span><span class="n">Athlete</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Medals</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Medal</span><span class="o">=</span><span class="ss">"Gold"</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">Event</span><span class="o">=</span><span class="ss">"110m hurdles"</span><span class="w"></span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">Athlete</span><span class="p">,</span><span class="w"> </span><span class="n">Event</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Medals</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Medal</span><span class="o">=</span><span class="ss">"Gold"</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Country</span><span class="o">=</span><span class="ss">"France"</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">Year</span><span class="o">=</span><span class="mi">2000</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Athlete</span><span class="w"> </span><span class="k">ASC</span><span class="w"></span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Medals</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">Medal</span><span class="o">=</span><span class="ss">"Gold"</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">YEAR</span><span class="o">=</span><span class="ss">"1984"</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">DESC</span><span class="w"></span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">Athlete</span><span class="p">,</span><span class="w"> </span><span class="n">City</span><span class="p">,</span><span class="w"> </span><span class="k">Year</span><span class="p">,</span><span class="w"> </span><span class="n">Medal</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">medals</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="ss">"%nia"</span><span class="w"></span>
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>N'hésitez pas à faire vos propres tests en modifiant légèrement ces requêtes ou à en tester d'autres pour comprendre.</p>
+</div>
+</li>
+<li>
+<p>Ecrire les requêtes SQL permettant d'extraire de cette base de données les informations suivantes :</p>
+<ol>
+<li>Les noms de tous les athlètes français ayant obtenu une médaille d'or aux jeux olympiques de 1984.</li>
+<li>Les noms de tous les champions olympiques du marathon de 1976 à 2008.</li>
+<li>Les épreuves dans lesquelles le champion de natation américain <a href="https://fr.wikipedia.org/wiki/Michael_Phelps" target="_blank">Michael Phelps</a> a obtenu des médailles en 2004.</li>
+<li>Tous les athletes médaillés entre 1976 et 2008 dont le nom contient "Richardson". Le handballeur d'origine réunionnaise <a href="https://fr.wikipedia.org/wiki/Jackson_Richardson" target="_blank">Jackson Richardson</a> devrait bien sûr y figurer !</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-3-operations-sur-les-colonnes"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Activité 3 : <em>Opérations sur les colonnes</em></img></h3>
+<div class="centre"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/yeX_Zs7zztY" title="YouTube video player" width="560"></iframe></div>
+<ol>
+<li>Télécharger les données présentées dans la vidéo précédente sous la forme d'une base de données :
+    <span class="centre"><a class="md-button" href="../files/C2/DettePIB.db">Dette et Croissance <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span> et l'ouvrir à l'aide de <code>sqlitebrowser</code>. Cette base est composée d'une seule table :
+    <table>
+<tr><th align="center" colspan="2"> RR </th></tr>
+<tr><td><ins><code>Id</code></ins></td><td><code>INTEGER</code> <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m5.6-4c-.8-2.3-3-4-5.6-4-3.3 0-6 2.7-6 6s2.7 6 6 6c2.6 0 4.8-1.7 5.6-4H16v4h4v-4h3v-4H12.6Z"></path></svg></span></td></tr>
+<tr><td><code>Country</code></td><td><code>TEXT</code></td></tr>
+<tr><td><code>Year</code></td><td><code>INTEGER</code></td></tr>
+<tr><td><code>DebtToGDP</code></td><td><code>REAL</code></td></tr>
+<tr><td><code>Growth</code></td><td><code>REAL</code></td></tr>
+<tr><td><code>DebtCategory</code></td><td><code>INTEGER</code></td></tr>
+</table>
+    On précise la signification des champs suivants : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>DebtToGDP</code> : la dette en pourcentage du <span style="font-variant:small-caps;">pib</span>.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>Growth</code> : la croissance.<br/></li>
+<li>Quelques requêtes pour s'échauffer<ol>
+<li>Vérifier comme indiqué dans la vidéo que les données contiennent bien 20 pays. Les lister.</li>
+<li>Vérifier aussi que les années vont de 1946 à 2009 comme indiqué dans la vidéo.</li>
+<li>Lister par ordre croissant les dix années où la croissance a été la plus faible en France.</li>
+<li>Lister les pays où la croissance a dépassé 15 %</li>
+</ol>
+</li>
+<li>
+<p>Des opérations sur les colonnes</p>
+<ol>
+<li>Ecrire une requête <span style="font-variant:small-caps;">sql</span> permettant d'obtenir le pays et l'année où la dette a été la plus importante.</li>
+<li>Vous avez <em>normalement</em> écrit une requête de classement par ordre décroissant associée à une clause <code>LIMIT</code>. En réalité on recherche ici le <strong>maximum</strong> d'une colonne, le langage <span style="font-variant:small-caps;">sql</span> permet d'opérer sur des colonnes : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>MIN</code> et <code>MAX</code> permettent d'obtenir respectivement le maximum ou le minimum d'un champ.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>SUM</code> permet de calculer la somme sur un ensemble d'enregistrement.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>AVG</code> permet de calculer la moyenne sur un ensemble d'enregistrement.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>COUNT</code> permet de compter le nombre d'enregistrement.<br/>
+Exécuter la requête :</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">DebtToGDP</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">RR</span><span class="w"></span>
+</code></pre></div>
+<p>Quelle différence constatez-vous par rapport à la solution précédente ?</p>
+</li>
+<li>
+<p>En vous aidant de ces nouvelles fonctionnalités, retrouver à l'aide de <span style="font-variant:small-caps;">sql</span>n les <em>vraies</em> valeurs de croissance moyenne en fonction de la catégorie de dette dans laquelle se trouve le pays et qu'on rappelle ci-dessous :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Croissance moyenne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4,2 %</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3,1 %</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3,2 %</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2,2 %</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Pour aller plus loin ...</p>
+</li>
+</ol>
+<p>Les opérations sur les colonnes sont particulièrement utiles en lien avec la clause <code>GROUP BY</code>. Par exemple, si on souhaite obtenir la somme de la croissance pour chacun des 20 pays depuis 1970 : </p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">Growth</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">RR</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">Year</span><span class="o">&gt;=</span><span class="mi">1970</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"></span>
+</code></pre></div>
+<p>On peut même renommer la  colonne <code>SUM(Growth)</code> des résultats grâce à <code>AS</code> et donc l'utiliser comme critère de classement: </p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">Growth</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">moy70</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">RR</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">Year</span><span class="o">&gt;=</span><span class="mi">1970</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">moy70</span><span class="w"> </span><span class="k">DESC</span><span class="w"></span>
+</code></pre></div>
+<p>Ecrire une <em>seule</em> requête permettant d'obtenir les taux de croissance moyenne pour chacune des catégories de dette.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>La clause  <code>GROUP BY</code> n'est pas exigible au niveau terminale NSI et ne fera pas partie des évaluations.</p>
+</div>
+<h2 id="cours">Cours</h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class="centre"><a class="md-button" href="../pdf/C2/C2-cours.pdf">Diaporama de cours <span class="twemoji"><svg viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-modelisation-dune-base-de-donnees-de-livres"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 1 : <em>Modélisation d'une base de données de livres</em></img></h3>
+<p>Pour mettre en place une base de données dans une médiathèque; on décide de stocker les livres dans une table de cette base. On donne ci-dessous la représentation de cette table avec simplement deux éléments donnés en exemple :</p>
+<table>
+<thead>
+<tr>
+<th>Titre</th>
+<th>Auteur</th>
+<th>Pays</th>
+<th>Année</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les misérables</td>
+<td>Victor Hugo</td>
+<td>France</td>
+<td>1862</td>
+</tr>
+<tr>
+<td>1984</td>
+<td>George Orwell</td>
+<td>Angleterre</td>
+<td>1949</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Quels sont les attributs de cette table ?</li>
+<li>Proposer un type et un domaine pour l'attribut <code>Année</code></li>
+<li>Certains livres sont achetés en plusieurs exemplaires dans cette médiathèque, expliquer pourquoi le modèle de table choisi ci-dessus ne convient plus et proposer une correction.</li>
+</ol>
+<h3 id="exercice-2-modelisation-dune-liste-de-contacts-telephoniques"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 2 : <em>Modélisation d'une liste de contacts téléphoniques</em></img></h3>
+<p>Proposer une modélisation d'une liste de contact téléphonique dans laquelle chaque personne (nom, prénom) est associée à un numéro de téléphone.</p>
+<h3 id="exercice-3-prix-nobel"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 3 : <em>Prix Nobel</em></img></h3>
+<ol>
+<li>Télécharger ci-dessous une base de données des Prix Nobel :
+<span class="centre"><a class="md-button" href="../files/C2/Nobel.db">Prix Nobel <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span></li>
+<li>Ouvrir cette base avec <code>sqlitebrowser</code></li>
+<li>Dans <span class="encadre">Parcourir les données</span> prendre note du noms des colonnes et de leur signification. </li>
+<li>Ecrire les requêtes <span style="font-variant:small-caps;">sql</span> permettant :<ol>
+<li>d'obtenir les catégories dans lesquelles sont attribuées les prix Nobel,</li>
+<li>de lister par ordre alphabétique les lauréats du prix Nobel nés en France ou travaillant pour une organisation Française,</li>
+<li>de lister les années où le "Comité international de la Croix Rouge" a obtenu le prix Nobel,</li>
+<li>de connaître le nombre de femmes ayant obtenu un prix Nobel,</li>
+<li>de lister par âge décroissant les lauréats du prix Nobel qui sont toujours en vie,</li>
+<li>de rechercher les lauréats dont le nom contient "Curie".</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-4-tremblements-de-terre"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 4 : <em>Tremblements de terre</em></img></h3>
+<ol>
+<li>Télécharger ci-dessous une base de données des tremblements de terre :
+<span class="centre"><a class="md-button" href="../files/C2/earthquakes.db">Tremblements de terre <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span></li>
+<li>Ouvrir cette base avec <code>sqlitebrowser</code></li>
+<li>Dans <span class="encadre">Parcourir les données</span> prendre note du noms des colonnes et de leur signification. </li>
+<li>
+<p>Ecrire les requêtes <span style="font-variant:small-caps;">sql</span> permettant :</p>
+<ol>
+<li>de lister  tremblements de terre qui se sont produits au Japon,</li>
+<li>
+<p>de lister les tremblements de terre qui se sont produits en l'an 2000 classés par magnitude,</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Remarquer que le champ <code>occured_on</code> qui indique la date est au format texte.</p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>Utiliser cette base pour répondre aux questions suivantes :</p>
+<ol>
+<li>
+<p>les tremblements de terre sont-ils plus fréquents dans l'hémisphère nord ou l'hémisphère sud ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On rappelle que l'hémisphère nord correspond à une latitude positive et le sud à une latitude négative.</p>
+</div>
+</li>
+<li>
+<p>Où étaient effectuées les essais nucléaires français ?</p>
+</li>
+<li>
+<p>L'un des séisme de cette base de données s'est-il produit à proximité de l'île de la Réunion ?</p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>Rechercher la latitude et la longitude de l'île de Réunion et considérer que "à proximité" signifie qu'on s'écarte de moins de 10 degrés de latitude ou de longitude</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-5-titanic"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 5 : <em>Titanic</em></img></h3>
+<ol>
+<li>Consulter la page wikipedia consacrée au <a href="https://fr.wikipedia.org/wiki/Titanic" target="_blank">Titanic</a> pour connaître l'histoire tragique de ce paquebot.</li>
+<li>Télécharger ci-dessous une base de données partielle des passagers du titanic :
+<span class="centre"><a class="md-button" href="../files/C2/titanic.db">Passagers du titanic <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"></path></svg></span></a></span>
+On précise la signification des champs suivants : <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>survived</code> : un entier qui vaut 0 (passager décédé) ou 1 (passager survivant). <br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>pclasse</code> : un entier qui indique la classe dans laquelle voyageait le passenger : de 1 pour la première classe à 3 pour la classe la moins chère.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>sibsp</code> : le nombre de frères et soeurs présents à bord.<br/>
+<span class="twemoji"><svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m6.427 4.427 3.396 3.396a.25.25 0 0 1 0 .354l-3.396 3.396A.25.25 0 0 1 6 11.396V4.604a.25.25 0 0 1 .427-.177z"></path></svg></span> <code>parch</code> : le nombre de parents et enfants présents à bord.<br/></li>
+<li>En <em>argumentant</em> vos réponses à l'aide d'informations extraites de cette base, donner votre avis sur les affirmations suivantes :<ol>
+<li>Les passengers de la première classe avaient plus de chance de survie.</li>
+<li>Les femmes et les enfants ont été sauvées en priorité.</li>
+<li>Les passenger âgés de plus de 50 avaient moins de chance de survie que les autres.</li>
+</ol>
+</li>
+</ol>
+<h3 id="exercice-6-creer-une-base-de-donnees-a-partir-dun-fichier-csv"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:">   Exercice 6 : <em>Créer une base de données à partir d'un fichier csv</em></img></h3>
+<div class="admonition remarque">
+<p class="admonition-title">Remarque</p>
+<p>La création de base de données est hors programme et ne fera donc pas l'objet d'évaluations. Cependant, on présente ici la création d'une base de données composée d'une seule table que l'on importera à partir d'un fichier <code>csv</code>. Ce format de fichier a été vu en classe de première (voir <a href="https://fabricenativel.github.io/NSIPremiere/donneestable/" target="_blank">le chapitre correspondant</a>).</p>
+</div>
+<ol>
+<li>Télécharger le fichier <code>csv</code> d'indicateurs de réussite des lycées sur <a href="https://www.data.gouv.fr/en/datasets/indicateurs-de-valeur-ajoutee-des-lycees-denseignement-general-et-technologique/" target="_blank">data.gouv.fr</a>. Par souci de simplification, renommer le fichier en <code>lycees.csv</code>.</li>
+<li>Lancer <em>DB Browser for sqlite</em> (depuis un terminale avec la commande <code>sqlitebrowser</code> ou via le menu des applications). Mettre le logiciel en français. Sélectionner <span class="encadre"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 14h2v3h3v2h-3v3h-2v-3h-3v-2h3v-3M12 3c4.42 0 8 1.79 8 4s-3.58 4-8 4-8-1.79-8-4 3.58-4 8-4M4 9c0 2.21 3.58 4 8 4s8-1.79 8-4v3.08L19 12c-2.59 0-4.8 1.64-5.64 3.94L12 16c-4.42 0-8-1.79-8-4V9m0 5c0 2.21 3.58 4 8 4h1c0 1.05.27 2.04.75 2.9L12 21c-4.42 0-8-1.79-8-4v-3Z"></path></svg></span> Nouvelle base de données</span> dans la barre de menu supérieur. Nommer votre base de données <code>lycees.db</code> et l'enregistrer dans le dossier de votre choix. <strong>Refermer</strong> l'interface qui apparaît ensuite (fenêtre <em>édition de la définition de la table</em>) et qui permet de créer les tables, nous allons simplement importer une table au format <code>csv</code>.</li>
+<li>Aller dans le menu  <code>Fichier &gt; Importer &gt; Table depuis un fichier csv</code>, sélectionner alors le fichier <code>lycees.csv</code> téléchargé précédemment (par défaut seul les fichiers texte s'affichent, changer l'option en bas et à droite de la fenêtre de sélection de fichiers).</li>
+<li>Nommer la table <code>indicateurs</code> et régler les options d'importations comme dans la fenêtre ci-dessous . Puis sauvegarder votre base de données sous le nom <code>lycees.db</code>.
+<img alt="importation dans sqlite" src="../images/C2/sqlite1.png"/></li>
+<li>Dans l'onglet <code>structure de la base de données</code>, cliquer sur la table <code>indicateurs</code> puis sur <span class="encadre"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6H6m7 1.5L18.5 9H13V3.5m7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.544.544 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15-2.09-2.08Z"></path></svg></span> Modifier une table</span>. Certaines données ont été importées au format <span style="font-variant:small-caps;">text</span> et d'autres au format <span style="font-variant:small-caps;">integer</span>. Les taux de réussites devraient être des valeurs numériques entières, est-ce bien le cas ? sinon corriger.</li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Attention lors du traitement des données à vérifier sous quel format elles ont été importées ! C'est une source d'erreur fréquente, par exemple classer par ordre décroissant des données en pensant qu'elles sont numériques alors qu'elles sont au format texte ne donnera sûrement pas le résultat escompté.</p>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Pied de page" class="md-footer__inner md-grid">
+<a aria-label="Précédent: C1-Récursivité" class="md-footer__link md-footer__link--prev" href="../recursivite/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Précédent
+              </span>
+              C1-Récursivité
+            </div>
+</div>
+</a>
+<a aria-label="Suivant: C3-Processus" class="md-footer__link md-footer__link--next" href="../processus/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Suivant
+              </span>
+              C3-Processus
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+<script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+</body>
+</html>

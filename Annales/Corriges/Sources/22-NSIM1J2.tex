@@ -1,0 +1,30 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usepackage{Cours}
+
+\begin{document}
+
+\input{\detokenize{/home/fenarius/Travail/Cours/NSITerminale/docs/commun/MacrosCours.tex}}
+\newcommand{\Schema}{\cnum Schéma}
+\pythonmode
+
+\newcommand{\Pile}[6]{
+    \begin{tabular}{|c|}
+        #1 \\
+        #2 \\
+        #3 \\
+        #4 \\
+        \hline
+        \multicolumn{1}{c}{#5}
+    \end{tabular}
+}
+
+%Schéma représentatif
+\begin{frame}
+    \mframe{\Schema}
+    \Pile{2}{4}{7}{8}{Départ}{PI} \\
+\end{frame}
+
+
+    
+\end{document}

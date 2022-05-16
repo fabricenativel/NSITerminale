@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{Act}
+\usepackage{listings}
+
+\begin{document}
+\input{\detokenize{/home/fenarius/Travail/Cours/Commun/latex/Macros.tex}}
+
+\DevoirNSI{Programmation orienté objet}{\Term}\vspace{0.2cm}
+\pythonmode
+%Nom de la première activité
+
+\Exo{ Une application pour un élevage de chien }{{\tt 10 points}} \\
+On souhaite créer une application de gestion d'un élevage de chiens, un chien de cet élevage sera représenté par une instanciation de la classe {\tt Chien} suivante dont la signification des attributs est indiqué en commentaire :
+\begin{lstlisting}
+class Chien:
+
+    def __init__(self,nom,race,sexe,naissance):
+        # le nom, la race, le sexe et l'année de naissance du chien
+        self.nom = nom
+        self.race = race
+        self.sexe = sexe
+        self.naissance = naissance
+    
+    def __str__(self):
+        return f'{self.nom} ({self.sexe}) {self.race} né en {self.naissance}'
+
+\end{lstlisting}
+\QListe
+\item Quelle instruction permet de créer l'objet {\tt medor} de la classe {\tt Chien}, de race "caniche", femelle née en 2017 et nommé "Médor" ?
+\item Quel sera l'affichage produit par {\tt print(medor)} ?
+\item Ecrire une méthode {\tt get\_race} (un {\textit getter}) qui renvoie la race d'un objet de type {\tt Chien}. 
+\item Ecrire une méthode {\tt set\_nom} (un {\textit setter})  qui permet de modifier le nom d'un objet de type {\tt Chien}.
+\item On suppose qu'on a importé le module {\tt time} de Python, l'expression {\tt time.gmtime().tm\_year} renvoie alors l'année en cours. Ecrire la méthode {\tt age}, qui renvoie l'âge approximatif d'un chien (on considère qu'un chien né en 2017 a 4 ans en 2021 sans s'occuper du jour de naissance)
+\FinListe
+
+\vspace{0.2cm}
+
+\Exo{Simulation d'un jeu de type Pokemon }{{\tt 10 points}} \\
+On veut créer un jeu de type Pokemon, dans lesquels on fait combattre des créatures, chaque créature a :
+\begin{itemize}
+\item un nom
+\item un nombre de points de vie maximum
+\item une valeur d'attaque
+\item une armure qui diminue les dégâts subies
+\item un nombre de points de vie actuel
+\end{itemize}
+\QListe
+\item Ecrire une classe {\tt Creature} représentant cette modélisation
+\item Instancier cette classe de façon à créer les créatures suivantes :  
+\begin{center}
+\begin{tabularx}{0.7\textwidth}{|X|X|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+        \cline{2-5}
+        \multicolumn{1}{c|}{} & Nom & Vie & Attaque & Armure \\
+        \hline
+        {\tt toto} & "Toto" & 90 & 10 & 0.7 \\
+        \hline
+        {\tt tartampion} & "Tartampion" & 40 & 70 & 0.5 \\
+        \hline
+        {\tt untel} & "Untel" & 20 & 150 & 0.1   \\
+        \hline
+\end{tabularx}
+\end{center}
+Chaque créature aura son nombre de points de vie maximum a sa création.
+\item Ecrire  la méthode spéciale {\tt \_\_str\_\_} permettant d'afficher un objet de la classe {\tt Creature} en donnant son nombre de points de vie actuel et son nombre de points de vie maximum.
+\item Un objet de la classe {\tt Creature} peut boire une potion pour récupérer 10 points de vie mais sans pouvoir dépasser son maximum. Ecrire la méthode {\tt boit\_potion} pour la classe {\tt Creature}
+\item Ecrire une méthode {\tt subit\_degats(d)} qui fait perdre {\tt d} points de vie à un objet {\tt Creature} mais sans tomber en dessous de 0.
+\item Ecrire une méthode {\tt attaque()} qui renvoie un nombre au hasard entre 1 et l'attribut {\tt attaque} d'une créature.
+\item Le principe d'un combat entre deux objets de type {\tt Creature} est le suivant :
+\begin{itemize}
+    \item[\ding{192}] On tire au hasard celui commence puis chacun attaque à son tour
+    \item[\ding{193}] Celui qui attaque génère un nombre au hasard entre 1 et son attribut d'attaque (par exemple si Toto attaque, il tire au sort un nombre entre 1 et 10)
+    \item[\ding{194}] Celui qui défend multiplie les dégats reçus par son armure et soustrait le total de ses points de vie (par exemple si Toto défend et reçoit une attaque de 20, il multiplie par son armure 0.7 et perd $20 \times 0.7=14$ points de vie)
+    \item[\ding{195}] Le combat prend fin lorsque l'un des deux participants atteint 0 PV.
+\end{itemize} 
+Ecrire la méthode {\tt combat(self,other)} entre deux créatures. On pourra afficher l'état des deux combattants durant le déroulement du combat.
+\FinListe
+
+
+\end{document}
+
