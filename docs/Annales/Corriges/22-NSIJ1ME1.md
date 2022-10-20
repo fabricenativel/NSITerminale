@@ -13,7 +13,7 @@
 2. La variable `controleur` augmente de 1 lorsqu'on rencontre une parenthèse ouvrante et diminue de 1 lorsqu'on rencontre une parenthèse fermante par conséquent :
 
     * pour `B=((()()` les valeurs successives seront : $1, 2, 3, 2, 3, 2$
-    * pour `C=(()))(` les valeurs successives seront : $1, 2, 1, 0 -1, 0$
+    * pour `C=(()))(` les valeurs successives seront : $1, 2, 1, 0, -1, 0$
 
 3. Le test 1 : 
 ```python
@@ -64,28 +64,27 @@ c. Puisque l'expression est correctement balisée, il y autant de balises ouvran
 
 1. a. Cette requête renvoie les champs `nom`, `prenom` et `naissance` de la relation `individu` lorsque le nom est `'Crog'`. Sur l'extrait de la table, on obtient donc : `'Crog', 'Daniel', '07-07-1968'`.
 
+    !!! Attention
+        Le sujet présente des *extraits* des relations `individu` et `realisation`, on ne sait pas s'il faut fournir le résultat des requêtes sur ces extraits uniquement ou de façon générale. Dans la réponse précédente, on donne les deux.
     b. 
     ```sql
     SELECT titre, id_rea FROM realisation WHERE annee > 2020;
     ```
 
-    !!! Attention
-    Le sujet présente des *extraits* des relations `individu` et `realisation`, on ne sait pas s'il faut fournir le résultat des requêtes sur ces extraits uniquement ou de façon générale. Dans la réponse précédente, on donne les deux.
-
-2. a. C'est la requête 1 qu'il faut utiliser, elle met à jour la table. La requête 2 ne fonctionne pas car elle insère un nouvel enregistrement, or `id_ind` est une clé primaire donc unique.  On ne peut donc pas insérer un nouvel enregistrement ayant la  pour `id_int` la valeur `688`.
+2. a. C'est la requête 1 qu'il faut utiliser, elle met à jour la table. La requête 2 ne fonctionne pas car elle insère un nouvel enregistrement, or `id_ind` est une clé primaire donc unique.  On ne peut donc pas insérer un nouvel enregistrement ayant pour `id_int` la valeur `688`.
 
     b. Pour la relation `individu` la clé primaire est `id_ind` les autres valeurs acceptent donc des doublons (pas de contrainte `UNIQUE`) et on peut donc avoir deux individus ayant même nom, prénom et date de naissance.
 
 3.  a.
     ```sql hl_lines="2"
     INSERT INTO emploi
-    VALUES (5400, '(Acteur(James Bond)))', 688, 105); -- (1)
+    VALUES (5400, 'Acteur(James Bond)', 688, 105); -- (1)
     ```
     1. `688` est l'`id_ind` de Daniel Crog et 105 l'`id_rea` de "Casino Imperial".
 
     ```sql hl_lines="2"
     INSERT INTO emploi
-    VALUES (5401, '(Acteur(James Bond)))', 688, 325); -- (1)
+    VALUES (5401, 'Acteur(James Bond)', 688, 325); -- (1)
     ```
 
     1. `688` est l'`id_ind` de Daniel Crog et 325 l'`id_rea` de "Ciel tombant".

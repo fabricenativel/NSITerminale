@@ -299,10 +299,14 @@ def jouer(p):
 ``` 
 
 !!! Bug
-    Si la pile `p` est un objet mutable, le test à la ligne 3 est toujours vérifié. En effet, `parcourir_pile_en_reduisant` modifie en place la pile `p` donnée en paramètre et en dépit du `return p` final `p` et `q` sont alors le même objet et ont donc la même taille. Cette correction suppose donc que la pile est **non mutable**, si c'est le cas on doit apporter des modifications au code à compléter.
-
+    La structure de données pile de l'énoncé est *mutable*. En effet, par exemple `depiler(p)` retire le sommet de `p` et donc modifie `p`. Par conséquent, `parcourir_pile_en_reduisant` modifie la pile passée en paramètre (en dépit du `return` qui figure dans cette fonction et laisse penser qu'on renvoie une nouvelle pile). Bien que la correction proposée ci-dessus est probablement la réponse attendue, elle ne fonctionne pas car `p` et `q` sont le même objet et le test ligne 3 est vérifié. 
+    Le site [écrit {{sc("nsi")}}](https://e-nsi.gitlab.io/ecrit/Struct/22-ME2-ex2/) propose une correction de Nicolas Reveret avec modification de l'énoncé afin d'éviter ce bug.
 
 {{ corrige_exobac(repere_sujet,3) }}
+
+1.  a. L'adresse du réseau est `192.168.1.0` pour l'obtenir il suffit de faire un *et* logique bit à bit entre l'adresse de la machine `192.168.1.0` et le masque du réseau qui est ici `255.255.255.0` (soir `\24\ en notation {{sc("cidr")}})
+
+2.  
 
 {{ corrige_exobac(repere_sujet,4) }}
 
