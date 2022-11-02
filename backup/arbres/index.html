@@ -1,0 +1,2298 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours de NSI en classe de terminale du lycée Hintermann-Afféjee">
+      
+      
+        <meta name="author" content="Fabrice NATIVEL">
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>Arbres - Numériques et Sciences Informatiques Terminale</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/fenarius.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c8-arbres" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Numériques et Sciences Informatiques Terminale" class="md-header__button md-logo" aria-label="Numériques et Sciences Informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numériques et Sciences Informatiques Terminale
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arbres
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px>&thinsp; Accueil
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../progression.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px>&thinsp; Liste des chapitres
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index_annales.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px>&thinsp; Annales du Bac
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projets.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../liens.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px>&thinsp; Liens
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../apropos.md" class="md-tabs__link">
+        <img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px>&thinsp; A propos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Numériques et Sciences Informatiques Terminale" class="md-nav__button md-logo" aria-label="Numériques et Sciences Informatiques Terminale" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    Numériques et Sciences Informatiques Terminale
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px>&thinsp; Accueil
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px>&thinsp; Accueil" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/home.svg' width=16px height=16px>&thinsp; Accueil
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px>&thinsp; Liste des chapitres
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px>&thinsp; Liste des chapitres" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/list-ordered-16.svg' width=16px height=16px>&thinsp; Liste des chapitres
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../progression.md" class="md-nav__link">
+        Progression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisions.md" class="md-nav__link">
+        C0-Révisions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursivite.md" class="md-nav__link">
+        C1-Récursivité
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql.md" class="md-nav__link">
+        C2-Bases de données et SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processus.md" class="md-nav__link">
+        C3-Processus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diviser.md" class="md-nav__link">
+        C4-Diviser pour régner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poo.md" class="md-nav__link">
+        C5-Notions de programmation orienté objet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sl.md" class="md-nav__link">
+        C6-Structures de données linéaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puces.md" class="md-nav__link">
+        C7-Système sur puce
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arbres.md" class="md-nav__link">
+        C8-Arbres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sgbd.md" class="md-nav__link">
+        C9-Schéma relationnel d'une base de données
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoarbre.md" class="md-nav__link">
+        C10-Algorithmes sur les arbres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graphes.md" class="md-nav__link">
+        C11-Graphes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../routage.md" class="md-nav__link">
+        C12-Protocoles de routage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../texte.md" class="md-nav__link">
+        C13-Recherche textuelle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../calculabilite.md" class="md-nav__link">
+        C14-Calculabilité, décidabilité
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryptographie.md" class="md-nav__link">
+        C15-Sécurisation des communications
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/file-badge-16.svg' width=16px height=16px>&thinsp; Documents officiels
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px>&thinsp; Annales du Bac
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px>&thinsp; Annales du Bac" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/graduation-cap.svg' width=16px height=16px>&thinsp; Annales du Bac
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index_annales.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          2021
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE.md" class="md-nav__link">
+        Epreuves écrites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corrigés épreuves écrites" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/Correction_EE.md" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ1AN1.md" class="md-nav__link">
+        21-NSIJ1AN1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ1G11.md" class="md-nav__link">
+        21-NSIJ1G11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ1ME1.md" class="md-nav__link">
+        21-NSIJ1ME1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ1ME2.md" class="md-nav__link">
+        21-NSIJ1ME2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ2G11.md" class="md-nav__link">
+        21-NSIJ2G11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ2ME1.md" class="md-nav__link">
+        21-NSIJ2ME1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ2ME2.md" class="md-nav__link">
+        21-NSIJ2ME2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ2ME3.md" class="md-nav__link">
+        21-NSIJ2ME3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/21-NSIJ2PO1.md" class="md-nav__link">
+        21-NSIJ2PO1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EP.md" class="md-nav__link">
+        Epreuves pratiques
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE.md" class="md-nav__link">
+        Epreuves écrites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_2">
+          Corrigés épreuves écrites
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corrigés épreuves écrites" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves écrites
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/Correction_EE.md" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/22-NSIJ1G11.md" class="md-nav__link">
+        22-NSIJ1G11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/22-NSIJ1ME1.md" class="md-nav__link">
+        22-NSIJ1ME1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/22-NSIJ1PO1.md" class="md-nav__link">
+        22-NSIJ1PO1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/22-NSIJ2G11.md" class="md-nav__link">
+        22-NSIJ2G11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/22-NSIJ2ME1.md" class="md-nav__link">
+        22-NSIJ2ME1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EP.md" class="md-nav__link">
+        Epreuves pratiques
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_3_4" type="checkbox" id="__nav_4_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_4">
+          Corrigés épreuves pratiques
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Corrigés épreuves pratiques" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Corrigés épreuves pratiques
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S01.md" class="md-nav__link">
+        Sujet 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S02.md" class="md-nav__link">
+        Sujet 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S03.md" class="md-nav__link">
+        Sujet 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S04.md" class="md-nav__link">
+        Sujet 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S05.md" class="md-nav__link">
+        Sujet 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S06.md" class="md-nav__link">
+        Sujet 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S07.md" class="md-nav__link">
+        Sujet 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S08.md" class="md-nav__link">
+        Sujet 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S09.md" class="md-nav__link">
+        Sujet 9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S10.md" class="md-nav__link">
+        Sujet 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S11.md" class="md-nav__link">
+        Sujet 11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S12.md" class="md-nav__link">
+        Sujet 12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S13.md" class="md-nav__link">
+        Sujet 13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S14.md" class="md-nav__link">
+        Sujet 14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S15.md" class="md-nav__link">
+        Sujet 15
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S16.md" class="md-nav__link">
+        Sujet 16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S17.md" class="md-nav__link">
+        Sujet 17
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S18.md" class="md-nav__link">
+        Sujet 18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S19.md" class="md-nav__link">
+        Sujet 19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S20.md" class="md-nav__link">
+        Sujet 20
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S21.md" class="md-nav__link">
+        Sujet 21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S22.md" class="md-nav__link">
+        Sujet 22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S23.md" class="md-nav__link">
+        Sujet 23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S24.md" class="md-nav__link">
+        Sujet 24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S25.md" class="md-nav__link">
+        Sujet 25
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S26.md" class="md-nav__link">
+        Sujet 26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S27.md" class="md-nav__link">
+        Sujet 27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S28.md" class="md-nav__link">
+        Sujet 28
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S29.md" class="md-nav__link">
+        Sujet 29
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S30.md" class="md-nav__link">
+        Sujet 30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S31.md" class="md-nav__link">
+        Sujet 31
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S32.md" class="md-nav__link">
+        Sujet 32
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S33.md" class="md-nav__link">
+        Sujet 33
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S34.md" class="md-nav__link">
+        Sujet 34
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S35.md" class="md-nav__link">
+        Sujet 35
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S36.md" class="md-nav__link">
+        Sujet 36
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S37.md" class="md-nav__link">
+        Sujet 37
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S38.md" class="md-nav__link">
+        Sujet 38
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S39.md" class="md-nav__link">
+        Sujet 39
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/Corriges/2022-S40.md" class="md-nav__link">
+        Sujet 40
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/lightbulb.svg' width=16px height=16px>&thinsp; Projets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projets.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px>&thinsp; Liens
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px>&thinsp; Liens" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/links.svg' width=16px height=16px>&thinsp; Liens
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../liens.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px>&thinsp; A propos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="<img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px>&thinsp; A propos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          <img src='https://fabricenativel.github.io/NSITerminale/images/icones/information.svg' width=16px height=16px>&thinsp; A propos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apropos.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#activites" class="md-nav__link">
+    Activités
+  </a>
+  
+    <nav class="md-nav" aria-label="Activités">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activite-1-vocabulaire" class="md-nav__link">
+    Activité 1 : Vocabulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-2-arbre-binaire" class="md-nav__link">
+    Activité 2 : Arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire" class="md-nav__link">
+    Activité 3 : Relation entre la hauteur et la taille d'un arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-4-implementation-des-arbres-binaires-en-python" class="md-nav__link">
+    Activité 4 : Implémentation des arbres binaires en Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cours" class="md-nav__link">
+    Cours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-dom" class="md-nav__link">
+    Exercice 1 : DOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-vocabulaire-sur-les-arbres" class="md-nav__link">
+    Exercice 2 : Vocabulaire sur les arbres
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-representer-un-arbre-binaire" class="md-nav__link">
+    Exercice 3 : Représenter un arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-representer-un-arbre-binaire-par-un-triplet" class="md-nav__link">
+    Exercice 4 : Représenter un arbre binaire par un triplet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-retour-sur-limplementation" class="md-nav__link">
+    Exercice 5 : Retour sur l'implémentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="c8-arbres"><span class='numchapitre'>C8</span> Arbres <span style='float:right;'><span class="twemoji" title="Structures de données"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v16h192V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-16H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-96c0-1.7.1-3.4.3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg></span></span></h1>
+<h2 id="activites">Activités</h2>
+<h3 id="activite-1-vocabulaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Activité 1 : <em>Vocabulaire</em></h3>
+<ol>
+<li>
+<p>Après execution d'une commande dans un terminal Linux on a obtenu l'affichage ci-dessous :
+<img alt="arborescence de repertoires" class="centre" src="./images/C8/arborescence.png" /></p>
+<ol>
+<li>De quelle commande s'agissait-il ? Quelle est sa traduction en français ?</li>
+<li>Que sont <code>Maths</code> et <code>NSI</code> pour le système d'exploitation ?</li>
+<li>Un point (<strong>.</strong>) figure en haut du schéma, quelle en est la signification ?</li>
+<li>Que signifie le lien entre <code>NSI</code> et <code>Projet</code> ?</li>
+</ol>
+</li>
+<li>
+<p>Le schéma ci-dessus est un exemple d'<strong>arbre</strong> (on parle d'ailleurs de l'arborescence des dossiers dans un système d'exploitation). Un arbre est constitué de <strong>noeuds</strong> et un lien entre deux noeuds s'appelle une <strong>arête</strong>.</p>
+<ol>
+<li>Citer trois noeuds de l'arbre ci-dessus et donner un exemple d'arête.</li>
+<li>Quel noeud est le répertoire parent de <code>Systèmes</code>  ? On dira dans le vocabulaire des arbres que le noeud <code>Systèmes</code> est un <strong>fils</strong> de ce noeud.</li>
+<li>Citer tous les fils du noeud <code>NSI</code>.</li>
+<li>Dans un arbre, un seul et unique noeud n'est le fils de personne, on l'appelle la <strong>racine</strong> de l'arbre. De qui s'agit-il ici ?</li>
+<li>Nommer les noeuds n'ayant aucun fils (on les appelle <strong>feuilles</strong> de l'arbre).</li>
+<li>Une <strong>branche</strong> est une suite (finie) de noeuds depuis la racine vers une feuille. Donner une branche de cette arbre constituée de trois noeuds.</li>
+<li>Donner la <strong>taille</strong> de cet arbre (c'est à dire son nombre de noeuds).</li>
+<li>Donner l'<strong>arité</strong> de cet arbre, c'est à dire le nombre maximal de fils qu'un noeud peut avoir.</li>
+<li>
+<p>Donner la <strong>hauteur</strong> de cet arbre c'est à dire le nombre maximal de noeuds dans une branche.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention<p>La hauteur d'un arbre est parfois définie comme le plus grand nombre d'arêtes dans une branche. Dans les sujets de <span style="font-variant:small-caps;">bac</span> faire attention à la définition utilisée qui est normalement donnée dans l'énoncé.</p>
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-2-arbre-binaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Activité 2 : <em>Arbre binaire</em></h3>
+<p>Chez les abeilles, le système de reproduction fait que :</p>
+<ul>
+<li>une abeille femelle est issue de deux abeilles, un mâle et une femelle,</li>
+<li>une abeille mâle est issue d'une seule abeille femelle.</li>
+</ul>
+<p>Cela s'explique par le fait qu'un oeuf non fécondé (donc issu uniquement d'une femelle) donne toujours naissance à une abeille mâle, alors qu'une oeuf fécondé (donc issu d'un mâle et d'une femelle) donne toujours naissance à une abeille femelle. On a représenté ci-contre les quatre premiers niveaux de l'arbre généalogique d'une abeille mâle en notant avec la lettre <strong>M</strong> les mâles et la lettre <strong>F</strong> les femelles.</p>
+<div class="centre">
+
+<div class="highlight"><pre><span></span><code>    graph TD
+    F0[&quot;F&quot;] --&gt; F1[&quot;F&quot;]
+    F0[&quot;F&quot;] --&gt; M1[&quot;M&quot;]
+    M1 --&gt; F2[&quot;F&quot;]
+    F1 --&gt; M2[&quot;M&quot;]
+    F1 --&gt; F3[&quot;F&quot;]
+    F2 --&gt; F4[&quot;F&quot;]
+    F2 --&gt; M3[&quot;M&quot;]
+    M2 --&gt; F5[&quot;F&quot;]
+    F3 --&gt; F6[&quot;F&quot;]
+    F3 --&gt; M4[&quot;M&quot;]
+</code></pre></div>
+</div>
+
+<ol>
+<li>
+<p>Définition des arbres binaires  </p>
+<ol>
+<li>Recopier et compléter cet arbre en ajoutant le 5<sup>e</sup> niveau.</li>
+<li>Rappeler la définition de l'<em>arité</em> d'un arbre et d'un noeud. Quelle est l'arité des feuilles d'un arbre ?</li>
+<li>Déterminer le degré (arité) des noeuds qui ne sont pas des feuilles selon que le noeud représente une abeille male ou une abeille femelle.</li>
+<li>On appelle <strong>arbre binaire</strong>, un arbre dans lequel les noeuds ont au maximum deux fils. Donner une définition équivalente utilisant le mot <em>arité</em> et justifier rapidement que l'arbre généalogique d'une abeille est binaire.</li>
+</ol>
+</li>
+<li>
+<p>Une définition récursive
+On reprend l'exemple de l'abre généalogique d'une abeille femelle jusqu'au cinquième niveau dessinée ci-dessus. On appelle <em>sous arbre gauche</em> et <em>sous arbre droit</em> l'arbre généalogique de chacune des deux parents de la racine. L'arbre est alors noté sous la forme d'un triplet constitué de la racine et des deux sous arbres : <code>(racine, sous arbre gauche, sous arbre droit)</code>. </p>
+<ol>
+<li>Justifier rapidement que les deux sous arbres sont des arbres binaires.</li>
+<li>Que dire du sous arbre droit lorsque l'abeille est un mâle ?</li>
+<li>Pour une feuille, que dire du sous arbre droit et du sous arbre gauche ?</li>
+<li>En déduire une version récursive de la définition d'un arbre binaire.</li>
+<li>Donner une définition récursive de la taille d'un arbre binaire.</li>
+<li>Donner une définition récursive de la hauteur d'un arbre binaire.</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Activité 3 : <em>Relation entre la hauteur et la taille d'un arbre binaire</em></h3>
+<ol>
+<li>On note <span class="arithmatex">\(h\)</span> la hauteur d'un arbre binaire et <span class="arithmatex">\(n\)</span> sa taille, on suppose dans la suite que <span class="arithmatex">\(n \geq 2\)</span>. En rappelant les définitions de la hauteur et de la taille d'un arbre, justifier que <span class="arithmatex">\(n \geq h\)</span>.</li>
+<li>
+<p>On numérote les noeuds d'un arbre binaire de la suivante :  </p>
+<ul>
+<li>la racine porte le numéro 1,</li>
+<li>le fils gauche d'un noeud porte le numéro de son père suivi d'un 0,</li>
+<li>le fils droit d'un noeud porte le numéro de son père suivi d'un 1.</li>
+</ul>
+</li>
+</ol>
+<p>On a entamé la numérotation de l'arbre binaire ci-dessous, recopier cet arbre et compléter cette numérotation.</p>
+<div class="centre">
+<div class="highlight"><pre><span></span><code>    graph TD
+    A[&quot;A : 1&quot;] --&gt; B[&quot;B : 10&quot;]
+    A --&gt; C[&quot;C : 11&quot;]
+    B --&gt; D[&quot;D : ...&quot;]
+    B --&gt; E[&quot;E : 101&quot;]
+    C --&gt; V1[&quot; &quot;]
+    C --&gt; F[&quot;F: ...&quot;]
+    D --&gt; G[&quot;G: ...&quot;]
+    D --&gt; H[&quot;H: ...&quot;]
+    F --&gt; I[&quot;I: ...&quot;]
+    F --&gt; V2[&quot; &quot;]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px
+</code></pre></div>
+</div>
+
+<ol>
+<li>Justifier que sur un niveau donné de l'arbre tous les numéros de noeud ont le même nombre de caractères.</li>
+<li>En déduire en fonction de <span class="arithmatex">\(h\)</span>, le nombre de caractères formant le numéro des feuilles</li>
+<li>En utilisant vos connaissances sur la numérotation binaire d'un entier positif, prouver que <span class="arithmatex">\(n \leq 2^h - 1\)</span>.</li>
+</ol>
+<h3 id="activite-4-implementation-des-arbres-binaires-en-python"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Activité 4 : <em>Implémentation des arbres binaires en Python</em></h3>
+<p>Le notebook suivant présente une implémentation <em>possible</em> des arbres binaires en Python. Cette implémentation pourra être sauvegardée et utilisée en exercice.</p>
+<p><span class='centre'><a class="md-button" href="././notebook/ArbresBinaires.ipynb">Jupyter Notebook <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span></a></span></p>
+<h2 id="cours">Cours</h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours présenté en classe :</p>
+<p><span class='centre'><a class="md-button" href="./pdf/C8/C8-cours.pdf">Diaporama de cours <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama ne vous donne que quelques points de repères lors de vos révisions. Il devrait être complété par la relecture attentive de vos <strong>propres</strong> notes de cours et par une révision approfondie des exercices.</p>
+</div>
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-dom"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Exercice 1 : <em>DOM</em></h3>
+<p>On considère le code  <span style="font-variant:small-caps;">html</span> suivant :
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Exemple<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Un titre <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Bonjour ! <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Case 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Case 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+Ce document peut se représenter par un arbre :
+<div class="highlight"><pre><span></span><code>    graph TD
+    HTML[&quot;html&quot;] --&gt; HEAD[&quot;head&quot;]
+    HTML[&quot;html&quot;] --&gt; BODY[&quot;body&quot;]
+    HEAD --&gt; META[&quot;meta&quot;]
+    HEAD --&gt; TITLE[&quot;title&quot;]
+    BODY --&gt; H1[&quot;h1&quot;]
+    BODY --&gt; P[&quot;p&quot;]
+    BODY --&gt; TABLE[&quot;table&quot;] 
+    TABLE --&gt; TR[&quot;tr&quot;]
+    TR --&gt; TD1[&quot;td&quot;]
+    TR --&gt; TD2[&quot;td&quot;]
+</code></pre></div></p>
+<ol>
+<li>Que représentent les noeuds de cet arbre ?</li>
+<li>Que signifie du point de vue du <span style="font-variant:small-caps;">html</span> une arête de cet arbre ?</li>
+<li>Quelle est la racine de cet arbre ?</li>
+<li>Donner les feuilles de cet arbre.</li>
+<li>Donner une branche de cet arbre.</li>
+<li>Donner l'arité de cet arbre.</li>
+<li>Donner la hauteur de cet arbre.</li>
+</ol>
+<h3 id="exercice-2-vocabulaire-sur-les-arbres"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Exercice 2 : <em>Vocabulaire sur les arbres</em></h3>
+<p>On considère l'arbre ci-dessous :</p>
+<div class="centre">
+<div class="highlight"><pre><span></span><code>    graph TD
+    A[&quot;A&quot;] --&gt; L[&quot;L&quot;]
+    A --&gt; G[&quot;G&quot;]
+    L --&gt; O[&quot;O&quot;]
+    L --&gt; R[&quot;R&quot;]
+    G --&gt; V1[&quot; &quot;]
+    G --&gt; I[&quot;I&quot;]
+    O --&gt; T[&quot;T&quot;]
+    O --&gt; H[&quot;H&quot;]
+    R --&gt; M[&quot;M&quot;]
+    R --&gt; E[&quot;E&quot;]
+    I --&gt; S[&quot;S&quot;]
+    I --&gt; V2[&quot; &quot;]
+    style V1 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 fill:#FFFFFF, stroke:#FFFFFF
+    linkStyle 11 stroke:#FFFFFF,stroke-width:0px
+</code></pre></div>
+</div>
+
+<ol>
+<li>Justifier qu'il s'agit d'un arbre binaire. Quelle est sa taille ?</li>
+<li>Quelle est sa racine ? Nommer les feuilles.</li>
+<li>Donner une branche de cet arbre.</li>
+<li>Donner la hauteur de cet arbre.</li>
+<li>Donner une branche de longueur 3 dans cet </li>
+<li>On considère le sous arbre gauche de la racine, quel est l'arité de chaque noeud ? Que peut-on dire du sous arbre gauche ?</li>
+<li>Même question pour le sous arbre droit de la racine.</li>
+</ol>
+<h3 id="exercice-3-representer-un-arbre-binaire"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Exercice 3 : <em>Représenter un arbre binaire</em></h3>
+<ol>
+<li>Dessiner tous les arbres binaires à 3 noeuds. Attention à bien distinguer le fils droit du fils gauche.</li>
+<li>Dessiner un arbre binaire de taille 4 et de profondeur 4.</li>
+<li>Dessiner un arbre binaire de taille 4 et de profondeur 3.</li>
+<li>
+<p>Quelle est la taille maximale d'un arbre binaire de hauteur 10 ? Justifier </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra utiliser sans justification, la formule vue en cours qui permet d'encadrer la taille d'un arbre en fonction de sa hauteur.</p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-4-representer-un-arbre-binaire-par-un-triplet"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Exercice 4 : <em>Représenter un arbre binaire par un triplet</em></h3>
+<p>On rappelle qu'on peut définir un arbre binaire de façon récursive, en effet, un arbre binaire est soit vide (noté <span class="arithmatex">\(\Delta\)</span>), soit un triplet <span class="arithmatex">\((etiquette,sag,sad)\)</span> où <span class="arithmatex">\(sag\)</span> (pour sous arbre gauche) et <span class="arithmatex">\(sad\)</span> (pour sous arbre droit) sont eux-mêmes des arbres binaires. </p>
+<p>On considère les arbres suivants :</p>
+<ul>
+<li><span class="arithmatex">\(A = (7,\Delta,\Delta)\)</span></li>
+<li><span class="arithmatex">\(B = (2,(3,\Delta,(9,\Delta,\Delta)),(10,\Delta,\Delta))\)</span></li>
+<li><span class="arithmatex">\(C = (4,(1,(8,\Delta,\Delta),(7,\Delta,\Delta)),(3,(6,\Delta,\Delta),(5,\Delta,\Delta)))\)</span></li>
+</ul>
+<p>Pour chacun de ces arbres :</p>
+<ol>
+<li>Faire un schéma pour le représenter.</li>
+<li>Donner sa taille, sa hauteur, son nombre de feuilles.</li>
+</ol>
+<h3 id="exercice-5-retour-sur-limplementation"><img alt="▪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/25aa.svg" title=":black_small_square:" />   Exercice 5 : <em>Retour sur l'implémentation</em></h3>
+<p>On reprend ici l'implémentation des arbres binaires vu en cours que vous pouvez télécharger ci-dessous :
+<span class='centre'><a class="md-button" href="././files/C8/ab.py">Implémentation arbres binaires <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span></a></span></p>
+<ol>
+<li>Compléter cette implémentation en écrivant une fonction <code>degenere(n)</code> qui prend en argument un entier positif <code>n</code> et qui renvoie l'arbre binaire dégénéré de taille <code>n</code>. On utilisera comme étiquette des noeuds <code>D0, D1, D2 ...</code>.</li>
+<li>Compléter cette implémentation en écrivant une fonction <code>complet(h)</code> qui prend en argument en entier positif <code>h</code> et qui renvoie l'arbre binaire complet de hauteur <code>h</code>. On utilisera comme étiquette des noeuds <code>C0, C1, C2, ...</code>.</li>
+<li>Reprendre ces deux fonctions et en écrire une version prenant aussi en paramètre une liste de chaines de caractères qui sera utilisée comme étiquette des noeuds. Par exemple <code>complet(2,["T","O","P"])</code> renvoie l'arbre binaire complet de hauteur 2 dont la racine porte l'étiquette <code>T</code> et a pour fils gauche <code>O</code> et fils droit <code>P</code>.</li>
+<li>Utiliser ces deux fonctions de façons à créer rapidement l'arbre de l'exercice 2.</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "navigation.expand"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.7.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

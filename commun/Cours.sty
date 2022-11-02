@@ -1,0 +1,51 @@
+%Style des résumé de cours projeté
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Cours}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+%Package pour utilisation des divers symboles mathématiques
+\usepackage{textcomp,amsmath,amsfonts,amssymb,mathrsfs,stmaryrd,pifont,marvosym,fontawesome5,dictsym,eurosym}
+%Package tableau, multirow pour le multi colonnes
+\usepackage{tabularx,multirow}
+%Environnement encadreés - Boites ovales, mise en pase et mise en forme des listes
+\usepackage[breakable]{tcolorbox}
+\usepackage{fancybox,fancyhdr}
+%Gestion des listes
+\usepackage[inline]{enumitem}
+\usepackage{tasks}
+%Faire des tableaux de variations
+\usepackage{variations}
+%Ecriture cursive
+\usepackage{frcursive}
+%Package multido pour faire des boucles et xstring de manipulation de chaine et hyperref pour les liens ifthen pour les instructions conditionnelles
+\usepackage{multido,xstring, hyperref,ifthen,calc}
+%xlop pour poser des opérations
+\usepackage{xlop}
+%Package graphique
+\usepackage{graphicx}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eps,pst-fill,pst-node,pst-math,pst-eucl,pstricks-add}
+% Définition des marges du document avec package geometry
+\usepackage[top=2.2cm, bottom=0.5cm, left=2cm , right=1cm]{geometry}
+\usepackage{algorithm,algorithmic,circuitikz,listings}
+
+
+\author
+{F. {\sc Nativel}}
+
+\institute
+{Lycée Nord}
+
+\date
+{Année scolaire 2018-2019}
+
+
+\pagestyle{fancy}
+\setlength\headsep{10pt}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0pt}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\partopsep}{0pt}
+\endinput
