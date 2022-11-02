@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+
+<!-- Content -->
+{% block content %}
+
+<h1> Nouvelle adresse ! </h1>
+
+Ce site a déménagé, <a href="https://fabricenativel.github.io">cliquer ici</a> pour accéder à la nouvelle adresse ou attendre quelques secondes pour être automatiquement transféré.
+
+<script>
+function transfert() {
+window.location.href = "https://fabricenativel.github.io";}
+setTimeout(transfert,10000)
+</script>
+
+{% endblock %}

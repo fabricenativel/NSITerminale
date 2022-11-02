@@ -113,6 +113,9 @@ theme:
     logo: fontawesome/solid/dragon
   favicon : images/dragon.svg
   # Les couleurs, on utilise la palette par défaut avec qques tweaks via css (voir https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/stylesheets/main/_colors.scss)
+  
+  custom_dir: overrides
+
   palette: 
     scheme: default
   features:
